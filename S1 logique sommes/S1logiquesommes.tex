@@ -1,0 +1,214 @@
+\documentclass{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts, amsmath, amssymb, mathrsfs}
+\usepackage [a4paper]{geometry}
+\geometry{left=3.5cm, right=3.5cm,top=3.5cm ,bottom=4cm}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{complexity}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{epigraph}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning,automata,shadows}
+\usepackage{palatino}
+\usepackage{pdfpages}
+\usepackage{epigraph}
+
+%%%% Format
+
+\setlength{\headheight}{35pt}
+\lhead{Colles\\MPSI}
+\rhead{Gaëtan \bsc{Douéneau-Tabot} \\ \small{\textsf{gaetan.doueneau@ens-paris-saclay.fr}}}
+\chead{}
+\rfoot{}
+\pagestyle{fancy}
+
+% Citations jolies
+
+\newenvironment{aquote}[1]
+    {\newcommand\finquote{#1} \begin{quote} \flqq}
+    {\frqq \vspace*{-0.7\baselineskip} \par\nobreak\smallskip\hfill \textcolor{gray}{\normalfont {\finquote}}
+    \end{quote} }
+
+\newcommand{\es}{\vspace{1\baselineskip}}
+\newcommand{\ds}{\vspace{0.4\baselineskip}}
+
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+
+% Exercices
+
+\newcounter{exo}
+\setcounter{exo}{1}
+
+\newcommand{\exercice}[1][\null]{\textbf{\ds \\ \large Exercice \theexo. #1} \addtocounter{exo}{1}}
+\newcommand{\cours}{\textbf{\ds \\ \large Questions de cours}}
+
+%%%% Corps du fichier
+
+
+\begin{document}
+
+\begin{center}
+\underline{\LARGE Semaine 1 : logique, ensembles, calculs de sommes}
+\end{center}
+
+
+
+
+
+\cours
+
+\begin{enumerate}
+
+\item Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction. A-t-on toujours $\forall x \in \mb{R}, \exists y \in \mb{R}, f(x) = y$ ? Donner la négation de cette formule.
+
+Que dire des fonctions qui vérifient $\exists y \in \mb{R}, \forall x \in \mb{R},  f(x) = y$ ?
+
+\item Montrer que toute fonction $f : \mb{R} \mapsto \mb{R}$ s'écrit comme somme d'une fonction paire et d'une fonction impaire. Prouver l'unicité de cette écriture.
+
+\item Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
+
+\item Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
+
+\end{enumerate}
+
+
+
+
+\exercice
+
+Soient $A$ et $B$ deux parties de $E$. Montrer que $A \cap B = A \cup B$ implique $A = B$.
+
+
+
+\exercice[Sous-structures]
+
+On se donne une proposition $P(x)$ dépendante d'un réel $x$.
+
+\begin{enumerate}
+
+\item Soit $X \subseteq \mb{R}$ telle que $\forall x \in H, P(x)$. Soit $I \subseteq H$, montrer que $\forall x \in I, P(x)$.
+
+\item Soit $J \subseteq \mb{R}$ telle que $\exists x \in H, P(x)$. Soit $J \subseteq K \subseteq \mb{R}$, montrer que $\exists x \in J, P(x)$.
+\end{enumerate}
+
+
+
+\exercice[Borne inférieure]
+
+Montrer que $\forall x \in \mb{R}, \forall y \in \mb{R}, \left[ (\forall \varepsilon > 0, x \le y + \varepsilon) \Rightarrow (x \le y) \right]$.
+
+\exercice
+
+Trouver toutes les fonctions $f : \mb{Q}_{+}^* \rightarrow \mb{Q}_{+}^*$ vérifiant pour tous $a,b$, $f(ab) = f(a)f(b)$ et $f(a+b) = f(a)+f(b)$ .
+
+
+
+\exercice
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction $T$-périodique pour tout $T \ge 0$. Montrer qu'elle est constante. (Une fonction $f$ est dite $T$-périodique si pour tout $x \in \mb{R}$, $f(x) = f(T+x)$).
+
+
+\exercice[Autour de la somme des $k$]
+
+Notons $S_n = \sum_{k=1}^n k $ pour $n \ge 1$.
+
+\begin{enumerate}
+
+\item Donner la formule du cours (sans somme) pour $S_n$, puis la prouver par récurrence.
+
+\item En calculant $2 S_n$, re-prouver ce résultat sans récurrence.
+
+\item Re-re-prouver ce résultat en calculant $S_n = \sum_{k=1}^n (k+1)^2 -  \sum_{k=1}^n k^2  $ de deux manières différentes.
+\end{enumerate}
+
+
+
+
+
+
+\exercice[Lagrange, Cauchy et Schwarz]
+
+Soient $a_1 \dots a_n$ et $b_1 \dots b_n$ des réels.
+
+\begin{enumerate}
+
+\item Calculer $\displaystyle \left(\sum_{i=1}^n a_i \right)\left(\sum_{i=1}^n b_i \right)$
+
+\item Montrer que $\displaystyle \left(\sum_{k=1}^n a_k^2\right)\left(\sum_{k=1}^n b_k^2\right) - \left(\sum_{k=1}^n a_k b_k\right)^2 = \sum_{1 \le i < j \le n} (a_i b_j - a_j b_i)^2$
+
+(identité de Lagrange).
+
+\item En déduire que $\displaystyle \left(\sum_{k=1}^n a_k b_k\right)^2 \le \left(\sum_{k=1}^n a_k^2\right)\left(\sum_{k=1}^n b_k^2\right)$
+
+(inégalité de Cauchy-Schwarz).
+
+\item En déduire que $ \displaystyle \left(\sum_{k=1}^n c_k\right)\left(\sum_{k=1}^n \frac{1}{c_k}\right) \ge n^2$ si $c_1 \dots c_k$ sont des réels strictement positifs.
+
+\end{enumerate}
+
+
+
+
+
+
+\exercice[Inégalité de Jensen]
+
+Soit $f: \mb{R} \mapsto \mb{R}$ une fonction vérifiant pour tous réels $x_1, x_2$ et $t \in [0,1]$
+$$f(t x_1 +(1-t) x_2) \le t f(x_1) +(1-t) f(x_2)$$  (une telle fonction est dite convexe).
+Montrer que si les $\lambda_1 \dots \lambda_n$ sont des réels positifs ou nuls tels que $\sum_{i=1}^n \lambda_i = 1$, alors pour tous réels $x_1 \dots x_n$ on a :
+$$f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i).$$
+
+\exercice[Inégalité de Bernoulli]
+
+\begin{enumerate}
+
+\item Montrer par récurrence que $(1+x)^n \ge 1+nx$ pour $n \ge 1$ et $x \ge -1$.
+
+\item Prouver ce résultat sans récurrence (pour $x \ge 0$).
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Encadrement de Gauss]
+
+On va donner un encadrement de $n !$.
+
+\begin{enumerate}
+
+\item Montrer que $\displaystyle n! = \prod_{\substack{i,j \ge 1\\i+j = n+1}}  \sqrt{ij}$
+
+\item Montrer que pour tous $i,j \ge 1$ on a $i+j-1 \le ij \le (\frac{i+j}{2})^2$.
+
+\item Conclure que $n^{\frac{n}{2}} \le n ! \le (\frac{n+1}{2})^n$.
+
+\end{enumerate}
+
+
+
+
+\exercice[Série harmonique]
+
+Soit $ H_n := \sum_{k =1}^n 1/k$ (série harmonique).
+
+\begin{enumerate}
+
+\item Calculer $H_n$ pour $1\le n \le 5$.
+
+\item Montrer que $H_n$ n'est jamais entier. On conjecturera, grâce à la question précédente, une certaine propriété à prouver par récurrence forte.
+
+\end{enumerate}
+
+
+
+\end{document}
