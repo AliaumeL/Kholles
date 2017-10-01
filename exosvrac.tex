@@ -1,0 +1,479 @@
+\documentclass{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts, amsmath, amssymb, mathrsfs}
+\usepackage [a4paper]{geometry}
+\geometry{left=3.5cm, right=3.5cm,top=3.5cm ,bottom=4cm}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{complexity}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{epigraph}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning,automata,shadows}
+\usepackage{palatino}
+\usepackage{pdfpages}
+\usepackage{epigraph}
+
+%%%% Format
+
+\setlength{\headheight}{35pt}
+\lhead{Colles\\MPSI}
+\rhead{}
+\chead{}
+\rfoot{}
+\pagestyle{fancy}
+
+\newcommand{\fonction}[5]{\raisebox{-0.5\baselineskip}{$\begin{array}{lccc}
+    #1: & #2 & \longrightarrow & #3 \\
+        & #4 & \longmapsto & #5 \end{array}$}}
+        
+\newcommand{\es}{\vspace{1\baselineskip}}
+\newcommand{\ds}{\vspace{0.4\baselineskip}}
+
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+
+% Exercices
+
+\newcounter{exo}
+\setcounter{exo}{1}
+
+\newcommand{\exercice}[1][\null]{\textbf{\ds \\ \large Exercice \theexo. \normalsize #1} \addtocounter{exo}{1}}
+\newcommand{\cours}{\textbf{\ds \\ \large Questions de cours}}
+
+%%%% Corps du fichier
+
+
+\begin{document}
+
+
+
+\cours
+
+\begin{enumerate}
+
+\item Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction. A-t-on toujours $\forall x \in \mb{R}, \exists y \in \mb{R}, f(x) = y$ ? Donner la négation de cette formule.
+
+Que dire des fonctions qui vérifient $\exists y \in \mb{R}, \forall x \in \mb{R},  f(x) = y$ ?
+
+\item Montrer que toute fonction $f : \mb{R} \mapsto \mb{R}$ s'écrit comme somme d'une fonction paire et d'une fonction impaire. Prouver l'unicité de cette écriture.
+
+\item Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
+
+\item Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
+
+\end{enumerate}
+
+
+
+
+\exercice
+
+Soient $A$ et $B$ deux parties de $E$. Montrer que $A \cap B = A \cup B$ implique $A = B$.
+
+
+
+\exercice[Sous-structures]
+
+On se donne une proposition $P(x)$ dépendante d'un réel $x$.
+
+\begin{enumerate}
+
+\item Soit $X \subseteq \mb{R}$ telle que $\forall x \in H, P(x)$. Soit $I \subseteq H$, montrer que $\forall x \in I, P(x)$.
+
+\item Soit $J \subseteq \mb{R}$ telle que $\exists x \in H, P(x)$. Soit $J \subseteq K \subseteq \mb{R}$, montrer que $\exists x \in J, P(x)$.
+\end{enumerate}
+
+
+
+\exercice[Borne inférieure]
+
+Montrer que $\forall x \in \mb{R}, \forall y \in \mb{R}, \left[ (\forall \varepsilon > 0, x \le y + \varepsilon) \Rightarrow (x \le y) \right]$.
+
+\exercice
+
+Trouver toutes les fonctions $f : \mb{Q}_{+}^* \rightarrow \mb{Q}_{+}^*$ vérifiant pour tous $a,b$, $f(ab) = f(a)f(b)$ et $f(a+b) = f(a)+f(b)$ .
+
+
+
+\exercice
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction $T$-périodique pour tout $T \ge 0$. Montrer qu'elle est constante. (Une fonction $f$ est dite $T$-périodique si pour tout $x \in \mb{R}$, $f(x) = f(T+x)$).
+
+
+\exercice[Autour de la somme des $k$]
+
+Notons $S_n = \sum_{k=1}^n k $ pour $n \ge 1$.
+
+\begin{enumerate}
+
+\item Donner la formule du cours (sans somme) pour $S_n$, puis la prouver par récurrence.
+
+\item En calculant $2 S_n$, re-prouver ce résultat sans récurrence.
+
+\item Re-re-prouver ce résultat en calculant $S_n = \sum_{k=1}^n (k+1)^2 -  \sum_{k=1}^n k^2  $ de deux manières différentes.
+\end{enumerate}
+
+
+
+
+
+
+
+\exercice[Inégalité de Jensen]
+
+Soit $f: \mb{R} \mapsto \mb{R}$ une fonction vérifiant pour tous réels $x_1, x_2$ et $t \in [0,1]$
+$$f(t x_1 +(1-t) x_2) \le t f(x_1) +(1-t) f(x_2)$$  (une telle fonction est dite convexe).
+Montrer que si les $\lambda_1 \dots \lambda_n$ sont des réels positifs ou nuls tels que $\sum_{i=1}^n \lambda_i = 1$, alors pour tous réels $x_1 \dots x_n$ on a :
+$$f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i).$$
+
+\exercice[Inégalité de Bernoulli]
+
+\begin{enumerate}
+
+\item Montrer par récurrence que $(1+x)^n \ge 1+nx$ pour $n \ge 1$ et $x \ge -1$.
+
+\item Prouver ce résultat sans récurrence (pour $x \ge 0$).
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Encadrement de Gauss]
+
+On va donner un encadrement de $n !$.
+
+\begin{enumerate}
+
+\item Montrer que $\displaystyle n! = \prod_{\substack{i,j \ge 1\\i+j = n+1}}  \sqrt{ij}$
+
+\item Montrer que pour tous $i,j \ge 1$ on a $i+j-1 \le ij \le (\frac{i+j}{2})^2$.
+
+\item Conclure que $n^{\frac{n}{2}} \le n ! \le (\frac{n+1}{2})^n$.
+
+\end{enumerate}
+
+
+
+
+\exercice[Série harmonique]
+
+Soit $ H_n := \sum_{k =1}^n 1/k$ (série harmonique).
+
+\begin{enumerate}
+
+\item Calculer $H_n$ pour $1\le n \le 5$.
+
+\item Montrer que $H_n$ n'est jamais entier. On conjecturera, grâce à la question précédente, une certaine propriété à prouver par récurrence forte.
+
+\end{enumerate}
+
+
+
+\cours
+
+\begin{enumerate}
+
+\item Définir $n \choose k$. Démontrer la formule de Pascal.
+
+\item Calculer  $\sum_k \sin(k\theta)$ où $\theta \in \mb{R}$.
+
+\item Donner l'inégalité triangulaire (dans $\mb{C})$. La démontrer.
+
+\end{enumerate}
+
+\exercice
+
+Soit $\displaystyle S_1 = \sum_{\substack{k=0 \\ k \text{ pair}}}^n {n \choose k}$ et $\displaystyle S_2 = \sum_{\substack{k=0 \\ k \text{ impair}}}^n {n \choose k}$. Calculer $S_1$ et $S_2$.
+
+\exercice[Formule d'inversion de Pascal]
+
+\begin{enumerate}
+
+\item Soit $n \in \mb{N}^*$, calculer $\displaystyle \sum_{k=0}^n (-1)^k {k \choose n}$. Que dire si $n = 0$ ?
+
+\item Soient $l \le k \le n$ des entiers, montrer que $\displaystyle {n \choose k} {k \choose l} = {n \choose l} {n-l \choose k-l} $.
+
+\item Soit $(x_n)_{n \ge 0}$ une suite réelle, on pose $(y_k)_{k \ge 0}$ la suite définie par $y_k = \sum_{l=0}^k {k \choose l} x_l$.
+
+Montrer que $\displaystyle x_n = \sum_{k=0}^n (-1)^{n-k} {n \choose k} y_k$.
+
+\end{enumerate}
+
+
+\exercice
+
+Montrer que pour tout $n \ge 0$ on a $\displaystyle \sum_{k=1}^n \frac{(-1)^{k+1}}{k} {n \choose k} = \sum_{k=0}^n \frac{1}{k}$.
+
+\exercice[Lagrange, Cauchy et Schwarz]
+
+Soient $a_1 \dots a_n$ et $b_1 \dots b_n$ des réels.
+
+\begin{enumerate}
+
+\item Calculer $\displaystyle \left(\sum_{i=1}^n a_i \right)\left(\sum_{i=1}^n b_i \right)$
+
+\item Montrer que $\displaystyle \left(\sum_{k=1}^n a_k^2\right)\left(\sum_{k=1}^n b_k^2\right) - \left(\sum_{k=1}^n a_k b_k\right)^2 = \sum_{1 \le i < j \le n} (a_i b_j - a_j b_i)^2$
+
+(identité de Lagrange).
+
+\item En déduire que $\displaystyle \left(\sum_{k=1}^n a_k b_k\right)^2 \le \left(\sum_{k=1}^n a_k^2\right)\left(\sum_{k=1}^n b_k^2\right)$
+
+(inégalité de Cauchy-Schwarz).
+
+\item En déduire que $ \displaystyle \left(\sum_{k=1}^n c_k\right)\left(\sum_{k=1}^n \frac{1}{c_k}\right) \ge n^2$ si $c_1 \dots c_k$ sont des réels strictement positifs.
+
+\end{enumerate}
+
+\exercice
+
+\begin{enumerate}
+
+\item Rappeler la formule reliant $\sin(2x)$ avec $\cos(x)$ et $\sin(x)$.
+
+\item Soit $x \in ]0, \pi [$, simplifier $P =\displaystyle \prod_{k=0}^n \cos(2^k x)$ (on commencera par calculer $ \sin (x) \times P$).
+
+\end{enumerate}
+
+\exercice
+
+Soient $z$ et $z'$ deux nombres complexes de module $1$. Montrer que $\displaystyle \frac{z+z'}{1+zz'}$ est un réél (quand il est défini).
+
+\exercice[Inégalité triangulaire généralisée]
+
+\begin{enumerate}
+
+\item Montrer que pour tout $n \ge 1$, pour tous $z_1 \dots z_n \in \mb{C}$, on a $\displaystyle \left|\sum_{k=1}^n z_k\right| \le \sum_{k=1}^n | z_k |$.
+
+On pourra utiliser, sans la redémontrer, l'inégalité triangulaire du cours.
+
+\item Rappeler dans quel cas $|z_1 + z_2| = |z_1| + |z_2|$.
+
+\item Montrer que s'il existe $1 \le i,j \le n$, $|z_i + z_j| < |z_i| + |z_j|$, alors $ \left|\sum_{k=1}^n z_k\right| < \sum_{k=1}^n | z_k |$ 
+
+\item Déduire de 2 et 3 à quelles conditions l'inégalité de la question 1 est une égalité. L'interpréter géométriquement.
+
+\end{enumerate}
+
+\exercice
+
+Calculer $\displaystyle \sum_{k=0}^n {n \choose k} \cos(k\theta)$ et $\displaystyle \sum_{k=0}^n {n \choose k} \sin(k\theta)$.
+
+\exercice
+
+Soit $Z \in \mb{C}$, résoudre dans $\mb{C}$ l'équation $\text{e}^z  = Z$ d'inconnue $Z$.
+
+
+\exercice
+
+Trouver toutes les fonctions $f : \mb{C} \rightarrow \mb{C}$ telles que $\forall z~\in \mb{C} = f(z) + \text{i} f(\overline{z}) = 2i$.
+
+\exercice
+
+Soit l'application $f : z \mapsto \frac{1}{1-z}$.
+
+\begin{enumerate}
+
+\item Exprimer $f(\text{e}^{\text{i}\theta})$ sous la forme $a + \text{i} b$.
+
+\item En déduire que $f$ envoie les éléments de $\mb{U}$ dans une droite que l'on précisera.
+
+\end{enumerate}
+
+\exercice
+
+Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
+
+
+
+
+
+
+
+\cours
+
+\begin{enumerate}
+
+\item Linéariser $\cos^2(\theta) \sin^3(\theta)$.
+
+\item Trouver les solutions $z \in \mb{C}$ de l'équation $z^n = 1$. Que dire de $zz'$ et de $1/z$ si $z$ et $z'$ sont solutions ?
+
+\item Déterminer les racines carrées de $6 + 2\text{i}$.
+
+\end{enumerate}
+
+
+
+\exercice
+
+Soit $\alpha, \beta \in  \mb{R}^2$. Calculer $\displaystyle \sum_{k=0}^n {n \choose k} \cos(\alpha + \beta k)$. 
+
+
+
+
+
+
+
+\exercice
+
+Soit $n \ge 1$. Trouver les $z \in \mb{C}$ tels que $(z-1)^n = (z+1)^n$.
+
+
+\exercice
+
+Calculer $\displaystyle P = \prod_{k=0}^n(z^k + \overline{z}^{k})$ en fonction du module et de l'argument de $z$.
+
+
+
+
+\exercice
+
+On rappelle que l'exponentielle complexe est définie par $$\text{e}^{a+\text{i}b} := \text{e}^{a} \text{e}^{\text{i}b} = \text{e}^{a} (\cos(b) + \text{i} \sin(b)).$$
+
+\begin{enumerate}
+
+
+\item Soit $f: \mb{C} \rightarrow \mb{C}, z \mapsto \frac{\text{e}^{\text{i}z}+\text{e}^{-\text{i}z}}{2}$ et $g: \mb{C} \rightarrow \mb{C}, z \mapsto \frac{\text{e}^{\text{i}z}-\text{e}^{-\text{i}z}}{2\text{i}}$ .
+
+Que valent $f(x)$ et $g(x)$ quand $x \in \mb{R}$ ? De quelles fonctions réelles $f$ et $g$ sont-elles les "extensions" aux nombres complexes ?
+
+\item Montrer que $f(z)^2 + g(z)^2 = 1$. Cela est-il cohérent avec la question précédente ?
+
+\item Prouver la formule de Moivre complexe : $\text{e}^{\text{i}z} = f(z) + \text{i} g(z)$.
+
+\end{enumerate}
+
+
+
+
+\exercice
+
+
+On rappelle que l'exponentielle complexe est définie par $$\text{e}^{a+\text{i}b} := \text{e}^{a} \text{e}^{\text{i}b} = \text{e}^{a} (\cos(b) + \text{i} \sin(b)).$$
+\begin{enumerate}
+
+
+\item Soit $f: \mb{C} \rightarrow \mb{C}, z \mapsto \frac{\text{e}^{z}+\text{e}^{-z}}{2}$ et $g: \mb{C} \rightarrow \mb{C}, z \mapsto \frac{\text{e}^{z}-\text{e}^{-z}}{2}$ .
+
+Que dire $f(x)$ et $g(x)$ quand $x \in \mb{R}$ ?
+
+\item Montrer que $f(z)^2 - g(z)^2 = 1$.
+
+\item Calculer $f(\text{i} x)$ et  $\frac{g(\text{i} x}{\text{i}}$ quand $x \in \mb{R}$.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+\exercice[Autour des racines 3-èmes]
+
+\begin{enumerate}
+
+\item On note $\text{j} = \text{e}^{\frac{2 \text{i} \pi}{3}}$. Que valent $j^3$ et $j^4$ ?
+
+\item On considère dans $\mb{C}$ l'équation $1 + z + z^2 = 0$.
+
+\begin{enumerate}
+
+\item Montrer que $\text{j}$ est solution. En déduire que $\text{j}^2$ l'est aussi.
+
+\item Sont-elles les seules solutions de l'équation ? Pourquoi ?
+
+\end{enumerate}
+
+\item Soit $f : \mb{C}^3 \rightarrow \mb{C}$ définie par $f(z_1, z_2, z_3) = \left[z_1 + \text{j} z_2 + \text{j}^2 z_3\right]^3$. Montrer que pour tous $z_1, z_2, z_3 \in \mb{C}$ on a $f(z_1, z_2, z_3) = f(z_2, z_3, z_1) = f(z_3, z_1, z_2)$.
+
+\end{enumerate}
+
+
+
+\exercice[Entiers de Gauss]
+
+On considère l'ensemble $\mb{Z}[\text{i}] := \{a + \text{i}b~|~a, b \in \mb{Z}\}$.
+
+\begin{enumerate}
+
+\item Montrer que si $z, z' \in \mb{Z}[\text{i}]$, alors $zz' \in \mb{Z}[\text{i}]$ et $z+z' \in \mb{Z}[\text{i}]$.
+
+\item On cherche les $z \in \mb{Z}[\text{i}] $ tels que $ \frac{1}{z} \in \mb{Z}[\text{i}]$. De tels éléments sont dits \emph{inversibles}.
+
+\begin{enumerate}
+
+\item Montrer que $\text{i}$ est inversible, mais pas de $1+ \text{i}$.
+
+\item Que dire de $|z|$ si $z \in \mb{Z}[\text{i}]$ ?
+
+\item Montrer que les inversibles doivent être de module 1. En déduire l'ensemble des inversibles.
+
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+\exercice[Racines primitives de l'unité]
+
+\begin{enumerate}
+
+\item Soit $z \in \mb{U}_n$, montrer que $\{z^k~|~k \ge 0\} \subseteq \mb{U}_n$.
+
+\item On dit que $z \in \mb{U}_n$ est une racine \emph{primitive} dans $\mb{U}
+_n$ si  $\{z^k~|~k \ge 0\} = \mb{U}_n$. Quelles sont les racines primitives dans  $\mb{U}_1$ ? $\mb{U}_2$? $\mb{U}_3$? $\mb{U}_4$ ?
+
+\item Montrer que si $z \in \mb{U}_n$ alors $\{z^k~|~k \ge 0\} = \{z^k~|~0 \le k < n\}$.
+
+\item  Soit $z \in \mb{U}_n$ telle qu'il existe $ 0 < k < n$ avec $z^k = 1$. Montrer que $z$ n'est pas primitive dans $\mb{U}_n$.
+\emph{Indication : compter le nombre d'éléments de $\{z^k~|~0 \le k < n\}$.}
+
+\item Supposons maintenant que $z \in \mb{U}_n$ n'est pas primitive dans $\mb{U}_n$.  \begin{enumerate} 
+
+\item Montrer qu'il existe $0 \le i\neq j < n$ tels que $z^i = z^j$.
+\item En déduire qu'il existe $0 < k < n$ tel que $z^k = 1$.
+
+\end{enumerate}
+
+\item Conclure que $z \in \mb{U}_n$ est primitive dans $\mb{U}_n$ si, et seulement si, $\forall k < n, z \not \in \mb{U}_k$.
+
+\end{enumerate}
+
+
+
+\exercice[Fonctions symétriques de 2 variables]
+
+Soient $z, z' \in \mb{C}$ on note $S = z + z'$ et $P = z z'$.
+
+\begin{enumerate}
+
+\item Exprimer $z^2 + z'^2$ en fonction de $P$ et $S$. Que peut-on en déduire si $P$ et $S$ sont réels ?
+
+\item L'écriture précédente est de la forme $\sum_{i=1}^n \lambda_i P^{j_i} S^{j'_i}$ avec $\lambda_i \in \mb{R}$ et $j_i, j'_i \in \mb{N}$. Montrer que $z^2 + z'$ ne peut pas s'écrire de cette manière. On pourra considérer $z = z' = \text{i}$, m
+
+\item Exprimer $z^2 z' + z'^2z $ en fonction de $P$ et $S$. En déduire un expression de $z^3 + z'^3$.
+
+\item Que peut-on dire pour $z^n + z'^n$ ?
+
+\end{enumerate}
+
+
+
+\end{document}
