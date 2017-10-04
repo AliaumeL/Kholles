@@ -11,7 +11,8 @@
 \usepackage{multicol}
 \usepackage{complexity}
 \usepackage{hyperref}
-\usepackage{enumitem}
+%\usepackage{enumitem}
+\usepackage{paralist}
 \usepackage{epigraph}
 \usepackage{tikz}
 \usetikzlibrary{arrows,positioning,automata,shadows}
@@ -93,7 +94,31 @@ On se donne une proposition $P(x)$ dépendante d'un réel $x$.
 \item Soit $J \subseteq \mb{R}$ telle que $\exists x \in H, P(x)$. Soit $J \subseteq K \subseteq \mb{R}$, montrer que $\exists x \in J, P(x)$.
 \end{enumerate}
 
+\exercice[Logique élémentaire]
 
+\begin{enumerate}
+    \item Prouver la formule suivante~: $\forall x \in \mathbb{R}, \exists y \in
+        \mathbb{R}, x + y = 0$
+
+    \item Donner la négation de cette formule. Si cette négation est vraie
+        donner une preuve et si non donner un contre exemple explicite.
+
+    \item Que dire de la formule suivante~: $\forall x \in \mathbb{R}, \exists y \in
+        \mathbb{R}, xy = 1$ ?
+\end{enumerate}
+
+
+\exercice[Contre exemple à la distributivité des quantificateurs]
+
+Trouver deux propositions $P(x)$ et $Q(x)$ telles que la propriété 
+$(1)$ soit vraie, mais que la propriété $(2)$ soit fausse.
+
+\begin{enumerate}[(1)]
+    \item $\forall x \in \mathbb{R}, (P (x) \vee Q(x))$
+    \item $\left(\forall x \in \mathbb{R}, P(x)\right) 
+        \vee 
+        \left(\forall x \in \mathbb{R}, Q(x)\right)$
+\end{enumerate}
 
 \exercice[Borne inférieure]
 
@@ -130,6 +155,61 @@ Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction $T$-périodique pour tout $T \
 \end{enumerate}
 
 
+\exercice[Sur les inclusions d'ensembles]
+
+On pose $P = \{ 2k ~|~ k \in \mathbb{N} \}$ et $I = \{ 2k + 1 ~|~ k \in
+\mathbb{N} \}$.
+
+\begin{enumerate}
+    \item Montrer par récurrence sur $n \in \mathbb{N}$ la propriété suivante~:
+        \begin{equation}
+            \forall n \in \mathbb{N}, \exists k \in \mathbb{N}, (n = 2k) \vee 
+            (n = 2k + 1)
+        \end{equation}
+    \item En déduire une inclusion entre $P \cup I$ et $\mathbb{N}$
+    \item Montrer l'inclusion réciproque
+    \item En déduire que $P \cup I = \mathbb{N}$
+    \item Montrer que $P \cap I = \emptyset$
+    \item On dit qu'un entier est pair quand il est dans $P$ et qu'un 
+        entier est impair quand il est dans $I$. Qu'avons nous montré 
+        dans cet exercice ?
+\end{enumerate}
+
+\exercice[Croissance des fonctions]
+
+On dit que $f : I \to \mb{R}$ est croissante 
+quand elle vérifie la propriété suivante~:
+
+\begin{equation}
+    \forall (x,y) \in I^2, x \leq y \implies f(x) \leq f(y)
+\end{equation}
+
+On dit qu'une fonction $f : I \to \mb{R}$ est \emph{strictement}
+croissante quand elle vérifie la propriété de croissance avec 
+des inégalités strictes.
+
+\begin{enumerate}
+    \item Que dire si l'on remplace l'implication par une équivalence 
+        dans la définition de croissance ?
+    \item Que dire si l'on remplace l'implication par une équivalence 
+        dans la définition de la croissance stricte ?
+\end{enumerate}
+
+
+\exercice[Finitude]
+
+Soit $E$ un ensemble, montrer que les deux propositions suivantes 
+sont équivalentes~:
+
+\begin{enumerate}[(i)]
+    \item $E$ est fini
+    \item Toute fonction $f : E \to E$ admet une partie stable non 
+        triviale
+\end{enumerate}
+
+Une partie stable est un sous ensemble $F \subseteq E$ tel 
+que $f(F) \subseteq F$. Une partie triviale est une partie $F$
+de $E$ qui est égale à $\emptyset$ ou $E$.
 
 \section{Calcul algébriques}
 
