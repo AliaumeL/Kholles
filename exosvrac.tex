@@ -11,7 +11,8 @@
 \usepackage{multicol}
 \usepackage{complexity}
 \usepackage{hyperref}
-\usepackage{enumitem}
+%\usepackage{enumitem}
+\usepackage{paralist}
 \usepackage{epigraph}
 \usepackage{tikz}
 \usetikzlibrary{arrows,positioning,automata,shadows}
@@ -93,7 +94,31 @@ On se donne une proposition $P(x)$ dépendante d'un réel $x$.
 \item Soit $J \subseteq \mb{R}$ telle que $\exists x \in H, P(x)$. Soit $J \subseteq K \subseteq \mb{R}$, montrer que $\exists x \in J, P(x)$.
 \end{enumerate}
 
+\exercice[Logique élémentaire]
 
+\begin{enumerate}
+    \item Prouver la formule suivante~: $\forall x \in \mathbb{R}, \exists y \in
+        \mathbb{R}, x + y = 0$
+
+    \item Donner la négation de cette formule. Si cette négation est vraie
+        donner une preuve et si non donner un contre exemple explicite.
+
+    \item Que dire de la formule suivante~: $\forall x \in \mathbb{R}, \exists y \in
+        \mathbb{R}, xy = 1$ ?
+\end{enumerate}
+
+
+\exercice[Contre exemple à la distributivité des quantificateurs]
+
+Trouver deux propositions $P(x)$ et $Q(x)$ telles que la propriété 
+$(1)$ soit vraie, mais que la propriété $(2)$ soit fausse.
+
+\begin{enumerate}[(1)]
+    \item $\forall x \in \mathbb{R}, (P (x) \vee Q(x))$
+    \item $\left(\forall x \in \mathbb{R}, P(x)\right) 
+        \vee 
+        \left(\forall x \in \mathbb{R}, Q(x)\right)$
+\end{enumerate}
 
 \exercice[Borne inférieure]
 
@@ -130,6 +155,61 @@ Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction $T$-périodique pour tout $T \
 \end{enumerate}
 
 
+\exercice[Sur les inclusions d'ensembles]
+
+On pose $P = \{ 2k ~|~ k \in \mathbb{N} \}$ et $I = \{ 2k + 1 ~|~ k \in
+\mathbb{N} \}$.
+
+\begin{enumerate}
+    \item Montrer par récurrence sur $n \in \mathbb{N}$ la propriété suivante~:
+        \begin{equation}
+            \forall n \in \mathbb{N}, \exists k \in \mathbb{N}, (n = 2k) \vee 
+            (n = 2k + 1)
+        \end{equation}
+    \item En déduire une inclusion entre $P \cup I$ et $\mathbb{N}$
+    \item Montrer l'inclusion réciproque
+    \item En déduire que $P \cup I = \mathbb{N}$
+    \item Montrer que $P \cap I = \emptyset$
+    \item On dit qu'un entier est pair quand il est dans $P$ et qu'un 
+        entier est impair quand il est dans $I$. Qu'avons nous montré 
+        dans cet exercice ?
+\end{enumerate}
+
+\exercice[Croissance des fonctions]
+
+On dit que $f : I \to \mb{R}$ est croissante 
+quand elle vérifie la propriété suivante~:
+
+\begin{equation}
+    \forall (x,y) \in I^2, x \leq y \implies f(x) \leq f(y)
+\end{equation}
+
+On dit qu'une fonction $f : I \to \mb{R}$ est \emph{strictement}
+croissante quand elle vérifie la propriété de croissance avec 
+des inégalités strictes.
+
+\begin{enumerate}
+    \item Que dire si l'on remplace l'implication par une équivalence 
+        dans la définition de croissance ?
+    \item Que dire si l'on remplace l'implication par une équivalence 
+        dans la définition de la croissance stricte ?
+\end{enumerate}
+
+
+\exercice[Finitude]
+
+Soit $E$ un ensemble, montrer que les deux propositions suivantes 
+sont équivalentes~:
+
+\begin{enumerate}[(i)]
+    \item $E$ est fini
+    \item Toute fonction $f : E \to E$ admet une partie stable non 
+        triviale
+\end{enumerate}
+
+Une partie stable est un sous ensemble $F \subseteq E$ tel 
+que $f(F) \subseteq F$. Une partie triviale est une partie $F$
+de $E$ qui est égale à $\emptyset$ ou $E$.
 
 \section{Calcul algébriques}
 
@@ -170,9 +250,21 @@ $$f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i).$$
 
 \end{enumerate}
 
+\exercice[Série croissante]
 
+Montrer que la série $S_n$ définie ci-dessous est strictement croissante.
 
+\begin{equation*}
+    S_n = \sum_{k = 1}^n \frac{1}{n + k}
+\end{equation*}
 
+\exercice[Petites variations]
+
+\begin{enumerate}
+    \item Calculer $S_n = \sum_{k =1}^{n} k 2^{-k}$ de deux manières 
+        différentes
+    \item En déduire une expression de  $T_n = \sum_{k=1}^{n} k 2^{-k+1}$
+\end{enumerate}
 
 \exercice[Encadrement de Gauss]
 
@@ -346,8 +438,20 @@ Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0
 
 Soit $\alpha, \beta \in  \mb{R}^2$. Calculer $\displaystyle \sum_{k=0}^n {n \choose k} \cos(\alpha + \beta k)$. 
 
+\exercice 
+On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
+$\mathbb{C}$.
 
+Montrer que $\mathbb{U}_n = \{ e^{2ik\pi / n} ~|~ 0 \leq k \leq n - 1 \}$.
 
+\exercice
+
+On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
+$\mathbb{C}$.
+\begin{enumerate}
+    \item Calculer $\sum_{ \omega \in \mathbb{U}_n} \omega$
+    \item Calculer $\sum_{ \omega \in \mathbb{U}_n} | 1 - \omega |$
+\end{enumerate}
 
 
 
@@ -405,9 +509,6 @@ Que dire $f(x)$ et $g(x)$ quand $x \in \mb{R}$ ?
 
 
 
-
-
-
 \exercice[Autour des racines 3-èmes]
 
 \begin{enumerate}
@@ -428,6 +529,30 @@ Que dire $f(x)$ et $g(x)$ quand $x \in \mb{R}$ ?
 
 \end{enumerate}
 
+\exercice[Un peu plus de $j$]
+
+On rappelle que $j = e^{2i\pi /3}$.
+On considère les trois somme suivantes~:
+
+\begin{equation*}
+    A_n = \sum_{k = 0 \wedge k \equiv 0 [3]}^{n} { n \choose k} 
+\end{equation*}
+
+\begin{equation*}
+    B_n = \sum_{k = 0 \wedge k \equiv 1 [3]}^{n} { n \choose k} 
+\end{equation*}
+
+\begin{equation*}
+    C_n = \sum_{k = 0 \wedge k \equiv 2 [3]}^{n} { n \choose k} 
+\end{equation*}
+
+\begin{enumerate}
+    \item Calculer $S_n = \sum_{k = 0}^n { n \choose k } j^k$
+    \item Montrer que $S_n = A_n + j B_n + j^2 C_n$
+    \item En déduire que $\overline{S_n} = A_n + j^2 B_n + jC_n$
+    \item Calculer $A_n + B_n + C_n$
+    \item En dédure une expression de $A_n$, $B_n$ et $C_n$
+\end{enumerate}
 
 
 \exercice[Entiers de Gauss]
@@ -505,5 +630,48 @@ Soient $z, z' \in \mb{C}$ on note $S = z + z'$ et $P = z z'$.
 \end{enumerate}
 
 
+\exercice[Homothéties dans le plan complexe]
+
+On considère $f$ une fonction qui vérifie la propriété 
+suivante~:
+
+\begin{equation*}
+    \forall (z,z') \in \mathbb{C}^2,
+    \forall (\alpha, \beta) \in \mathbb{R}^2,
+    f( \alpha z + \beta z') = \alpha f (z) + \beta f(z')
+\end{equation*}
+
+\begin{enumerate}
+    \item Montrer que $f(0) = 0$
+    \item Montrer que $f$ est entièrement déterminée 
+        par $f(1)$ et $f(i)$
+
+    \item On suppose désormais que $f$ vérifie de plus 
+        la propriété suivante~: $\forall z \in \mathbb{C},
+        \exists \lambda \in \mathbb{R}, f (z) = \lambda z$.
+        Montrer que $f$ vérifie alors~: $\exists \lambda
+        \in \mathbb{R}, \forall z \in \mathbb{C}, f(z) = \lambda z$.
+\end{enumerate}
+
+
+\exercice[Transformée de Fourier Rapide]
+
+On note $\alpha_0, \dots, \alpha_{n-1}$ des nombres réels.
+On pose $\omega = e^{2i\pi / n}$, et 
+pour $0 \leq 1 \leq n - 1$~:
+
+\begin{equation*}
+    \beta_i = \sum_{k = 0}^{n-1} \alpha_k (\omega^i)^k
+\end{equation*}
+
+\begin{enumerate}
+    \item 
+        Calculer $\sum_{i = 0}^{n - 1} \beta_i (\omega^{-1})^i$
+    \item 
+        Calculer $\sum_{i = 0}^{n-1} \beta_i (\omega^{-k})^i$
+
+    \item En déduire qu'il est possible de récupérer les coefficients 
+        $\alpha_k$ à partir des coefficients $\beta_k$.
+\end{enumerate}
 
 \end{document}
