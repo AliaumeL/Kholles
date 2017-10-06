@@ -58,21 +58,15 @@
 
 \section{Logique, ensembles, applications}
 
-\cours
+\exercice 
 
-\begin{enumerate}
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction. A-t-on toujours $\forall x \in \mb{R}, \exists y \in \mb{R}, f(x) = y$ ? Donner la négation de cette formule. Que dire des fonctions qui vérifient $\exists y \in \mb{R}, \forall x \in \mb{R},  f(x) = y$ ?
 
-\item Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction. A-t-on toujours $\forall x \in \mb{R}, \exists y \in \mb{R}, f(x) = y$ ? Donner la négation de cette formule.
+\exercice  Montrer que toute fonction $f : \mb{R} \mapsto \mb{R}$ s'écrit comme somme d'une fonction paire et d'une fonction impaire. Prouver l'unicité de cette écriture.
 
-Que dire des fonctions qui vérifient $\exists y \in \mb{R}, \forall x \in \mb{R},  f(x) = y$ ?
+\exercice Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
 
-\item Montrer que toute fonction $f : \mb{R} \mapsto \mb{R}$ s'écrit comme somme d'une fonction paire et d'une fonction impaire. Prouver l'unicité de cette écriture.
-
-\item Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
-
-\item Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
-
-\end{enumerate}
+\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
 
 
 
@@ -210,6 +204,22 @@ sont équivalentes~:
 Une partie stable est un sous ensemble $F \subseteq E$ tel 
 que $f(F) \subseteq F$. Une partie triviale est une partie $F$
 de $E$ qui est égale à $\emptyset$ ou $E$.
+
+
+
+\exercice 
+
+
+
+Soit $f : E \rightarrow E$. Soit $A \subseteq E$, on définit par récurrence la suite d'ensembles $(A_n)_{n \ge 0}$ par $A_0 = A$ puis $A_n = f(A_{n-1})$ pour $n \ge 1$. Soit $\displaystyle B = \bigcup_{n \in \mb{N}} A_n$.
+
+\begin{enumerate}
+
+\item Montrer que $f(B) \subseteq B$.
+
+\item Soit $C \subseteq E$ telle que $A \subseteq C$ et $f(C) \subseteq C$. Montrer que $B \subseteq C$.
+\end{enumerate}
+
 
 \section{Calcul algébriques}
 
@@ -673,5 +683,24 @@ pour $0 \leq 1 \leq n - 1$~:
     \item En déduire qu'il est possible de récupérer les coefficients 
         $\alpha_k$ à partir des coefficients $\beta_k$.
 \end{enumerate}
+
+\section{Rééls et cie}
+
+
+\exercice
+Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f$ possède un \emph{point fixe}, c'est-à-dire qu'il existe $a \in [0,1]$ tel que $f(a) = a$. Soit $A = \{x \in [0,1]~|~f(x)\le x\}$.
+
+\begin{enumerate}
+
+\item Montrer que $A$ n'est pas vide.
+
+\item Montrer que si $x \in A$, alors $f(x) \in A$.
+
+\item Soit $a = \inf A$. Montrer que $\forall x \in A, f(a) \le x$. En déduire que $f(a)\le a$.
+
+\item Montrer que $a \le f(a)$ et conclure.
+
+\end{enumerate}
+
 
 \end{document}
