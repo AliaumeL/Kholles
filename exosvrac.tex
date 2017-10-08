@@ -674,4 +674,133 @@ pour $0 \leq 1 \leq n - 1$~:
         $\alpha_k$ à partir des coefficients $\beta_k$.
 \end{enumerate}
 
+
+\section{Fonctions réelles}
+
+\cours 
+
+\begin{enumerate}
+    \item Donner le domaine de définition et tracer 
+        la courbe de la fonction $x \mapsto b (x - a)^2 + a$
+
+    \item Donner le domaine de définition et tracer 
+        la courbe de la fonction $x \mapsto b \sqrt{x - a} + a$
+
+    \item Donner le domaine de définition et tracer 
+        la courbe de la fonction $x \mapsto \frac{x}{x^2 + 1}$
+
+
+    \item Donner le domaine de définition et tracer la courbe 
+        de $x \mapsto \sin(x) \sin (\alpha x)$ avec $\alpha$ très
+        supérieur à $1$
+
+    \item Donner la définition d'une bijection de $I \subseteq \mb{R}$
+        dans $J \subseteq \mb{R}$
+
+    \item Donner la définition d'une fonction croissante 
+\end{enumerate}
+
+\exercice[Fonction Bornée]
+
+Soit $f : I \to J$ avec $I$ et $J$ des intervalles de $\mb{R}$.
+
+\begin{enumerate}
+    \item Montrer la formule suivante: $\forall x \in I, \exists M, f(x) \leq
+        M$.
+
+    \item Est-ce que $f$ est majorée sur $I$ ?
+\end{enumerate}
+
+\exercice[Calcul de dérivée]
+
+On pose $f(x) = \frac{1}{1-x}$.
+
+\begin{enumerate}
+    \item Donner de domaine de définition de $f$
+    \item Tracer la courbe de $f$
+    \item Calculer la dérivée de $f$ en un point
+    \item On note $f'$ la fonction dérivée de $f$,
+        calculer la dérivée de $f'$
+    \item En déduire une expression générale 
+        de la dérivée $n$-ème de $f$
+\end{enumerate}
+
+
+\exercice[Dérivée et minimum local]
+
+Soit $f$ une fonction dérivable sur un intervalle $]a,b[$ de $\mb{R}$,
+et continue sur $[a,b]$.
+
+\begin{enumerate}
+    \item Si $f$ est croissante, que dire d'un éventuel minimum de $f$ ? 
+        D'un maximum de $f$ ?
+    \item Si $f$ admet un minimum en un point $x \in ]a,b[$, 
+        que dire de $f'(x)$ ?
+    \item Si $f$ admet un maximum en un point $x \in ]a,b[$,
+        que dire de $f'(x)$ ?
+    \item Si $f$ admet un extremum local en un point $x \in ]a,b[$
+        que dire de $f'(x)$ ?
+    \item Si $x \in ]a,b[$ et que $f'(x) = 0$, est-ce que $x$
+        est un extremum ? Un extremum local ?
+    \item Trouver un point réalisant un
+        minimum pour la fonction $x \mapsto \sqrt{x}$ pour $x \geq 0$.
+\end{enumerate}
+
+\exercice[Convexité]
+
+On dit que $f : I \to \mb{R}$ est convexe quand elle vérifie 
+la propriété suivante
+
+\begin{equation*}
+    \forall (x,y) \in I^2, \forall \lambda \in [0,1], 
+    f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda) f(y)
+\end{equation*}
+
+Soit $a \in I$, on note $\Delta_a$ la fonction définie comme suit
+
+\begin{equation*}
+    \Delta_a (x) = \frac{f(x) - f(a)}{x - a}
+\end{equation*}
+
+\begin{enumerate}
+    \item Quel est l'ensemble de définitiion de $\Delta_a$ ?
+    \item Si $(x,y) \in I^2$ et $\lambda \in [0,1]$ 
+        montrer que $\lambda x + (1 - \lambda y) \in I$
+    \item Montrer que si pour tout $a \in I$ $\Delta_a$ 
+        est une fonction croissante alors $f$ est convexe.
+        \emph{(Indication: supposer $x < y$, $\lambda \in ]0,1[$ 
+            et remarquer 
+            $\lambda x + (1 - \lambda y) < y$
+            puis utiliser la croissance de $\Delta_x$)}
+    
+    \item On suppose maintenant $f$ convexe, et $a \in I$.
+        \begin{enumerate}
+            \item Si $(x,y) \in I^2$ et $x < y < a$, en considérant 
+                $\lambda = (x - a) / (y-a)$ montrer que 
+                $\Delta_a (x) \leq \Delta_a (y)$
+
+            \item Si $(x,y) \in I^2$ et $a < x < y$, montrer que 
+                $\Delta_a(x) \leq \Delta_a (y)$
+
+            \item Si $(x,y) \in I^2$ et $x < a < y$, montrer 
+                que $\Delta_a (x) \leq \Delta_a (y)$. 
+                \emph{(Indication: considérer $\lambda = (a - y)/(x-y)$)}
+        \end{enumerate}
+        En déduire que $\Delta_a$ est croissante.
+    \item Conclure que $f$ est convexe si et seulement si $\Delta_a$ est 
+        croissante pour tout $a \in I$.
+   
+    \item En déduire que si $f$ est convexe et dérivable sur $I$, alors $f'$ 
+        est croissante sur $I$ \emph{(Indication: utiliser la croissance de $\Delta_x$ 
+        pour $x$ entre $a$ et $b$)}.
+
+    \item Que dire de la réciproque ? \emph{(Indication: utiliser 
+            $g(\lambda) = \lambda f(x) + (1 - \lambda)f(y) - f (\lambda x +
+            (1-\lambda) f (y))$)}
+
+    \item Montrer que si $f$ est deux fois dérivable, $f$ est convexe 
+        si et seulement si $f''$ est positive.
+\end{enumerate}
+
+
 \end{document}
