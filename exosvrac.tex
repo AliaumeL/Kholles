@@ -36,6 +36,8 @@
 \newcommand{\es}{\vspace{1\baselineskip}}
 \newcommand{\ds}{\vspace{0.4\baselineskip}}
 
+\newcommand{\ex}[1]{\operatorname{e}}
+\newcommand{\im}[1]{\operatorname{i}}
 \newcommand{\mb}[1]{\mathbb{#1}}
 \newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\mf}[1]{\mathfrak{#1}}
@@ -658,6 +660,18 @@ pour $0 \leq 1 \leq n - 1$~:
         $\alpha_k$ à partir des coefficients $\beta_k$.
 \end{enumerate}
 
+
+
+\exercice
+
+Trouver en fonction de $p,q \in \mb{Z}$, les $z \in \mb{C}$ tels que $z^p = (z+1)^q = 1$.
+
+\exercice
+
+Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1- \im r}$ pour $r \in \mb{R}$ ?
+
+
+
 \section{Fonctions réelles}
 
 \cours 
@@ -784,6 +798,135 @@ Soit $a \in I$, on note $\Delta_a$ la fonction définie comme suit
     \item Montrer que si $f$ est deux fois dérivable, $f$ est convexe 
         si et seulement si $f''$ est positive.
 \end{enumerate}
+
+
+\exercice[Inégalité de Huygens]
+
+\begin{enumerate}
+
+\item Montrer que pour $x \in [0, \frac{\pi}{2}[$ on a $x \le \frac{2}{3} \sin(x) + \frac{1}{3} \tan(x) $.
+
+\item Interpréter cette inégalité géométriquement.
+
+\end{enumerate}
+
+
+\exercice 
+
+Soit $f : \mb{R} \rightarrow \mb{R}, x \mapsto \frac{2x}{1+x^2}$.
+\begin{enumerate}
+\item Etudier les variations de $f$. Tracer son graphe.
+
+\item $f$ est-elle bijective ? (Surjective ? Injective ?)
+
+\item Montrer que $g : [0,1] \rightarrow [0,1], x \mapsto f(x)$ est bijective.
+\end{enumerate}
+
+
+
+
+\exercice
+
+On considère la fonction $f : \mb{R} \rightarrow \mb{R}, x \mapsto x^2 \sin(\frac{1}{x})$
+
+\begin{enumerate}
+
+\item Etudier le domaine de définition de $f$, sa parité, ses points d'annulation.
+
+\item Montrer que $\forall x \neq 0$, $-x^2 \le f(x) \le x^2$. En déduire $\displaystyle \lim_{\substack{x \rightarrow 0\\x \neq 0}} f(x)$.
+
+\item \begin{enumerate}
+
+\item Montrer que pour tout $t\in [0,\frac{\pi}{2}]$, $\frac{2}{\pi}t \le \sin(t) \le t$.
+
+\item En déduire un encadrement de $f(x)$ pour $x \ge a$ (on précisera la valeur de $a$).
+
+\end{enumerate}
+
+\item Tracer le graphe de $f$. On pourra admettre que $y =x$ est une asymptote de $f$ en $+ \infty$.
+\end{enumerate}
+
+
+\exercice[Argument sinus hyperbolique]
+
+Résoudre l'équation $\text{sh}(x) =y \in \mb{R}$ d'inconnue $x \in \mb{R}$.
+
+
+\exercice
+
+\begin{enumerate}
+
+\item Montrer que pour $x \neq 0$ on a $\dfrac{1}{\text{sh}(x)} = \dfrac{1}{\text{th}(x/2)} - \dfrac{1}{\text{th}(x)}$.
+
+
+\item En déduire la limite de $\displaystyle \sum_{k=0}^n \frac{1}{\text{sh}(2^kx)}$ quand $n \rightarrow + \infty$.
+
+\end{enumerate}
+
+
+
+\exercice 
+
+\begin{enumerate}
+
+\item Calculer la dérivée $n$-ème de $x \mapsto \frac{1}{1+x}$, puis celle de $x \mapsto \frac{1}{1-x}$. On précisera les domaines de dérivabilité.
+
+\item En déduire la dérivée $n$-ème de $x \mapsto \frac{1}{1-x^2}$ sur son domaine.
+
+\end{enumerate}
+
+
+\exercice[Formule de Leibniz et application]
+
+\begin{enumerate}
+
+\item Soient $f$ et $g$ deux fonctions réelles $n$ fois dérivables. Montrer par récurrence que $\displaystyle (fg)^{(n)} (x)= \sum_{k=0}^n {n \choose k} f^{(k)}(x) g^{(n-k)}(x)$.
+
+\item \begin{enumerate}
+
+\item Calculer la dérivée $n$-ème de $f:x \mapsto x^{2n}$.
+
+\item En écrivant $x^{2n} = x^n\times x^n$, exprimer la dérivée $n$-ème de $f$ sous une autre forme.
+
+\item En déduire que $\displaystyle \sum_{k=0}^n {n \choose k}^2 = {2n \choose n}$.
+
+\end{enumerate}
+
+\end{enumerate}
+
+\exercice 
+
+\begin{enumerate}
+
+\item Donner un exemple \emph{simple} de fonction $f:[0,1] \rightarrow [0,1]$ vérifiant $\forall x, f(x^2) = f(x)$.
+\item Soit $\displaystyle A = \left\{\text{e}^{-2^n\ln(2)}~\Big|~n \in \mb{Z}\right\}$.
+
+\begin{enumerate}
+
+\item Justifier que $A \subseteq[0,1]$.
+
+\item Montrer que si $x \in A$, alors $x^2 \in A$.
+
+\item Montrer que si $x \in [0,1]\smallsetminus A$, alors $x^2 \in [0,1]\smallsetminus A$.
+
+\end{enumerate}
+
+\item En déduire une fonction \emph{non constante} $f:[0,1] \rightarrow [0,1]$ vérifiant $\forall x, f(x^2) = f(x)$.
+\end{enumerate}
+
+
+\exercice
+
+\begin{enumerate}
+
+\item Trouver toutes les fonctions dérivables $f :\mb{R} \rightarrow \mb{R}$ vérifiant $\forall xy, f(x+y) = f(x)+ f(y)$.
+
+\item Trouver toutes les fonctions dérivables $f :\mb{R} \rightarrow \mb{R}^*_+$ vérifiant $\forall xy, f(xy) = f(x)f(y)$.
+\end{enumerate}
+
+
+
+
 
 \section{Nombres réels}
 
