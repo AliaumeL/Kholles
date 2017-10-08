@@ -45,7 +45,7 @@
 \newcounter{exo}
 \setcounter{exo}{1}
 
-\newcommand{\exercice}[1][\null]{\textbf{\ds \\ \large Exercice \theexo. \normalsize #1} \addtocounter{exo}{1}}
+\newcommand{\exercice}[1][\null]{\textbf{\\ \large Exercice \thesection.\theexo. \normalsize #1} \addtocounter{exo}{1}}
 \newcommand{\cours}{\textbf{\ds \\ \large Questions de cours}}
 
 %%%% Corps du fichier
@@ -53,26 +53,22 @@
 
 \begin{document}
 
-\emph{Mettre plein de questions intermédiaires.}
+\tableofcontents
+
+\pagebreak
 
 
 \section{Logique, ensembles, applications}
 
-\cours
+\exercice 
 
-\begin{enumerate}
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction. A-t-on toujours $\forall x \in \mb{R}, \exists y \in \mb{R}, f(x) = y$ ? Donner la négation de cette formule. Que dire des fonctions qui vérifient $\exists y \in \mb{R}, \forall x \in \mb{R},  f(x) = y$ ?
 
-\item Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction. A-t-on toujours $\forall x \in \mb{R}, \exists y \in \mb{R}, f(x) = y$ ? Donner la négation de cette formule.
+\exercice  Montrer que toute fonction $f : \mb{R} \mapsto \mb{R}$ s'écrit comme somme d'une fonction paire et d'une fonction impaire. Prouver l'unicité de cette écriture.
 
-Que dire des fonctions qui vérifient $\exists y \in \mb{R}, \forall x \in \mb{R},  f(x) = y$ ?
+\exercice Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
 
-\item Montrer que toute fonction $f : \mb{R} \mapsto \mb{R}$ s'écrit comme somme d'une fonction paire et d'une fonction impaire. Prouver l'unicité de cette écriture.
-
-\item Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
-
-\item Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
-
-\end{enumerate}
+\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
 
 
 
@@ -211,7 +207,28 @@ Une partie stable est un sous ensemble $F \subseteq E$ tel
 que $f(F) \subseteq F$. Une partie triviale est une partie $F$
 de $E$ qui est égale à $\emptyset$ ou $E$.
 
-\section{Calcul algébriques}
+
+
+\exercice 
+Soit $f : E \rightarrow E$. Soit $A \subseteq E$, on définit par récurrence la suite d'ensembles $(A_n)_{n \ge 0}$ par $A_0 = A$ puis $A_n = f(A_{n-1})$ pour $n \ge 1$. Soit $\displaystyle B = \bigcup_{n \in \mb{N}} A_n$.
+
+\begin{enumerate}
+
+\item Montrer que $f(B) \subseteq B$.
+
+\item Soit $C \subseteq E$ telle que $A \subseteq C$ et $f(C) \subseteq C$. Montrer que $B \subseteq C$.
+\end{enumerate}
+
+
+
+
+
+\exercice 
+
+Déterminer une bijection de $[-1,1]$ dans $\mb{R}$.
+
+
+\section{Calcul algébriques, sommes, produits}
 
 
 \exercice[Autour de la somme des $k$]
@@ -230,10 +247,7 @@ Notons $S_n = \sum_{k=1}^n k $ pour $n \ge 1$.
 
 
 
-
-
-
-\exercice[Inégalité de Jensen]
+\exercice[Inégalité faible de Jensen]
 
 Soit $f: \mb{R} \mapsto \mb{R}$ une fonction vérifiant pour tous réels $x_1, x_2$ et $t \in [0,1]$
 $$f(t x_1 +(1-t) x_2) \le t f(x_1) +(1-t) f(x_2)$$  (une telle fonction est dite convexe).
@@ -250,7 +264,7 @@ $$f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i).$$
 
 \end{enumerate}
 
-\exercice[Série croissante]
+\exercice[Série croissante (qui en fait n'est pas du tout une série :D)]
 
 Montrer que la série $S_n$ définie ci-dessous est strictement croissante.
 
@@ -297,15 +311,17 @@ Soit $ H_n := \sum_{k =1}^n 1/k$ (série harmonique).
 
 
 
-\cours
+\exercice Calculer les sommes suivantes pour $n \ge 0$ et $\alpha, \beta \in \mb{R}$.
 
 \begin{enumerate}
 
-\item Définir $n \choose k$. Démontrer la formule de Pascal.
+\item $\displaystyle \sum_{k=0}^n \sin(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n \cos(\alpha + k\beta)$. 
 
-\item Calculer  $\sum_k \sin(k\theta)$ où $\theta \in \mb{R}$.
+\item $\displaystyle \sum_{k=0}^n {k \choose n} \sin(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n {k \choose n} \cos(\alpha + k\beta)$.
 
-\item Donner l'inégalité triangulaire (dans $\mb{C})$. La démontrer.
+\item $\displaystyle \sum_{k=0}^n \text{sh}(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n \text{ch}(\alpha + k\beta)$. 
+
+\item $\displaystyle \sum_{k=0}^n {k \choose n} \text{sh}(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n {k \choose n} \text{ch}(\alpha + k\beta)$.
 
 \end{enumerate}
 
@@ -317,11 +333,11 @@ Soit $\displaystyle S_1 = \sum_{\substack{k=0 \\ k \text{ pair}}}^n {n \choose k
 
 \begin{enumerate}
 
-\item Soit $n \in \mb{N}^*$, calculer $\displaystyle \sum_{k=0}^n (-1)^k {k \choose n}$. Que dire si $n = 0$ ?
+\item Soit $n > 0$, calculer $\displaystyle \sum_{k=0}^n (-1)^k {k \choose n}$. Que dire si $n = 0$ ?
 
 \item Soient $l \le k \le n$ des entiers, montrer que $\displaystyle {n \choose k} {k \choose l} = {n \choose l} {n-l \choose k-l} $.
 
-\item Soit $(x_n)_{n \ge 0}$ une suite réelle, on pose $(y_k)_{k \ge 0}$ la suite définie par $y_k = \sum_{l=0}^k {k \choose l} x_l$.
+\item Soit $(x_n)_{n \ge 0}$ une suite réelle, on pose $(y_k)_{k \ge 0}$ la suite définie par $\displaystyle y_k = \sum_{l=0}^k {k \choose l} x_l$.
 
 Montrer que $\displaystyle x_n = \sum_{k=0}^n (-1)^{n-k} {n \choose k} y_k$.
 
@@ -332,7 +348,7 @@ Montrer que $\displaystyle x_n = \sum_{k=0}^n (-1)^{n-k} {n \choose k} y_k$.
 
 Montrer que pour tout $n \ge 0$ on a $\displaystyle \sum_{k=1}^n \frac{(-1)^{k+1}}{k} {n \choose k} = \sum_{k=0}^n \frac{1}{k}$.
 
-\exercice[Lagrange, Cauchy et Schwarz]
+\exercice[Cauchy-Schwarz par Lagrange]
 
 Soient $a_1 \dots a_n$ et $b_1 \dots b_n$ des réels.
 
@@ -387,10 +403,6 @@ On pourra utiliser, sans la redémontrer, l'inégalité triangulaire du cours.
 
 \exercice
 
-Calculer $\displaystyle \sum_{k=0}^n {n \choose k} \cos(k\theta)$ et $\displaystyle \sum_{k=0}^n {n \choose k} \sin(k\theta)$.
-
-\exercice
-
 Soit $Z \in \mb{C}$, résoudre dans $\mb{C}$ l'équation $\text{e}^z  = Z$ d'inconnue $Z$.
 
 
@@ -406,7 +418,7 @@ Soit l'application $f : z \mapsto \frac{1}{1-z}$.
 
 \item Exprimer $f(\text{e}^{\text{i}\theta})$ sous la forme $a + \text{i} b$.
 
-\item En déduire que $f$ envoie les éléments de $\mb{U}$ dans une droite que l'on précisera.
+\item Montrer que $f$ est une bijection de $\mb{U}$ vers une droite que l'on précisera.
 
 \end{enumerate}
 
@@ -416,33 +428,13 @@ Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0
 
 
 
-
-
-
-
-\cours
-
-\begin{enumerate}
-
-\item Linéariser $\cos^2(\theta) \sin^3(\theta)$.
-
-\item Trouver les solutions $z \in \mb{C}$ de l'équation $z^n = 1$. Que dire de $zz'$ et de $1/z$ si $z$ et $z'$ sont solutions ?
-
-\item Déterminer les racines carrées de $6 + 2\text{i}$.
-
-\end{enumerate}
-
-
-
-\exercice
-
-Soit $\alpha, \beta \in  \mb{R}^2$. Calculer $\displaystyle \sum_{k=0}^n {n \choose k} \cos(\alpha + \beta k)$. 
-
 \exercice 
 On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
 $\mathbb{C}$.
 
 Montrer que $\mathbb{U}_n = \{ e^{2ik\pi / n} ~|~ 0 \leq k \leq n - 1 \}$.
+
+
 
 \exercice
 
@@ -515,15 +507,7 @@ Que dire $f(x)$ et $g(x)$ quand $x \in \mb{R}$ ?
 
 \item On note $\text{j} = \text{e}^{\frac{2 \text{i} \pi}{3}}$. Que valent $j^3$ et $j^4$ ? Les représenter sur le cercle unité.
 
-\item On considère dans $\mb{C}$ l'équation $1 + z + z^2 = 0$.
-
-\begin{enumerate}
-
-\item Montrer que $\text{j}$ est solution. En déduire que $\text{j}^2$ l'est aussi.
-
-\item Sont-elles les seules solutions de l'équation ? Pourquoi ?
-
-\end{enumerate}
+\item Quelles sont les solutions dans $\mb{C}$ l'équation $1 + z + z^2 = 0$.
 
 \item Soit $f : \mb{C}^3 \rightarrow \mb{C}$ définie par $f(z_1, z_2, z_3) = \left[z_1 + \text{j} z_2 + \text{j}^2 z_3\right]^3$. Montrer que pour tous $z_1, z_2, z_3 \in \mb{C}$ on a $f(z_1, z_2, z_3) = f(z_2, z_3, z_1) = f(z_3, z_1, z_2)$.
 
@@ -569,7 +553,7 @@ On considère l'ensemble $\mb{Z}[\text{i}] := \{a + \text{i}b~|~a, b \in \mb{Z}\
 
 \item Montrer que $\text{i}$ est inversible, mais pas de $1+ \text{i}$.
 
-\item Que dire de $|z|$ si $z \in \mb{Z}[\text{i}]$ ?
+\item Que dire de $|z|^2$ si $z \in \mb{Z}[\text{i}]$ ?
 
 \item Montrer que les inversibles doivent être de module 1. En déduire l'ensemble des inversibles.
 
@@ -621,7 +605,7 @@ Soient $z, z' \in \mb{C}$ on note $S = z + z'$ et $P = z z'$.
 
 \item Exprimer $z^2 + z'^2$ en fonction de $P$ et $S$. Que peut-on en déduire si $P$ et $S$ sont réels ?
 
-\item L'écriture précédente est de la forme $\sum_{i=1}^n \lambda_i P^{j_i} S^{j'_i}$ avec $\lambda_i \in \mb{R}$ et $j_i, j'_i \in \mb{N}$. Montrer que $z^2 + z'$ ne peut pas s'écrire de cette manière. On pourra considérer $z = z' = \text{i}$, m
+\item L'écriture précédente est de la forme $\sum_{i=1}^n \lambda_i P^{j_i} S^{j'_i}$ avec $\lambda_i \in \mb{R}$ et $j_i, j'_i \in \mb{N}$. Montrer que $z^2 + z'$ ne peut pas s'écrire de cette manière. On pourra prendre $z = \text{i}$ et $z' = - \text{i}$.
 
 \item Exprimer $z^2 z' + z'^2z $ en fonction de $P$ et $S$. En déduire un expression de $z^3 + z'^3$.
 
@@ -673,7 +657,6 @@ pour $0 \leq 1 \leq n - 1$~:
     \item En déduire qu'il est possible de récupérer les coefficients 
         $\alpha_k$ à partir des coefficients $\beta_k$.
 \end{enumerate}
-
 
 \section{Fonctions réelles}
 
@@ -800,6 +783,24 @@ Soit $a \in I$, on note $\Delta_a$ la fonction définie comme suit
 
     \item Montrer que si $f$ est deux fois dérivable, $f$ est convexe 
         si et seulement si $f''$ est positive.
+\end{enumerate}
+
+\section{Nombres réels}
+
+
+\exercice
+Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f$ possède un \emph{point fixe}, c'est-à-dire qu'il existe $a \in [0,1]$ tel que $f(a) = a$. Soit $A = \{x \in [0,1]~|~f(x)\le x\}$.
+
+\begin{enumerate}
+
+\item Montrer que $A$ n'est pas vide.
+
+\item Montrer que si $x \in A$, alors $f(x) \in A$.
+
+\item Soit $a = \inf A$. Montrer que $\forall x \in A, f(a) \le x$. En déduire que $f(a)\le a$.
+
+\item Montrer que $a \le f(a)$ et conclure.
+
 \end{enumerate}
 
 
