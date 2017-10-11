@@ -1,5 +1,6 @@
 # Statistiques en python
 from scipy import stats
+import matplotlib.pyplot as plt
 
 notes = open ("notes.txt","r")
 
@@ -36,7 +37,20 @@ descTotal = stats.describe (notesTotal)
 descGat = stats.describe (notesGat)
 descAli = stats.describe (notesAli)
 
+print(descAli)
+
 print ("Moyenne: {} (Ali) | {} (Gat) | {} (Total)".format (descAli.mean,
     descGat.mean, descTotal.mean))
 print ("Variance: {} (Ali) | {} (Gat) | {} (Total)".format (descAli.variance,
     descGat.variance, descTotal.variance))
+
+
+plt.hist([notesAli, notesGat], bins = range(0,20), color = ['yellow', 'green'],
+            edgecolor = 'black', hatch = '/', label = ['Ali', 'Gat'],
+            histtype = 'bar')
+plt.ylabel('Nb eleves')
+plt.xlabel('Note')
+plt.title('Ste Marie')
+plt.legend()
+
+plt.show()
