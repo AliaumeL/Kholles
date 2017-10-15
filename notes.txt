@@ -26,6 +26,3 @@ REGNIER     : 15A
 TRUONG      : 13A
 OLIVIER     : 14A
 WENDEOU     : 13A
-
-
-
