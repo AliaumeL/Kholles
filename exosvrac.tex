@@ -2,7 +2,7 @@
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{amsfonts, amsmath, amssymb, mathrsfs}
+\usepackage{amsfonts, amsmath, amssymb,dsfont, mathrsfs}
 \usepackage [a4paper]{geometry}
 \geometry{left=3.5cm, right=3.5cm,top=3.5cm ,bottom=4cm}
 \usepackage{fancyhdr}
@@ -19,6 +19,7 @@
 \usepackage{palatino}
 \usepackage{pdfpages}
 \usepackage{epigraph}
+\usepackage{multicol}
 
 %%%% Format
 
@@ -62,6 +63,8 @@
 
 \section{Logique, ensembles, applications}
 
+\subsection{Logique et raisonnement}
+
 \exercice 
 
 Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction. A-t-on toujours $\forall x \in \mb{R}, \exists y \in \mb{R}, f(x) = y$ ? Donner la négation de cette formule. Que dire des fonctions qui vérifient $\exists y \in \mb{R}, \forall x \in \mb{R},  f(x) = y$ ?
@@ -70,16 +73,9 @@ Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction. A-t-on toujours $\forall x \i
 
 \exercice Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
 
-\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
-
-
-
-
 \exercice
 
 Soient $A$ et $B$ deux parties de $E$. Montrer que $A \cap B = A \cup B$ implique $A = B$.
-
-
 
 \exercice[Sous-structures]
 
@@ -104,6 +100,8 @@ On se donne une proposition $P(x)$ dépendante d'un réel $x$.
     \item Que dire de la formule suivante~: $\forall x \in \mathbb{R}, \exists y \in
         \mathbb{R}, xy = 1$ ?
 \end{enumerate}
+
+\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
 
 
 \exercice[Contre exemple à la distributivité des quantificateurs]
@@ -173,6 +171,8 @@ On pose $P = \{ 2k ~|~ k \in \mathbb{N} \}$ et $I = \{ 2k + 1 ~|~ k \in
         dans cet exercice ?
 \end{enumerate}
 
+\subsection{Ensembles et applications}
+
 \exercice[Croissance des fonctions]
 
 On dit que $f : I \to \mb{R}$ est croissante 
@@ -192,6 +192,7 @@ des inégalités strictes.
     \item Que dire si l'on remplace l'implication par une équivalence 
         dans la définition de la croissance stricte ?
 \end{enumerate}
+
 
 
 \exercice[Finitude]
@@ -230,7 +231,124 @@ Soit $f : E \rightarrow E$. Soit $A \subseteq E$, on définit par récurrence la
 Déterminer une bijection de $[-1,1]$ dans $\mb{R}$.
 
 
+\exercice[Ensembles dénombrables]
+
+\begin{enumerate}
+
+\item Expliciter une bijection $f$ entre $\mb{N}$ et $\mb{Z}$.
+
+\item Soit $\fonction{g}{\mb{N}^2}{\mb{N}}{(i,j)}{ i + \sum_{k=0}^{i+j} k}$.
+
+\begin{enumerate}
+
+\item Calculer $g(i,j)$ pour les $i,j$ tels que $i+j \le 3$, puis représenter les valeurs obtenues sur le plan $\mb{N}^2$. Décrire par un dessin le comportement général de $g$.
+
+\item Montrer que $g$ est surjective.
+
+\emph{Pour trouver un antécédent de $n$, on pourra considérer $p := \min \left\{ p \in \mb{N}~|~ \sum_{k=0}^{p} k \le n\right\}$}.
+
+\item Montrer que $g$ est injective.
+
+\end{enumerate}
+
+\item En remarquant que $\forall n \ge 1$, $\mb{N}^{n+1} = \mb{N}^n \times \mb{N}$, construire par récurrence sur $n > 0$ une bijection entre $\mb{N}$ et $\mb{N}^n$.
+
+
+\end{enumerate}
+
+\exercice[Propriété universelle du produit]
+
+\begin{enumerate}
+
+\item Décrire la forme des produits cartésiens de 2 intervalles fermés de $\mb{R}$ ? A quoi correspondent-ils dans le plan ?
+
+\item Soient $A$ et $B$ deux ensembles non vides.
+
+On pose $\fonction{\pi_A}{A\times B}{A}{(a,b)}{a}$ et $\fonction{\pi_B}{A\times B}{A}{(a,b)}{b}$.
+
+Montrer que $\pi_A$ et $\pi_B$ sont surjectives. Quand a-t-on injectivité de $\pi_A$ ?
+
+\item Soit $C$ un ensemble et deux fonctions $f_A : C \rightarrow A$ et $f_B : C \rightarrow B$. Montrer qu'il existe une unique fonction $h : C \rightarrow A \times B$ telle que $\pi_A \circ h = f_A$ et $\pi_B \circ h = f_B$. 
+
+\emph{On pourra raisonner par analyse-synthèse.}
+
+\item Faire un dessin de la construction. On représentera les fonctions $\pi_A, \pi_B, f_A, f_B$ et $h$ par des flèches entre les ensembles $A, B, A \times B$ et $C$.
+
+\end{enumerate}
+
+\exercice[Propriété universelle du quotient]
+
+Soit $A$ un ensemble et $(A_i)_{i \in I}$ une partition de $A$ avec $A_i \neq \varnothing$.
+
+\begin{enumerate}
+
+\item Rappeler la définition d'une partition.
+
+\item On note $\overline{A} = \{X_i~|~i \in I\}$ et $\fonction{\pi}{A}{\overline{A}}{x}{A_i \text{ tel que } x \in A_i}$.
+
+\begin{enumerate}
+
+\item Décrire (patates) $\overline{A}$ et $\pi$ dans le cas où $A = \{0,1,2\}$ partitionné en $\{1\}$ et $\{2\}$.
+
+\item Dans le cas général, pourquoi $\pi$ est-elle bien définie ?
+
+\item Montrer que $\pi$ est surjective.
+
+\end{enumerate}
+
+\item Soit $B$ un ensemble et $f : A\rightarrow B$ telle que $\forall i \in I$, $\forall x, y \in X_i$, $f(x) = f(y)$ ($f$ est constante sur chaque morceau de la partition).
+
+Montrer qu'il existe une unique fonction $\overline{f} : \overline{A} \rightarrow B$ telle que $f = \overline{f} \circ \pi$.
+
+\emph{On pourra raisonner par analyse-synthèse.}
+
+\item Faire un dessin de la construction. On représentera les fonctions $\pi, f$ et $ \overline{f}$ par des flèches entre les ensembles $A, \overline{A}$ et $B$.
+\end{enumerate}
+
+
+\exercice[Fonctions indicatrices]
+
+Soit $E$ un ensemble. Si $A \subseteq E$ on pose 
+$\mathds{1}_A (x) = 0$ quand $x \not \in A$ et $\mathds{1}_A (x) = 1$ 
+quand $x \in A$.
+
+\begin{enumerate}
+    \item Justifier que si $A$ est une partie de $E$
+        $\mathds{1}_A$ est bien une fonction de $E$ dans $\{ 0, 1 \}$
+
+    \item Étant donné une fonction $f$ de $E$ dans $\{ 0, 1 \}$
+        construire un ensemble $A$ tel que $f = \mathds{1}_A$
+
+    \item En déduire une bijection entre $\mathcal{P}(E)$
+        et $E \to \{ 0, 1 \}$
+
+    \item Justifier que si $f_1$ et $f_2$ sont des 
+        fonctions de $E$ dans $\{0,1\}$ alors 
+        les opérations suivantes définissent bien 
+        une fonction de $E$ dans $\{ 0, 1\}$:
+
+
+        \begin{multicols}{2}
+            \begin{enumerate}
+                \item $\max (f_1, f_2)$
+                \item $\min (f_1, f_2)$
+                \item $f_1 \times f_1$
+                \item $1 - f_1$
+                \item $f_1 + f_2 - f_1 \times f_2$
+                \item $(f_1 - f_2)^2$
+            \end{enumerate}
+        \end{multicols}
+
+
+    \item En utilisant la bijection, étudier 
+        le sens de ces opérations dans $\mathcal{P}(E)$
+\end{enumerate}
+
+
 \section{Calcul algébriques, sommes, produits}
+
+
+\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
 
 
 \exercice[Autour de la somme des $k$]
@@ -701,7 +819,7 @@ Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1-
         et $\theta \in \mb{R}$ on a $\cos (n\theta) + i \sin (n \theta) = (\cos
         (\theta) + i \sin (\theta))^n$.
 
-    \item En déduire une expression de $\cos (n\theta)$ (resp. $\sin (n\theta)$
+    \item En déduire une expression de $\cos (n\theta)$ (resp. $\sin (n\theta)$)
         en fonction de $\cos (\theta)$ (resp. $\cos (\theta)$)
 
     \item Montrer que $\cos (n \theta)$ est un polynôme de degré $n$ en $\cos
@@ -709,7 +827,35 @@ Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1-
 
     \item Calculer les racines de $T_n$
     \item Calculer les points où $T_n$ est maximal sur $[-1,1]$
+
+\end{enumerate}
         
+\subsection{Fonctions circulaires réciproques}
+
+\exercice
+
+Simplifier $\arccos \dfrac{1-x^2}{1+x^2}$ pour $x \in \mb{R}$. On justifiera aussi que ce nombre est défini.
+
+\exercice
+
+Simplifier $\arcsin \dfrac{x}{\sqrt{x^2 +1}}$ pour $x \in \mb{R}$. On justifiera aussi que ce nombre est défini.
+
+
+\exercice
+
+Montrer que pour $a,b \in \mb{R}, ab \neq 1$ on a $\arctan(a) + \arctan(b) = \arctan \dfrac{a+b}{1-ab} + k \pi$ avec $k \in \{ -1, 0, 1 \}$.
+
+
+\exercice[Formule de Machin]
+
+\begin{enumerate} 
+
+\item Soit $\theta = \arctan \frac{1}{5}$, calculer $\tan(2\theta)$, $\tan(4 \theta)$ et $\tan(4 \theta - \frac{\pi}{4})$.
+
+\item Justifier que $\arctan(\tan(4 \theta-\frac{\pi}{4})) = 4 \theta-\frac{\pi}{4}$.
+
+\item En déduire que $\displaystyle \frac{\pi}{4} = 4 \arctan\frac{1}{5} -  \arctan\frac{1}{239}$.
+
 \end{enumerate}
 
 
@@ -990,6 +1136,33 @@ Soit $(x,y) \in \mb{R}^2$, montrer l'équivalence suivante
 \item Trouver toutes les fonctions dérivables $f :\mb{R} \rightarrow \mb{R}$ vérifiant $\forall xy, f(x+y) = f(x)+ f(y)$.
 
 \item Trouver toutes les fonctions dérivables $f :\mb{R} \rightarrow \mb{R}^*_+$ vérifiant $\forall xy, f(xy) = f(x)f(y)$.
+\end{enumerate}
+
+
+\exercice[Pré-images de fonctions]
+
+\begin{enumerate}
+    \item Si $f : x \mapsto x^2$, calculer 
+        $f^{-1}( [-1;4])$, $f^{-1}([-1;0])$
+        et $f^{-1}([0;4])$
+
+    \item Montrer que si $f : E \to F$ alors 
+        si $A$ et $B$ sont des parties de $F$,
+        $f^{-1}(A \cap B) = f^{-1} (A) \cap f^{-1}( B)$
+
+    \item Montrer que si $f : E \to F$ alors 
+        si $A$ et $B$ sont des parties de $F$,
+        $f^{-1}(A \cup B) = f^{-1} (A) \cup f^{-1}( B)$
+
+    \item Est-ce vrai des images directes en général ?
+
+    \item Montrer que $f : E \to F$ est injective 
+        si et seulement si $\forall A \in \mathcal{P}(E),
+        A = f^{-1}(f(A))$
+
+    \item Montrer que $f : E \to F$ est surjective 
+        si et seulement si $\forall B \in \mathcal{P}(F),
+        B = f( f^{-1} (B))$.
 \end{enumerate}
 
 \exercice[Divergence de la série harmonique]
