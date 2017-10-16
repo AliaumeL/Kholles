@@ -25,7 +25,7 @@ PRAT        : 16A
 REGNIER     : 15A
 TRUONG      : 13A
 OLIVIER     : 14A
+AYASSE      : 16A
+BLANCHET    : 14A
+BAYT        : 17A
 WENDEOU     : 13A
-
-
-
