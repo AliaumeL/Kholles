@@ -261,10 +261,16 @@ Soit $f : E \rightarrow E$. Soit $A \subseteq E$, on définit par récurrence la
 
 
 
-
 \exercice 
 
 Déterminer une bijection de $[-1,1]$ dans $\mb{R}$.
+
+\exercice 
+
+Montrer que $D = \{ (x,y) \in \mb{R}^2 ~|~ x^2 + y^2 = 1 \}$
+ne peut pas s'écrire comme un produit cartésien $A \times B$
+avec $A$ et $B$ des parties de $\mb{R}$.
+
 
 
 \exercice[Ensembles dénombrables]
@@ -460,7 +466,24 @@ Montrer qu'il existe une unique fonction $\overline{f} : \overline{A} \rightarro
 \item Faire un dessin de la construction. On représentera les fonctions $\pi, f$ et $ \overline{f}$ par des flèches entre les ensembles $A, \overline{A}$ et $B$.
 \end{enumerate}
 
+\exercice[Épi/mono]
 
+\begin{enumerate}
+    \item Montrer que $f: E \to F$ est surjective 
+        si et seulement si 
+        pour toute paire $(g,h)$ de fonctions de $F$ vers $G$
+        on a $g \circ f = h \circ f \implies g = h$.
+
+    \item Montrer que $f : E \to F$ est injective 
+        si et seulement si 
+        pour toute parie $(g,h)$ de foncitons de $G$ vers $E$
+        on a $f \circ g = f \circ h \implies g = h$.
+\end{enumerate}
+
+\exercice[Bijectivité]
+
+Montrer que $f : E \to F$ est bijective si et seulement 
+si pour toute partie $A$ de $E$ on a $f(A^c) = f(A)^c$.
 
 \exercice[Fonctions indicatrices]
 
@@ -500,6 +523,100 @@ quand $x \in A$.
         le sens de ces opérations dans $\mathcal{P}(E)$
 \end{enumerate}
 
+\exercice[Morphismes]
+
+Soit $f : I \to \mb{R}$ avec $I \subseteq \mb{R}$.
+On suppose que $f(x + y) = f (x) + f(y)$,
+que $0 \in I$ et que $I$ est stable par addition.
+
+\begin{enumerate}
+    \item Montrer que $f(I)$ contient $0$
+        et est stable par addition
+    \item Si on suppose de plus que $I$ est 
+        stable par soustraction, montrer 
+        que $f(I)$ est stable par soustraction.
+    \item On pose $J$ un sous ensemble de $\mb{R}$
+        stable par addition, soustraction et qui 
+        contient $0$, montrer que $f^{-1}(J)$
+        vérifie encore ces propriétés 
+\end{enumerate}
+
+
+
+\exercice[Une histoire de notations]
+
+Soit $f : E \to E$ telle que $f(f(E)) = E$,
+montrer que $f$ est surjective.
+
+\section{Relations et Ordres}
+
+\exercice[Induction]
+
+\begin{itemize}
+    \item Définition d'un ordre partiel, d'un ordre total
+    \item Soit $E$ un ensemble totalement ordonné, 
+        est-ce que toute partie de $E$ admet un minimum ?
+        (\emph{Indication: $\mb{Q}$}) 
+    \item Montrer que toute partie non vide de $\mb{N}$ 
+        admet un plus petit élément (\emph{on admet 
+        le raisonnement par récurrence valide})
+    \item Montrer le principe de récurrence sur $\mb{N}$
+        en utilisant le fait qu'une partie non vide 
+        admet un plus petit élément
+\end{itemize}
+
+\exercice[Vision graphique]
+
+Soit $f : E \to F$ une \emph{fonction}.
+
+\begin{itemize}
+    \item Dans le cas où $E = F = \mb{R}$ 
+        définir le graphe de $f$ noté $\Gamma_f$ 
+        comme un sous ensemble de $\mb{R}^2$.
+
+    \item Généraliser cette définition 
+        au cas où $E$ et $F$ sont quelconques 
+
+    \item Montrer que si $f$ est une fonction 
+        $\Gamma_f$ est une relation de $E \times F$ 
+        qui vérifie
+        \begin{enumerate}[(i)]
+            \item $\forall x \in E, \exists y \in F, x \Gamma_f y$
+            \item $\forall x \in E, \forall (y_1,y_2) \in F^2, 
+                x \Gamma_f y_1 \wedge x \Gamma_f y_2 \implies 
+                y_1 = y_2$
+        \end{enumerate}
+
+    \item Si $R$ est une relation de $E \times F$
+        on pose $R^{op}$ une relation de $F \times E$
+        définie par $\{ (y,x) \in E\times F ~|~ x R y \}$
+
+        Montrer que si $f$ est bijective, $\Gamma_f^{op} = \Gamma_{f^{-1}}$.
+
+    \item En général si $f$ est une fonction, quelle 
+        à quelle propriété de $\Gamma_f^{op}$ correspond la 
+        \emph{surjectivité} ? \emph{L'injectivité} ? On 
+        se servira des propriétés $(i)$ et $(ii)$ définies 
+        sur les relations.
+\end{itemize}
+
+
+\exercice[Résolution d'équations]
+
+Soit $f : E \to F$ une fonction.
+
+\begin{itemize}
+    \item Soit $y \in F$, quel est l'ensemble 
+        qui résout $f(x) = y$ ?
+
+    \item Soit $g : F \to G$ et $y \in G$, quel
+        est l'ensemble qui résout $g(f(x)) = y$ ?
+
+    \item Montrer que $(g \circ f)^{-1}(A) = f^{-1} (g^{-1} (A))$
+
+    \item Résoudre l'équation $\exp ((x + 1)^2) \in [1; 100]$
+
+\end{itemize}
 
 \section{Calcul algébriques, sommes, produits}
 
