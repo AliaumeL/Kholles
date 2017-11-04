@@ -252,14 +252,54 @@ Déterminer une bijection de $[-1,1]$ dans $\mb{R}$.
 
 \item En remarquant que $\forall n \ge 1$, $\mb{N}^{n+1} = \mb{N}^n \times \mb{N}$, construire par récurrence sur $n > 0$ une bijection entre $\mb{N}$ et $\mb{N}^n$.
 
+\end{enumerate}
+
+
+
+
+\exercice[Argument diagonal]
+
+\begin{enumerate}
+
+\item Donner une injection de $\mb{N}$ dans $\{0,1\}^{\mb{N}}$ (suites à valeurs dans $\{0,1\}$).
+
+\item On va montrer que  $\mb{N}$ et $\{0,1\}^{\mb{N}}$ ne sont pas en bijection. Soit $f : \mb{N} \rightarrow \{0,1\}^{\mb{N}}$, on pose $(u_{n,i})_{i \in \mb{N}} := f(n)$ pour $n \in \mb{N}$.
+
+\begin{enumerate}
+
+\item Soit la suite $(v_i)_{i \in \mb{N}}$ définie par $v_i := 1 - u_{i,i}$. Justifier que $(v_i)_{i \in \mb{N}} \in \{0,1\}^{\mb{N}}$. 
+
+\item Montrer que $\forall n \in \mb{N}$, $ f(n)\neq (v_i )_{i \in \mb{N}}$.
+
+\item Conclure.
 
 \end{enumerate}
+
+\end{enumerate}
+
+
+
+
+\exercice[Théorème de Cantor-Bernstein]
+
+Soient $A$ et $B$ deux ensembles, on suppose qu'il existe une injection $f : A \rightarrow B$ et une injection $g : B \rightarrow A$. L'objectif est de montrer qu'il existe une bijection $h : A \rightarrow B$.
+
+\begin{enumerate}
+
+\item 
+
+\end{enumerate}
+
+
+
+
+
 
 \exercice[Propriété universelle du produit]
 
 \begin{enumerate}
 
-\item Décrire la forme des produits cartésiens de 2 intervalles fermés de $\mb{R}$ ? A quoi correspondent-ils dans le plan ?
+\item Si $A$ et $B$ sont deux ensembles finis, quel est le cardinal de $A \times B$ ?
 
 \item Soient $A$ et $B$ deux ensembles non vides.
 
@@ -274,6 +314,32 @@ Montrer que $\pi_A$ et $\pi_B$ sont surjectives. Quand a-t-on injectivité de $\
 \item Faire un dessin de la construction. On représentera les fonctions $\pi_A, \pi_B, f_A, f_B$ et $h$ par des flèches entre les ensembles $A, B, A \times B$ et $C$.
 
 \end{enumerate}
+
+
+
+
+
+\exercice[Propriété universelle du coproduit]
+
+ Si $A$ et $B$ sont deux ensembles, on définit l'union disjointe $A \uplus B := \{0\} \times A \cup \{1\} \times B $
+
+\begin{enumerate}
+
+\item Si $A$ et $B$ sont deux ensembles finis, quel est le cardinal de $A \uplus B$ ? Celui de $A \times B$ ?
+\item Soient $A$ et $B$ deux ensembles.
+
+On pose $\fonction{\mu_A}{A}{A\uplus B}{a}{(0,a)}$ et $\fonction{\pi_B}{B}{A\uplus B}{b}{(1,b)}$.
+
+Montrer que $\mu_A$ et $\mu_B$ sont injectives. Quand a-t-on surjectivité de $\mu_A$ ?
+
+\item Soit $C$ un ensemble, et deux fonctions $f_A : A \rightarrow C$ et $f_B : B \rightarrow C$. Montrer qu'il existe une unique fonction $h : A \uplus B \rightarrow C$ telle que $h \circ \mu_A  = f_A$ et $h \circ \mu_B  = f_B$. 
+
+\emph{On pourra raisonner par analyse-synthèse.}
+
+\item Faire un dessin de la construction. On représentera les fonctions $\mu_A, \mu_B, f_A, f_B$ et $h$ par des flèches entre les ensembles $A, B, A \times B$ et $C$.
+
+\end{enumerate}
+
 
 \exercice[Propriété universelle du quotient]
 
@@ -389,7 +455,7 @@ Notons $S_n = \sum_{k=1}^n k $ pour $n \ge 1$.
 
 
 
-\exercice[Inégalité faible de Jensen]
+\exercice[Une version simple de l'inégalité de Jensen]
 
 Soit $f: \mb{R} \mapsto \mb{R}$ une fonction vérifiant pour tous réels $x_1, x_2$ et $t \in [0,1]$
 $$f(t x_1 +(1-t) x_2) \le t f(x_1) +(1-t) f(x_2)$$  (une telle fonction est dite convexe).
@@ -406,12 +472,12 @@ $$f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i).$$
 
 \end{enumerate}
 
-\exercice[Série croissante (qui en fait n'est pas du tout une série :D)]
+\exercice[Suite croissante]
 
-Montrer que la série $S_n$ définie ci-dessous est strictement croissante.
+Montrer que la suite $S_n$ définie ci-dessous est strictement croissante.
 
 \begin{equation*}
-    S_n = \sum_{k = 1}^n \frac{1}{n + k}
+    u_n = \sum_{k = 1}^n \frac{1}{n + k}
 \end{equation*}
 
 \exercice[Petites variations]
@@ -422,7 +488,7 @@ Montrer que la série $S_n$ définie ci-dessous est strictement croissante.
     \item En déduire une expression de  $T_n = \sum_{k=1}^{n} k 2^{-k+1}$
 \end{enumerate}
 
-\exercice[Encadrement de Gauss]
+\exercice[Encadrement de la factorielle (Gauss)]
 
 On va donner un encadrement de $n !$.
 
@@ -519,7 +585,7 @@ Soient $x_1 \dots x_n, y_1 \dots y_n, a_1 \dots a_n, b_1 \dots, b_n \in \mb{R}$
 \item Développer $\displaystyle \left(\sum_{i=1}^n a_i \right)\left(\sum_{i=1}^n b_i \right)$.
 
 \item Soient $x_1 \dots x_n, y_1 \dots y_n, a_1 \dots a_n, b_1 \dots, b_n \in \mb{R}$. Montrer la formule de Binet :
-$$ \left(\sum_{i=1}^n a_i x_i\right)\left(\sum_{i=1}^n b_i y_i\right) = \displaystyle \left(\sum_{i=1}^n a_i y_i\right)\left(\sum_{i=1}^n b_i x_i\right) + \sum_{1 \le i < j \le n} (a_i b_j - a_j -b_i)(x_i y_j - x_j y_i).$$
+$$ \left(\sum_{i=1}^n a_i x_i\right)\left(\sum_{i=1}^n b_i y_i\right) = \displaystyle \left(\sum_{i=1}^n a_i y_i\right)\left(\sum_{i=1}^n b_i x_i\right) + \sum_{1 \le i < j \le n} (a_i b_j - a_j b_i)(x_i y_j - x_j y_i).$$
 
 \item En déduire l'identité de Lagrange :
 
@@ -529,7 +595,7 @@ $$\displaystyle \left(\sum_{k=1}^n a_k^2\right)\left(\sum_{k=1}^n b_k^2\right) -
 \item Etablir l'inégalité de Cauchy-Schwarz :
 $$\displaystyle \left(\sum_{k=1}^n a_k b_k\right)^2 \le \left(\sum_{k=1}^n a_k^2\right)\left(\sum_{k=1}^n b_k^2\right)$$
 
-\item En déduire que $ \displaystyle \left(\sum_{k=1}^n c_k\right)\left(\sum_{k=1}^n \frac{1}{c_k}\right) \ge n^2$ si $c_1 \dots c_k$ sont des réels strictement positifs.
+\item En déduire que $ \displaystyle \left(\sum_{k=1}^n c_k\right)\left(\sum_{k=1}^n \frac{1}{c_k}\right) \ge n^2$ si $c_1 \dots c_k$ sont des réels strictement positifs. Interpréter ce résultat en termes d'aires.
 
 \end{enumerate}
 
@@ -848,7 +914,7 @@ Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1-
         (\theta)$ que l'on note $T_n$
 
     \item Calculer les racines de $T_n$
-    \item Calculer les points où $T_n$ est maximal sur $[-1,1]$
+    \item Calculer les maxima et minima $x \mapsto T_n(x)$ sur $[-1,1]$
 
 \end{enumerate}
         
@@ -856,11 +922,13 @@ Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1-
 
 \exercice
 
-Simplifier $\arccos \dfrac{1-x^2}{1+x^2}$ pour $x \in \mb{R}$. On justifiera aussi que ce nombre est défini.
+Justifier que $\arccos \dfrac{1-x^2}{1+x^2}$ est défini pour $x \in \mb{R}$, puis simplifier l'expression.
 
 \exercice
 
-Simplifier $\arcsin \dfrac{x}{\sqrt{x^2 +1}}$ pour $x \in \mb{R}$. On justifiera aussi que ce nombre est défini.
+Justifier que $\arcsin \dfrac{x}{\sqrt{x^2 +1}}$ est défini pour $x \in \mb{R}$, puis simplifier l'expression.
+
+IL Y A PLETHORE D'AUTRES EXOS DANS LA MEME VEINE
 
 
 \exercice
@@ -1274,12 +1342,11 @@ On pose $g(x) = e^{-1/x^2}$.
 \exercice 
 
 Étudier la fonction $f : x \mapsto x \sqrt{1 - x^2}$
-afin d'en réaliser la représentation graphique.
+afin de tracer son graphe.
 
-\exercice 
+\exercice[Un petit théorème de point fixe]
 
-Soit $f : [0,1] \to [0,1]$ 
-On suppose $f$ continue, montrer qu'il existe un 
+Soit $f$ continue de $ [0,1] $ dans $[0,1]$, montrer qu'il existe 
 $x \in [0,1]$ tel que $f(x) = x$.
 
 \exercice
@@ -1287,7 +1354,7 @@ $x \in [0,1]$ tel que $f(x) = x$.
 Étudier la fonction $f : x \mapsto \frac{\ln x }{x}$.
 
 
-\exercice 
+\exercice["Equations différentielles"]
 
 \begin{enumerate}
     \item Trouver une fonction dérivable $f$ telle que $f'(x) = f(x)$
@@ -1300,7 +1367,8 @@ $x \in [0,1]$ tel que $f(x) = x$.
 \section{Nombres réels}
 
 
-\exercice
+\exercice[Théorème de Knaster-Tarski]
+
 Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f$ possède un \emph{point fixe}, c'est-à-dire qu'il existe $a \in [0,1]$ tel que $f(a) = a$. Soit $A = \{x \in [0,1]~|~f(x)\le x\}$.
 
 \begin{enumerate}
