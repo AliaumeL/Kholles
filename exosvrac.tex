@@ -431,7 +431,58 @@ montrer que $f$ est surjective.
         admet un plus petit élément
 \end{itemize}
 
-\exercice[]
+\exercice[Vision graphique]
+
+Soit $f : E \to F$ une \emph{fonction}.
+
+\begin{itemize}
+    \item Dans le cas où $E = F = \mb{R}$ 
+        définir le graphe de $f$ noté $\Gamma_f$ 
+        comme un sous ensemble de $\mb{R}^2$.
+
+    \item Généraliser cette définition 
+        au cas où $E$ et $F$ sont quelconques 
+
+    \item Montrer que si $f$ est une fonction 
+        $\Gamma_f$ est une relation de $E \times F$ 
+        qui vérifie
+        \begin{enumerate}[(i)]
+            \item $\forall x \in E, \exists y \in F, x \Gamma_f y$
+            \item $\forall x \in E, \forall (y_1,y_2) \in F^2, 
+                x \Gamma_f y_1 \wedge x \Gamma_f y_2 \implies 
+                y_1 = y_2$
+        \end{enumerate}
+
+    \item Si $R$ est une relation de $E \times F$
+        on pose $R^{op}$ une relation de $F \times E$
+        définie par $\{ (y,x) \in E\times F ~|~ x R y \}$
+
+        Montrer que si $f$ est bijective, $\Gamma_f^{op} = \Gamma_{f^{-1}}$.
+
+    \item En général si $f$ est une fonction, quelle 
+        à quelle propriété de $\Gamma_f^{op}$ correspond la 
+        \emph{surjectivité} ? \emph{L'injectivité} ? On 
+        se servira des propriétés $(i)$ et $(ii)$ définies 
+        sur les relations.
+\end{itemize}
+
+
+\exercice[Résolution d'équations]
+
+Soit $f : E \to F$ une fonction.
+
+\begin{itemize}
+    \item Soit $y \in F$, quel est l'ensemble 
+        qui résout $f(x) = y$ ?
+
+    \item Soit $g : F \to G$ et $y \in G$, quel
+        est l'ensemble qui résout $g(f(x)) = y$ ?
+
+    \item Montrer que $(g \circ f)^{-1}(A) = f^{-1} (g^{-1} (A))$
+
+    \item Résoudre l'équation $\exp ((x + 1)^2) \in [1; 100]$
+
+\end{itemize}
 
 \section{Calcul algébriques, sommes, produits}
 
