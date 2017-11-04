@@ -173,6 +173,42 @@ On pose $P = \{ 2k ~|~ k \in \mathbb{N} \}$ et $I = \{ 2k + 1 ~|~ k \in
 
 \subsection{Ensembles et applications}
 
+\exercice[Caractérisations des injections]
+
+Montrer que pour $f : A \rightarrow B$, on a équivalence entre les deux assertions suivantes.
+
+\begin{itemize}
+
+\item $f$ est injective ;
+
+\item pour tout $X,Y \subseteq A$, $f(X \cap Y) = f(X) \cap f(Y)$ ;
+
+\item pour tout $X \subseteq A$, $f^{-1}(f(X)) = X$.
+
+\end{itemize} 
+
+
+
+\exercice[Injectivité et monotonie]
+
+\begin{enumerate}
+
+\item Soit $f : \mb{R} \rightarrow \mb{R}$ strictement monotone. Montrer qu'elle est injective.
+
+\item A-t-on la réciproque ? Et si on impose que $f$ soit continue ?
+
+\end{enumerate}
+
+
+
+
+\exercice[Symétrie des bornes]
+
+Soit $(E, \le)$ un ensemble ordonné. On suppose que toute partie non vide et majorée de $E$ admet une borne supérieure. Montrer que toute partie non vide et minorée de $E$ admet une borne inférieure.
+
+
+
+
 \exercice[Croissance des fonctions]
 
 On dit que $f : I \to \mb{R}$ est croissante 
@@ -262,21 +298,28 @@ Déterminer une bijection de $[-1,1]$ dans $\mb{R}$.
 
 \begin{enumerate}
 
-\item Donner une injection de $\mb{N}$ dans $\{0,1\}^{\mb{N}}$ (suites à valeurs dans $\{0,1\}$).
+\item Donner une injection $g$ de $\mb{N}$ dans $\{0,1\}^{\mb{N}}$ (suites à valeurs dans $\{0,1\}$).
 
-\item On va montrer que  $\mb{N}$ et $\{0,1\}^{\mb{N}}$ ne sont pas en bijection. Soit $f : \mb{N} \rightarrow \{0,1\}^{\mb{N}}$, on pose $(u_{n,i})_{i \in \mb{N}} := f(n)$ pour $n \in \mb{N}$.
+\item On va montrer qu'il n'existe pas de fonction surjective de $\mb{N}$ dans $\{0,1\}^{\mb{N}}$.
+
+Soit $f : \mb{N} \rightarrow \{0,1\}^{\mb{N}}$, on pose $(u_{n,i})_{i \in \mb{N}} := f(n)$ pour $n \in \mb{N}$.
 
 \begin{enumerate}
+
+\item Expliciter $(u_{n,i})_{i \in \mb{N}}$ pour $n \ge 0$, dans le cas où $f = g$ de la question précédente.
 
 \item Soit la suite $(v_i)_{i \in \mb{N}}$ définie par $v_i := 1 - u_{i,i}$. Justifier que $(v_i)_{i \in \mb{N}} \in \{0,1\}^{\mb{N}}$. 
 
 \item Montrer que $\forall n \in \mb{N}$, $ f(n)\neq (v_i )_{i \in \mb{N}}$.
 
-\item Conclure.
+\item Conclure quant à la surjectivité de $f$ ? $\mb{N}$ et $\{0,1\}^{\mb{N}}$ peuvent-ils être en bijection ?
 
 \end{enumerate}
 
+\item Existe-t-il une surjection de $\mb{N}$ dans $\mc{P}(\mb{N})$ ?
+
 \end{enumerate}
+
 
 
 
@@ -317,6 +360,52 @@ Montrer que $\pi_A$ et $\pi_B$ sont surjectives. Quand a-t-on injectivité de $\
 \end{enumerate}
 
 
+\exercice[Clôtures d'une relation]
+ 
+ Soit $E$ un ensemble et $R \subseteq E^2$ une relation binaire. On note $\mc{R}(R)$ la plus petite relation réflexive qui contient $R$, appelée clôture réflexive de $R$. De même on note $\mc{S}(R)$ la clôture symétrique de $R$, et $\mc{T}(R)$ sa clôture transitive.\footnote{Indication générale : pour montrer que $X$ est le plus petit \emph{truc} vérifiant $P$, on procède en 2 étapes. Montrer que $X$ est un \emph{truc} vérifiant $P$. Puis montrer que tout \emph{truc} vérifiant $P$ contient $X$.}
+ é
+
+
+\begin{enumerate}
+
+\item Montrer que $\mc{R}(R)  = R \cup \{ (x,x) ~|~x\in E\}$.
+
+\item Montrer que $\mc{S}(R)  = R \cup \{ (y,x) ~|~(x,y)\in R\}$. A-t-on $ \mc{R}(\mc{S}(R)) = \mc{S}(\mc{R}(R))$ ?
+
+\item Soit $\fonction{f}{\mc{P}(E^2)}{\mc{P}(E^2)}{S}{S \cup \{(x,z)~|~\exists y, (x,y)\in S \text{ et }(y,z) \in S\}}$
+
+Montrer que $\mc{T}(R) = \cup_{n \ge 0} f^n(R)$ où $f^n = f \circ f \circ \cdots \circ f$ ($n$ fois) et $f^0 = \text{id}$.
+
+\emph{On prouvera par récurrence sur $n$ que $f^n(S) \subseteq R'$ pour toute $R'$ transitive contenant $R$.}
+
+\item Dans cette question on suppose $R$ symétrique et réflexive. Soit $\mc{E}(R)$ la plus petite relation d'équivalence contenant $R$. Montrer $\mc{T}(R) = \mc{E}(R)$.
+
+\emph{On utilisera la question précédente pour montrer que $\mc{T}(R)$ est une relation d'équivalence.}
+
+\item On ne fait plus d'hypothèses sur $R$. Montrer que $\mc{E}(R) = \mc{T} (\mc{S}(\mc{R}(R)))$.
+
+\item Application. Soit $E = \{1 \dots 6\}$ et $R = \{(1,2),(2,3),(5,6)\}$. Expliciter $\mc{E}(R)$ puis ses classes d'équivalence.
+
+
+\end{enumerate}
+
+\exercice[Prolongement des applications]
+
+Soient $A,B$ deux ensembles et $\mc{E} = \{(F,f)~|~F \subseteq A \text{ et } f : F \rightarrow B\}$.
+
+\begin{enumerate}
+
+\item Soit $\preccurlyeq$ défini par $(F,f) \preccurlyeq (G,g)$ ssi $F \subseteq G$ et $\forall x \in F, f(x) = g(x)$ ($g$ est un prolongement de $f$). Montrer que $\preccurlyeq$ une relation d'ordre sur $\mc{E}$.
+
+\item A quelles conditions sur $A,B$ l'ordre est-il total ?
+
+\item Montrer que $\mc{E}$ possède un plus petit élément.
+
+\item Soit $\mc{F}\subseteq \mc{E}$ un sous-ensemble totalement ordonné de $\mc{E}$. Montrer que $\mc{F}$ est majoré.
+
+\emph{Remarque : on dit que $\mc{E}$ est un ensemble inductif.}
+
+\end{enumerate}
 
 
 
@@ -344,17 +433,17 @@ Montrer que $\mu_A$ et $\mu_B$ sont injectives. Quand a-t-on surjectivité de $\
 
 \exercice[Propriété universelle du quotient]
 
-Soit $A$ un ensemble et $(A_i)_{i \in I}$ une partition de $A$ avec $A_i \neq \varnothing$.
+Soit $A$ un ensemble et $\sim$ une relation d'équivalence sur $A$.
 
 \begin{enumerate}
 
-\item Rappeler la définition d'une partition.
+\item Montrer que les classes d'équivalence de $\sim$ forment une partition $(A_i)_{i \in I}$ de $A$. Dans la suite, on note $\overline{A} = \{A_i~|~i \in I\}$ l'ensemble des classes.
 
-\item On note $\overline{A} = \{X_i~|~i \in I\}$ et $\fonction{\pi}{A}{\overline{A}}{x}{A_i \text{ tel que } x \in A_i}$.
+\item Soit $\fonction{\pi}{A}{\overline{A}}{x}{A_i \text{ tel que } x \in A_i}$.
 
 \begin{enumerate}
 
-\item Décrire (patates) $\overline{A}$ et $\pi$ dans le cas où $A = \{0,1,2\}$ partitionné en $\{1\}$ et $\{2\}$.
+\item Représenter (patates) $\overline{A}$ et $\pi$ dans le cas où $A = \{0,1,2\}$ avec $0 \sim 2$ et $1 \not \sim 2$.
 
 \item Dans le cas général, pourquoi $\pi$ est-elle bien définie ?
 
@@ -362,7 +451,7 @@ Soit $A$ un ensemble et $(A_i)_{i \in I}$ une partition de $A$ avec $A_i \neq \v
 
 \end{enumerate}
 
-\item Soit $B$ un ensemble et $f : A\rightarrow B$ telle que $\forall i \in I$, $\forall x, y \in X_i$, $f(x) = f(y)$ ($f$ est constante sur chaque morceau de la partition).
+\item Soit $B$ un ensemble et $f : A\rightarrow B$ telle que $\forall x,y \in A$, $x \sim y \Rightarrow f(x) = f(y)$.
 
 Montrer qu'il existe une unique fonction $\overline{f} : \overline{A} \rightarrow B$ telle que $f = \overline{f} \circ \pi$.
 
@@ -370,6 +459,7 @@ Montrer qu'il existe une unique fonction $\overline{f} : \overline{A} \rightarro
 
 \item Faire un dessin de la construction. On représentera les fonctions $\pi, f$ et $ \overline{f}$ par des flèches entre les ensembles $A, \overline{A}$ et $B$.
 \end{enumerate}
+
 
 
 \exercice[Fonctions indicatrices]
