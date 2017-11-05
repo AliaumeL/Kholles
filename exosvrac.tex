@@ -136,7 +136,7 @@ Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction $T$-périodique pour tout $T \
 
 \item Montrer que $\sqrt{2} \not \in \mb{Q}$.
 
-\item On veut montrer quet $\exists x, y \not \in \mb{Q}, x^y \in \mb{Q}$.
+\item On veut montrer que $\exists x, y \not \in \mb{Q}, x^y \in \mb{Q}$.
 
 \begin{enumerate}
 
@@ -171,11 +171,11 @@ On pose $P = \{ 2k ~|~ k \in \mathbb{N} \}$ et $I = \{ 2k + 1 ~|~ k \in
         dans cet exercice ?
 \end{enumerate}
 
-\subsection{Ensembles et applications}
+\subsection{Propriétés des applications}
 
 \exercice[Caractérisations des injections]
 
-Montrer que pour $f : A \rightarrow B$, on a équivalence entre les deux assertions suivantes.
+Montrer que pour $f : A \rightarrow B$, on a équivalence entre les trois assertions suivantes.
 
 \begin{itemize}
 
@@ -187,6 +187,44 @@ Montrer que pour $f : A \rightarrow B$, on a équivalence entre les deux asserti
 
 \end{itemize} 
 
+\exercice[Épi/mono]
+
+\begin{enumerate}
+    \item Montrer que $f: E \to F$ est surjective 
+        si et seulement si 
+        pour toute paire $(g,h)$ de fonctions de $F$ vers $G$
+        on a $g \circ f = h \circ f \implies g = h$.
+
+    \item Montrer que $f : E \to F$ est injective 
+        si et seulement si 
+        pour toute parie $(g,h)$ de foncitons de $G$ vers $E$
+        on a $f \circ g = f \circ h \implies g = h$.
+\end{enumerate}
+
+
+
+\exercice[Axiome du choix \dots{} ou pas]
+
+\begin{enumerate}
+
+\item Monter que $f : E \rightarrow F$ est injective, si et seulement si, il existe $g : F \rightarrow E$ telle que $f \circ g = \text{id}_E$.
+
+\item Monter que $f : E \rightarrow F$ est surjective, si et seulement si, il existe $g : F \rightarrow E$ telle que $g \circ f = \text{id}_F$.
+
+\end{enumerate}
+
+
+
+\exercice[Bijectivité]
+
+Montrer que $f : E \to F$ est bijective si et seulement 
+si pour toute partie $A$ de $E$ on a $f(A^c) = f(A)^c$.
+
+
+\exercice[Une histoire de notations]
+
+Soit $f : E \to E$ telle que $f(f(E)) = E$,
+montrer que $f$ est surjective.
 
 
 \exercice[Injectivité et monotonie]
@@ -369,7 +407,7 @@ Montrer que $\pi_A$ et $\pi_B$ sont surjectives. Quand a-t-on injectivité de $\
 \exercice[Clôtures d'une relation]
  
  Soit $E$ un ensemble et $R \subseteq E^2$ une relation binaire. On note $\mc{R}(R)$ la plus petite relation réflexive qui contient $R$, appelée clôture réflexive de $R$. De même on note $\mc{S}(R)$ la clôture symétrique de $R$, et $\mc{T}(R)$ sa clôture transitive.\footnote{Indication générale : pour montrer que $X$ est le plus petit \emph{truc} vérifiant $P$, on procède en 2 étapes. Montrer que $X$ est un \emph{truc} vérifiant $P$. Puis montrer que tout \emph{truc} vérifiant $P$ contient $X$.}
- é
+
 
 
 \begin{enumerate}
@@ -466,25 +504,6 @@ Montrer qu'il existe une unique fonction $\overline{f} : \overline{A} \rightarro
 \item Faire un dessin de la construction. On représentera les fonctions $\pi, f$ et $ \overline{f}$ par des flèches entre les ensembles $A, \overline{A}$ et $B$.
 \end{enumerate}
 
-\exercice[Épi/mono]
-
-\begin{enumerate}
-    \item Montrer que $f: E \to F$ est surjective 
-        si et seulement si 
-        pour toute paire $(g,h)$ de fonctions de $F$ vers $G$
-        on a $g \circ f = h \circ f \implies g = h$.
-
-    \item Montrer que $f : E \to F$ est injective 
-        si et seulement si 
-        pour toute parie $(g,h)$ de foncitons de $G$ vers $E$
-        on a $f \circ g = f \circ h \implies g = h$.
-\end{enumerate}
-
-\exercice[Bijectivité]
-
-Montrer que $f : E \to F$ est bijective si et seulement 
-si pour toute partie $A$ de $E$ on a $f(A^c) = f(A)^c$.
-
 \exercice[Fonctions indicatrices]
 
 Soit $E$ un ensemble. Si $A \subseteq E$ on pose 
@@ -542,11 +561,6 @@ que $0 \in I$ et que $I$ est stable par addition.
 \end{enumerate}
 
 
-
-\exercice[Une histoire de notations]
-
-Soit $f : E \to E$ telle que $f(f(E)) = E$,
-montrer que $f$ est surjective.
 
 \section{Relations et Ordres}
 
