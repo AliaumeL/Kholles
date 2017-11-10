@@ -56,6 +56,14 @@
 
 \begin{document}
 
+
+
+\title{Exercices détaillés de MSPI}
+
+\author{Aliaume Lopez \& Gaëtan Douéneau}
+
+\maketitle
+
 \tableofcontents
 
 \pagebreak
@@ -203,6 +211,33 @@ On pose $P = \{ 2k ~|~ k \in \mathbb{N} \}$ et $I = \{ 2k + 1 ~|~ k \in
 \subsection{Fonctions et ensembles}
 
 \subsubsection{Formalisme}
+
+\exercice[Pré-images de fonctions]
+
+\begin{enumerate}
+    \item Si $f : x \mapsto x^2$, calculer 
+        $f^{-1}( [-1;4])$, $f^{-1}([-1;0])$
+        et $f^{-1}([0;4])$
+
+    \item Montrer que si $f : E \to F$ alors 
+        si $A$ et $B$ sont des parties de $F$,
+        $f^{-1}(A \cap B) = f^{-1} (A) \cap f^{-1}( B)$
+
+    \item Montrer que si $f : E \to F$ alors 
+        si $A$ et $B$ sont des parties de $F$,
+        $f^{-1}(A \cup B) = f^{-1} (A) \cup f^{-1}( B)$
+
+    \item Est-ce vrai des images directes en général ?
+
+    \item Montrer que $f : E \to F$ est injective 
+        si et seulement si $\forall A \in \mathcal{P}(E),
+        A = f^{-1}(f(A))$
+
+    \item Montrer que $f : E \to F$ est surjective 
+        si et seulement si $\forall B \in \mathcal{P}(F),
+        B = f( f^{-1} (B))$.
+\end{enumerate}
+
 
 
 \exercice 
@@ -691,10 +726,11 @@ Soient $A,B$ deux ensembles et $\mc{E} = \{(F,f)~|~F \subseteq A \text{ et } f :
 
 
 
-\section{Calcul algébriques, sommes, produits}
+\section{Calcul algébriques}
 
+\subsection{Sommes et produits de nombres réels}
 
-\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
+\subsubsection{Calculs classiques}
 
 
 \exercice[Autour de la somme des $k$]
@@ -711,22 +747,13 @@ Notons $S_n = \sum_{k=1}^n k $ pour $n \ge 1$.
 \end{enumerate}
 
 
-
-
-\exercice[Une version simple de l'inégalité de Jensen]
-
-Soit $f: \mb{R} \mapsto \mb{R}$ une fonction vérifiant pour tous réels $x_1, x_2$ et $t \in [0,1]$
-$$f(t x_1 +(1-t) x_2) \le t f(x_1) +(1-t) f(x_2)$$  (une telle fonction est dite convexe).
-Montrer que si les $\lambda_1 \dots \lambda_n$ sont des réels positifs ou nuls tels que $\sum_{i=1}^n \lambda_i = 1$, alors pour tous réels $x_1 \dots x_n$ on a :
-$$f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i).$$
-
-\exercice[Inégalité de Bernoulli]
+\exercice
 
 \begin{enumerate}
 
-\item Montrer par récurrence que $(1+x)^n \ge 1+nx$ pour $n \ge 1$ et $x \ge -1$.
+\item Rappeler la formule reliant $\sin(2x)$ avec $\cos(x)$ et $\sin(x)$.
 
-\item Prouver ce résultat sans récurrence (pour $x \ge 0$).
+\item Soit $x \in ]0, \pi [$, simplifier $P =\displaystyle \prod_{k=0}^n \cos(2^k x)$ (on commencera par calculer $ \sin (x) \times P$).
 
 \end{enumerate}
 
@@ -746,22 +773,16 @@ Montrer que la suite $S_n$ définie ci-dessous est strictement croissante.
     \item En déduire une expression de  $T_n = \sum_{k=1}^{n} k 2^{-k+1}$
 \end{enumerate}
 
-\exercice[Encadrement de la factorielle (Gauss)]
 
-On va donner un encadrement de $n !$.
+\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
 
-\begin{enumerate}
+\exercice
 
-\item Montrer que $\displaystyle n! = \prod_{\substack{i,j \ge 1\\i+j = n+1}}  \sqrt{ij}$
+Montrer que $\displaystyle \sum_{i=0}^n i x^i = \frac{n x^{n+2} - (n+1)x^{n+1} +x}{(x-1)^2}$
 
-\item Montrer que pour tous $i,j \ge 1$ on a $i+j-1 \le ij \le (\frac{i+j}{2})^2$.
+\exercice
 
-\item Conclure que $n^{\frac{n}{2}} \le n ! \le (\frac{n+1}{2})^n$.
-
-\end{enumerate}
-
-
-
+Montrer que $\displaystyle \prod_{i=0}(1-a_i) \ge 1- \sum_{i=0}^n a_i$ si $0<a_i<1$.
 
 \exercice[Série harmonique]
 
@@ -777,19 +798,7 @@ Soit $ H_n := \sum_{k =1}^n 1/k$ (série harmonique).
 
 
 
-\exercice Calculer les sommes suivantes pour $n \ge 0$ et $\alpha, \beta \in \mb{R}$.
-
-\begin{enumerate}
-
-\item $\displaystyle \sum_{k=0}^n \sin(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n \cos(\alpha + k\beta)$. 
-
-\item $\displaystyle \sum_{k=0}^n {k \choose n} \sin(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n {k \choose n} \cos(\alpha + k\beta)$.
-
-\item $\displaystyle \sum_{k=0}^n \text{sh}(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n \text{ch}(\alpha + k\beta)$. 
-
-\item $\displaystyle \sum_{k=0}^n {k \choose n} \text{sh}(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n {k \choose n} \text{ch}(\alpha + k\beta)$.
-
-\end{enumerate}
+\subsubsection{Coefficients binomiaux}
 
 \exercice
 
@@ -815,24 +824,49 @@ Montrer que $\displaystyle x_n = \sum_{k=0}^n (-1)^{n-k} {n \choose k} y_k$.
 Montrer que pour tout $n \ge 0$ on a $\displaystyle \sum_{k=1}^n \frac{(-1)^{k+1}}{k} {n \choose k} = \sum_{k=0}^n \frac{1}{k}$.
 
 
-\exercice
+
+\subsubsection{Identités diverses}
+
+
+
+
+
+
+\exercice[Une version simple de l'inégalité de Jensen]
+
+Soit $f: \mb{R} \mapsto \mb{R}$ une fonction vérifiant pour tous réels $x_1, x_2$ et $t \in [0,1]$
+$$f(t x_1 +(1-t) x_2) \le t f(x_1) +(1-t) f(x_2)$$  (une telle fonction est dite convexe).
+Montrer que si les $\lambda_1 \dots \lambda_n$ sont des réels positifs ou nuls tels que $\sum_{i=1}^n \lambda_i = 1$, alors pour tous réels $x_1 \dots x_n$ on a :
+$$f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i).$$
+
+
+\exercice[Inégalité de Bernoulli]
 
 \begin{enumerate}
 
-\item Rappeler la formule reliant $\sin(2x)$ avec $\cos(x)$ et $\sin(x)$.
+\item Montrer par récurrence que $(1+x)^n \ge 1+nx$ pour $n \ge 1$ et $x \ge -1$.
 
-\item Soit $x \in ]0, \pi [$, simplifier $P =\displaystyle \prod_{k=0}^n \cos(2^k x)$ (on commencera par calculer $ \sin (x) \times P$).
+\item Prouver ce résultat sans récurrence (pour $x \ge 0$).
 
 \end{enumerate}
 
 
-\exercice
 
-Montrer que $\displaystyle \sum_{i=0}^n i x^i = \frac{n x^{n+2} - (n+1)x^{n+1} +x}{(x-1)^2}$
+\exercice[Encadrement de la factorielle (Gauss)]
 
-\exercice
+On va donner un encadrement de $n !$.
 
-Montrer que $\displaystyle \prod_{i=0}(1-a_i) \ge 1- \sum_{i=0}^n a_i$ si $0<a_i<1$.
+\begin{enumerate}
+
+\item Montrer que $\displaystyle n! = \prod_{\substack{i,j \ge 1\\i+j = n+1}}  \sqrt{ij}$
+
+\item Montrer que pour tous $i,j \ge 1$ on a $i+j-1 \le ij \le (\frac{i+j}{2})^2$.
+
+\item Conclure que $n^{\frac{n}{2}} \le n ! \le (\frac{n+1}{2})^n$.
+
+\end{enumerate}
+
+
 
 \exercice[Binet, Lagrange, Cauchy-Schwarz]
 
@@ -869,27 +903,14 @@ Montrer que $\displaystyle \sum_{i=1}^n \frac{(x_i)^r}{P_j} = 0$ si $0 \le r < n
 
 
 
-\section{Nombres complexes, trigonométrie}
 
-\exercice
 
-Soient $z$ et $z'$ deux nombres complexes de module $1$. Montrer que $\displaystyle \frac{z+z'}{1+zz'}$ est un réél (quand il est défini).
 
-\exercice[Inégalité triangulaire généralisée]
+\subsection{Nombres complexes et trigonométrie}
 
-\begin{enumerate}
 
-\item Montrer que pour tout $n \ge 1$, pour tous $z_1 \dots z_n \in \mb{C}$, on a $\displaystyle \left|\sum_{k=1}^n z_k\right| \le \sum_{k=1}^n | z_k |$.
 
-On pourra utiliser, sans la redémontrer, l'inégalité triangulaire du cours.
-
-\item Rappeler dans quel cas $|z_1 + z_2| = |z_1| + |z_2|$.
-
-\item Montrer que s'il existe $1 \le i,j \le n$, $|z_i + z_j| < |z_i| + |z_j|$, alors $ \left|\sum_{k=1}^n z_k\right| < \sum_{k=1}^n | z_k |$ 
-
-\item Déduire de 2 et 3 à quelles conditions l'inégalité de la question 1 est une égalité. L'interpréter géométriquement.
-
-\end{enumerate}
+\subsubsection{Module, argument, calculs}
 
 \exercice
 
@@ -912,40 +933,26 @@ Soit l'application $f : z \mapsto \frac{1}{1-z}$.
 
 \end{enumerate}
 
-\exercice
-
-Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
-
-
-
-\exercice 
-On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
-$\mathbb{C}$.
-
-Montrer que $\mathbb{U}_n = \{ e^{2ik\pi / n} ~|~ 0 \leq k \leq n - 1 \}$.
 
 
 
 \exercice
 
-On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
-$\mathbb{C}$.
-\begin{enumerate}
-    \item Calculer $\sum_{ \omega \in \mathbb{U}_n} \omega$
-    \item Calculer $\sum_{ \omega \in \mathbb{U}_n} | 1 - \omega |$
-\end{enumerate}
-
+Soient $z$ et $z'$ deux nombres complexes de module $1$. Montrer que $\displaystyle \frac{z+z'}{1+zz'}$ est un réel (quand il est défini).
 
 
 
 \exercice
 
-Soit $n \ge 1$. Trouver les $z \in \mb{C}$ tels que $(z-1)^n = (z+1)^n$.
-
+Trouver en fonction de $p,q \in \mb{Z}$, les $z \in \mb{C}$ tels que $z^p = (z+1)^q = 1$.
 
 \exercice
 
-Calculer $\displaystyle P = \prod_{k=0}^n(z^k + \overline{z}^{k})$ en fonction du module et de l'argument de $z$.
+Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1- \im r}$ pour $r \in \mb{R}$ ?
+
+\exercice
+
+Simplifier $\displaystyle P = \prod_{k=0}^n(z^k + \overline{z}^{k})$ en fonction du module et de l'argument de $z$.
 
 
 
@@ -991,6 +998,58 @@ Que dire $f(x)$ et $g(x)$ quand $x \in \mb{R}$ ?
 
 
 
+
+\exercice Calculer les sommes suivantes pour $n \ge 0$ et $\alpha, \beta \in \mb{R}$.
+
+\begin{enumerate}
+
+\item $\displaystyle \sum_{k=0}^n \sin(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n \cos(\alpha + k\beta)$. 
+
+\item $\displaystyle \sum_{k=0}^n {k \choose n} \sin(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n {k \choose n} \cos(\alpha + k\beta)$.
+
+\item $\displaystyle \sum_{k=0}^n \text{sh}(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n \text{ch}(\alpha + k\beta)$. 
+
+\item $\displaystyle \sum_{k=0}^n {k \choose n} \text{sh}(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n {k \choose n} \text{ch}(\alpha + k\beta)$.
+
+\end{enumerate}
+
+
+
+
+
+\subsubsection{Racines de l'unité}
+
+
+
+\exercice 
+On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
+$\mathbb{C}$.
+
+Montrer que $\mathbb{U}_n = \{ e^{2ik\pi / n} ~|~ 0 \leq k \leq n - 1 \}$.
+
+
+
+\exercice
+
+On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
+$\mathbb{C}$.
+\begin{enumerate}
+    \item Calculer $\sum_{ \omega \in \mathbb{U}_n} \omega$
+    \item Calculer $\sum_{ \omega \in \mathbb{U}_n} | 1 - \omega |$
+\end{enumerate}
+
+
+\exercice
+
+Soit $n \ge 1$. Trouver les $z \in \mb{C}$ tels que $(z-1)^n = (z+1)^n$.
+
+
+
+
+
+
+
+
 \exercice[Autour des racines 3-èmes]
 
 \begin{enumerate}
@@ -1029,29 +1088,6 @@ On considère les trois somme suivantes~:
 \end{enumerate}
 
 
-\exercice[Entiers de Gauss]
-
-On considère l'ensemble $\mb{Z}[\text{i}] := \{a + \text{i}b~|~a, b \in \mb{Z}\}$.
-
-\begin{enumerate}
-
-\item Montrer que si $z, z' \in \mb{Z}[\text{i}]$, alors $zz' \in \mb{Z}[\text{i}]$ et $z+z' \in \mb{Z}[\text{i}]$.
-
-\item On cherche les $z \in \mb{Z}[\text{i}] $ tels que $ \frac{1}{z} \in \mb{Z}[\text{i}]$. De tels éléments sont dits \emph{inversibles}.
-
-\begin{enumerate}
-
-\item Montrer que $\text{i}$ est inversible, mais pas de $1+ \text{i}$.
-
-\item Que dire de $|z|^2$ si $z \in \mb{Z}[\text{i}]$ ?
-
-\item Montrer que les inversibles doivent être de module 1. En déduire l'ensemble des inversibles.
-
-
-\end{enumerate}
-
-
-\end{enumerate}
 
 
 
@@ -1086,6 +1122,16 @@ _n$ si  $\{z^k~|~k \ge 0\} = \mb{U}_n$. Quelles sont les racines primitives dans
 \end{enumerate}
 
 
+
+
+
+
+
+
+
+
+
+\subsubsection{Applications}
 
 \exercice[Fonctions symétriques de 2 variables]
 
@@ -1149,15 +1195,6 @@ pour $0 \leq 1 \leq n - 1$~:
 \end{enumerate}
 
 
-
-\exercice
-
-Trouver en fonction de $p,q \in \mb{Z}$, les $z \in \mb{C}$ tels que $z^p = (z+1)^q = 1$.
-
-\exercice
-
-Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1- \im r}$ pour $r \in \mb{R}$ ?
-
 \exercice[Tcheby mon amour]
 
 \begin{enumerate}
@@ -1175,6 +1212,72 @@ Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1-
     \item Calculer les maxima et minima $x \mapsto T_n(x)$ sur $[-1,1]$
 
 \end{enumerate}
+
+
+
+
+\exercice[Inégalité triangulaire généralisée]
+
+\begin{enumerate}
+
+\item Montrer que pour tout $n \ge 1$, pour tous $z_1 \dots z_n \in \mb{C}$, on a $\displaystyle \left|\sum_{k=1}^n z_k\right| \le \sum_{k=1}^n | z_k |$.
+
+On pourra utiliser, sans la redémontrer, l'inégalité triangulaire du cours.
+
+\item Rappeler dans quel cas $|z_1 + z_2| = |z_1| + |z_2|$.
+
+\item Montrer que s'il existe $1 \le i,j \le n$, $|z_i + z_j| < |z_i| + |z_j|$, alors $ \left|\sum_{k=1}^n z_k\right| < \sum_{k=1}^n | z_k |$ 
+
+\item Déduire de 2 et 3 à quelles conditions l'inégalité de la question 1 est une égalité. L'interpréter géométriquement.
+
+\end{enumerate}
+
+
+\exercice[Entiers de Gauss]
+
+On considère l'ensemble $\mb{Z}[\text{i}] := \{a + \text{i}b~|~a, b \in \mb{Z}\}$.
+
+\begin{enumerate}
+
+\item Montrer que si $z, z' \in \mb{Z}[\text{i}]$, alors $zz' \in \mb{Z}[\text{i}]$ et $z+z' \in \mb{Z}[\text{i}]$.
+
+\item On cherche les $z \in \mb{Z}[\text{i}] $ tels que $ \frac{1}{z} \in \mb{Z}[\text{i}]$. De tels éléments sont dits \emph{inversibles}.
+
+\begin{enumerate}
+
+\item Montrer que $\text{i}$ est inversible, mais pas de $1+ \text{i}$.
+
+\item Que dire de $|z|^2$ si $z \in \mb{Z}[\text{i}]$ ?
+
+\item Montrer que les inversibles doivent être de module 1. En déduire l'ensemble des inversibles.
+
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Fonctions réelles}
+
+\subsection{Etude de fonctions}
         
 \subsection{Fonctions circulaires réciproques}
 
@@ -1215,7 +1318,7 @@ Montrer que pour $a,b \in \mb{R}, ab \neq 1$ on a $\arctan(a) + \arctan(b) = \ar
 Simplifier la fonction $f : x \mapsto \cos 2 \arccos x$
 
 
-\section{Fonctions réelles}
+
 
 \cours 
 
@@ -1445,6 +1548,8 @@ Soit $(x,y) \in \mb{R}^2$, montrer l'équivalence suivante
 
 \end{enumerate}
 
+\subsubsection{Dérivabilité}
+
 
 \exercice[Formule de Leibniz et application]
 
@@ -1495,31 +1600,6 @@ Soit $(x,y) \in \mb{R}^2$, montrer l'équivalence suivante
 \end{enumerate}
 
 
-\exercice[Pré-images de fonctions]
-
-\begin{enumerate}
-    \item Si $f : x \mapsto x^2$, calculer 
-        $f^{-1}( [-1;4])$, $f^{-1}([-1;0])$
-        et $f^{-1}([0;4])$
-
-    \item Montrer que si $f : E \to F$ alors 
-        si $A$ et $B$ sont des parties de $F$,
-        $f^{-1}(A \cap B) = f^{-1} (A) \cap f^{-1}( B)$
-
-    \item Montrer que si $f : E \to F$ alors 
-        si $A$ et $B$ sont des parties de $F$,
-        $f^{-1}(A \cup B) = f^{-1} (A) \cup f^{-1}( B)$
-
-    \item Est-ce vrai des images directes en général ?
-
-    \item Montrer que $f : E \to F$ est injective 
-        si et seulement si $\forall A \in \mathcal{P}(E),
-        A = f^{-1}(f(A))$
-
-    \item Montrer que $f : E \to F$ est surjective 
-        si et seulement si $\forall B \in \mathcal{P}(F),
-        B = f( f^{-1} (B))$.
-\end{enumerate}
 
 \exercice[Divergence de la série harmonique]
 
@@ -1640,6 +1720,11 @@ Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f
 \item Montrer que $a \le f(a)$ et conclure.
 
 \end{enumerate}
+
+
+\exercice
+
+Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
 
 
 
