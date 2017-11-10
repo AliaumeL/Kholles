@@ -36,9 +36,9 @@
         
 \newcommand{\es}{\vspace{1\baselineskip}}
 \newcommand{\ds}{\vspace{0.4\baselineskip}}
-
+\renewcommand{\d}{\text{d}}
 \newcommand{\ex}{\operatorname{e}}
-\newcommand{\im}{\operatorname{i}}
+\newcommand{\im}{\text{i}}
 \newcommand{\mb}[1]{\mathbb{#1}}
 \newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\mf}[1]{\mathfrak{#1}}
@@ -48,7 +48,7 @@
 \newcounter{exo}
 \setcounter{exo}{1}
 
-\newcommand{\exercice}[1][\null]{\textbf{\\ \large Exercice \thesection.\theexo. \normalsize #1} \addtocounter{exo}{1}}
+\newcommand{\exercice}[1][\null]{\textbf{\\ Exercice \thesection.\theexo. #1} \addtocounter{exo}{1}}
 \newcommand{\cours}{\textbf{\ds \\ \large Questions de cours}}
 
 %%%% Corps du fichier
@@ -61,21 +61,15 @@
 \pagebreak
 
 
-\section{Logique, ensembles, applications}
+\section{Logique et algèbre}
 
 \subsection{Logique et raisonnement}
+
+\subsubsection{Quantificateurs}
 
 \exercice 
 
 Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction. A-t-on toujours $\forall x \in \mb{R}, \exists y \in \mb{R}, f(x) = y$ ? Donner la négation de cette formule. Que dire des fonctions qui vérifient $\exists y \in \mb{R}, \forall x \in \mb{R},  f(x) = y$ ?
-
-\exercice  Montrer que toute fonction $f : \mb{R} \mapsto \mb{R}$ s'écrit comme somme d'une fonction paire et d'une fonction impaire. Prouver l'unicité de cette écriture.
-
-\exercice Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
-
-\exercice
-
-Soient $A$ et $B$ deux parties de $E$. Montrer que $A \cap B = A \cup B$ implique $A = B$.
 
 \exercice[Sous-structures]
 
@@ -101,9 +95,6 @@ On se donne une proposition $P(x)$ dépendante d'un réel $x$.
         \mathbb{R}, xy = 1$ ?
 \end{enumerate}
 
-\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
-
-
 \exercice[Contre exemple à la distributivité des quantificateurs]
 
 Trouver deux propositions $P(x)$ et $Q(x)$ telles que la propriété 
@@ -119,6 +110,43 @@ $(1)$ soit vraie, mais que la propriété $(2)$ soit fausse.
 \exercice[Borne inférieure]
 
 Montrer que $\forall x \in \mb{R}, \forall y \in \mb{R}, \left[ (\forall \varepsilon > 0, x \le y + \varepsilon) \Rightarrow (x \le y) \right]$.
+
+\exercice[Croissance des fonctions]
+
+On dit que $f : I \to \mb{R}$ est croissante 
+quand elle vérifie la propriété suivante~:
+
+\begin{equation}
+    \forall (x,y) \in I^2, x \leq y \implies f(x) \leq f(y)
+\end{equation}
+
+On dit qu'une fonction $f : I \to \mb{R}$ est \emph{strictement}
+croissante quand elle vérifie la propriété de croissance avec 
+des inégalités strictes.
+
+\begin{enumerate}
+    \item Que dire si l'on remplace l'implication par une équivalence 
+        dans la définition de croissance ?
+    \item Que dire si l'on remplace l'implication par une équivalence 
+        dans la définition de la croissance stricte ?
+\end{enumerate}
+
+
+\subsubsection{Démonstrations basiques}
+
+\exercice Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
+
+
+
+\exercice  Montrer que toute fonction $f : \mb{R} \mapsto \mb{R}$ s'écrit comme somme d'une fonction paire et d'une fonction impaire. Prouver l'unicité de cette écriture.
+
+
+\exercice
+
+Soient $A$ et $B$ deux parties de $E$. Montrer que $A \cap B = A \cup B$ implique $A = B$.
+
+
+
 
 \exercice
 
@@ -171,7 +199,90 @@ On pose $P = \{ 2k ~|~ k \in \mathbb{N} \}$ et $I = \{ 2k + 1 ~|~ k \in
         dans cet exercice ?
 \end{enumerate}
 
-\subsection{Propriétés des applications}
+
+\subsection{Fonctions et ensembles}
+
+\subsubsection{Formalisme}
+
+
+\exercice 
+Soit $f : E \rightarrow E$. Soit $A \subseteq E$, on définit par récurrence la suite d'ensembles $(A_n)_{n \ge 0}$ par $A_0 = A$ puis $A_n = f(A_{n-1})$ pour $n \ge 1$. Soit $\displaystyle B = \bigcup_{n \in \mb{N}} A_n$.
+
+\begin{enumerate}
+
+\item Montrer que $f(B) \subseteq B$.
+
+\item Soit $C \subseteq E$ telle que $A \subseteq C$ et $f(C) \subseteq C$. Montrer que $B \subseteq C$.
+\end{enumerate}
+
+
+\exercice 
+
+Montrer que $D = \{ (x,y) \in \mb{R}^2 ~|~ x^2 + y^2 = 1 \}$
+ne peut pas s'écrire comme un produit cartésien $A \times B$
+avec $A$ et $B$ des parties de $\mb{R}$.
+
+
+\exercice[Fonctions indicatrices]
+
+Soit $E$ un ensemble. Si $A \subseteq E$ on pose 
+$\mathds{1}_A (x) = 0$ quand $x \not \in A$ et $\mathds{1}_A (x) = 1$ 
+quand $x \in A$.
+
+\begin{enumerate}
+    \item Justifier que si $A$ est une partie de $E$
+        $\mathds{1}_A$ est bien une fonction de $E$ dans $\{ 0, 1 \}$
+
+    \item Étant donné une fonction $f$ de $E$ dans $\{ 0, 1 \}$
+        construire un ensemble $A$ tel que $f = \mathds{1}_A$
+
+    \item En déduire une bijection entre $\mathcal{P}(E)$
+        et $E \to \{ 0, 1 \}$
+
+    \item Justifier que si $f_1$ et $f_2$ sont des 
+        fonctions de $E$ dans $\{0,1\}$ alors 
+        les opérations suivantes définissent bien 
+        une fonction de $E$ dans $\{ 0, 1\}$:
+
+
+        \begin{multicols}{2}
+            \begin{enumerate}
+                \item $\max (f_1, f_2)$
+                \item $\min (f_1, f_2)$
+                \item $f_1 \times f_1$
+                \item $1 - f_1$
+                \item $f_1 + f_2 - f_1 \times f_2$
+                \item $(f_1 - f_2)^2$
+            \end{enumerate}
+        \end{multicols}
+
+
+    \item En utilisant la bijection, étudier 
+        le sens de ces opérations dans $\mathcal{P}(E)$
+\end{enumerate}
+
+\exercice[Morphismes]
+
+Soit $f : I \to \mb{R}$ avec $I \subseteq \mb{R}$.
+On suppose que $f(x + y) = f (x) + f(y)$,
+que $0 \in I$ et que $I$ est stable par addition.
+
+\begin{enumerate}
+    \item Montrer que $f(I)$ contient $0$
+        et est stable par addition
+    \item Si on suppose de plus que $I$ est 
+        stable par soustraction, montrer 
+        que $f(I)$ est stable par soustraction.
+    \item On pose $J$ un sous ensemble de $\mb{R}$
+        stable par addition, soustraction et qui 
+        contient $0$, montrer que $f^{-1}(J)$
+        vérifie encore ces propriétés 
+\end{enumerate}
+
+
+
+
+\subsubsection{Injection, surjection, bijection}
 
 \exercice[Caractérisations des injections]
 
@@ -220,17 +331,6 @@ Montrer que pour $f : A \rightarrow B$, on a équivalence entre les trois assert
 Montrer que $f : E \to F$ est bijective si et seulement 
 si pour toute partie $A$ de $E$ on a $f(A^c) = f(A)^c$.
 
-
-\exercice[Une histoire de notations]
-
-Soit $f : E \to E$ telle que $f(f(E)) = E$,
-montrer que $f$ est surjective.
-
-\exercice
-
-Etudier les variations de la fonction $\fonction{f}{\mc{P}(E)}{\mc{P}(E)}{X}{E \smallsetminus X}$
-
-
 \exercice[Injectivité et monotonie]
 
 \begin{enumerate}
@@ -243,35 +343,20 @@ Etudier les variations de la fonction $\fonction{f}{\mc{P}(E)}{\mc{P}(E)}{X}{E \
 
 
 
+\exercice[Une histoire de notations]
 
-\exercice[Symétrie des bornes]
+Soit $f : E \to E$ telle que $f(f(E)) = E$,
+montrer que $f$ est surjective.
 
-Soit $(E, \le)$ un ensemble ordonné. On suppose que toute partie non vide et majorée de $E$ admet une borne supérieure. Montrer que toute partie non vide et minorée de $E$ admet une borne inférieure.
+\exercice 
 
-
-
-
-\exercice[Croissance des fonctions]
-
-On dit que $f : I \to \mb{R}$ est croissante 
-quand elle vérifie la propriété suivante~:
-
-\begin{equation}
-    \forall (x,y) \in I^2, x \leq y \implies f(x) \leq f(y)
-\end{equation}
-
-On dit qu'une fonction $f : I \to \mb{R}$ est \emph{strictement}
-croissante quand elle vérifie la propriété de croissance avec 
-des inégalités strictes.
-
-\begin{enumerate}
-    \item Que dire si l'on remplace l'implication par une équivalence 
-        dans la définition de croissance ?
-    \item Que dire si l'on remplace l'implication par une équivalence 
-        dans la définition de la croissance stricte ?
-\end{enumerate}
+Déterminer une bijection de $[-1,1]$ dans $\mb{R}$.
 
 
+
+
+
+\subsubsection{Cardinalité}
 
 \exercice[Finitude]
 
@@ -288,30 +373,6 @@ Une partie stable est un sous ensemble $F \subseteq E$ tel
 que $f(F) \subseteq F$. Une partie triviale est une partie $F$
 de $E$ qui est égale à $\emptyset$ ou $E$.
 
-
-
-\exercice 
-Soit $f : E \rightarrow E$. Soit $A \subseteq E$, on définit par récurrence la suite d'ensembles $(A_n)_{n \ge 0}$ par $A_0 = A$ puis $A_n = f(A_{n-1})$ pour $n \ge 1$. Soit $\displaystyle B = \bigcup_{n \in \mb{N}} A_n$.
-
-\begin{enumerate}
-
-\item Montrer que $f(B) \subseteq B$.
-
-\item Soit $C \subseteq E$ telle que $A \subseteq C$ et $f(C) \subseteq C$. Montrer que $B \subseteq C$.
-\end{enumerate}
-
-
-
-
-\exercice 
-
-Déterminer une bijection de $[-1,1]$ dans $\mb{R}$.
-
-\exercice 
-
-Montrer que $D = \{ (x,y) \in \mb{R}^2 ~|~ x^2 + y^2 = 1 \}$
-ne peut pas s'écrire comme un produit cartésien $A \times B$
-avec $A$ et $B$ des parties de $\mb{R}$.
 
 
 
@@ -387,6 +448,8 @@ Soient $A$ et $B$ deux ensembles, on suppose qu'il existe une injection $f : A \
 
 
 
+\subsubsection{Propriétés universelles}
+
 \exercice[Propriété universelle du produit]
 
 \begin{enumerate}
@@ -404,54 +467,6 @@ Montrer que $\pi_A$ et $\pi_B$ sont surjectives. Quand a-t-on injectivité de $\
 \emph{On pourra raisonner par analyse-synthèse.}
 
 \item Faire un dessin de la construction. On représentera les fonctions $\pi_A, \pi_B, f_A, f_B$ et $h$ par des flèches entre les ensembles $A, B, A \times B$ et $C$.
-
-\end{enumerate}
-
-
-\exercice[Clôtures d'une relation]
- 
- Soit $E$ un ensemble et $R \subseteq E^2$ une relation binaire. On note $\mc{R}(R)$ la plus petite relation réflexive qui contient $R$, appelée clôture réflexive de $R$. De même on note $\mc{S}(R)$ la clôture symétrique de $R$, et $\mc{T}(R)$ sa clôture transitive.\footnote{Indication générale : pour montrer que $X$ est le plus petit \emph{truc} vérifiant $P$, on procède en 2 étapes. Montrer que $X$ est un \emph{truc} vérifiant $P$. Puis montrer que tout \emph{truc} vérifiant $P$ contient $X$.}
-
-
-
-\begin{enumerate}
-
-\item Montrer que $\mc{R}(R)  = R \cup \{ (x,x) ~|~x\in E\}$.
-
-\item Montrer que $\mc{S}(R)  = R \cup \{ (y,x) ~|~(x,y)\in R\}$. A-t-on $ \mc{R}(\mc{S}(R)) = \mc{S}(\mc{R}(R))$ ?
-
-\item Soit $\fonction{f}{\mc{P}(E^2)}{\mc{P}(E^2)}{S}{S \cup \{(x,z)~|~\exists y, (x,y)\in S \text{ et }(y,z) \in S\}}$
-
-Montrer que $\mc{T}(R) = \cup_{n \ge 0} f^n(R)$ où $f^n = f \circ f \circ \cdots \circ f$ ($n$ fois) et $f^0 = \text{id}$.
-
-\emph{On prouvera par récurrence sur $n$ que $f^n(S) \subseteq R'$ pour toute $R'$ transitive contenant $R$.}
-
-\item Dans cette question on suppose $R$ symétrique et réflexive. Soit $\mc{E}(R)$ la plus petite relation d'équivalence contenant $R$. Montrer $\mc{T}(R) = \mc{E}(R)$.
-
-\emph{On utilisera la question précédente pour montrer que $\mc{T}(R)$ est une relation d'équivalence.}
-
-\item On ne fait plus d'hypothèses sur $R$. Montrer que $\mc{E}(R) = \mc{T} (\mc{S}(\mc{R}(R)))$.
-
-\item Application. Soit $E = \{1 \dots 6\}$ et $R = \{(1,2),(2,3),(5,6)\}$. Expliciter $\mc{E}(R)$ puis ses classes d'équivalence.
-
-
-\end{enumerate}
-
-\exercice[Prolongement des applications]
-
-Soient $A,B$ deux ensembles et $\mc{E} = \{(F,f)~|~F \subseteq A \text{ et } f : F \rightarrow B\}$.
-
-\begin{enumerate}
-
-\item Soit $\preccurlyeq$ défini par $(F,f) \preccurlyeq (G,g)$ ssi $F \subseteq G$ et $\forall x \in F, f(x) = g(x)$ ($g$ est un prolongement de $f$). Montrer que $\preccurlyeq$ une relation d'ordre sur $\mc{E}$.
-
-\item A quelles conditions sur $A,B$ l'ordre est-il total ?
-
-\item Montrer que $\mc{E}$ possède un plus petit élément.
-
-\item Soit $\mc{F}\subseteq \mc{E}$ un sous-ensemble totalement ordonné de $\mc{E}$. Montrer que $\mc{F}$ est majoré.
-
-\emph{Remarque : on dit que $\mc{E}$ est un ensemble inductif.}
 
 \end{enumerate}
 
@@ -508,80 +523,52 @@ Montrer qu'il existe une unique fonction $\overline{f} : \overline{A} \rightarro
 \item Faire un dessin de la construction. On représentera les fonctions $\pi, f$ et $ \overline{f}$ par des flèches entre les ensembles $A, \overline{A}$ et $B$.
 \end{enumerate}
 
-\exercice[Fonctions indicatrices]
-
-Soit $E$ un ensemble. Si $A \subseteq E$ on pose 
-$\mathds{1}_A (x) = 0$ quand $x \not \in A$ et $\mathds{1}_A (x) = 1$ 
-quand $x \in A$.
-
-\begin{enumerate}
-    \item Justifier que si $A$ est une partie de $E$
-        $\mathds{1}_A$ est bien une fonction de $E$ dans $\{ 0, 1 \}$
-
-    \item Étant donné une fonction $f$ de $E$ dans $\{ 0, 1 \}$
-        construire un ensemble $A$ tel que $f = \mathds{1}_A$
-
-    \item En déduire une bijection entre $\mathcal{P}(E)$
-        et $E \to \{ 0, 1 \}$
-
-    \item Justifier que si $f_1$ et $f_2$ sont des 
-        fonctions de $E$ dans $\{0,1\}$ alors 
-        les opérations suivantes définissent bien 
-        une fonction de $E$ dans $\{ 0, 1\}$:
 
 
-        \begin{multicols}{2}
-            \begin{enumerate}
-                \item $\max (f_1, f_2)$
-                \item $\min (f_1, f_2)$
-                \item $f_1 \times f_1$
-                \item $1 - f_1$
-                \item $f_1 + f_2 - f_1 \times f_2$
-                \item $(f_1 - f_2)^2$
-            \end{enumerate}
-        \end{multicols}
+\exercice
+
+Etudier les variations de la fonction $\fonction{f}{\mc{P}(E)}{\mc{P}(E)}{X}{E \smallsetminus X}$
 
 
-    \item En utilisant la bijection, étudier 
-        le sens de ces opérations dans $\mathcal{P}(E)$
-\end{enumerate}
 
-\exercice[Morphismes]
 
-Soit $f : I \to \mb{R}$ avec $I \subseteq \mb{R}$.
-On suppose que $f(x + y) = f (x) + f(y)$,
-que $0 \in I$ et que $I$ est stable par addition.
+
+
+\subsection{Relations}
+
+\subsubsection{Formalisme}
+
+\exercice[Clôtures d'une relation]
+ 
+ Soit $E$ un ensemble et $R \subseteq E^2$ une relation binaire. On note $\mc{R}(R)$ la plus petite relation réflexive qui contient $R$, appelée clôture réflexive de $R$. De même on note $\mc{S}(R)$ la clôture symétrique de $R$, et $\mc{T}(R)$ sa clôture transitive.\footnote{Indication générale : pour montrer que $X$ est le plus petit \emph{truc} vérifiant $P$, on procède en 2 étapes. Montrer que $X$ est un \emph{truc} vérifiant $P$. Puis montrer que tout \emph{truc} vérifiant $P$ contient $X$.}
+
+
 
 \begin{enumerate}
-    \item Montrer que $f(I)$ contient $0$
-        et est stable par addition
-    \item Si on suppose de plus que $I$ est 
-        stable par soustraction, montrer 
-        que $f(I)$ est stable par soustraction.
-    \item On pose $J$ un sous ensemble de $\mb{R}$
-        stable par addition, soustraction et qui 
-        contient $0$, montrer que $f^{-1}(J)$
-        vérifie encore ces propriétés 
+
+\item Montrer que $\mc{R}(R)  = R \cup \{ (x,x) ~|~x\in E\}$.
+
+\item Montrer que $\mc{S}(R)  = R \cup \{ (y,x) ~|~(x,y)\in R\}$. A-t-on $ \mc{R}(\mc{S}(R)) = \mc{S}(\mc{R}(R))$ ?
+
+\item Soit $\fonction{f}{\mc{P}(E^2)}{\mc{P}(E^2)}{S}{S \cup \{(x,z)~|~\exists y, (x,y)\in S \text{ et }(y,z) \in S\}}$
+
+Montrer que $\mc{T}(R) = \cup_{n \ge 0} f^n(R)$ où $f^n = f \circ f \circ \cdots \circ f$ ($n$ fois) et $f^0 = \text{id}$.
+
+\emph{On prouvera par récurrence sur $n$ que $f^n(S) \subseteq R'$ pour toute $R'$ transitive contenant $R$.}
+
+\item Dans cette question on suppose $R$ symétrique et réflexive. Soit $\mc{E}(R)$ la plus petite relation d'équivalence contenant $R$. Montrer $\mc{T}(R) = \mc{E}(R)$.
+
+\emph{On utilisera la question précédente pour montrer que $\mc{T}(R)$ est une relation d'équivalence.}
+
+\item On ne fait plus d'hypothèses sur $R$. Montrer que $\mc{E}(R) = \mc{T} (\mc{S}(\mc{R}(R)))$.
+
+\item Application. Soit $E = \{1 \dots 6\}$ et $R = \{(1,2),(2,3),(5,6)\}$. Expliciter $\mc{E}(R)$ puis ses classes d'équivalence.
+
+
 \end{enumerate}
 
 
 
-\section{Relations et Ordres}
-
-\exercice[Induction]
-
-\begin{itemize}
-    \item Définition d'un ordre partiel, d'un ordre total
-    \item Soit $E$ un ensemble totalement ordonné, 
-        est-ce que toute partie de $E$ admet un minimum ?
-        (\emph{Indication: $\mb{Q}$}) 
-    \item Montrer que toute partie non vide de $\mb{N}$ 
-        admet un plus petit élément (\emph{on admet 
-        le raisonnement par récurrence valide})
-    \item Montrer le principe de récurrence sur $\mb{N}$
-        en utilisant le fait qu'une partie non vide 
-        admet un plus petit élément
-\end{itemize}
 
 \exercice[Vision graphique]
 
@@ -639,7 +626,70 @@ Soit $f : E \to F$ une fonction.
 
 
 
-\exercice[Résolution d'équations]
+
+\subsubsection{Relations d'ordre}
+
+\exercice[Symétrie des bornes]
+
+Soit $(E, \le)$ un ensemble ordonné. On suppose que toute partie non vide et majorée de $E$ admet une borne supérieure.
+
+\begin{enumerate}
+
+\item Soit $A \neq \varnothing$ une partie minorée de $E$. Montrer que $B := \{x~|~ \forall y \in A, x \le y\}$  admet une borne supérieure.
+
+\item On va montrer que $A$ admet une borne inférieure. 
+\begin{enumerate}
+
+\item Montrer que $\sup(B)$ est un minorant de $A$. \emph{On remarquera que $A$ est contenu dans l'ensemble des majorants de $B$}.
+
+\item Montrer que $\sup(B)$ est le plus petit d'entre eux et conclure.
+
+\end{enumerate}
+
+\item On suppose maintenant que $E$ possède un plus grand et un plus petit élément. Montrer que toute partie de $E$ admet des bornes supérieure et inférieure.
+
+\end{enumerate}
+
+
+
+\exercice[Prolongement des applications]
+
+Soient $A,B$ deux ensembles et $\mc{E} = \{(F,f)~|~F \subseteq A \text{ et } f : F \rightarrow B\}$.
+
+\begin{enumerate}
+
+\item Soit $\preccurlyeq$ défini par $(F,f) \preccurlyeq (G,g)$ ssi $F \subseteq G$ et $\forall x \in F, f(x) = g(x)$ ($g$ est un prolongement de $f$). Montrer que $\preccurlyeq$ une relation d'ordre sur $\mc{E}$.
+
+\item A quelles conditions sur $A,B$ l'ordre est-il total ?
+
+\item Montrer que $\mc{E}$ possède un plus petit élément.
+
+\item Soit $\mc{F}\subseteq \mc{E}$ un sous-ensemble totalement ordonné de $\mc{E}$. Montrer que $\mc{F}$ est majoré.
+
+\emph{Remarque : on dit que $\mc{E}$ est un ensemble inductif.}
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Induction]
+
+\begin{itemize}
+    \item Définition d'un ordre partiel, d'un ordre total
+    \item Soit $E$ un ensemble totalement ordonné, 
+        est-ce que toute partie de $E$ admet un minimum ?
+        (\emph{Indication: $\mb{Q}$}) 
+    \item Montrer que toute partie non vide de $\mb{N}$ 
+        admet un plus petit élément (\emph{on admet 
+        le raisonnement par récurrence valide})
+    \item Montrer le principe de récurrence sur $\mb{N}$
+        en utilisant le fait qu'une partie non vide 
+        admet un plus petit élément
+\end{itemize}
+
+
 
 \section{Calcul algébriques, sommes, produits}
 
@@ -1594,6 +1644,20 @@ Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f
 
 
 \section{Intégration}
+
+\exercice
+
+Soit $f : [a,b] \rightarrow \mb{C}$ une fonction continue telle que $\displaystyle \left|\int_a^b f(t) \d t \right| = \int_a^b |f(t)| \d t \neq 0$.
+
+\begin{enumerate}
+
+\item Soit $\alpha = \int_a^b f(t) \d t \Big/  \left|\int_a^b f(t) \d t \right| $. Justifier qu'il existe $\theta \in \mb{R}$ tel que $\alpha = {\ex}^{\im \theta}$.
+
+\item 
+
+\item Que dire si $\int_a^b |f(t)| \d t = 0$ ?
+
+\end{enumerate}
 
 
 \end{document}
