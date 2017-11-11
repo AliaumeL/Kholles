@@ -36,8 +36,8 @@
         
 \newcommand{\es}{\vspace{1\baselineskip}}
 \newcommand{\ds}{\vspace{0.4\baselineskip}}
-\renewcommand{\d}{\text{d}}
-\newcommand{\ex}{\operatorname{e}}
+\newcommand{\di}{\mathrm{d}}
+\newcommand{\ex}{{\operatorname{e}}}
 \newcommand{\im}{\text{i}}
 \newcommand{\mb}[1]{\mathbb{#1}}
 \newcommand{\mc}[1]{\mathcal{#1}}
@@ -1730,17 +1730,163 @@ Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0
 
 \section{Intégration}
 
+\subsection{Primitives, intégrales}
+
+\subsubsection{Calculs d'intégrales}
+
 \exercice
 
-Soit $f : [a,b] \rightarrow \mb{C}$ une fonction continue telle que $\displaystyle \left|\int_a^b f(t) \d t \right| = \int_a^b |f(t)| \d t \neq 0$.
+Calculer $\displaystyle \int_{0}^{\frac{\pi}{4}} \cos^2(t) \di t$.
+
+\exercice
+
+Calculer $\displaystyle \int_{0}^{\frac{\pi}{8}} \tan(-2t) \di t$.
+
+\exercice
+
+Calculer $\displaystyle \int_{0}^{\sqrt{\ln(3)}} -t\ex^{t^2} \di t$.
+
+\exercice
+
+Calculer $\displaystyle \int_0^1 \ln(1+t^2) \di t$.
+
+
+\exercice
+
+Soit $\displaystyle I = \int_{0}^{\frac{\pi}{2}} \frac{\cos(t)}{\sqrt{1+ \cos(t) \sin(t)}} \di t$ et $\displaystyle I = \int_{0}^{\frac{\pi}{2}} \frac{\sin(t)}{\sqrt{1+ \cos(t) \sin(t)}} \di t$.
 
 \begin{enumerate}
 
-\item Soit $\alpha = \int_a^b f(t) \d t \Big/  \left|\int_a^b f(t) \d t \right| $. Justifier qu'il existe $\theta \in \mb{R}$ tel que $\alpha = {\ex}^{\im \theta}$.
+\item Montrer que $I = J$.
+
+\item Calculer $I+J$ en posant $u = \sin(t) - \cos(t)$. En déduire $I$.
+
+\end{enumerate}
+
+
+\exercice
+Montrer que $\displaystyle \int_{0}^{\sqrt{3}} \arcsin \frac{2t}{1+t^2} \di t = \frac{\pi}{\sqrt{3}}$.
+
+\emph{Indication : on pourra intégrer par parties le facteur 1 multipliant l'arc.}
+
+
+\exercice
+
+Monter que $\displaystyle \int_{\frac{1}{2}}^2 \left(1+\frac{1}{t^2}\right) \arctan (t) \di t = \frac{3 \pi}{4}$.
+
+\emph{Indication : commencer par poser $u = 1/t$}
+
+
+\exercice
+
+Soit $a<b$. Montrer que $\displaystyle \int_{a}^b \frac{\di t}{\sqrt{(b-t)(t-a)}} = \int_{0}^1 \frac{\di u}{\sqrt{u(1-u)}}$ puis calculer sa valeur.
+
+\subsubsection{Suites d'intégrales}
+
+
+\exercice[Wallis]
+
+\exercice[Puissances de $\ln$]
+
+Pour $n \ge 0$ soit $\displaystyle I_n := \int_{1}^{\ex} \ln(t)^n {\di} t$.
+
+\begin{enumerate}
+
+\item Calculer $I_0$ et $I_1$.
+
+\item Montrer (sans calcul) que la suite $(I_n)_n$ possède une limite.
+
+\item Etablir une relation de récurrence liant $I_{n+1}$ et $I_n$.
+
+\item Montrer que $\forall n \ge 0$, $0<I_n<\frac{e}{n+1}$ et en déduire $\lim_n I_n$.
+
+\item Montrer que $I_n = (-1)^n(a_n \ex - n!)$ où $(a_n)_{n \ge 0}$ est une suite d'entiers $>0$ vérifiant une relation de récurrence que l'on explicitera.
+
+\end{enumerate}
+
+\subsubsection{Intégrales fonction des bornes}
+
+
+\exercice
+
+Soit $ \fonction{f}{\mb{R^*_+}}{\mb{R}}{x}{\displaystyle \int_x^{2x} \frac{\ex^t}{t}}$.
+
+\begin{enumerate}
+
+\item Montrer que $f$ est dérivable et calculer sa dérivée.
+
+\item En remarquant que pour $x>0$, $\forall t \in [x,2x]$, $\displaystyle \frac{\ex^x}{t} \le \frac{\ex^t}{t} \le \frac{\ex^{2x}}{t} $, déterminer $\displaystyle \lim_{x \rightarrow 0^+} f(x)$.
+
+\end{enumerate}
+
+\exercice
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue. Déterminer $\displaystyle \lim_{x \rightarrow 0^+} \frac{1}{x} \int_0^x f(t) \di t$.
+
+\emph{Indication : introduire une primitive de $f$.}
+
+
+
+\exercice[Convolution fonction des bornes]
+
+Soit $g : \mb{R} \rightarrow \mb{R}$ une fonction continue. On pose $f(x) = \displaystyle \int_0^x \sin(x-t) g(t) \di t$.
+
+\begin{enumerate}
+
+\item Montrer que $f$ est dérivable et que $f'(x) =  \displaystyle \int_0^x \cos(x-t) g(t) \di t$.
+
+\item Montrer que $f$ est deux fois dérivable et qu'elle vérifie $f'' + f = g(x)$.
+
+\item Montrer que $f$ est de classe $\mc{C}^\infty$.
+
+\end{enumerate}
+
+
+\subsubsection{Applications}
+
+\exercice[Comparaison série-intégrale]
+
+\begin{enumerate}
+
+\item Que vaut $\displaystyle \lim_{n \rightarrow + \infty} \int_1^{n} \frac{1}{t} \di  t$ ?
+
+\item Si $k \ge 2$, montrer que $ \displaystyle \int_{k-1}^{k} \frac{1}{t} \di  t \le \frac{1}{k} \le \int_{k}^{k+1} \frac{1}{t} \di  t$.
+
+\item En déduire $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{k}$. Comparer avec $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{2^k}$.
+\end{enumerate}
+
+
+\subsection{Equations différentielles}
+
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle $y' + 2y = x^2$.
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle  $y' + y=2 \sin(x)$.
+
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle $(x^2+1)y'+2xy+1=0$
+
+
+
+
+
+\exercice
+
+Soit $f : [a,b] \rightarrow \mb{C}$ une fonction continue telle que $\displaystyle \left|\int_a^b f(t) \di t \right| = \int_a^b |f(t)| \di t \neq 0$.
+
+\begin{enumerate}
+
+\item Soit $\alpha = \int_a^b f(t) \di t \Big/  \left|\int_a^b f(t) \di t \right| $. Justifier qu'il existe $\theta \in \mb{R}$ tel que $\alpha = {\ex}^{\im \theta}$.
 
 \item 
 
-\item Que dire si $\int_a^b |f(t)| \d t = 0$ ?
+\item Que dire si $\int_a^b |f(t)| \di t = 0$ ?
 
 \end{enumerate}
 
