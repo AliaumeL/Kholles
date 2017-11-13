@@ -36,9 +36,9 @@
         
 \newcommand{\es}{\vspace{1\baselineskip}}
 \newcommand{\ds}{\vspace{0.4\baselineskip}}
-
-\newcommand{\ex}{\operatorname{e}}
-\newcommand{\im}{\operatorname{i}}
+\newcommand{\di}{\mathrm{d}}
+\newcommand{\ex}{{\operatorname{e}}}
+\newcommand{\im}{\text{i}}
 \newcommand{\mb}[1]{\mathbb{#1}}
 \newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\mf}[1]{\mathfrak{#1}}
@@ -48,7 +48,7 @@
 \newcounter{exo}
 \setcounter{exo}{1}
 
-\newcommand{\exercice}[1][\null]{\textbf{\\ \large Exercice \thesection.\theexo. \normalsize #1} \addtocounter{exo}{1}}
+\newcommand{\exercice}[1][\null]{\textbf{\\ Exercice \thesection.\theexo. #1} \addtocounter{exo}{1}}
 \newcommand{\cours}{\textbf{\ds \\ \large Questions de cours}}
 
 %%%% Corps du fichier
@@ -56,26 +56,28 @@
 
 \begin{document}
 
+
+
+\title{Exercices détaillés de MSPI}
+
+\author{Aliaume Lopez \& Gaëtan Douéneau}
+
+\maketitle
+
 \tableofcontents
 
 \pagebreak
 
 
-\section{Logique, ensembles, applications}
+\section{Logique et algèbre}
 
 \subsection{Logique et raisonnement}
+
+\subsubsection{Quantificateurs}
 
 \exercice 
 
 Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction. A-t-on toujours $\forall x \in \mb{R}, \exists y \in \mb{R}, f(x) = y$ ? Donner la négation de cette formule. Que dire des fonctions qui vérifient $\exists y \in \mb{R}, \forall x \in \mb{R},  f(x) = y$ ?
-
-\exercice  Montrer que toute fonction $f : \mb{R} \mapsto \mb{R}$ s'écrit comme somme d'une fonction paire et d'une fonction impaire. Prouver l'unicité de cette écriture.
-
-\exercice Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
-
-\exercice
-
-Soient $A$ et $B$ deux parties de $E$. Montrer que $A \cap B = A \cup B$ implique $A = B$.
 
 \exercice[Sous-structures]
 
@@ -101,9 +103,6 @@ On se donne une proposition $P(x)$ dépendante d'un réel $x$.
         \mathbb{R}, xy = 1$ ?
 \end{enumerate}
 
-\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
-
-
 \exercice[Contre exemple à la distributivité des quantificateurs]
 
 Trouver deux propositions $P(x)$ et $Q(x)$ telles que la propriété 
@@ -119,6 +118,43 @@ $(1)$ soit vraie, mais que la propriété $(2)$ soit fausse.
 \exercice[Borne inférieure]
 
 Montrer que $\forall x \in \mb{R}, \forall y \in \mb{R}, \left[ (\forall \varepsilon > 0, x \le y + \varepsilon) \Rightarrow (x \le y) \right]$.
+
+\exercice[Croissance des fonctions]
+
+On dit que $f : I \to \mb{R}$ est croissante 
+quand elle vérifie la propriété suivante~:
+
+\begin{equation}
+    \forall (x,y) \in I^2, x \leq y \implies f(x) \leq f(y)
+\end{equation}
+
+On dit qu'une fonction $f : I \to \mb{R}$ est \emph{strictement}
+croissante quand elle vérifie la propriété de croissance avec 
+des inégalités strictes.
+
+\begin{enumerate}
+    \item Que dire si l'on remplace l'implication par une équivalence 
+        dans la définition de croissance ?
+    \item Que dire si l'on remplace l'implication par une équivalence 
+        dans la définition de la croissance stricte ?
+\end{enumerate}
+
+
+\subsubsection{Démonstrations basiques}
+
+\exercice Donner les fonctions $f : \mb{N} \rightarrow \mb{N}$ telles que pour tous $a,b$ dans $\mb{N}$, $f(a+b) = f(a)+f(b)$.
+
+
+
+\exercice  Montrer que toute fonction $f : \mb{R} \mapsto \mb{R}$ s'écrit comme somme d'une fonction paire et d'une fonction impaire. Prouver l'unicité de cette écriture.
+
+
+\exercice
+
+Soient $A$ et $B$ deux parties de $E$. Montrer que $A \cap B = A \cup B$ implique $A = B$.
+
+
+
 
 \exercice
 
@@ -136,7 +172,7 @@ Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction $T$-périodique pour tout $T \
 
 \item Montrer que $\sqrt{2} \not \in \mb{Q}$.
 
-\item On veut montrer quet $\exists x, y \not \in \mb{Q}, x^y \in \mb{Q}$.
+\item On veut montrer que $\exists x, y \not \in \mb{Q}, x^y \in \mb{Q}$.
 
 \begin{enumerate}
 
@@ -171,44 +207,36 @@ On pose $P = \{ 2k ~|~ k \in \mathbb{N} \}$ et $I = \{ 2k + 1 ~|~ k \in
         dans cet exercice ?
 \end{enumerate}
 
-\subsection{Ensembles et applications}
 
-\exercice[Croissance des fonctions]
+\subsection{Fonctions et ensembles}
 
-On dit que $f : I \to \mb{R}$ est croissante 
-quand elle vérifie la propriété suivante~:
+\subsubsection{Formalisme}
 
-\begin{equation}
-    \forall (x,y) \in I^2, x \leq y \implies f(x) \leq f(y)
-\end{equation}
-
-On dit qu'une fonction $f : I \to \mb{R}$ est \emph{strictement}
-croissante quand elle vérifie la propriété de croissance avec 
-des inégalités strictes.
+\exercice[Pré-images de fonctions]
 
 \begin{enumerate}
-    \item Que dire si l'on remplace l'implication par une équivalence 
-        dans la définition de croissance ?
-    \item Que dire si l'on remplace l'implication par une équivalence 
-        dans la définition de la croissance stricte ?
+    \item Si $f : x \mapsto x^2$, calculer 
+        $f^{-1}( [-1;4])$, $f^{-1}([-1;0])$
+        et $f^{-1}([0;4])$
+
+    \item Montrer que si $f : E \to F$ alors 
+        si $A$ et $B$ sont des parties de $F$,
+        $f^{-1}(A \cap B) = f^{-1} (A) \cap f^{-1}( B)$
+
+    \item Montrer que si $f : E \to F$ alors 
+        si $A$ et $B$ sont des parties de $F$,
+        $f^{-1}(A \cup B) = f^{-1} (A) \cup f^{-1}( B)$
+
+    \item Est-ce vrai des images directes en général ?
+
+    \item Montrer que $f : E \to F$ est injective 
+        si et seulement si $\forall A \in \mathcal{P}(E),
+        A = f^{-1}(f(A))$
+
+    \item Montrer que $f : E \to F$ est surjective 
+        si et seulement si $\forall B \in \mathcal{P}(F),
+        B = f( f^{-1} (B))$.
 \end{enumerate}
-
-
-
-\exercice[Finitude]
-
-Soit $E$ un ensemble, montrer que les deux propositions suivantes 
-sont équivalentes~:
-
-\begin{enumerate}[(i)]
-    \item $E$ est fini
-    \item Toute fonction $f : E \to E$ admet une partie stable non 
-        triviale
-\end{enumerate}
-
-Une partie stable est un sous ensemble $F \subseteq E$ tel 
-que $f(F) \subseteq F$. Une partie triviale est une partie $F$
-de $E$ qui est égale à $\emptyset$ ou $E$.
 
 
 
@@ -223,179 +251,12 @@ Soit $f : E \rightarrow E$. Soit $A \subseteq E$, on définit par récurrence la
 \end{enumerate}
 
 
-
-
-\exercice 
-
-Déterminer une bijection de $[-1,1]$ dans $\mb{R}$.
-
 \exercice 
 
 Montrer que $D = \{ (x,y) \in \mb{R}^2 ~|~ x^2 + y^2 = 1 \}$
 ne peut pas s'écrire comme un produit cartésien $A \times B$
 avec $A$ et $B$ des parties de $\mb{R}$.
 
-
-
-\exercice[Ensembles dénombrables]
-
-\begin{enumerate}
-
-\item Expliciter une bijection $f$ entre $\mb{N}$ et $\mb{Z}$.
-
-\item Soit $\fonction{g}{\mb{N}^2}{\mb{N}}{(i,j)}{ i + \sum_{k=0}^{i+j} k}$.
-
-\begin{enumerate}
-
-\item Calculer $g(i,j)$ pour les $i,j$ tels que $i+j \le 3$, puis représenter les valeurs obtenues sur le plan $\mb{N}^2$. Décrire par un dessin le comportement général de $g$.
-
-\item Montrer que $g$ est surjective.
-
-\emph{Pour trouver un antécédent de $n$, on pourra considérer $p := \min \left\{ p \in \mb{N}~|~ \sum_{k=0}^{p} k \le n\right\}$}.
-
-\item Montrer que $g$ est injective.
-
-\end{enumerate}
-
-\item En remarquant que $\forall n \ge 1$, $\mb{N}^{n+1} = \mb{N}^n \times \mb{N}$, construire par récurrence sur $n > 0$ une bijection entre $\mb{N}$ et $\mb{N}^n$.
-
-\end{enumerate}
-
-
-
-
-\exercice[Argument diagonal]
-
-\begin{enumerate}
-
-\item Donner une injection de $\mb{N}$ dans $\{0,1\}^{\mb{N}}$ (suites à valeurs dans $\{0,1\}$).
-
-\item On va montrer que  $\mb{N}$ et $\{0,1\}^{\mb{N}}$ ne sont pas en bijection. Soit $f : \mb{N} \rightarrow \{0,1\}^{\mb{N}}$, on pose $(u_{n,i})_{i \in \mb{N}} := f(n)$ pour $n \in \mb{N}$.
-
-\begin{enumerate}
-
-\item Soit la suite $(v_i)_{i \in \mb{N}}$ définie par $v_i := 1 - u_{i,i}$. Justifier que $(v_i)_{i \in \mb{N}} \in \{0,1\}^{\mb{N}}$. 
-
-\item Montrer que $\forall n \in \mb{N}$, $ f(n)\neq (v_i )_{i \in \mb{N}}$.
-
-\item Conclure.
-
-\end{enumerate}
-
-\end{enumerate}
-
-
-
-
-\exercice[Théorème de Cantor-Bernstein]
-
-Soient $A$ et $B$ deux ensembles, on suppose qu'il existe une injection $f : A \rightarrow B$ et une injection $g : B \rightarrow A$. L'objectif est de montrer qu'il existe une bijection $h : A \rightarrow B$.
-
-\begin{enumerate}
-
-\item 
-
-\end{enumerate}
-
-
-
-
-
-
-\exercice[Propriété universelle du produit]
-
-\begin{enumerate}
-
-\item Si $A$ et $B$ sont deux ensembles finis, quel est le cardinal de $A \times B$ ?
-
-\item Soient $A$ et $B$ deux ensembles non vides.
-
-On pose $\fonction{\pi_A}{A\times B}{A}{(a,b)}{a}$ et $\fonction{\pi_B}{A\times B}{A}{(a,b)}{b}$.
-
-Montrer que $\pi_A$ et $\pi_B$ sont surjectives. Quand a-t-on injectivité de $\pi_A$ ?
-
-\item Soit $C$ un ensemble et deux fonctions $f_A : C \rightarrow A$ et $f_B : C \rightarrow B$. Montrer qu'il existe une unique fonction $h : C \rightarrow A \times B$ telle que $\pi_A \circ h = f_A$ et $\pi_B \circ h = f_B$. 
-
-\emph{On pourra raisonner par analyse-synthèse.}
-
-\item Faire un dessin de la construction. On représentera les fonctions $\pi_A, \pi_B, f_A, f_B$ et $h$ par des flèches entre les ensembles $A, B, A \times B$ et $C$.
-
-\end{enumerate}
-
-
-
-
-
-\exercice[Propriété universelle du coproduit]
-
- Si $A$ et $B$ sont deux ensembles, on définit l'union disjointe $A \uplus B := \{0\} \times A \cup \{1\} \times B $
-
-\begin{enumerate}
-
-\item Si $A$ et $B$ sont deux ensembles finis, quel est le cardinal de $A \uplus B$ ? Celui de $A \times B$ ?
-\item Soient $A$ et $B$ deux ensembles.
-
-On pose $\fonction{\mu_A}{A}{A\uplus B}{a}{(0,a)}$ et $\fonction{\pi_B}{B}{A\uplus B}{b}{(1,b)}$.
-
-Montrer que $\mu_A$ et $\mu_B$ sont injectives. Quand a-t-on surjectivité de $\mu_A$ ?
-
-\item Soit $C$ un ensemble, et deux fonctions $f_A : A \rightarrow C$ et $f_B : B \rightarrow C$. Montrer qu'il existe une unique fonction $h : A \uplus B \rightarrow C$ telle que $h \circ \mu_A  = f_A$ et $h \circ \mu_B  = f_B$. 
-
-\emph{On pourra raisonner par analyse-synthèse.}
-
-\item Faire un dessin de la construction. On représentera les fonctions $\mu_A, \mu_B, f_A, f_B$ et $h$ par des flèches entre les ensembles $A, B, A \times B$ et $C$.
-
-\end{enumerate}
-
-
-\exercice[Propriété universelle du quotient]
-
-Soit $A$ un ensemble et $(A_i)_{i \in I}$ une partition de $A$ avec $A_i \neq \varnothing$.
-
-\begin{enumerate}
-
-\item Rappeler la définition d'une partition.
-
-\item On note $\overline{A} = \{X_i~|~i \in I\}$ et $\fonction{\pi}{A}{\overline{A}}{x}{A_i \text{ tel que } x \in A_i}$.
-
-\begin{enumerate}
-
-\item Décrire (patates) $\overline{A}$ et $\pi$ dans le cas où $A = \{0,1,2\}$ partitionné en $\{1\}$ et $\{2\}$.
-
-\item Dans le cas général, pourquoi $\pi$ est-elle bien définie ?
-
-\item Montrer que $\pi$ est surjective.
-
-\end{enumerate}
-
-\item Soit $B$ un ensemble et $f : A\rightarrow B$ telle que $\forall i \in I$, $\forall x, y \in X_i$, $f(x) = f(y)$ ($f$ est constante sur chaque morceau de la partition).
-
-Montrer qu'il existe une unique fonction $\overline{f} : \overline{A} \rightarrow B$ telle que $f = \overline{f} \circ \pi$.
-
-\emph{On pourra raisonner par analyse-synthèse.}
-
-\item Faire un dessin de la construction. On représentera les fonctions $\pi, f$ et $ \overline{f}$ par des flèches entre les ensembles $A, \overline{A}$ et $B$.
-\end{enumerate}
-
-
-\exercice[Épi/mono]
-
-\begin{enumerate}
-    \item Montrer que $f: E \to F$ est surjective 
-        si et seulement si 
-        pour toute paire $(g,h)$ de fonctions de $F$ vers $G$
-        on a $g \circ f = h \circ f \implies g = h$.
-
-    \item Montrer que $f : E \to F$ est injective 
-        si et seulement si 
-        pour toute parie $(g,h)$ de foncitons de $G$ vers $E$
-        on a $f \circ g = f \circ h \implies g = h$.
-\end{enumerate}
-
-\exercice[Bijectivité]
-
-Montrer que $f : E \to F$ est bijective si et seulement 
-si pour toute partie $A$ de $E$ on a $f(A^c) = f(A)^c$.
 
 \exercice[Fonctions indicatrices]
 
@@ -455,27 +316,294 @@ que $0 \in I$ et que $I$ est stable par addition.
 
 
 
+
+\subsubsection{Injection, surjection, bijection}
+
+\exercice[Caractérisations des injections]
+
+Montrer que pour $f : A \rightarrow B$, on a équivalence entre les trois assertions suivantes.
+
+\begin{itemize}
+
+\item $f$ est injective ;
+
+\item pour tout $X,Y \subseteq A$, $f(X \cap Y) = f(X) \cap f(Y)$ ;
+
+\item pour tout $X \subseteq A$, $f^{-1}(f(X)) = X$.
+
+\end{itemize} 
+
+\exercice[Épi/mono]
+
+\begin{enumerate}
+    \item Montrer que $f: E \to F$ est surjective 
+        si et seulement si 
+        pour toute paire $(g,h)$ de fonctions de $F$ vers $G$
+        on a $g \circ f = h \circ f \implies g = h$.
+
+    \item Montrer que $f : E \to F$ est injective 
+        si et seulement si 
+        pour toute parie $(g,h)$ de foncitons de $G$ vers $E$
+        on a $f \circ g = f \circ h \implies g = h$.
+\end{enumerate}
+
+
+
+\exercice[Axiome du choix \dots{} ou pas]
+
+\begin{enumerate}
+
+\item Monter que $f : E \rightarrow F$ est injective, si et seulement si, il existe $g : F \rightarrow E$ telle que $f \circ g = \text{id}_E$.
+
+\item Monter que $f : E \rightarrow F$ est surjective, si et seulement si, il existe $g : F \rightarrow E$ telle que $g \circ f = \text{id}_F$.
+
+\end{enumerate}
+
+
+
+\exercice[Bijectivité]
+
+Montrer que $f : E \to F$ est bijective si et seulement 
+si pour toute partie $A$ de $E$ on a $f(A^c) = f(A)^c$.
+
+\exercice[Injectivité et monotonie]
+
+\begin{enumerate}
+
+\item Soit $f : \mb{R} \rightarrow \mb{R}$ strictement monotone. Montrer qu'elle est injective.
+
+\item A-t-on la réciproque ? Et si on impose que $f$ soit continue ?
+
+\end{enumerate}
+
+
+
 \exercice[Une histoire de notations]
 
 Soit $f : E \to E$ telle que $f(f(E)) = E$,
 montrer que $f$ est surjective.
 
-\section{Relations et Ordres}
+\exercice 
 
-\exercice[Induction]
+Déterminer une bijection de $[-1,1]$ dans $\mb{R}$.
 
-\begin{itemize}
-    \item Définition d'un ordre partiel, d'un ordre total
-    \item Soit $E$ un ensemble totalement ordonné, 
-        est-ce que toute partie de $E$ admet un minimum ?
-        (\emph{Indication: $\mb{Q}$}) 
-    \item Montrer que toute partie non vide de $\mb{N}$ 
-        admet un plus petit élément (\emph{on admet 
-        le raisonnement par récurrence valide})
-    \item Montrer le principe de récurrence sur $\mb{N}$
-        en utilisant le fait qu'une partie non vide 
-        admet un plus petit élément
-\end{itemize}
+
+
+
+
+\subsubsection{Cardinalité}
+
+\exercice[Finitude]
+
+Soit $E$ un ensemble, montrer que les deux propositions suivantes 
+sont équivalentes~:
+
+\begin{enumerate}[(i)]
+    \item $E$ est fini
+    \item Toute fonction $f : E \to E$ admet une partie stable non 
+        triviale
+\end{enumerate}
+
+Une partie stable est un sous ensemble $F \subseteq E$ tel 
+que $f(F) \subseteq F$. Une partie triviale est une partie $F$
+de $E$ qui est égale à $\emptyset$ ou $E$.
+
+
+
+
+\exercice[Ensembles dénombrables]
+
+\begin{enumerate}
+
+\item Expliciter une bijection $f$ entre $\mb{N}$ et $\mb{Z}$.
+
+\item Soit $\fonction{g}{\mb{N}^2}{\mb{N}}{(i,j)}{ i + \sum_{k=0}^{i+j} k}$.
+
+\begin{enumerate}
+
+\item Calculer $g(i,j)$ pour les $i,j$ tels que $i+j \le 3$, puis représenter les valeurs obtenues sur le plan $\mb{N}^2$. Décrire par un dessin le comportement général de $g$.
+
+\item Montrer que $g$ est surjective.
+
+\emph{Pour trouver un antécédent de $n$, on pourra considérer $p := \min \left\{ p \in \mb{N}~|~ \sum_{k=0}^{p} k \le n\right\}$}.
+
+\item Montrer que $g$ est injective.
+
+\end{enumerate}
+
+\item En remarquant que $\forall n \ge 1$, $\mb{N}^{n+1} = \mb{N}^n \times \mb{N}$, construire par récurrence sur $n > 0$ une bijection entre $\mb{N}$ et $\mb{N}^n$.
+
+\end{enumerate}
+
+
+
+
+\exercice[Argument diagonal]
+
+\begin{enumerate}
+
+\item Donner une injection $g$ de $\mb{N}$ dans $\{0,1\}^{\mb{N}}$ (suites à valeurs dans $\{0,1\}$).
+
+\item On va montrer qu'il n'existe pas de fonction surjective de $\mb{N}$ dans $\{0,1\}^{\mb{N}}$.
+
+Soit $f : \mb{N} \rightarrow \{0,1\}^{\mb{N}}$, on pose $(u_{n,i})_{i \in \mb{N}} := f(n)$ pour $n \in \mb{N}$.
+
+\begin{enumerate}
+
+\item Expliciter $(u_{n,i})_{i \in \mb{N}}$ pour $n \ge 0$, dans le cas où $f = g$ de la question précédente.
+
+\item Soit la suite $(v_i)_{i \in \mb{N}}$ définie par $v_i := 1 - u_{i,i}$. Justifier que $(v_i)_{i \in \mb{N}} \in \{0,1\}^{\mb{N}}$. 
+
+\item Montrer que $\forall n \in \mb{N}$, $ f(n)\neq (v_i )_{i \in \mb{N}}$.
+
+\item Conclure quant à la surjectivité de $f$ ? $\mb{N}$ et $\{0,1\}^{\mb{N}}$ peuvent-ils être en bijection ?
+
+\end{enumerate}
+
+\item Existe-t-il une surjection de $\mb{N}$ dans $\mc{P}(\mb{N})$ ?
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Théorème de Cantor-Bernstein]
+
+Soient $A$ et $B$ deux ensembles, on suppose qu'il existe une injection $f : A \rightarrow B$ et une injection $g : B \rightarrow A$. L'objectif est de montrer qu'il existe une bijection $h : A \rightarrow B$.
+
+\begin{enumerate}
+
+\item 
+
+\end{enumerate}
+
+
+
+
+
+
+\subsubsection{Propriétés universelles}
+
+\exercice[Propriété universelle du produit]
+
+\begin{enumerate}
+
+\item Si $A$ et $B$ sont deux ensembles finis, quel est le cardinal de $A \times B$ ?
+
+\item Soient $A$ et $B$ deux ensembles non vides.
+
+On pose $\fonction{\pi_A}{A\times B}{A}{(a,b)}{a}$ et $\fonction{\pi_B}{A\times B}{A}{(a,b)}{b}$.
+
+Montrer que $\pi_A$ et $\pi_B$ sont surjectives. Quand a-t-on injectivité de $\pi_A$ ?
+
+\item Soit $C$ un ensemble et deux fonctions $f_A : C \rightarrow A$ et $f_B : C \rightarrow B$. Montrer qu'il existe une unique fonction $h : C \rightarrow A \times B$ telle que $\pi_A \circ h = f_A$ et $\pi_B \circ h = f_B$. 
+
+\emph{On pourra raisonner par analyse-synthèse.}
+
+\item Faire un dessin de la construction. On représentera les fonctions $\pi_A, \pi_B, f_A, f_B$ et $h$ par des flèches entre les ensembles $A, B, A \times B$ et $C$.
+
+\end{enumerate}
+
+
+
+\exercice[Propriété universelle du coproduit]
+
+ Si $A$ et $B$ sont deux ensembles, on définit l'union disjointe $A \uplus B := \{0\} \times A \cup \{1\} \times B $
+
+\begin{enumerate}
+
+\item Si $A$ et $B$ sont deux ensembles finis, quel est le cardinal de $A \uplus B$ ? Celui de $A \times B$ ?
+\item Soient $A$ et $B$ deux ensembles.
+
+On pose $\fonction{\mu_A}{A}{A\uplus B}{a}{(0,a)}$ et $\fonction{\pi_B}{B}{A\uplus B}{b}{(1,b)}$.
+
+Montrer que $\mu_A$ et $\mu_B$ sont injectives. Quand a-t-on surjectivité de $\mu_A$ ?
+
+\item Soit $C$ un ensemble, et deux fonctions $f_A : A \rightarrow C$ et $f_B : B \rightarrow C$. Montrer qu'il existe une unique fonction $h : A \uplus B \rightarrow C$ telle que $h \circ \mu_A  = f_A$ et $h \circ \mu_B  = f_B$. 
+
+\emph{On pourra raisonner par analyse-synthèse.}
+
+\item Faire un dessin de la construction. On représentera les fonctions $\mu_A, \mu_B, f_A, f_B$ et $h$ par des flèches entre les ensembles $A, B, A \times B$ et $C$.
+
+\end{enumerate}
+
+
+\exercice[Propriété universelle du quotient]
+
+Soit $A$ un ensemble et $\sim$ une relation d'équivalence sur $A$.
+
+\begin{enumerate}
+
+\item Montrer que les classes d'équivalence de $\sim$ forment une partition $(A_i)_{i \in I}$ de $A$. Dans la suite, on note $\overline{A} = \{A_i~|~i \in I\}$ l'ensemble des classes.
+
+\item Soit $\fonction{\pi}{A}{\overline{A}}{x}{A_i \text{ tel que } x \in A_i}$.
+
+\begin{enumerate}
+
+\item Représenter (patates) $\overline{A}$ et $\pi$ dans le cas où $A = \{0,1,2\}$ avec $0 \sim 2$ et $1 \not \sim 2$.
+
+\item Dans le cas général, pourquoi $\pi$ est-elle bien définie ?
+
+\item Montrer que $\pi$ est surjective.
+
+\end{enumerate}
+
+\item Soit $B$ un ensemble et $f : A\rightarrow B$ telle que $\forall x,y \in A$, $x \sim y \Rightarrow f(x) = f(y)$.
+
+Montrer qu'il existe une unique fonction $\overline{f} : \overline{A} \rightarrow B$ telle que $f = \overline{f} \circ \pi$.
+
+\emph{On pourra raisonner par analyse-synthèse.}
+
+\item Faire un dessin de la construction. On représentera les fonctions $\pi, f$ et $ \overline{f}$ par des flèches entre les ensembles $A, \overline{A}$ et $B$.
+\end{enumerate}
+
+
+
+\exercice
+
+Etudier les variations de la fonction $\fonction{f}{\mc{P}(E)}{\mc{P}(E)}{X}{E \smallsetminus X}$
+
+
+
+
+
+
+\subsection{Relations}
+
+\subsubsection{Formalisme}
+
+\exercice[Clôtures d'une relation]
+ 
+ Soit $E$ un ensemble et $R \subseteq E^2$ une relation binaire. On note $\mc{R}(R)$ la plus petite relation réflexive qui contient $R$, appelée clôture réflexive de $R$. De même on note $\mc{S}(R)$ la clôture symétrique de $R$, et $\mc{T}(R)$ sa clôture transitive.\footnote{Indication générale : pour montrer que $X$ est le plus petit \emph{truc} vérifiant $P$, on procède en 2 étapes. Montrer que $X$ est un \emph{truc} vérifiant $P$. Puis montrer que tout \emph{truc} vérifiant $P$ contient $X$.}
+
+
+
+\begin{enumerate}
+
+\item Montrer que $\mc{R}(R)  = R \cup \{ (x,x) ~|~x\in E\}$.
+
+\item Montrer que $\mc{S}(R)  = R \cup \{ (y,x) ~|~(x,y)\in R\}$. A-t-on $ \mc{R}(\mc{S}(R)) = \mc{S}(\mc{R}(R))$ ?
+
+\item Soit $\fonction{f}{\mc{P}(E^2)}{\mc{P}(E^2)}{S}{S \cup \{(x,z)~|~\exists y, (x,y)\in S \text{ et }(y,z) \in S\}}$
+
+Montrer que $\mc{T}(R) = \cup_{n \ge 0} f^n(R)$ où $f^n = f \circ f \circ \cdots \circ f$ ($n$ fois) et $f^0 = \text{id}$.
+
+\emph{On prouvera par récurrence sur $n$ que $f^n(S) \subseteq R'$ pour toute $R'$ transitive contenant $R$.}
+
+\item Dans cette question on suppose $R$ symétrique et réflexive. Soit $\mc{E}(R)$ la plus petite relation d'équivalence contenant $R$. Montrer $\mc{T}(R) = \mc{E}(R)$.
+
+\emph{On utilisera la question précédente pour montrer que $\mc{T}(R)$ est une relation d'équivalence.}
+
+\item On ne fait plus d'hypothèses sur $R$. Montrer que $\mc{E}(R) = \mc{T} (\mc{S}(\mc{R}(R)))$.
+
+\item Application. Soit $E = \{1 \dots 6\}$ et $R = \{(1,2),(2,3),(5,6)\}$. Expliciter $\mc{E}(R)$ puis ses classes d'équivalence.
+
+
+\end{enumerate}
+
+
+
 
 \exercice[Vision graphique]
 
@@ -530,10 +658,79 @@ Soit $f : E \to F$ une fonction.
 
 \end{itemize}
 
-\section{Calcul algébriques, sommes, produits}
 
 
-\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
+
+
+\subsubsection{Relations d'ordre}
+
+\exercice[Symétrie des bornes]
+
+Soit $(E, \le)$ un ensemble ordonné. On suppose que toute partie non vide et majorée de $E$ admet une borne supérieure.
+
+\begin{enumerate}
+
+\item Soit $A \neq \varnothing$ une partie minorée de $E$. Montrer que $B := \{x~|~ \forall y \in A, x \le y\}$  admet une borne supérieure.
+
+\item On va montrer que $A$ admet une borne inférieure. 
+\begin{enumerate}
+
+\item Montrer que $\sup(B)$ est un minorant de $A$. \emph{On remarquera que $A$ est contenu dans l'ensemble des majorants de $B$}.
+
+\item Montrer que $\sup(B)$ est le plus petit d'entre eux et conclure.
+
+\end{enumerate}
+
+\item On suppose maintenant que $E$ possède un plus grand et un plus petit élément. Montrer que toute partie de $E$ admet des bornes supérieure et inférieure.
+
+\end{enumerate}
+
+
+
+\exercice[Prolongement des applications]
+
+Soient $A,B$ deux ensembles et $\mc{E} = \{(F,f)~|~F \subseteq A \text{ et } f : F \rightarrow B\}$.
+
+\begin{enumerate}
+
+\item Soit $\preccurlyeq$ défini par $(F,f) \preccurlyeq (G,g)$ ssi $F \subseteq G$ et $\forall x \in F, f(x) = g(x)$ ($g$ est un prolongement de $f$). Montrer que $\preccurlyeq$ une relation d'ordre sur $\mc{E}$.
+
+\item A quelles conditions sur $A,B$ l'ordre est-il total ?
+
+\item Montrer que $\mc{E}$ possède un plus petit élément.
+
+\item Soit $\mc{F}\subseteq \mc{E}$ un sous-ensemble totalement ordonné de $\mc{E}$. Montrer que $\mc{F}$ est majoré.
+
+\emph{Remarque : on dit que $\mc{E}$ est un ensemble inductif.}
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Induction]
+
+\begin{itemize}
+    \item Définition d'un ordre partiel, d'un ordre total
+    \item Soit $E$ un ensemble totalement ordonné, 
+        est-ce que toute partie de $E$ admet un minimum ?
+        (\emph{Indication: $\mb{Q}$}) 
+    \item Montrer que toute partie non vide de $\mb{N}$ 
+        admet un plus petit élément (\emph{on admet 
+        le raisonnement par récurrence valide})
+    \item Montrer le principe de récurrence sur $\mb{N}$
+        en utilisant le fait qu'une partie non vide 
+        admet un plus petit élément
+\end{itemize}
+
+
+
+\section{Calcul algébriques}
+
+\subsection{Sommes et produits de nombres réels}
+
+\subsubsection{Calculs classiques}
 
 
 \exercice[Autour de la somme des $k$]
@@ -550,22 +747,13 @@ Notons $S_n = \sum_{k=1}^n k $ pour $n \ge 1$.
 \end{enumerate}
 
 
-
-
-\exercice[Une version simple de l'inégalité de Jensen]
-
-Soit $f: \mb{R} \mapsto \mb{R}$ une fonction vérifiant pour tous réels $x_1, x_2$ et $t \in [0,1]$
-$$f(t x_1 +(1-t) x_2) \le t f(x_1) +(1-t) f(x_2)$$  (une telle fonction est dite convexe).
-Montrer que si les $\lambda_1 \dots \lambda_n$ sont des réels positifs ou nuls tels que $\sum_{i=1}^n \lambda_i = 1$, alors pour tous réels $x_1 \dots x_n$ on a :
-$$f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i).$$
-
-\exercice[Inégalité de Bernoulli]
+\exercice
 
 \begin{enumerate}
 
-\item Montrer par récurrence que $(1+x)^n \ge 1+nx$ pour $n \ge 1$ et $x \ge -1$.
+\item Rappeler la formule reliant $\sin(2x)$ avec $\cos(x)$ et $\sin(x)$.
 
-\item Prouver ce résultat sans récurrence (pour $x \ge 0$).
+\item Soit $x \in ]0, \pi [$, simplifier $P =\displaystyle \prod_{k=0}^n \cos(2^k x)$ (on commencera par calculer $ \sin (x) \times P$).
 
 \end{enumerate}
 
@@ -585,22 +773,16 @@ Montrer que la suite $S_n$ définie ci-dessous est strictement croissante.
     \item En déduire une expression de  $T_n = \sum_{k=1}^{n} k 2^{-k+1}$
 \end{enumerate}
 
-\exercice[Encadrement de la factorielle (Gauss)]
 
-On va donner un encadrement de $n !$.
+\exercice  Calculer $\displaystyle \sum_{1 \le i, j \le n} ij$.
 
-\begin{enumerate}
+\exercice
 
-\item Montrer que $\displaystyle n! = \prod_{\substack{i,j \ge 1\\i+j = n+1}}  \sqrt{ij}$
+Montrer que $\displaystyle \sum_{i=0}^n i x^i = \frac{n x^{n+2} - (n+1)x^{n+1} +x}{(x-1)^2}$
 
-\item Montrer que pour tous $i,j \ge 1$ on a $i+j-1 \le ij \le (\frac{i+j}{2})^2$.
+\exercice
 
-\item Conclure que $n^{\frac{n}{2}} \le n ! \le (\frac{n+1}{2})^n$.
-
-\end{enumerate}
-
-
-
+Montrer que $\displaystyle \prod_{i=0}(1-a_i) \ge 1- \sum_{i=0}^n a_i$ si $0<a_i<1$.
 
 \exercice[Série harmonique]
 
@@ -616,19 +798,7 @@ Soit $ H_n := \sum_{k =1}^n 1/k$ (série harmonique).
 
 
 
-\exercice Calculer les sommes suivantes pour $n \ge 0$ et $\alpha, \beta \in \mb{R}$.
-
-\begin{enumerate}
-
-\item $\displaystyle \sum_{k=0}^n \sin(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n \cos(\alpha + k\beta)$. 
-
-\item $\displaystyle \sum_{k=0}^n {k \choose n} \sin(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n {k \choose n} \cos(\alpha + k\beta)$.
-
-\item $\displaystyle \sum_{k=0}^n \text{sh}(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n \text{ch}(\alpha + k\beta)$. 
-
-\item $\displaystyle \sum_{k=0}^n {k \choose n} \text{sh}(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n {k \choose n} \text{ch}(\alpha + k\beta)$.
-
-\end{enumerate}
+\subsubsection{Coefficients binomiaux}
 
 \exercice
 
@@ -654,24 +824,49 @@ Montrer que $\displaystyle x_n = \sum_{k=0}^n (-1)^{n-k} {n \choose k} y_k$.
 Montrer que pour tout $n \ge 0$ on a $\displaystyle \sum_{k=1}^n \frac{(-1)^{k+1}}{k} {n \choose k} = \sum_{k=0}^n \frac{1}{k}$.
 
 
-\exercice
+
+\subsubsection{Identités diverses}
+
+
+
+
+
+
+\exercice[Une version simple de l'inégalité de Jensen]
+
+Soit $f: \mb{R} \mapsto \mb{R}$ une fonction vérifiant pour tous réels $x_1, x_2$ et $t \in [0,1]$
+$$f(t x_1 +(1-t) x_2) \le t f(x_1) +(1-t) f(x_2)$$  (une telle fonction est dite convexe).
+Montrer que si les $\lambda_1 \dots \lambda_n$ sont des réels positifs ou nuls tels que $\sum_{i=1}^n \lambda_i = 1$, alors pour tous réels $x_1 \dots x_n$ on a :
+$$f\left(\sum_{i=1}^n \lambda_i x_i\right) \le \sum_{i=1}^n \lambda_i f(x_i).$$
+
+
+\exercice[Inégalité de Bernoulli]
 
 \begin{enumerate}
 
-\item Rappeler la formule reliant $\sin(2x)$ avec $\cos(x)$ et $\sin(x)$.
+\item Montrer par récurrence que $(1+x)^n \ge 1+nx$ pour $n \ge 1$ et $x \ge -1$.
 
-\item Soit $x \in ]0, \pi [$, simplifier $P =\displaystyle \prod_{k=0}^n \cos(2^k x)$ (on commencera par calculer $ \sin (x) \times P$).
+\item Prouver ce résultat sans récurrence (pour $x \ge 0$).
 
 \end{enumerate}
 
 
-\exercice
 
-Montrer que $\displaystyle \sum_{i=0}^n i x^i = \frac{n x^{n+2} - (n+1)x^{n+1} +x}{(x-1)^2}$
+\exercice[Encadrement de la factorielle (Gauss)]
 
-\exercice
+On va donner un encadrement de $n !$.
 
-Montrer que $\displaystyle \prod_{i=0}(1-a_i) \ge 1- \sum_{i=0}^n a_i$ si $0<a_i<1$.
+\begin{enumerate}
+
+\item Montrer que $\displaystyle n! = \prod_{\substack{i,j \ge 1\\i+j = n+1}}  \sqrt{ij}$
+
+\item Montrer que pour tous $i,j \ge 1$ on a $i+j-1 \le ij \le (\frac{i+j}{2})^2$.
+
+\item Conclure que $n^{\frac{n}{2}} \le n ! \le (\frac{n+1}{2})^n$.
+
+\end{enumerate}
+
+
 
 \exercice[Binet, Lagrange, Cauchy-Schwarz]
 
@@ -708,27 +903,14 @@ Montrer que $\displaystyle \sum_{i=1}^n \frac{(x_i)^r}{P_j} = 0$ si $0 \le r < n
 
 
 
-\section{Nombres complexes, trigonométrie}
 
-\exercice
 
-Soient $z$ et $z'$ deux nombres complexes de module $1$. Montrer que $\displaystyle \frac{z+z'}{1+zz'}$ est un réél (quand il est défini).
 
-\exercice[Inégalité triangulaire généralisée]
+\subsection{Nombres complexes et trigonométrie}
 
-\begin{enumerate}
 
-\item Montrer que pour tout $n \ge 1$, pour tous $z_1 \dots z_n \in \mb{C}$, on a $\displaystyle \left|\sum_{k=1}^n z_k\right| \le \sum_{k=1}^n | z_k |$.
 
-On pourra utiliser, sans la redémontrer, l'inégalité triangulaire du cours.
-
-\item Rappeler dans quel cas $|z_1 + z_2| = |z_1| + |z_2|$.
-
-\item Montrer que s'il existe $1 \le i,j \le n$, $|z_i + z_j| < |z_i| + |z_j|$, alors $ \left|\sum_{k=1}^n z_k\right| < \sum_{k=1}^n | z_k |$ 
-
-\item Déduire de 2 et 3 à quelles conditions l'inégalité de la question 1 est une égalité. L'interpréter géométriquement.
-
-\end{enumerate}
+\subsubsection{Module, argument, calculs}
 
 \exercice
 
@@ -751,40 +933,26 @@ Soit l'application $f : z \mapsto \frac{1}{1-z}$.
 
 \end{enumerate}
 
-\exercice
-
-Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
-
-
-
-\exercice 
-On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
-$\mathbb{C}$.
-
-Montrer que $\mathbb{U}_n = \{ e^{2ik\pi / n} ~|~ 0 \leq k \leq n - 1 \}$.
 
 
 
 \exercice
 
-On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
-$\mathbb{C}$.
-\begin{enumerate}
-    \item Calculer $\sum_{ \omega \in \mathbb{U}_n} \omega$
-    \item Calculer $\sum_{ \omega \in \mathbb{U}_n} | 1 - \omega |$
-\end{enumerate}
-
+Soient $z$ et $z'$ deux nombres complexes de module $1$. Montrer que $\displaystyle \frac{z+z'}{1+zz'}$ est un réel (quand il est défini).
 
 
 
 \exercice
 
-Soit $n \ge 1$. Trouver les $z \in \mb{C}$ tels que $(z-1)^n = (z+1)^n$.
-
+Trouver en fonction de $p,q \in \mb{Z}$, les $z \in \mb{C}$ tels que $z^p = (z+1)^q = 1$.
 
 \exercice
 
-Calculer $\displaystyle P = \prod_{k=0}^n(z^k + \overline{z}^{k})$ en fonction du module et de l'argument de $z$.
+Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1- \im r}$ pour $r \in \mb{R}$ ?
+
+\exercice
+
+Simplifier $\displaystyle P = \prod_{k=0}^n(z^k + \overline{z}^{k})$ en fonction du module et de l'argument de $z$.
 
 
 
@@ -830,6 +998,58 @@ Que dire $f(x)$ et $g(x)$ quand $x \in \mb{R}$ ?
 
 
 
+
+\exercice Calculer les sommes suivantes pour $n \ge 0$ et $\alpha, \beta \in \mb{R}$.
+
+\begin{enumerate}
+
+\item $\displaystyle \sum_{k=0}^n \sin(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n \cos(\alpha + k\beta)$. 
+
+\item $\displaystyle \sum_{k=0}^n {k \choose n} \sin(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n {k \choose n} \cos(\alpha + k\beta)$.
+
+\item $\displaystyle \sum_{k=0}^n \text{sh}(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n \text{ch}(\alpha + k\beta)$. 
+
+\item $\displaystyle \sum_{k=0}^n {k \choose n} \text{sh}(\alpha + k\beta)$ et $\displaystyle \sum_{k=0}^n {k \choose n} \text{ch}(\alpha + k\beta)$.
+
+\end{enumerate}
+
+
+
+
+
+\subsubsection{Racines de l'unité}
+
+
+
+\exercice 
+On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
+$\mathbb{C}$.
+
+Montrer que $\mathbb{U}_n = \{ e^{2ik\pi / n} ~|~ 0 \leq k \leq n - 1 \}$.
+
+
+
+\exercice
+
+On note $\mathbb{U}_n$ l'ensemble des racines n-èmes de l'unité dans
+$\mathbb{C}$.
+\begin{enumerate}
+    \item Calculer $\sum_{ \omega \in \mathbb{U}_n} \omega$
+    \item Calculer $\sum_{ \omega \in \mathbb{U}_n} | 1 - \omega |$
+\end{enumerate}
+
+
+\exercice
+
+Soit $n \ge 1$. Trouver les $z \in \mb{C}$ tels que $(z-1)^n = (z+1)^n$.
+
+
+
+
+
+
+
+
 \exercice[Autour des racines 3-èmes]
 
 \begin{enumerate}
@@ -868,29 +1088,6 @@ On considère les trois somme suivantes~:
 \end{enumerate}
 
 
-\exercice[Entiers de Gauss]
-
-On considère l'ensemble $\mb{Z}[\text{i}] := \{a + \text{i}b~|~a, b \in \mb{Z}\}$.
-
-\begin{enumerate}
-
-\item Montrer que si $z, z' \in \mb{Z}[\text{i}]$, alors $zz' \in \mb{Z}[\text{i}]$ et $z+z' \in \mb{Z}[\text{i}]$.
-
-\item On cherche les $z \in \mb{Z}[\text{i}] $ tels que $ \frac{1}{z} \in \mb{Z}[\text{i}]$. De tels éléments sont dits \emph{inversibles}.
-
-\begin{enumerate}
-
-\item Montrer que $\text{i}$ est inversible, mais pas de $1+ \text{i}$.
-
-\item Que dire de $|z|^2$ si $z \in \mb{Z}[\text{i}]$ ?
-
-\item Montrer que les inversibles doivent être de module 1. En déduire l'ensemble des inversibles.
-
-
-\end{enumerate}
-
-
-\end{enumerate}
 
 
 
@@ -925,6 +1122,16 @@ _n$ si  $\{z^k~|~k \ge 0\} = \mb{U}_n$. Quelles sont les racines primitives dans
 \end{enumerate}
 
 
+
+
+
+
+
+
+
+
+
+\subsubsection{Applications}
 
 \exercice[Fonctions symétriques de 2 variables]
 
@@ -988,15 +1195,6 @@ pour $0 \leq 1 \leq n - 1$~:
 \end{enumerate}
 
 
-
-\exercice
-
-Trouver en fonction de $p,q \in \mb{Z}$, les $z \in \mb{C}$ tels que $z^p = (z+1)^q = 1$.
-
-\exercice
-
-Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1- \im r}$ pour $r \in \mb{R}$ ?
-
 \exercice[Tcheby mon amour]
 
 \begin{enumerate}
@@ -1014,6 +1212,72 @@ Quels sont les complexes qui peuvent s'écrire sous la forme $\frac{1+ \im r}{1-
     \item Calculer les maxima et minima $x \mapsto T_n(x)$ sur $[-1,1]$
 
 \end{enumerate}
+
+
+
+
+\exercice[Inégalité triangulaire généralisée]
+
+\begin{enumerate}
+
+\item Montrer que pour tout $n \ge 1$, pour tous $z_1 \dots z_n \in \mb{C}$, on a $\displaystyle \left|\sum_{k=1}^n z_k\right| \le \sum_{k=1}^n | z_k |$.
+
+On pourra utiliser, sans la redémontrer, l'inégalité triangulaire du cours.
+
+\item Rappeler dans quel cas $|z_1 + z_2| = |z_1| + |z_2|$.
+
+\item Montrer que s'il existe $1 \le i,j \le n$, $|z_i + z_j| < |z_i| + |z_j|$, alors $ \left|\sum_{k=1}^n z_k\right| < \sum_{k=1}^n | z_k |$ 
+
+\item Déduire de 2 et 3 à quelles conditions l'inégalité de la question 1 est une égalité. L'interpréter géométriquement.
+
+\end{enumerate}
+
+
+\exercice[Entiers de Gauss]
+
+On considère l'ensemble $\mb{Z}[\text{i}] := \{a + \text{i}b~|~a, b \in \mb{Z}\}$.
+
+\begin{enumerate}
+
+\item Montrer que si $z, z' \in \mb{Z}[\text{i}]$, alors $zz' \in \mb{Z}[\text{i}]$ et $z+z' \in \mb{Z}[\text{i}]$.
+
+\item On cherche les $z \in \mb{Z}[\text{i}] $ tels que $ \frac{1}{z} \in \mb{Z}[\text{i}]$. De tels éléments sont dits \emph{inversibles}.
+
+\begin{enumerate}
+
+\item Montrer que $\text{i}$ est inversible, mais pas de $1+ \text{i}$.
+
+\item Que dire de $|z|^2$ si $z \in \mb{Z}[\text{i}]$ ?
+
+\item Montrer que les inversibles doivent être de module 1. En déduire l'ensemble des inversibles.
+
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Fonctions réelles}
+
+\subsection{Etude de fonctions}
         
 \subsection{Fonctions circulaires réciproques}
 
@@ -1025,7 +1289,7 @@ Justifier que $\arccos \dfrac{1-x^2}{1+x^2}$ est défini pour $x \in \mb{R}$, pu
 
 Justifier que $\arcsin \dfrac{x}{\sqrt{x^2 +1}}$ est défini pour $x \in \mb{R}$, puis simplifier l'expression.
 
-IL Y A PLETHORE D'AUTRES EXOS DANS LA MEME VEINE
+
 
 
 \exercice
@@ -1054,7 +1318,7 @@ Montrer que pour $a,b \in \mb{R}, ab \neq 1$ on a $\arctan(a) + \arctan(b) = \ar
 Simplifier la fonction $f : x \mapsto \cos 2 \arccos x$
 
 
-\section{Fonctions réelles}
+
 
 \cours 
 
@@ -1284,6 +1548,8 @@ Soit $(x,y) \in \mb{R}^2$, montrer l'équivalence suivante
 
 \end{enumerate}
 
+\subsubsection{Dérivabilité}
+
 
 \exercice[Formule de Leibniz et application]
 
@@ -1334,31 +1600,6 @@ Soit $(x,y) \in \mb{R}^2$, montrer l'équivalence suivante
 \end{enumerate}
 
 
-\exercice[Pré-images de fonctions]
-
-\begin{enumerate}
-    \item Si $f : x \mapsto x^2$, calculer 
-        $f^{-1}( [-1;4])$, $f^{-1}([-1;0])$
-        et $f^{-1}([0;4])$
-
-    \item Montrer que si $f : E \to F$ alors 
-        si $A$ et $B$ sont des parties de $F$,
-        $f^{-1}(A \cap B) = f^{-1} (A) \cap f^{-1}( B)$
-
-    \item Montrer que si $f : E \to F$ alors 
-        si $A$ et $B$ sont des parties de $F$,
-        $f^{-1}(A \cup B) = f^{-1} (A) \cup f^{-1}( B)$
-
-    \item Est-ce vrai des images directes en général ?
-
-    \item Montrer que $f : E \to F$ est injective 
-        si et seulement si $\forall A \in \mathcal{P}(E),
-        A = f^{-1}(f(A))$
-
-    \item Montrer que $f : E \to F$ est surjective 
-        si et seulement si $\forall B \in \mathcal{P}(F),
-        B = f( f^{-1} (B))$.
-\end{enumerate}
 
 \exercice[Divergence de la série harmonique]
 
@@ -1578,6 +1819,175 @@ suivante:
 \begin{equation*}
     y''(x) + 4y(x) = \frac{1}{\cos 2x }
 \end{equation*}
+
+
+\exercice
+
+Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
+
+
+
+\section{Intégration}
+
+\subsection{Primitives, intégrales}
+
+\subsubsection{Calculs d'intégrales}
+
+\exercice
+
+Calculer $\displaystyle \int_{0}^{\frac{\pi}{4}} \cos^2(t) \di t$.
+
+\exercice
+
+Calculer $\displaystyle \int_{0}^{\frac{\pi}{8}} \tan(-2t) \di t$.
+
+\exercice
+
+Calculer $\displaystyle \int_{0}^{\sqrt{\ln(3)}} -t\ex^{t^2} \di t$.
+
+\exercice
+
+Calculer $\displaystyle \int_0^1 \ln(1+t^2) \di t$.
+
+
+\exercice
+
+Soit $\displaystyle I = \int_{0}^{\frac{\pi}{2}} \frac{\cos(t)}{\sqrt{1+ \cos(t) \sin(t)}} \di t$ et $\displaystyle I = \int_{0}^{\frac{\pi}{2}} \frac{\sin(t)}{\sqrt{1+ \cos(t) \sin(t)}} \di t$.
+
+\begin{enumerate}
+
+\item Montrer que $I = J$.
+
+\item Calculer $I+J$ en posant $u = \sin(t) - \cos(t)$. En déduire $I$.
+
+\end{enumerate}
+
+
+\exercice
+Montrer que $\displaystyle \int_{0}^{\sqrt{3}} \arcsin \frac{2t}{1+t^2} \di t = \frac{\pi}{\sqrt{3}}$.
+
+\emph{Indication : on pourra intégrer par parties le facteur 1 multipliant l'arc.}
+
+
+\exercice
+
+Monter que $\displaystyle \int_{\frac{1}{2}}^2 \left(1+\frac{1}{t^2}\right) \arctan (t) \di t = \frac{3 \pi}{4}$.
+
+\emph{Indication : commencer par poser $u = 1/t$}
+
+
+\exercice
+
+Soit $a<b$. Montrer que $\displaystyle \int_{a}^b \frac{\di t}{\sqrt{(b-t)(t-a)}} = \int_{0}^1 \frac{\di u}{\sqrt{u(1-u)}}$ puis calculer sa valeur.
+
+\subsubsection{Suites d'intégrales}
+
+
+\exercice[Wallis]
+
+\exercice[Puissances de $\ln$]
+
+Pour $n \ge 0$ soit $\displaystyle I_n := \int_{1}^{\ex} \ln(t)^n {\di} t$.
+
+\begin{enumerate}
+
+\item Calculer $I_0$ et $I_1$.
+
+\item Montrer (sans calcul) que la suite $(I_n)_n$ possède une limite.
+
+\item Etablir une relation de récurrence liant $I_{n+1}$ et $I_n$.
+
+\item Montrer que $\forall n \ge 0$, $0<I_n<\frac{e}{n+1}$ et en déduire $\lim_n I_n$.
+
+\item Montrer que $I_n = (-1)^n(a_n \ex - n!)$ où $(a_n)_{n \ge 0}$ est une suite d'entiers $>0$ vérifiant une relation de récurrence que l'on explicitera.
+
+\end{enumerate}
+
+\subsubsection{Intégrales fonction des bornes}
+
+
+\exercice
+
+Soit $ \fonction{f}{\mb{R^*_+}}{\mb{R}}{x}{\displaystyle \int_x^{2x} \frac{\ex^t}{t}}$.
+
+\begin{enumerate}
+
+\item Montrer que $f$ est dérivable et calculer sa dérivée.
+
+\item En remarquant que pour $x>0$, $\forall t \in [x,2x]$, $\displaystyle \frac{\ex^x}{t} \le \frac{\ex^t}{t} \le \frac{\ex^{2x}}{t} $, déterminer $\displaystyle \lim_{x \rightarrow 0^+} f(x)$.
+
+\end{enumerate}
+
+\exercice
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue. Déterminer $\displaystyle \lim_{x \rightarrow 0^+} \frac{1}{x} \int_0^x f(t) \di t$.
+
+\emph{Indication : introduire une primitive de $f$.}
+
+
+
+\exercice[Convolution fonction des bornes]
+
+Soit $g : \mb{R} \rightarrow \mb{R}$ une fonction continue. On pose $f(x) = \displaystyle \int_0^x \sin(x-t) g(t) \di t$.
+
+\begin{enumerate}
+
+\item Montrer que $f$ est dérivable et que $f'(x) =  \displaystyle \int_0^x \cos(x-t) g(t) \di t$.
+
+\item Montrer que $f$ est deux fois dérivable et qu'elle vérifie $f'' + f = g(x)$.
+
+\item Montrer que $f$ est de classe $\mc{C}^\infty$.
+
+\end{enumerate}
+
+
+\subsubsection{Applications}
+
+\exercice[Comparaison série-intégrale]
+
+\begin{enumerate}
+
+\item Que vaut $\displaystyle \lim_{n \rightarrow + \infty} \int_1^{n} \frac{1}{t} \di  t$ ?
+
+\item Si $k \ge 2$, montrer que $ \displaystyle \int_{k-1}^{k} \frac{1}{t} \di  t \le \frac{1}{k} \le \int_{k}^{k+1} \frac{1}{t} \di  t$.
+
+\item En déduire $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{k}$. Comparer avec $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{2^k}$.
+\end{enumerate}
+
+
+\subsection{Equations différentielles}
+
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle $y' + 2y = x^2$.
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle  $y' + y=2 \sin(x)$.
+
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle $(x^2+1)y'+2xy+1=0$
+
+
+
+
+
+\exercice
+
+Soit $f : [a,b] \rightarrow \mb{C}$ une fonction continue telle que $\displaystyle \left|\int_a^b f(t) \di t \right| = \int_a^b |f(t)| \di t \neq 0$.
+
+\begin{enumerate}
+
+\item Soit $\alpha = \int_a^b f(t) \di t \Big/  \left|\int_a^b f(t) \di t \right| $. Justifier qu'il existe $\theta \in \mb{R}$ tel que $\alpha = {\ex}^{\im \theta}$.
+
+\item 
+
+\item Que dire si $\int_a^b |f(t)| \di t = 0$ ?
+
+\end{enumerate}
 
 
 \end{document}
