@@ -1776,9 +1776,9 @@ Monter que $\displaystyle \int_{\frac{1}{2}}^2 \left(1+\frac{1}{t^2}\right) \arc
 \emph{Indication : commencer par poser $u = 1/t$}
 
 
-\exercice
+\exercice[Une intégrale impropre]
 
-Soit $a<b$. Montrer que $\displaystyle \int_{a}^b \frac{\di t}{\sqrt{(b-t)(t-a)}} = \int_{0}^1 \frac{\di u}{\sqrt{u(1-u)}}$ puis calculer sa valeur.
+Soit $a<b$ et $\varepsilon > 0$. Montrer que $\displaystyle \int_{a+ \varepsilon}^{b - \varepsilon} \frac{\di t}{\sqrt{(b-t)(t-a)}} = \int_{\varepsilon/(b-a)}^{1-\varepsilon/(b-a)} \frac{\di u}{\sqrt{u(1-u)}}$ puis calculer sa valeur. En faisant tendre $\varepsilon$ vers 0, en déduire que $\displaystyle \int_{a}^{b} \frac{\di t}{\sqrt{(b-t)(t-a)}}  = \pi$.
 
 \exercice 
 
@@ -1963,7 +1963,7 @@ suivante:
 
 \section{Espaces euclidiens}
 
-\exercice
+\exercice[Quand la norme passe à l'intégrale]
 
 Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une application continue telle que $\displaystyle \left\lVert\int_a^b f(t) \di t \right\lVert = \int_a^b \lVert f(t)\lVert \di t$.
 
@@ -1971,11 +1971,18 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 
 \item Que dire si $\left\lVert\int_a^b f(t) \di t \right\lVert = 0$ ?
 
-\item On suppose désormais $\neq 0$. Soit $\alpha = \int_a^b f(t) \di t \Big/  \left\lVert\int_a^b f(t) \di t \right\lVert $.
+\item On suppose désormais $\neq 0$. Soit $e_1 = \int_a^b f(t) \di t \Big/  \left\lVert\int_a^b f(t) \di t \right\lVert $. On complète $e_1$ en une base orthonormée $e_1 \dots e_n$ de $E$, et on note $f = \sum_i f_i e_i$.
+\begin{enumerate}
 
-\item 
+\item Montrer que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$ puis que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$.
 
-\item Que dire si $\int_a^b |f(t)| \di t = 0$ ?
+\item Utiliser ce résultat pour obtenir $f_i = 0$ pour $i \ge 2$.
+
+\item Conclure que $f = \lVert f \lVert e_1$.
+
+\end{enumerate}
+
+\item Ce résultat est-il toujours vrai avec une norme quelconque ?
 
 \end{enumerate}
 
