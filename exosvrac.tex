@@ -1923,6 +1923,7 @@ Soit $g : \mb{R} \rightarrow \mb{R}$ une fonction continue. On pose $f(x) = \dis
 
 \subsection{Equations différentielles}
 
+\subsubsection{Linéaires d'ordre 1}
 
 \exercice
 
@@ -1951,6 +1952,24 @@ Résoudre l'équation $y'(x) + y(x) = 2 \sin (x)$
 Résoudre l'équation $3 y'(x) + 5 y(x) = \arctan (x)$
 
 
+
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle $y'' - 3y' + 2y = \sin(2t)$.
+
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle  $(1-t^2)y' + t y = 0$.
+
+
+\subsubsection{Linéaires d'ordre 2}
+
+\exercice[Régime forcé]
+
+Résoudre sur $\mb{R}$ l'équation différentielle $y'' + \omega^2 y = \cos(\omega_0 t)$.
+
 \exercice 
 
 Résoudre en utilisant la méthode d'abaissement 
@@ -1960,6 +1979,106 @@ suivante:
 \begin{equation*}
     y''(x) + 4y(x) = \frac{1}{\cos 2x }
 \end{equation*}
+
+
+\exercice
+
+Trouver les fonctions $f : \mb{R} \rightarrow \mb{R}$ dérivables telles que $\forall x \in \mb{R}$, $f'(x) = f(2-x)$.
+
+\emph{Indication : si $f$ est vérifie l'équation, elle est solution d'une ED d'ordre 2.}
+
+\exercice
+
+Trouver les fonctions $f : \mb{R} \rightarrow \mb{R}$ dérivables telles que $\forall x \in \mb{R}$, $f'(x) + f(-x) = \ex^x$.
+
+\emph{Indication : si $f$ est vérifie l'équation, elle est solution d'une ED d'ordre 2.}
+
+
+
+\exercice[Résolution générique]
+
+Soit $g : \mb{R} \rightarrow \mb{R}$ une fonction continue. On cherche à résoudre $y'' + y = g$.
+
+\begin{enumerate}
+
+\item  On pose $\fonction{f}{\mb{R}}{\mb{R}}{x}{\displaystyle \int_0^x \sin(x-t) g(t) \di t}$.
+
+\begin{enumerate}
+\item Montrer que $f$ est dérivable et que $f'(x) =  \displaystyle \int_0^x \cos(x-t) g(t) \di t$.
+
+\emph{Indication : on se souviendra que $\sin(x-t) = \cdots$.}
+
+\item Montrer que $f$ est deux fois dérivable et qu'elle vérifie $f'' + f = g$.
+
+
+\end{enumerate}
+
+\item Résoudre $y'' + y = g$, en exprimant les solutions en fonction de $f$.
+
+\item Application. Quelles sont les solutions si $g(t) = \cos(t) \sin(t)$ ? 
+
+\end{enumerate}
+
+
+\exercice[Equation d'Euler]
+
+On cherche les $f : \mb{R}_+^* \rightarrow \mb{R}$ dérivables, telles que $f'(t) = f(1/t)$ pour tout $t>0$ $(E)$ .
+
+\begin{enumerate}
+
+\item Monter que si $f$ vérifie $(E)$, alors elle est infiniment dérivable.
+
+\item Montrer que si $f$ vérifie $(E)$, alors $f$ est solution de $t^2 y'' + y = 0$ $(H)$.
+
+\item Montrer que si $f$ est solution de $(H)$, alors $g := f \circ \exp$ vérifie une équation linéaire d'ordre 2 $(H')$ que l'on précisera.
+
+\item Résoudre $(H')$ puis conclure.
+
+\end{enumerate}
+
+\subsubsection{Non-linéaires}
+
+\exercice[Une équation de Bernoulli]
+
+On cherche les solutions $\mb{R} \rightarrow \mb{R}_+^*$ de $y' = \sin(t) y + \cos(t) \sqrt{y}$ $(B)$.
+
+\begin{enumerate}
+
+\item Montrer si $f$ est solution de $(B)$, alors $\sqrt{f}$ est solution de $2y' = \sin(t) y + \cos(t)$ $(E)$.
+
+\item Résoudre $(E)$ et conclure.
+
+\end{enumerate}
+
+
+\exercice[Une équation de Ricatti]
+
+On cherche les solutions à valeurs complexes de $y' + y + y^2 + 1 = 0$ $(R)$. On raisonne par analyse-synthèse, soit $f$ une solution potentielle.
+
+\begin{enumerate}
+
+\item  \begin{enumerate}
+
+\item A quelle condition sur $c \in \mb{C}$ la fonction constante $x \mapsto c$ est elle solution ?
+
+\item Si $c \in \mb{C}$ est choisi comme à la question précédente, montrer que $g : t \mapsto f(t) -c$ est solution de $y' + (2\text{j} +1) y + y^2 = 0$ $(E)$
+
+\end{enumerate}
+ 
+\item \begin{enumerate}
+\item On suppose que $g$ ne s'annule jamais. Montrer que $h : t \mapsto 1/g(t)$ est solution de $-y' + (2 \text{j}+1)y +1 = 0$.
+
+\item Résoudre cette équation.
+
+\end{enumerate}
+
+\item Conclure quant à la forme des solutions de $(R)$ quand $g$ ne s'annule en aucun point.
+
+\item Que se passait-il si $g$ s'annulait en un point dans l'équation $(E)$ ?
+
+\emph{Indication : on pensera à Cauchy-Lipschitz.}
+\end{enumerate}
+
 
 \section{Espaces euclidiens}
 
