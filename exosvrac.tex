@@ -1721,9 +1721,6 @@ Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f
 
 \end{enumerate}
 
-
-
-
 \exercice
 
 Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
@@ -1779,9 +1776,178 @@ Monter que $\displaystyle \int_{\frac{1}{2}}^2 \left(1+\frac{1}{t^2}\right) \arc
 \emph{Indication : commencer par poser $u = 1/t$}
 
 
+\exercice[Une intégrale impropre]
+
+Soit $a<b$ et $\varepsilon > 0$. Montrer que $\displaystyle \int_{a+ \varepsilon}^{b - \varepsilon} \frac{\di t}{\sqrt{(b-t)(t-a)}} = \int_{\varepsilon/(b-a)}^{1-\varepsilon/(b-a)} \frac{\di u}{\sqrt{u(1-u)}}$ puis calculer sa valeur. En faisant tendre $\varepsilon$ vers 0, en déduire que $\displaystyle \int_{a}^{b} \frac{\di t}{\sqrt{(b-t)(t-a)}}  = \pi$.
+
+\exercice 
+
+Calculer 
+
+\begin{equation*}
+    \int_0^1 \frac{1}{e^t + 1} dt 
+\end{equation*}
+
+\exercice 
+
+Calculer 
+
+\begin{equation*}
+    \int_0^1 \sqrt{1 - t^2} dt 
+\end{equation*}
+
+\exercice 
+
+Forme général d'une primitive de 
+\begin{equation*}
+    f(x) = \frac{1}{ax^2 + bx + c}
+\end{equation*}
+
+\exercice 
+
+Calculer en utilisant la tangeante de l'arc moitié
+\begin{equation*}
+    \int_a^x \frac{dt}{\sin t}
+\end{equation*}
+
+
 \exercice
 
-Soit $a<b$. Montrer que $\displaystyle \int_{a}^b \frac{\di t}{\sqrt{(b-t)(t-a)}} = \int_{0}^1 \frac{\di u}{\sqrt{u(1-u)}}$ puis calculer sa valeur.
+\begin{enumerate}
+    \item Soit $P$ un polynôme de degré $n$ et 
+        $f(x) = P(x) e^{\alpha x}$. Montrer qu'une 
+        primitive de $f$ est de la forme $Q(x) e^{\alpha x}$
+        avec $Q$ un polynôme de degré $n$
+
+    \item Calculer une primitive de 
+        la fonction $f(x) = 4x^3 e^x + 12x^2 e^x + 2x e^x + 3e^x$
+\end{enumerate}
+
+\exercice[Des IPP]
+
+\begin{enumerate}
+    \item Calculer une primitive de $f(x) = x \sin x$
+    \item Calculer une primitive de $f(x) = x e^x$
+    \item Calculer 
+        \begin{equation*}
+            \int_0^1 t^2 \sqrt{2t + 1}
+        \end{equation*}
+\end{enumerate}
+
+
+
+\subsubsection{Suites d'intégrales}
+
+
+\exercice[Wallis]
+
+\exercice[Puissances de $\ln$]
+
+Pour $n \ge 0$ soit $\displaystyle I_n := \int_{1}^{\ex} \ln(t)^n {\di} t$.
+
+\begin{enumerate}
+
+\item Calculer $I_0$ et $I_1$.
+
+\item Montrer (sans calcul) que la suite $(I_n)_n$ possède une limite.
+
+\item Etablir une relation de récurrence liant $I_{n+1}$ et $I_n$.
+
+\item Montrer que $\forall n \ge 0$, $0<I_n<\frac{e}{n+1}$ et en déduire $\lim_n I_n$.
+
+\item Montrer que $I_n = (-1)^n(a_n \ex - n!)$ où $(a_n)_{n \ge 0}$ est une suite d'entiers $>0$ vérifiant une relation de récurrence que l'on explicitera.
+
+\end{enumerate}
+
+
+\subsubsection{Intégrales fonction des bornes}
+
+
+\exercice
+
+Soit $ \fonction{f}{\mb{R^*_+}}{\mb{R}}{x}{\displaystyle \int_x^{2x} \frac{\ex^t}{t}}$.
+
+\begin{enumerate}
+
+\item Montrer que $f$ est dérivable et calculer sa dérivée.
+
+\item En remarquant que pour $x>0$, $\forall t \in [x,2x]$, $\displaystyle \frac{\ex^x}{t} \le \frac{\ex^t}{t} \le \frac{\ex^{2x}}{t} $, déterminer $\displaystyle \lim_{x \rightarrow 0^+} f(x)$.
+
+\end{enumerate}
+
+\exercice
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue. Déterminer $\displaystyle \lim_{x \rightarrow 0^+} \frac{1}{x} \int_0^x f(t) \di t$.
+
+\emph{Indication : introduire une primitive de $f$.}
+
+
+
+\exercice[Convolution fonction des bornes]
+
+Soit $g : \mb{R} \rightarrow \mb{R}$ une fonction continue. On pose $f(x) = \displaystyle \int_0^x \sin(x-t) g(t) \di t$.
+
+\begin{enumerate}
+
+\item Montrer que $f$ est dérivable et que $f'(x) =  \displaystyle \int_0^x \cos(x-t) g(t) \di t$.
+
+\item Montrer que $f$ est deux fois dérivable et qu'elle vérifie $f'' + f = g(x)$.
+
+\item Montrer que $f$ est de classe $\mc{C}^\infty$.
+
+\end{enumerate}
+
+
+\subsubsection{Applications}
+
+\exercice[Comparaison série-intégrale]
+
+\begin{enumerate}
+
+\item Que vaut $\displaystyle \lim_{n \rightarrow + \infty} \int_1^{n} \frac{1}{t} \di  t$ ?
+
+\item Si $k \ge 2$, montrer que $ \displaystyle \int_{k-1}^{k} \frac{1}{t} \di  t \le \frac{1}{k} \le \int_{k}^{k+1} \frac{1}{t} \di  t$.
+
+\item En déduire $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{k}$. Comparer avec $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{2^k}$.
+\end{enumerate}
+
+
+\subsection{Equations différentielles}
+
+\subsubsection{Linéaires d'ordre 1}
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle $y' + 2y = x^2$.
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle  $y' + y=2 \sin(x)$.
+
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle $(x^2+1)y'+2xy+1=0$
+
+\exercice 
+
+Résoudre l'équation $x y'(x) + \alpha y(x) = 0$ 
+
+
+\exercice 
+
+Résoudre l'équation $y'(x) + y(x) = 2 \sin (x)$
+
+\exercice 
+
+Résoudre l'équation $3 y'(x) + 5 y(x) = \arctan (x)$
+
+
+
+
+\exercice
+
+Résoudre sur $\mb{R}$ l'équation différentielle $y'' - 3y' + 2y = \sin(2t)$.
 
 \exercice
 
@@ -1847,115 +2013,153 @@ Calculer en utilisant la tangeante de l'arc moitié
 
 \subsubsection{Suites d'intégrales}
 
+\exercice
 
-\exercice[Wallis]
+Résoudre sur $\mb{R}$ l'équation différentielle  $(1-t^2)y' + t y = 0$.
 
-\exercice[Puissances de $\ln$]
 
-Pour $n \ge 0$ soit $\displaystyle I_n := \int_{1}^{\ex} \ln(t)^n {\di} t$.
+\subsubsection{Linéaires d'ordre 2}
 
-\begin{enumerate}
+\exercice[Régime forcé]
 
-\item Calculer $I_0$ et $I_1$.
-
-\item Montrer (sans calcul) que la suite $(I_n)_n$ possède une limite.
-
-\item Etablir une relation de récurrence liant $I_{n+1}$ et $I_n$.
-
-\item Montrer que $\forall n \ge 0$, $0<I_n<\frac{e}{n+1}$ et en déduire $\lim_n I_n$.
-
-\item Montrer que $I_n = (-1)^n(a_n \ex - n!)$ où $(a_n)_{n \ge 0}$ est une suite d'entiers $>0$ vérifiant une relation de récurrence que l'on explicitera.
-
-\end{enumerate}
+Résoudre sur $\mb{R}$ l'équation différentielle $y'' + \omega^2 y = \cos(\omega_0 t)$.
 
 \exercice 
 
-Calcul par récurrence sur $n$ 
-de l'intégrale 
+Résoudre en utilisant la méthode d'abaissement 
+de l'ordre ($y(x) = z(x) e^{r x}$) l'équation
+suivante:
 
 \begin{equation*}
-    \int_0^1 t^n \sqrt{2t + 1} dt
+    y''(x) + 4y(x) = \frac{1}{\cos 2x }
 \end{equation*}
+
+
+\exercice
+Trouver les fonctions $f : \mb{R} \rightarrow \mb{R}$ dérivables telles que $\forall x \in \mb{R}$, $f'(x) = f(2-x)$.
+
+\emph{Indication : si $f$ est vérifie l'équation, elle est solution d'une ED d'ordre 2.}
+
 
 \subsubsection{Intégrales fonction des bornes}
 
 
 \exercice
 
-Soit $ \fonction{f}{\mb{R^*_+}}{\mb{R}}{x}{\displaystyle \int_x^{2x} \frac{\ex^t}{t}}$.
+Trouver les fonctions $f : \mb{R} \rightarrow \mb{R}$ dérivables telles que $\forall x \in \mb{R}$, $f'(x) + f(-x) = \ex^x$.
+
+\emph{Indication : si $f$ est vérifie l'équation, elle est solution d'une ED d'ordre 2.}
+
+
+
+\exercice[Résolution générique]
+
+Soit $g : \mb{R} \rightarrow \mb{R}$ une fonction continue. On cherche à résoudre $y'' + y = g$.
 
 \begin{enumerate}
 
-\item Montrer que $f$ est dérivable et calculer sa dérivée.
-
-\item En remarquant que pour $x>0$, $\forall t \in [x,2x]$, $\displaystyle \frac{\ex^x}{t} \le \frac{\ex^t}{t} \le \frac{\ex^{2x}}{t} $, déterminer $\displaystyle \lim_{x \rightarrow 0^+} f(x)$.
-
-\end{enumerate}
-
-\exercice
-
-Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue. Déterminer $\displaystyle \lim_{x \rightarrow 0^+} \frac{1}{x} \int_0^x f(t) \di t$.
-
-\emph{Indication : introduire une primitive de $f$.}
-
-
-
-\exercice[Convolution fonction des bornes]
-
-Soit $g : \mb{R} \rightarrow \mb{R}$ une fonction continue. On pose $f(x) = \displaystyle \int_0^x \sin(x-t) g(t) \di t$.
+\item  On pose $\fonction{f}{\mb{R}}{\mb{R}}{x}{\displaystyle \int_0^x \sin(x-t) g(t) \di t}$.
 
 \begin{enumerate}
-
 \item Montrer que $f$ est dérivable et que $f'(x) =  \displaystyle \int_0^x \cos(x-t) g(t) \di t$.
 
-\item Montrer que $f$ est deux fois dérivable et qu'elle vérifie $f'' + f = g(x)$.
+\emph{Indication : on se souviendra que $\sin(x-t) = \cdots$.}
 
-\item Montrer que $f$ est de classe $\mc{C}^\infty$.
+\item Montrer que $f$ est deux fois dérivable et qu'elle vérifie $f'' + f = g$.
+
+
+\end{enumerate}
+
+\item Résoudre $y'' + y = g$, en exprimant les solutions en fonction de $f$.
+
+\item Application. Quelles sont les solutions si $g(t) = \cos(t) \sin(t)$ ? 
 
 \end{enumerate}
 
 
-\subsubsection{Applications}
+\exercice[Equation d'Euler]
 
-\exercice[Comparaison série-intégrale]
+On cherche les $f : \mb{R}_+^* \rightarrow \mb{R}$ dérivables, telles que $f'(t) = f(1/t)$ pour tout $t>0$ $(E)$ .
 
 \begin{enumerate}
 
-\item Que vaut $\displaystyle \lim_{n \rightarrow + \infty} \int_1^{n} \frac{1}{t} \di  t$ ?
+\item Monter que si $f$ vérifie $(E)$, alors elle est infiniment dérivable.
 
-\item Si $k \ge 2$, montrer que $ \displaystyle \int_{k-1}^{k} \frac{1}{t} \di  t \le \frac{1}{k} \le \int_{k}^{k+1} \frac{1}{t} \di  t$.
+\item Montrer que si $f$ vérifie $(E)$, alors $f$ est solution de $t^2 y'' + y = 0$ $(H)$.
 
-\item En déduire $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{k}$. Comparer avec $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{2^k}$.
+\item Montrer que si $f$ est solution de $(H)$, alors $g := f \circ \exp$ vérifie une équation linéaire d'ordre 2 $(H')$ que l'on précisera.
+
+\item Résoudre $(H')$ puis conclure.
+
+\end{enumerate}
+
+\subsubsection{Non-linéaires}
+
+\exercice[Une équation de Bernoulli]
+
+On cherche les solutions $\mb{R} \rightarrow \mb{R}_+^*$ de $y' = \sin(t) y + \cos(t) \sqrt{y}$ $(B)$.
+
+\begin{enumerate}
+
+\item Montrer si $f$ est solution de $(B)$, alors $\sqrt{f}$ est solution de $2y' = \sin(t) y + \cos(t)$ $(E)$.
+
+\item Résoudre $(E)$ et conclure.
+
 \end{enumerate}
 
 
-\subsection{Equations différentielles}
+\exercice[Une équation de Ricatti]
 
-
-\exercice
-
-Résoudre sur $\mb{R}$ l'équation différentielle $y' + 2y = x^2$.
-
-\exercice
-
-Résoudre sur $\mb{R}$ l'équation différentielle  $y' + y=2 \sin(x)$.
-
-
-\exercice
-
-Résoudre sur $\mb{R}$ l'équation différentielle $(x^2+1)y'+2xy+1=0$
-
-\exercice
-
-Soit $f : [a,b] \rightarrow \mb{C}$ une fonction continue telle que $\displaystyle \left|\int_a^b f(t) \di t \right| = \int_a^b |f(t)| \di t \neq 0$.
+On cherche les solutions à valeurs complexes de $y' + y + y^2 + 1 = 0$ $(R)$. On raisonne par analyse-synthèse, soit $f$ une solution potentielle.
 
 \begin{enumerate}
 
-\item Soit $\alpha = \int_a^b f(t) \di t \Big/  \left|\int_a^b f(t) \di t \right| $. Justifier qu'il existe $\theta \in \mb{R}$ tel que $\alpha = {\ex}^{\im \theta}$.
+\item  \begin{enumerate}
 
-\item 
+\item A quelle condition sur $c \in \mb{C}$ la fonction constante $x \mapsto c$ est elle solution ?
 
-\item Que dire si $\int_a^b |f(t)| \di t = 0$ ?
+\item Si $c \in \mb{C}$ est choisi comme à la question précédente, montrer que $g : t \mapsto f(t) -c$ est solution de $y' + (2\text{j} +1) y + y^2 = 0$ $(E)$
+
+\end{enumerate}
+ 
+\item \begin{enumerate}
+\item On suppose que $g$ ne s'annule jamais. Montrer que $h : t \mapsto 1/g(t)$ est solution de $-y' + (2 \text{j}+1)y +1 = 0$.
+
+\item Résoudre cette équation.
+
+\end{enumerate}
+
+
+\item Conclure quant à la forme des solutions de $(R)$ quand $g$ ne s'annule en aucun point.
+
+\item Que se passait-il si $g$ s'annulait en un point dans l'équation $(E)$ ?
+
+\emph{Indication : on pensera à Cauchy-Lipschitz.}
+\end{enumerate}
+
+
+\section{Espaces euclidiens}
+
+\exercice[Quand la norme passe à l'intégrale]
+
+Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une application continue telle que $\displaystyle \left\lVert\int_a^b f(t) \di t \right\lVert = \int_a^b \lVert f(t)\lVert \di t$.
+
+\begin{enumerate}
+
+\item Que dire si $\left\lVert\int_a^b f(t) \di t \right\lVert = 0$ ?
+
+\item On suppose désormais $\neq 0$. Soit $e_1 = \int_a^b f(t) \di t \Big/  \left\lVert\int_a^b f(t) \di t \right\lVert $. On complète $e_1$ en une base orthonormée $e_1 \dots e_n$ de $E$, et on note $f = \sum_i f_i e_i$.
+\begin{enumerate}
+
+\item Montrer que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$ puis que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$.
+
+\item Utiliser ce résultat pour obtenir $f_i = 0$ pour $i \ge 2$.
+
+\item Conclure que $f = \lVert f \lVert e_1$.
+
+\end{enumerate}
+
+\item Ce résultat est-il toujours vrai avec une norme quelconque ?
 
 \end{enumerate}
 
