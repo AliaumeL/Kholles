@@ -1859,15 +1859,6 @@ Pour $n \ge 0$ soit $\displaystyle I_n := \int_{1}^{\ex} \ln(t)^n {\di} t$.
 
 \end{enumerate}
 
-\exercice 
-
-Calcul par récurrence sur $n$ 
-de l'intégrale 
-
-\begin{equation*}
-    \int_0^1 t^n \sqrt{2t + 1} dt
-\end{equation*}
-
 
 \subsubsection{Intégrales fonction des bornes}
 
@@ -1936,7 +1927,7 @@ Résoudre sur $\mb{R}$ l'équation différentielle  $y' + y=2 \sin(x)$.
 
 \exercice
 
-Résoudre sur $\mb{R}$ l'équation différentielle $(x^2+1)y'+2xy+1=0$
+Résoudre sur $\mb{R}$ l'équation différentielle $(x^2+1)y'+2xy+1= 1 + 3x^2 $
 
 \exercice 
 
@@ -1951,20 +1942,65 @@ Résoudre l'équation $y'(x) + y(x) = 2 \sin (x)$
 
 Résoudre l'équation $3 y'(x) + 5 y(x) = \arctan (x)$
 
+\exercice[Équation Fonctionnelle]
+
+Trouver toutes les applications $f : \mb{R} \to \mb{R}$ 
+dérivables en $0$ telles que: 
+
+\begin{equation*}
+    f(x + y) = e^x f(y) + e^y f(x)
+\end{equation*}
+
+\emph{Indication: f(0) = 0, puis dériver en $x$ quelconque ...}
+
+\exercice[Gronwall]
+
+Soit $\psi > 0$ et $\phi$ deux fonctions vérifiant 
+pour tout $t \geq t_0$~:
+
+\begin{equation*}
+    \phi (t) \leq K + \int_{t_0}^t \psi (s) \phi (s) ds
+\end{equation*}
+
+\begin{enumerate}
+    \item Montrer que pour tout $t \geq t_0$~:
+\begin{equation*}
+    \phi (t) \leq K \exp \left(  \int_{t_0}^t \psi (s) ds \right) 
+\end{equation*}
+
+    \item Si on suppose de plus $K = 0$ et $\phi \geq 0$, 
+        en déduire que $\phi = 0$
+\end{enumerate}
+
+\emph{Ceci permet de montrer dans certains cas l'unicité d'une solution}
 
 
+\exercice[Périodicité]
+Soit $\phi$ une fonction continue $T$-périodique sur $\mb{R}$.
+Soit $a \in \mb{R}^*$. Déterminer toutes les solutions périodiques 
+de l'équation $y' - ay = \phi$.
+
+\exercice[Inégalité différentielle]
+
+On travaille sur un intervalle fermé $I = [a,b]$.
+Soit $\alpha : I \to \mb{R}^+$ et $f,g$ vérifiant~:
+
+\begin{equation*}
+    \begin{cases}
+        f(a) \leq g(a) \\
+        \forall t \in I, f'(t) \leq \alpha (t) f(t) \\
+        \forall t \in I, g'(t)  = \alpha (t) g(t) \\
+    \end{cases}
+\end{equation*}
+
+Montrer que pour tout $t \in I$ l'inégalité $f(t) \leq g(t)$ est vérifiée.
+
+
+\subsubsection{Linéaires d'ordre 2}
 
 \exercice
 
 Résoudre sur $\mb{R}$ l'équation différentielle $y'' - 3y' + 2y = \sin(2t)$.
-
-
-\exercice
-
-Résoudre sur $\mb{R}$ l'équation différentielle  $(1-t^2)y' + t y = 0$.
-
-
-\subsubsection{Linéaires d'ordre 2}
 
 \exercice[Régime forcé]
 
@@ -1980,12 +2016,17 @@ suivante:
     y''(x) + 4y(x) = \frac{1}{\cos 2x }
 \end{equation*}
 
-
 \exercice
 
+Résoudre sur $\mb{R}$ l'équation différentielle  $(1-t^2)y' + t y = 0$.
+
+
+\exercice
 Trouver les fonctions $f : \mb{R} \rightarrow \mb{R}$ dérivables telles que $\forall x \in \mb{R}$, $f'(x) = f(2-x)$.
 
 \emph{Indication : si $f$ est vérifie l'équation, elle est solution d'une ED d'ordre 2.}
+
+
 
 \exercice
 
@@ -2072,6 +2113,7 @@ On cherche les solutions à valeurs complexes de $y' + y + y^2 + 1 = 0$ $(R)$. O
 
 \end{enumerate}
 
+
 \item Conclure quant à la forme des solutions de $(R)$ quand $g$ ne s'annule en aucun point.
 
 \item Que se passait-il si $g$ s'annulait en un point dans l'équation $(E)$ ?
@@ -2104,6 +2146,9 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 \item Ce résultat est-il toujours vrai avec une norme quelconque ?
 
 \end{enumerate}
+
+
+
 
 
 \end{document}
