@@ -1995,6 +1995,11 @@ Soit $\alpha : I \to \mb{R}^+$ et $f,g$ vérifiant~:
 
 Montrer que pour tout $t \in I$ l'inégalité $f(t) \leq g(t)$ est vérifiée.
 
+\exercice[Zéros isolés]
+
+Montrer que si $f$ est une solution non nulle de $y'' + q(x) y = 0$
+alors ses zéros sont isolés. 
+
 
 \subsubsection{Linéaires d'ordre 2}
 
@@ -2148,7 +2153,72 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 \end{enumerate}
 
 
+\section{Suites numériques}
 
+\exercice[Discriminant]
+
+Soit $(u_n)$ une suite de nombre strictement positifs 
+qui vérifie~:
+
+\begin{equation*}
+    u_n + \frac{1}{u_n} \rightarrow 2
+\end{equation*}
+
+Calculer la limite de $u_n$ \emph{Indication: solution d'une équation de degré
+2...}
+
+\exercice
+
+Pour tout $n \in \mb{N}$, on pose
+\begin{equation*}
+    S_{n} = \sum_{k = 1}^{n} \frac{1}{n + k}
+\end{equation*}
+\begin{equation*}
+    S'_{n} = \sum_{k = 1}^{n} \frac{( - 1)^{k - 1}}{k}
+\end{equation*}
+\begin{enumerate}
+    \item
+    Établir que pour tout $p > 1$,
+    \begin{equation*}
+        \int_{p}^{p + 1} \frac{d x}{x} \leq \frac{1}{p} \leq \int_{p - 1}^{p} \frac{d x}{x}
+    \end{equation*}
+    En déduire la limite de $(S_{n})$.
+    \item
+    Établir que $S'_{2n} = S_{n}$. En déduire la limite de $(S'_{n})$.
+\end{enumerate}
+
+
+\exercice
+
+Soient $(a,b) \in \mb{R}^{2}$, $(u_{n})$ et $(v_{n})$ deux suites telles que
+\begin{equation*}
+    \begin{cases}
+        \forall n \in \mb{N}, u_n \leq a \\
+        \forall n \in \mb{N}, v_n \leq b \\
+        u_n + v_n \to a + b
+    \end{cases}
+\end{equation*}
+Montrer que $u_{n} \to a$ et $v_{n} \to b$.
+
+\exercice
+
+Soit $(x_{n})$ et $(y_{n})$ deux suites réelles telles que
+\begin{equation*}
+    \forall n \in \mb{N}, x_{n + 1} = \frac{x_{n} - y_{n}}{2} \quad  y_{n + 1} = \frac{x_{n} + y_{n}}{2}
+\end{equation*}
+
+En introduisant la suite complexe de terme général $z_{n} = x_{n} + i y_{n}$, 
+montrer que les suites $(x_{n})$ et $(y_{n})$ convergent et déterminer leurs limites.
+
+\exercice
+
+Déterminer les fonctions $f\colon \mb{R}_{ + }^{*} \to \mb{R}_{ + }^{*}$ vérifiant
+\begin{equation*}
+  f\bigl(f(x)\bigr) + f(x) = 2x  \quad\text{pour tout $x>0$}
+\end{equation*}
+
+\emph{Indication: on considérera $u_0 \in \mb{R}$ et la suite $u_{n+1} =
+f(u_n)$}
 
 
 \end{document}
