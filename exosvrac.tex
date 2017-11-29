@@ -1702,7 +1702,7 @@ $x \in [0,1]$ tel que $f(x) = x$.
         $f'(x) = -x f(x)$
 \end{enumerate}
 
-\section{Nombres réels}
+\section{Topologie, suites dans $\mb{R}$ et $\mb{C}$}
 
 
 \exercice[Théorème de Knaster-Tarski]
@@ -1725,6 +1725,193 @@ Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f
 
 Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
 
+\exercice
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue telle que si $ x \le y$ sont des rationnels alors $f(x) \le f(y)$. Montrer que $f$ est croissante sur $\mb{R}$.
+
+\exercice
+
+Soit $f : [0,1] \rightarrow \mb{R}$ continue et $\fonction{g}{[0,1]}{\mb{R}}{x}{\displaystyle \sup_{t \in [0,x]} f(t)}$.
+
+Montrer que $g$ est croissante et continue.
+
+\begin{enumerate}
+
+\item Donner la définition d'une suite réelle convergente. Est-elle toujours bornée ?
+
+\item Soient $(u_n)_{n \ge 0}$ une suite réelle telle que $(u_{2n}){n \ge 0}$ et $(u_{2n+1})_{n \ge 0}$ convergent vers la même limite $l$. Que dire de la convergence de $(u_n)_{n \ge 0}$ ?
+
+\item \'Enoncer et démontrer le théorème de Bolzano-Weierstrass dans $\mb{C}$ (on pourra admettre sa validité dans $\mb{R}$).
+
+\end{enumerate}
+
+\exercice
+
+Soient $(u_n)_{n \ge 0}$ et $(v_n)_{n \ge 0}$ deux suites de réels strictement positifs telles que $\frac{u_{n+1}}{u_n} \le \frac{v_{n+1}}{v_n}$.
+
+\begin{enumerate}
+
+\item On suppose que $(v_n)_{n \ge 0}$ tend vers $0$. Que dire de $(u_n)_{n \ge 0}$ ? \emph{Indication : télescopage.}
+
+\item Que se passe-t-il si $(u_n)_{n \ge 0}$ tend vers $+ \infty$ ?
+
+\end{enumerate}
+
+
+\subsection{Convergence de suites}
+
+\exercice[Règle de Leibniz]
+
+\begin{enumerate}
+
+\item Soit $(u_k)_{k \ge 0}$ une suite de réels positifs décroissante et tendant vers $0$. Pour $n \ge 0$ on pose $\displaystyle A_n := \sum_{k=0}^n (-1)^{k} u_k$.
+
+
+\begin{enumerate}
+
+\item Montrer que $(A_{2n})_{n \ge 0}$ et $(A_{2n+1})_{n \ge 0}$ sont adjacentes.
+
+\item Montrer que $(A_n)_{n \ge 0}$ converge.
+
+\end{enumerate}
+
+\item Quelle est la nature de $\displaystyle \left(\sum_{k=0}^n \frac{(-1)^{k}}{\sqrt{k+1}}\right)_{n \ge 0}$ ?
+
+\end{enumerate}
+
+
+
+
+
+\exercice
+
+\begin{enumerate}
+
+\item Soit $k \in \mb{N}$ et $x \in \mb{R}$, montrer que que $nx -1 < \lfloor nx \rfloor \le nx$.
+
+\item Que dire de $\displaystyle \lim_{n \to + \infty} \frac{1}{n^2} \sum_{k=1}^n \lfloor kx \rfloor$ ?
+\end{enumerate}
+
+
+\exercice[Suites convergentes vers les irrationnels]
+
+\begin{enumerate}
+
+\item Soit $(u_n)_{n \ge 0}$ une suite d'entiers convergente. Montrer qu'elle est stationnaire.
+
+\item Soit $x\in \mb{R}^*_+ \smallsetminus \mb{Q}$ Monter qu'il existe une suite $\left(\frac{p_n}{q_n}\right)_{n \ge 0}$ de limite $x$ telle que $p_n, q_n \in \mb{N}^*$.
+
+\item On suppose que $q_n \not \rightarrow + \infty$.
+
+\begin{enumerate}
+
+\item Montrer qu'il existe une sous-suite $(q_{\varphi(n)})_{n \ge 0}$ qui est bornée. En déduire qu'il existe une sous-suite $(q_{\psi(n)})_{n \ge 0}$ stationnaire.
+
+\item Montrer que $\left(\frac{p_{\psi(n)}}{q_{\psi(n)}} \times q_{\psi(n)}\right)_{n \ge 0}$ est stationnaire.
+
+\item Conclure à une contradiction.
+\end{enumerate}
+
+\item On sait maintenant que $q_n \to + \infty$. On suppose que $p_n \not \rightarrow + \infty$. Montrer qu'il existe une sous-suite $\left(\frac{p_{\nu(n)}}{q_{\nu(n)}}\right)_{n \ge 0}$ tendant vers $0$, puis conclure à une contradiction.
+
+\end{enumerate}
+
+
+
+
+
+
+\exercice[Complétude de $\mb{R}$]
+
+Une suite réelle $(u_n)_{n \ge 0}$ est de Cauchy si $\forall \varepsilon >0$, $\exists n_0$, $\forall m,n \ge n_0$, $|u_n - u_m | \le \varepsilon$.
+
+\begin{enumerate}
+
+\item Soit $(u_n)_{n \ge 0}$ une suite réelle convergente. Montrer qu'elle est de Cauchy.
+
+\item On suppose que $(u_n)_{n \ge 0}$ est de Cauchy.
+
+\begin{enumerate}
+
+\item Montrer que $(u_n)_{n \ge 0}$ est bornée.
+
+\item En déduire qu'elle possède une sous-suite convergente vers une limite $l$. En réutilisant la propriété de Cauchy, montrer que $u_n \rightarrow l$.
+
+\end{enumerate}
+
+\item Ces résultats restent-ils vrais dans $\mb{C}$ ?
+
+\end{enumerate}
+
+
+
+
+
+
+\exercice[Lemme de Ces\`aro]
+
+Soit $(u_k)_{k \ge 0}$ une suite réelle convergente vers une limite finie $l$. On souhaite montrer que la suite $\displaystyle S_n := \frac{1}{n+1} \sum_{k=0}^n u_k $ converge également vers $l$.
+
+\begin{enumerate}
+
+\item Montrer que pour tout $n \ge m \ge 0$ on a : 
+
+$$ \left| \left( \frac{1}{n+1} \sum_{k=0}^n u_k \right) - l \right| \le \left(\frac{1}{n+1}  \sum_{k=0}^{m-1} \left| u_k - l \right|\right)+ \left(\frac{1}{n+1} \sum_{k=m}^n \left| u_k - l \right|\right)$$
+
+\item On fixe à partir dans cette question et la suivante $\varepsilon > 0$.
+
+\begin{enumerate}
+
+\item Pourquoi existe-t-il $m \ge 0$ tel que $\forall k \ge m$, $|u_k - l | \le \varepsilon /2$ ?
+
+\item En déduire que pour tout $n \ge m$, $\frac{1}{n+1} \sum_{k=m}^n \left| u_k - l \right| \le \varepsilon /2$.
+
+\end{enumerate}
+
+\item $m$ étant fixé, monter qu'il existe $n \ge m$ tel que $\frac{1}{n+1}  \sum_{k=0}^{m-1} \left| u_k - l \right| \le \varepsilon /2$.
+
+\item Déduire de ce qui précède la convergence de $(S_n)_{n \ge 0}$.
+
+\item A-t-on la réciproque de ce résultat ?
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Extraction diagonale]
+
+On suppose que pour tout $k \ge 0$, $u^k := (u^k_n)_{n \ge 0}$ est une suite réelle bornée. 
+
+\begin{enumerate}
+
+\item D'après quel théorème existe-t-il une sous-suite $\left(u^0_{\varphi_0(n)}\right)_{n \ge 0}$ convergente ?
+
+\item Construire par récurrence une suite $(\varphi_k)_{k \ge 0}$ d'extractrices telle que :
+
+\begin{itemize}
+
+\item[$\bullet$] $\forall k \ge 0$, il existe une extractrice $\psi_k$ telle que $\varphi_{k+1} = \varphi_k \circ \psi_k$ ;
+
+\item[$\bullet$] $\forall k \ge 0$, $\forall 1 \le i \le k$, $\left(u^i_{\varphi_k(n)}\right)_{n \ge 0}$ converge.
+
+\end{itemize}
+
+\item Montrer que $\varphi : k \mapsto \varphi_k(k)$ est une extractrice et que $\forall k \ge 0$, $\left(u^k_{\varphi(n)}\right)_{n \ge 0}$ converge.
+
+
+\end{enumerate}
+
+
+\exercice
+
+Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n}\right\rfloor = \left\lfloor nx \right\rfloor$.
+
+\emph{Indication : faire un dessin de la droite réelle.}
 
 
 \section{Intégration}
@@ -2086,11 +2273,11 @@ On cherche les $f : \mb{R}_+^* \rightarrow \mb{R}$ dérivables, telles que $f'(t
 
 \exercice[Une équation de Bernoulli]
 
-On cherche les solutions $\mb{R} \rightarrow \mb{R}_+^*$ de $y' = \sin(t) y + \cos(t) \sqrt{y}$ $(B)$.
+On cherche les solutions $\mb{R} \rightarrow \mb{R}_+^*$ de $y' = y +  \sqrt{y}$ $(B)$.
 
 \begin{enumerate}
 
-\item Montrer si $f$ est solution de $(B)$, alors $\sqrt{f}$ est solution de $2y' = \sin(t) y + \cos(t)$ $(E)$.
+\item Montrer si $f$ est solution de $(B)$, alors $\sqrt{f}$ est solution de $2y' =  y + 1$ $(E)$.
 
 \item Résoudre $(E)$ et conclure.
 
