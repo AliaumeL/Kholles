@@ -1735,183 +1735,7 @@ Soit $f : [0,1] \rightarrow \mb{R}$ continue et $\fonction{g}{[0,1]}{\mb{R}}{x}{
 
 Montrer que $g$ est croissante et continue.
 
-\begin{enumerate}
 
-\item Donner la définition d'une suite réelle convergente. Est-elle toujours bornée ?
-
-\item Soient $(u_n)_{n \ge 0}$ une suite réelle telle que $(u_{2n}){n \ge 0}$ et $(u_{2n+1})_{n \ge 0}$ convergent vers la même limite $l$. Que dire de la convergence de $(u_n)_{n \ge 0}$ ?
-
-\item \'Enoncer et démontrer le théorème de Bolzano-Weierstrass dans $\mb{C}$ (on pourra admettre sa validité dans $\mb{R}$).
-
-\end{enumerate}
-
-\exercice
-
-Soient $(u_n)_{n \ge 0}$ et $(v_n)_{n \ge 0}$ deux suites de réels strictement positifs telles que $\frac{u_{n+1}}{u_n} \le \frac{v_{n+1}}{v_n}$.
-
-\begin{enumerate}
-
-\item On suppose que $(v_n)_{n \ge 0}$ tend vers $0$. Que dire de $(u_n)_{n \ge 0}$ ? \emph{Indication : télescopage.}
-
-\item Que se passe-t-il si $(u_n)_{n \ge 0}$ tend vers $+ \infty$ ?
-
-\end{enumerate}
-
-
-\subsection{Convergence de suites}
-
-\exercice[Règle de Leibniz]
-
-\begin{enumerate}
-
-\item Soit $(u_k)_{k \ge 0}$ une suite de réels positifs décroissante et tendant vers $0$. Pour $n \ge 0$ on pose $\displaystyle A_n := \sum_{k=0}^n (-1)^{k} u_k$.
-
-
-\begin{enumerate}
-
-\item Montrer que $(A_{2n})_{n \ge 0}$ et $(A_{2n+1})_{n \ge 0}$ sont adjacentes.
-
-\item Montrer que $(A_n)_{n \ge 0}$ converge.
-
-\end{enumerate}
-
-\item Quelle est la nature de $\displaystyle \left(\sum_{k=0}^n \frac{(-1)^{k}}{\sqrt{k+1}}\right)_{n \ge 0}$ ?
-
-\end{enumerate}
-
-
-
-
-
-\exercice
-
-\begin{enumerate}
-
-\item Soit $k \in \mb{N}$ et $x \in \mb{R}$, montrer que que $nx -1 < \lfloor nx \rfloor \le nx$.
-
-\item Que dire de $\displaystyle \lim_{n \to + \infty} \frac{1}{n^2} \sum_{k=1}^n \lfloor kx \rfloor$ ?
-\end{enumerate}
-
-
-\exercice[Suites convergentes vers les irrationnels]
-
-\begin{enumerate}
-
-\item Soit $(u_n)_{n \ge 0}$ une suite d'entiers convergente. Montrer qu'elle est stationnaire.
-
-\item Soit $x\in \mb{R}^*_+ \smallsetminus \mb{Q}$ Monter qu'il existe une suite $\left(\frac{p_n}{q_n}\right)_{n \ge 0}$ de limite $x$ telle que $p_n, q_n \in \mb{N}^*$.
-
-\item On suppose que $q_n \not \rightarrow + \infty$.
-
-\begin{enumerate}
-
-\item Montrer qu'il existe une sous-suite $(q_{\varphi(n)})_{n \ge 0}$ qui est bornée. En déduire qu'il existe une sous-suite $(q_{\psi(n)})_{n \ge 0}$ stationnaire.
-
-\item Montrer que $\left(\frac{p_{\psi(n)}}{q_{\psi(n)}} \times q_{\psi(n)}\right)_{n \ge 0}$ est stationnaire.
-
-\item Conclure à une contradiction.
-\end{enumerate}
-
-\item On sait maintenant que $q_n \to + \infty$. On suppose que $p_n \not \rightarrow + \infty$. Montrer qu'il existe une sous-suite $\left(\frac{p_{\nu(n)}}{q_{\nu(n)}}\right)_{n \ge 0}$ tendant vers $0$, puis conclure à une contradiction.
-
-\end{enumerate}
-
-
-
-
-
-
-\exercice[Complétude de $\mb{R}$]
-
-Une suite réelle $(u_n)_{n \ge 0}$ est de Cauchy si $\forall \varepsilon >0$, $\exists n_0$, $\forall m,n \ge n_0$, $|u_n - u_m | \le \varepsilon$.
-
-\begin{enumerate}
-
-\item Soit $(u_n)_{n \ge 0}$ une suite réelle convergente. Montrer qu'elle est de Cauchy.
-
-\item On suppose que $(u_n)_{n \ge 0}$ est de Cauchy.
-
-\begin{enumerate}
-
-\item Montrer que $(u_n)_{n \ge 0}$ est bornée.
-
-\item En déduire qu'elle possède une sous-suite convergente vers une limite $l$. En réutilisant la propriété de Cauchy, montrer que $u_n \rightarrow l$.
-
-\end{enumerate}
-
-\item Ces résultats restent-ils vrais dans $\mb{C}$ ?
-
-\end{enumerate}
-
-
-
-
-
-
-\exercice[Lemme de Ces\`aro]
-
-Soit $(u_k)_{k \ge 0}$ une suite réelle convergente vers une limite finie $l$. On souhaite montrer que la suite $\displaystyle S_n := \frac{1}{n+1} \sum_{k=0}^n u_k $ converge également vers $l$.
-
-\begin{enumerate}
-
-\item Montrer que pour tout $n \ge m \ge 0$ on a : 
-
-$$ \left| \left( \frac{1}{n+1} \sum_{k=0}^n u_k \right) - l \right| \le \left(\frac{1}{n+1}  \sum_{k=0}^{m-1} \left| u_k - l \right|\right)+ \left(\frac{1}{n+1} \sum_{k=m}^n \left| u_k - l \right|\right)$$
-
-\item On fixe à partir dans cette question et la suivante $\varepsilon > 0$.
-
-\begin{enumerate}
-
-\item Pourquoi existe-t-il $m \ge 0$ tel que $\forall k \ge m$, $|u_k - l | \le \varepsilon /2$ ?
-
-\item En déduire que pour tout $n \ge m$, $\frac{1}{n+1} \sum_{k=m}^n \left| u_k - l \right| \le \varepsilon /2$.
-
-\end{enumerate}
-
-\item $m$ étant fixé, monter qu'il existe $n_0 \ge m$ tel si $n \ge n_0$, $\frac{1}{n+1}  \sum_{k=0}^{m-1} \left| u_k - l \right| \le \varepsilon /2$.
-
-\item Déduire de ce qui précède la convergence de $(S_n)_{n \ge 0}$.
-
-\item A-t-on la réciproque de ce résultat ?
-
-
-
-
-\end{enumerate}
-
-
-
-
-
-\exercice[Extraction diagonale]
-
-On suppose que pour tout $k \ge 0$, $u^k := (u^k_n)_{n \ge 0}$ est une suite réelle bornée. 
-
-\begin{enumerate}
-
-\item D'après quel théorème existe-t-il une sous-suite $\left(u^0_{\varphi_0(n)}\right)_{n \ge 0}$ convergente ?
-
-\item Construire par récurrence une suite $(\varphi_k)_{k \ge 0}$ d'extractrices telle que :
-
-\begin{itemize}
-
-\item[$\bullet$] $\forall k \ge 0$, il existe une extractrice $\psi_k$ telle que $\varphi_{k+1} = \varphi_k \circ \psi_k$ ;
-
-\item[$\bullet$] $\forall k \ge 0$, $\forall 1 \le i \le k$, $\left(u^i_{\varphi_k(n)}\right)_{n \ge 0}$ converge.
-
-\end{itemize}
-
-\item Montrer que $\varphi : k \mapsto \varphi_k(k)$ est une extractrice et que $\forall k \ge 0$, $\left(u^k_{\varphi(n)}\right)_{n \ge 0}$ converge.
-
-
-\end{enumerate}
-
-
-\exercice
-
-Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n}\right\rfloor = \left\lfloor nx \right\rfloor$.
-
-\emph{Indication : faire un dessin de la droite réelle.}
 
 
 \section{Intégration}
@@ -2342,17 +2166,26 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 
 \section{Suites numériques}
 
-\exercice[Discriminant]
+\subsection{Convergence}
 
-Soit $(u_n)$ une suite de nombre strictement positifs 
-qui vérifie~:
+\exercice[Règle de Leibniz]
 
-\begin{equation*}
-    u_n + \frac{1}{u_n} \rightarrow 2
-\end{equation*}
+\begin{enumerate}
 
-Calculer la limite de $u_n$ \emph{Indication: solution d'une équation de degré
-2...}
+\item Soit $(u_k)_{k \ge 0}$ une suite de réels positifs décroissante et tendant vers $0$. Pour $n \ge 0$ on pose $\displaystyle A_n := \sum_{k=0}^n (-1)^{k} u_k$.
+
+
+\begin{enumerate}
+
+\item Montrer que $(A_{2n})_{n \ge 0}$ et $(A_{2n+1})_{n \ge 0}$ sont adjacentes.
+
+\item Montrer que $(A_n)_{n \ge 0}$ converge.
+
+\end{enumerate}
+
+\item Quelle est la nature de $\displaystyle \left(\sum_{k=0}^n \frac{(-1)^{k}}{\sqrt{k+1}}\right)_{n \ge 0}$ ?
+
+\end{enumerate}
 
 \exercice
 
@@ -2374,6 +2207,33 @@ Pour tout $n \in \mb{N}$, on pose
     Établir que $S'_{2n} = S_{n}$. En déduire la limite de $(S'_{n})$.
 \end{enumerate}
 
+\exercice[Règle de d'Alembert pour les suites]
+
+Soit $(u_n)_n \ge 0$ une suite de réels strictement positifs telle que $\frac{u_{n+1}}{u_n} \rightarrow l$.
+
+\begin{enumerate}
+
+\item Montrer que si $l<1$ alors $u_n \rightarrow 0$.
+
+\item Montrer que si $l>1$ alors $u_n \rightarrow + \infty$.
+
+\item Que dire dans le cas $l=1$ ?
+
+\end{enumerate}
+
+
+
+\exercice[Discriminant]
+
+Soit $(u_n)$ une suite de nombre strictement positifs 
+qui vérifie~:
+
+\begin{equation*}
+    u_n + \frac{1}{u_n} \rightarrow 2
+\end{equation*}
+
+Calculer la limite de $u_n$ \emph{Indication: solution d'une équation de degré
+2...}
 
 \exercice
 
@@ -2387,15 +2247,8 @@ Soient $(a,b) \in \mb{R}^{2}$, $(u_{n})$ et $(v_{n})$ deux suites telles que
 \end{equation*}
 Montrer que $u_{n} \to a$ et $v_{n} \to b$.
 
-\exercice
 
-Soit $(x_{n})$ et $(y_{n})$ deux suites réelles telles que
-\begin{equation*}
-    \forall n \in \mb{N}, x_{n + 1} = \frac{x_{n} - y_{n}}{2} \quad  y_{n + 1} = \frac{x_{n} + y_{n}}{2}
-\end{equation*}
-
-En introduisant la suite complexe de terme général $z_{n} = x_{n} + i y_{n}$, 
-montrer que les suites $(x_{n})$ et $(y_{n})$ convergent et déterminer leurs limites.
+\subsection{Suites récurrentes}
 
 \exercice
 
@@ -2406,6 +2259,53 @@ Déterminer les fonctions $f\colon \mb{R}_{ + }^{*} \to \mb{R}_{ + }^{*}$ vérif
 
 \emph{Indication: on considérera $u_0 \in \mb{R}$ et la suite $u_{n+1} =
 f(u_n)$}
+
+\exercice
+
+Déterminer les fonctions $f : \mb{R}_+^* \rightarrow \mb{R}_+^*$ vérifiant $f \circ f(x) = 6x - f(x)$.
+
+\emph{Indication :  faire apparaître une suite récurrente.}
+
+\exercice
+
+Terme général de $(u_n)_{n \ge 0}$ définie par $u_0 = u_1 = 1$ et $u_{n+2} = 2 \cos(\theta) u_{n+1} - u_n$.
+
+
+
+\exercice
+
+Soit $(x_{n})$ et $(y_{n})$ deux suites réelles telles que
+\begin{equation*}
+    \forall n \in \mb{N}, x_{n + 1} = \frac{x_{n} - y_{n}}{2} \quad  y_{n + 1} = \frac{x_{n} + y_{n}}{2}
+\end{equation*}
+
+En introduisant la suite complexe de terme général $z_{n} = x_{n} + i y_{n}$, 
+montrer que les suites $(x_{n})$ et $(y_{n})$ convergent et déterminer leurs limites.
+
+\exercice[Inégalité de récurrence]
+
+Soit $(u_n)_{n \ge 0} \in [0,1]^{\mb{N}}$ une suite telle qu'il existe $K > 1$ et $v_n \rightarrow 0$ avec $\forall n$, $u_{n+1} \le \frac{u_{n} + v_n}{K}$.
+
+\begin{enumerate}
+
+\item Montrer que $\forall n \ge 0, \forall p \ge 1$, $u_{n+p} \le \frac{u_n}{K^p} + \sum_{k=1}^p \frac{v_{n+k}}{K^k}$
+
+\item En déduire que $(u_n)_{n \ge 0}$ tend vers $0$.
+
+\end{enumerate}
+
+\exercice
+
+Soient $(u_n)_{n \ge 0}$ et $(v_n)_{n \ge 0}$ deux suites de réels strictement positifs telles que $\frac{u_{n+1}}{u_n} \le \frac{v_{n+1}}{v_n}$.
+
+\begin{enumerate}
+
+\item On suppose que $(v_n)_{n \ge 0}$ tend vers $0$. Que dire de $(u_n)_{n \ge 0}$ ? \emph{Indication : télescopage.}
+
+\item Que se passe-t-il si $(u_n)_{n \ge 0}$ tend vers $+ \infty$ ?
+
+\end{enumerate}
+
 
 
 \exercice 
@@ -2427,18 +2327,81 @@ Montrer que la suite $(v_n)$ définie comme suit converge~:
     v_n = \prod_{i = 0}^n u_n
 \end{equation*}
 
-\emph{Indication: $2^n \sin (\theta/ 2^n)$}
+\emph{Indication: $2^n \sin (\theta/ 2^n)$ - attention à l'équivalent}
 
 \exercice 
 
 Soit $n$ un entier naturel et $E_n$ l'équation
-$tan x + x = n$.
+$\tan x + x = n$.
 
 \begin{enumerate}
     \item Montrer que $E_n$ admet une unique solution $x_n$ dans 
     $]-\pi/2, \pi/2[$
     \item Montrer que la suite $x_n$ converge (remarquer que $(x_n)$ 
         est bornée)
+\end{enumerate}
+
+
+\exercice
+
+Montrer que la suite $(\cos(n))_{n \ge 0}$ n'est pas convergente.
+
+\emph{Remarque : on peut en fait montrer que l'ensemble de ses valeurs d'adhérence est $[-1,1]$.}
+
+
+
+\exercice[Suites adjacentes, à l'envers]
+
+Soit $0 < u_0 < v_0$, on définit par récurrence pour $n > 0$, $u_{n+1} = \frac{u_n+v_n}{2}$ et $v_{n+1} = \sqrt{u_n v_n}$.
+
+\begin{enumerate}
+
+\item Montrer que $(u_n)_{n \ge 0}$ et $(v_n)_{n \ge 0}$ sont bien définies et que $\forall n \ge 0$, $u_n \le v_n$.
+
+\item Etudier la monotonie de $(u_n)_{n \ge 0}$ et de $(v_n)_{n \ge 0}$. En déduire que ces suites ont des limites $U$ et $V$.
+
+\item Montrer que $U =V$. Les suites $(u_n)_{n \ge 0}$ et $(v_n)_{n \ge 0}$ étaient-elles adjacentes ?
+
+
+\end{enumerate}
+
+
+\exercice
+
+\begin{enumerate}
+
+\item Soit $k \in \mb{N}$ et $x \in \mb{R}$, montrer que que $nx -1 < \lfloor nx \rfloor \le nx$.
+
+\item Que dire de $\displaystyle \lim_{n \to + \infty} \frac{1}{n^2} \sum_{k=1}^n \lfloor kx \rfloor$ ?
+\end{enumerate}
+
+
+
+\subsection{Sous-suites, extractions, manipulations de $\varepsilon$}
+
+
+
+\exercice[Suites convergentes vers les irrationnels]
+
+\begin{enumerate}
+
+\item Soit $(u_n)_{n \ge 0}$ une suite d'entiers convergente. Montrer qu'elle est stationnaire.
+
+\item Soit $x\in \mb{R}^*_+ \smallsetminus \mb{Q}$ Monter qu'il existe une suite $\left(\frac{p_n}{q_n}\right)_{n \ge 0}$ de limite $x$ telle que $p_n, q_n \in \mb{N}^*$.
+
+\item On suppose que $q_n \not \rightarrow + \infty$.
+
+\begin{enumerate}
+
+\item Montrer qu'il existe une sous-suite $(q_{\varphi(n)})_{n \ge 0}$ qui est bornée. En déduire qu'il existe une sous-suite $(q_{\psi(n)})_{n \ge 0}$ stationnaire.
+
+\item Montrer que $\left(\frac{p_{\psi(n)}}{q_{\psi(n)}} \times q_{\psi(n)}\right)_{n \ge 0}$ est stationnaire.
+
+\item Conclure à une contradiction.
+\end{enumerate}
+
+\item On sait maintenant que $q_n \to + \infty$. On suppose que $p_n \not \rightarrow + \infty$. Montrer qu'il existe une sous-suite $\left(\frac{p_{\nu(n)}}{q_{\nu(n)}}\right)_{n \ge 0}$ tendant vers $0$, puis conclure à une contradiction.
+
 \end{enumerate}
 
 \exercice[Irrationalité de $e$]
@@ -2465,7 +2428,7 @@ Et $v_n = u_n + \frac{1}{n \cdot n!}$.
         \end{equation*}
         Avec $M_{n+1} = \sup_{x \in [a,b] } |f^{(n+1)} (x)|$.
 
-        En appliquant cette inégalité à $f = e$, $[a,b] = [0,1]$,
+        En appliquant cette inégalité à $f = \exp$, $[a,b] = [0,1]$,
         $x_0 = 0$ et $x = 1$ 
         en déduire $u_n \to e$
 
@@ -2482,5 +2445,102 @@ Dans le sytle, montrer par récurrence que~:
 \begin{equation*}
     e^x = \sum_{k = 0}^n \frac{x^k}{k!} + \int_0^x \frac{x^n}{n!} e^x dx
 \end{equation*}
+
+
+
+
+
+
+
+
+\exercice[Complétude de $\mb{R}$]
+
+Une suite réelle $(u_n)_{n \ge 0}$ est de Cauchy si $\forall \varepsilon >0$, $\exists n_0$, $\forall m,n \ge n_0$, $|u_n - u_m | \le \varepsilon$.
+
+\begin{enumerate}
+
+\item Soit $(u_n)_{n \ge 0}$ une suite réelle convergente. Montrer qu'elle est de Cauchy.
+
+\item On suppose que $(u_n)_{n \ge 0}$ est de Cauchy.
+
+\begin{enumerate}
+
+\item Montrer que $(u_n)_{n \ge 0}$ est bornée.
+
+\item En déduire qu'elle possède une sous-suite convergente vers une limite $l$. En réutilisant la propriété de Cauchy, montrer que $u_n \rightarrow l$.
+
+\end{enumerate}
+
+\item Ces résultats restent-ils vrais dans $\mb{C}$ ?
+
+\end{enumerate}
+
+
+
+
+
+
+\exercice[Lemme de Ces\`aro]
+
+Soit $(u_k)_{k \ge 0}$ une suite réelle convergente vers une limite finie $l$. On souhaite montrer que la suite $\displaystyle S_n := \frac{1}{n+1} \sum_{k=0}^n u_k $ converge également vers $l$.
+
+\begin{enumerate}
+
+\item Montrer que pour tout $n \ge m \ge 0$ on a : 
+
+$$ \left| \left( \frac{1}{n+1} \sum_{k=0}^n u_k \right) - l \right| \le \left(\frac{1}{n+1}  \sum_{k=0}^{m-1} \left| u_k - l \right|\right)+ \left(\frac{1}{n+1} \sum_{k=m}^n \left| u_k - l \right|\right)$$
+
+\item On fixe à partir dans cette question et la suivante $\varepsilon > 0$.
+
+\begin{enumerate}
+
+\item Pourquoi existe-t-il $m \ge 0$ tel que $\forall k \ge m$, $|u_k - l | \le \varepsilon /2$ ?
+
+\item En déduire que pour tout $n \ge m$, $\frac{1}{n+1} \sum_{k=m}^n \left| u_k - l \right| \le \varepsilon /2$.
+
+\end{enumerate}
+
+\item $m$ étant fixé, monter qu'il existe $n_0 \ge m$ tel si $n \ge n_0$, $\frac{1}{n+1}  \sum_{k=0}^{m-1} \left| u_k - l \right| \le \varepsilon /2$.
+
+\item Déduire de ce qui précède la convergence de $(S_n)_{n \ge 0}$.
+
+\item A-t-on la réciproque de ce résultat ?
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Extraction diagonale]
+
+On suppose que pour tout $k \ge 0$, $u^k := (u^k_n)_{n \ge 0}$ est une suite réelle bornée. 
+
+\begin{enumerate}
+
+\item D'après quel théorème existe-t-il une sous-suite $\left(u^0_{\varphi_0(n)}\right)_{n \ge 0}$ convergente ?
+
+\item Construire par récurrence une suite $(\varphi_k)_{k \ge 0}$ d'extractrices telle que :
+
+\begin{itemize}
+
+\item[$\bullet$] $\forall k \ge 0$, il existe une extractrice $\psi_k$ telle que $\varphi_{k+1} = \varphi_k \circ \psi_k$ ;
+
+\item[$\bullet$] $\forall k \ge 0$, $\forall 1 \le i \le k$, $\left(u^i_{\varphi_k(n)}\right)_{n \ge 0}$ converge.
+
+\end{itemize}
+
+\item Montrer que $\varphi : k \mapsto \varphi_k(k)$ est une extractrice et que $\forall k \ge 0$, $\left(u^k_{\varphi(n)}\right)_{n \ge 0}$ converge.
+
+
+\end{enumerate}
+
+
+
+
+
 
 \end{document}
