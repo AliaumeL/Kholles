@@ -33,9 +33,9 @@ AYASSE      : 16A
 BLANCHET    : 14A
 BAYT        : 17A
 WENDEOU     : 13A,13G
-JADE        : 10A
-LEMASSON    : 15A
-MAURICE     : 13A
+JADE        : 10A,7G
+LEMASSON    : 15A,15G
+MAURICE     : 13A,14G
 BANDO       : 14A
 LAVAUD      : 14A
 LECUNUDER   : 10A

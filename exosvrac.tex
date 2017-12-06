@@ -2288,13 +2288,13 @@ Soit $(u_n)_{n \ge 0} \in [0,1]^{\mb{N}}$ une suite telle qu'il existe $K > 1$ e
 
 \begin{enumerate}
 
-\item Montrer que $\forall n \ge 0, \forall p \ge 1$, $u_{n+p} \le \frac{u_n}{K^p} + \sum_{k=1}^p \frac{v_{n+k}}{K^k}$
+\item Montrer que $\forall n \ge 0, \forall p \ge 1$, $u_{n+p} \le \frac{u_n}{K^p} + \sum_{k=1}^p \frac{v_{n+k+1}}{K^k}$
 
 \item En déduire que $(u_n)_{n \ge 0}$ tend vers $0$.
 
 \end{enumerate}
 
-\exercice
+\exercice[Règle de comparaison logarithmique pour les suites]
 
 Soient $(u_n)_{n \ge 0}$ et $(v_n)_{n \ge 0}$ deux suites de réels strictement positifs telles que $\frac{u_{n+1}}{u_n} \le \frac{v_{n+1}}{v_n}$.
 
@@ -2352,11 +2352,11 @@ Montrer que la suite $(\cos(n))_{n \ge 0}$ n'est pas convergente.
 
 \exercice[Suites adjacentes, à l'envers]
 
-Soit $0 < u_0 < v_0$, on définit par récurrence pour $n > 0$, $u_{n+1} = \frac{u_n+v_n}{2}$ et $v_{n+1} = \sqrt{u_n v_n}$.
+Soit $0 < v_0 < u_0$, on définit par récurrence pour $n > 0$, $u_{n+1} = \frac{u_n+v_n}{2}$ et $v_{n+1} = \sqrt{u_n v_n}$.
 
 \begin{enumerate}
 
-\item Montrer que $(u_n)_{n \ge 0}$ et $(v_n)_{n \ge 0}$ sont bien définies et que $\forall n \ge 0$, $u_n \le v_n$.
+\item Montrer que $(u_n)_{n \ge 0}$ et $(v_n)_{n \ge 0}$ sont bien définies et que $\forall n \ge 0$, $u_n \ge v_n$.
 
 \item Etudier la monotonie de $(u_n)_{n \ge 0}$ et de $(v_n)_{n \ge 0}$. En déduire que ces suites ont des limites $U$ et $V$.
 
