@@ -1748,120 +1748,11 @@ $x \in [0,1]$ tel que $f(x) = x$.
         $f'(x) = -x f(x)$
 \end{enumerate}
 
-\section{Topologie, suites dans $\mb{R}$ et $\mb{C}$}
 
 
-\exercice[Théorème de Knaster-Tarski]
-
-Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f$ possède un \emph{point fixe}, c'est-à-dire qu'il existe $a \in [0,1]$ tel que $f(a) = a$. Soit $A = \{x \in [0,1]~|~f(x)\le x\}$.
-
-\begin{enumerate}
-
-\item Montrer que $A$ n'est pas vide.
-
-\item Montrer que si $x \in A$, alors $f(x) \in A$.
-
-\item Soit $a = \inf A$. Montrer que $\forall x \in A, f(a) \le x$. En déduire que $f(a)\le a$.
-
-\item Montrer que $a \le f(a)$ et conclure.
-
-\end{enumerate}
-
-\exercice
-
-Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
-
-\exercice
-
-Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue telle que si $ x \le y$ sont des rationnels alors $f(x) \le f(y)$. Montrer que $f$ est croissante sur $\mb{R}$.
-
-\exercice
-
-Soit $f : [0,1] \rightarrow \mb{R}$ continue et $\fonction{g}{[0,1]}{\mb{R}}{x}{\displaystyle \sup_{t \in [0,x]} f(t)}$.
-
-Montrer que $g$ est croissante et continue.
 
 
-\section{Continuité, TVI \& compagnie}
 
-\exercice[Théorème de point fixe]
-
-Soit $f : [0; + \infty] \to \mb{R}_+$ continue et qui vérifie
-
-\begin{equation*}
-    \frac{f(x)}{x} \underset{x \to +\infty}{\xrightarrow{\quad\quad\quad}} l < 1
-\end{equation*}
-
-Montrer que $f$ admet un point fixe.
-
-\exercice
-
-Soit $f : [a,b] \to \mb{R}$ continue et $p,q \in \mb{R}_+$, montrer 
-qu'il existe un $c \in [a;b]$ tel que 
-
-\begin{equation*}
-    p f(a) + q f(b) = (p + q) f (c)
-\end{equation*}
-
-\exercice[Égalité de valeurs absolues ...]
-
-Soient $f : I \to \mb{R}$ et $g : I \to \mb{R}$ deux fonctions 
-continues qui vérifient~:
-
-\begin{equation*}
-    \forall x \in I, | f(x) | = |g(x)| \neq 0
-\end{equation*}
-
-Montrer que $f = g$ ou $f = -g$.
-
-\exercice[Équation fonctionnelle]
-
-Déterminer l'ensemble des fonctions $f : \mb{R} \to \mb{R}$ continues 
-qui vérifient~:
-\begin{equation*}
-    \forall x \in \mb{R}, f(x) = f (x^2)
-\end{equation*}
-
-
-\exercice[Sinus sinus ...]
-
-Soit $f : \mb{R} \to \mb{R}$ une fonction continue et prenant la valeur $0$
-et $1$. On suppose que~:
-
-\begin{equation*}
-    \forall x \in \mb{R}, f(2x) = f(x) \cos x
-\end{equation*}
-
-Déterminer $f$.
-
-\emph{Indication: appliquer en $x/2$... + récurrence}
-
-\exercice[Limite d'intégrale]
-
-Déterminer la limite quand $x \to 0^+$ de l'intégrale suivante
-
-\begin{equation*}
-    \int_{-x}^x \sin t^2 
-\end{equation*}
-
-\exercice[Exponentielle]
-
-On pose 
-\begin{equation*}
-    I_n = \int_0^1 \frac{(1 - x)^n}{n!} e^x dx
-\end{equation*}
-
-\begin{enumerate}[(a)]
-    \item Montrer que la suite $I_n$ tends vers zéro
-    \item Montrer que 
-        \begin{equation*}
-            I_n = \frac{1}{(n+1)!} + I_{n+1}
-        \end{equation*}
-    \item En déduire que 
-        \begin{equation*}
-            e = \sum_{k = 0}^\infty \frac{1}{k!}
-        \end{equation*}
-\end{enumerate}
 
 
 
@@ -2290,10 +2181,11 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 
 \end{enumerate}
 
+\section{Propriétés topologiques dans $\mb{R}$ et $\mb{C}$}
 
-\section{Suites numériques}
+\subsection{Suites numériques}
 
-\subsection{Convergence}
+\subsubsection{Convergence}
 
 \exercice[Règle de Leibniz]
 
@@ -2375,7 +2267,21 @@ Soient $(a,b) \in \mb{R}^{2}$, $(u_{n})$ et $(v_{n})$ deux suites telles que
 Montrer que $u_{n} \to a$ et $v_{n} \to b$.
 
 
-\subsection{Suites récurrentes}
+\subsubsection{Suites récurrentes}
+
+\exercice
+
+Terme général de $(u_n)_{n \ge 0}$ définie par $u_0 = u_1 = 1$ et $u_{n+2} = 2 \cos(\theta) u_{n+1} - u_n$.
+
+\exercice
+
+Soit $(x_{n})$ et $(y_{n})$ deux suites réelles telles que
+\begin{equation*}
+    \forall n \in \mb{N}, x_{n + 1} = \frac{x_{n} - y_{n}}{2} \quad  y_{n + 1} = \frac{x_{n} + y_{n}}{2}
+\end{equation*}
+
+En introduisant la suite complexe de terme général $z_{n} = x_{n} + i y_{n}$, 
+montrer que les suites $(x_{n})$ et $(y_{n})$ convergent et déterminer leurs limites.
 
 \exercice
 
@@ -2393,21 +2299,6 @@ Déterminer les fonctions $f : \mb{R}_+^* \rightarrow \mb{R}_+^*$ vérifiant $f 
 
 \emph{Indication :  faire apparaître une suite récurrente.}
 
-\exercice
-
-Terme général de $(u_n)_{n \ge 0}$ définie par $u_0 = u_1 = 1$ et $u_{n+2} = 2 \cos(\theta) u_{n+1} - u_n$.
-
-
-
-\exercice
-
-Soit $(x_{n})$ et $(y_{n})$ deux suites réelles telles que
-\begin{equation*}
-    \forall n \in \mb{N}, x_{n + 1} = \frac{x_{n} - y_{n}}{2} \quad  y_{n + 1} = \frac{x_{n} + y_{n}}{2}
-\end{equation*}
-
-En introduisant la suite complexe de terme général $z_{n} = x_{n} + i y_{n}$, 
-montrer que les suites $(x_{n})$ et $(y_{n})$ convergent et déterminer leurs limites.
 
 \exercice[Inégalité de récurrence]
 
@@ -2504,7 +2395,7 @@ Soit $0 < v_0 < u_0$, on définit par récurrence pour $n > 0$, $u_{n+1} = \frac
 
 
 
-\subsection{Sous-suites, extractions, manipulations de $\varepsilon$}
+\subsubsection{Sous-suites, extractions, manipulations de $\varepsilon$}
 
 
 
@@ -2664,6 +2555,264 @@ On suppose que pour tout $k \ge 0$, $u^k := (u^k_n)_{n \ge 0}$ est une suite ré
 
 
 \end{enumerate}
+
+
+\subsection{Limites de fonctions, continuité}
+
+\subsubsection{Limites et continuité}
+
+\exercice
+
+\begin{enumerate}
+
+\item Trouver toutes les fonctions continues $\mb{R} \rightarrow \mb{Z}$.
+
+\item Soit $X\subseteq \mb{R}$ un ensemble fini. Trouver toutes les fonctions continues $\mb{R} \rightarrow X$.
+
+\end{enumerate}
+
+
+\exercice[Périodique n'a pas de limite]
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction périodique admettant une limite en $+ \infty$.
+
+Montrer que $f$ est constante.
+
+\exercice
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue telle que si $ x \le y$ sont des rationnels alors $f(x) \le f(y)$. Montrer que $f$ est croissante sur $\mb{R}$.
+
+
+\exercice
+
+Soit $f : [0,1] \rightarrow \mb{R}$ continue et $\fonction{g}{[0,1]}{\mb{R}}{x}{\displaystyle \sup_{t \in [0,x]} f(t)}$.
+
+Montrer que $g$ est croissante et continue.
+
+\exercice[Fonction nulle part continue]
+
+Trouver une fonction $\mb{R} \rightarrow \mb{R}$ qui n'est continue en aucun point.
+
+\emph{On pourra penser aux rationnels.}
+
+
+
+
+\subsubsection{Valeurs intermédiaires, points fixes}
+
+\exercice
+
+Soit $f : [a,b] \to \mb{R}$ continue et $p,q \in \mb{R}_+$, montrer 
+qu'il existe un $c \in [a;b]$ tel que 
+
+\begin{equation*}
+    p f(a) + q f(b) = (p + q) f (c)
+\end{equation*}
+
+
+\exercice[Isobarycentre des images]
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue et $x_1 \dots x_n$ des réels.
+
+Montrer qu'il existe $c \in \mb{R}$ tel que $\displaystyle f(c) = \frac{1}{n} \sum_{i=1}^n f(x_i)$.
+
+\emph{Indication : encadrer la valeur que l'on veut atteindre.}
+
+
+\exercice
+
+Soit $f : [0,1] \rightarrow \mb{R}$ continue telle que $f(0) = 0$ et $f(1) = 1$. Montrer que $f$ possède un point fixe.
+
+\exercice
+
+Soit $f : [0; + \infty] \to \mb{R}_+$ continue et qui vérifie
+
+\begin{equation*}
+    \frac{f(x)}{x} \underset{x \to +\infty}{\xrightarrow{\quad\quad\quad}} l < 1
+\end{equation*}
+
+Montrer que $f$ admet un point fixe.
+
+\exercice[Point fixe itéré]
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue et $f^n = f \circ \dots \circ f$ ($n$ fois).
+\begin{enumerate}
+
+\item Si $f$ admet un point fixe, est-ce le cas de $f^n$ ?
+
+\item On suppose que $f^n$ possède un unique point fixe. Montrer que $f$ possède un point fixe, et qu'il est unique. \emph{Indication : c'est $f(y)$ si $y$ est le point fixe de $f^n$}.
+
+\item On suppose dans la suite que $f^n$ possède un point fixe $y$, pas nécessairement unique. On va montrer que $f$ possède quand même un point fixe. Soit $\phi : x \mapsto f(x)$.
+
+\begin{enumerate}
+
+\item Montrer que $\displaystyle \sum_{k=0}^{n-1} \phi(f^k(y)) = 0$.
+
+\item En déduire que $\phi$ change de signe (au sens large) et conclure.
+
+\end{enumerate}
+
+\item Trouver une fonction $f : \mb{R} \rightarrow \mb{R}$ admettant un unique point fixe, telle que $f^2$ ait strictement plus d'un point fixe.
+
+
+\end{enumerate}
+
+
+\exercice[Théorème de Knaster-Tarski]
+
+Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f$ possède un \emph{point fixe}, c'est-à-dire qu'il existe $a \in [0,1]$ tel que $f(a) = a$. Soit $A = \{x \in [0,1]~|~f(x)\le x\}$.
+
+\begin{enumerate}
+
+\item Montrer que $A$ n'est pas vide.
+
+\item Montrer que si $x \in A$, alors $f(x) \in A$.
+
+\item Soit $a = \inf A$. Montrer que $\forall x \in A, f(a) \le x$. En déduire que $f(a)\le a$.
+
+\item Montrer que $a \le f(a)$ et conclure.
+
+\end{enumerate}
+
+\subsubsection{Equations fonctionnelles}
+
+\exercice[Équation fonctionnelle]
+
+Déterminer l'ensemble des fonctions $f : \mb{R} \to \mb{R}$ continues 
+qui vérifient~:
+\begin{equation*}
+    \forall x \in \mb{R}, f(x) = f (x^2)
+\end{equation*}
+
+
+
+\exercice[Égalité de valeurs absolues ...]
+
+Soient $f : I \to \mb{R}$ et $g : I \to \mb{R}$ deux fonctions 
+continues qui vérifient~:
+
+\begin{equation*}
+    \forall x \in I, | f(x) | = |g(x)| \neq 0
+\end{equation*}
+
+Montrer que $f = g$ ou $f = -g$.
+
+
+
+\exercice[Sinus sinus ...]
+
+Soit $f : \mb{R} \to \mb{R}$ une fonction continue et prenant la valeur $0$
+et $1$. On suppose que~:
+
+\begin{equation*}
+    \forall x \in \mb{R}, f(2x) = f(x) \cos x
+\end{equation*}
+
+Déterminer $f$.
+
+\emph{Indication: appliquer en $x/2$... + récurrence}
+
+\exercice
+
+Soit $f : \mb{R}_{+} \rightarrow \mb{R}_{+}$ une fonction continue telle que $f \circ f = \text{id}$.
+
+\begin{enumerate}
+
+\item Montrer que $f$ est strictement croissante.
+
+\item En déduire que $f = \text{id}$ \emph{Indication : montrer que $f(x) > x$ ou $f(x) < x$ est impossible.}
+
+\end{enumerate}
+
+\exercice[Equation fonctionnelle de la moyenne]
+
+On cherche les fonctions continues $f : \mb{R} \rightarrow \mb{R}$ telles que $\forall x,y \in \mb{R}$, $f(\frac{x+y}{2}) = \frac{f(x) +f(y)}{2}$.
+
+\begin{enumerate}
+
+\item Soit $f$ une fonction de la forme précédente. On suppose de plus $f(0) = f(1) = 0$.
+
+\begin{enumerate}
+
+\item Montrer que $f(2x) = 2 f(x)$.
+
+\item Montrer que $f$ est $2$-périodique. \emph{On pensera à utiliser les symétries autour de $0$ et $1$.}
+
+\item En remarquant que $f$ doit être bornée, conclure que $f$ est nulle.
+
+\end{enumerate}
+
+\item Que dire dans le cas général ? \emph{Indication : comment se ramener au cas précédent ?}
+
+\end{enumerate}
+
+
+\exercice[Automorphismes du corps réel]
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ telle que $\forall x,y \in \mb{R}$, $f(x+y) = f(x) + f(y)$ et $f(xy) = f(x) f(y)$.
+
+\emph{Attention on ne suppose pas $f$ continue.} 
+
+\begin{enumerate}
+
+\item Montrer que $f(0) = 0$ et $f(1) = \pm 1$. Dans la suite on supposera $f(1) = 1$.
+
+\item Montrer que $f$ est l'identité sur $\mb{N}$, puis sur $\mb{Z}$, et enfin sur $\mb{Q}$.
+
+\item Montrer que $f$ est croissante. \emph{Indication : $f(x^2) = f(x)^2$.}
+
+\item En déduire que $f$ est l'identité. \emph{On pensera aux limites monotones.}
+
+\item Que se passait-il si $f(1) = -1$ ?
+
+\end{enumerate}
+
+
+
+\subsubsection{Limites d'intégrales}
+
+\exercice[Limite d'intégrale]
+
+Déterminer la limite quand $x \to 0^+$ de l'intégrale suivante
+
+\begin{equation*}
+    \int_{-x}^x \sin t^2 \di t
+\end{equation*}
+
+\exercice[Exponentielle]
+
+On pose 
+\begin{equation*}
+    I_n = \int_0^1 \frac{(1 - x)^n}{n!} e^x \di x
+\end{equation*}
+
+\begin{enumerate}[(a)]
+    \item Montrer que la suite $I_n$ tend vers zéro
+    \item Montrer que 
+        \begin{equation*}
+            I_n = \frac{1}{(n+1)!} + I_{n+1}
+        \end{equation*}
+    \item En déduire que 
+        \begin{equation*}
+            e = \sum_{k = 0}^\infty \frac{1}{k!}
+        \end{equation*}
+\end{enumerate}
+
+
+
+\subsection{Partie entière}
+
+
+\exercice
+
+Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
+
+
+
+
+
+
+
 
 
 
