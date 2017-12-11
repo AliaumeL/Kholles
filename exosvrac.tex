@@ -1262,13 +1262,59 @@ On considère l'ensemble $\mb{Z}[\text{i}] := \{a + \text{i}b~|~a, b \in \mb{Z}\
 
 
 
+\subsection{Arithmétique}
+
+\exercice[Infinité de nombres premiers]
+
+Montrer qu'il existe une infinité de nombres premiers.
+
+\exercice[Des trous dans les nombres premiers]
+
+Justifier l'existence de $1 000$ nombres consécutifs 
+qui ne contiennent pas de nombres premiers.
+
+\emph{Indication: $x_k = (10001)! + k$}
+
+\exercice[Nombres de Mersenne]
+
+On suppose que $n$ est un entier plus grand que $2$, et que 
+$2^n - 1$ est premier. Montrer que $n$ est premier.
+
+\emph{Indication~: $2^{ab} - 1 = (2^a - 1)(1 + \dots + 2^{a(b-1)})$}
+
+\exercice[Répartition des nombres premiers]
+
+On note $v_p(n)$ l'exposant de $p$ dans la décomposition de $n$ 
+en facteurs premiers. On note $\pi(x)$ le nombre de nombres premiers 
+inférieurs à $x$.
+
+\begin{enumerate}[(a)]
+    \item Montrer l'égalité suivante
+        \begin{equation*}
+            v_p (n!) = \sum_{k = 1}^{+\infty} \left\lfloor \frac{n}{p^k} \right\rfloor
+        \end{equation*}
+
+    \item Montrer que $v_p (a b) = v_p (a) + v_p (b)$. En déduire que $v_p (a^2)
+        = 2 v_p (a)$. Montrer un résultat similaire pour la division.
+
+    \item Montrer que ${ 2n \choose n }$ divise le produit suivant~:
+
+            \begin{equation*}
+                \prod_{p \in \mb{P}, p \leq 2n} p^{ \lfloor \frac{\ln 2n}{\ln p}
+                \rfloor}
+            \end{equation*}
+
+            \emph{Indication: utiliser les questions précédentes sur le coefficient
+            binomial pour déterminer ses diviseurs premiers.}
+
+    \item Montrer que ${ 2n \choose n } \leq (2n)^{\pi (2n)}$
 
 
-
-
-
-
-
+    \item Montrer que quand $x \to +\infty$
+        \begin{equation*}
+            \frac{x}{\ln x} = O (\pi (x)) 
+        \end{equation*}
+\end{enumerate}
 
 
 
@@ -1735,6 +1781,87 @@ Soit $f : [0,1] \rightarrow \mb{R}$ continue et $\fonction{g}{[0,1]}{\mb{R}}{x}{
 
 Montrer que $g$ est croissante et continue.
 
+
+\section{Continuité, TVI \& compagnie}
+
+\exercice[Théorème de point fixe]
+
+Soit $f : [0; + \infty] \to \mb{R}_+$ continue et qui vérifie
+
+\begin{equation*}
+    \frac{f(x)}{x} \underset{x \to +\infty}{\xrightarrow{\quad\quad\quad}} l < 1
+\end{equation*}
+
+Montrer que $f$ admet un point fixe.
+
+\exercice
+
+Soit $f : [a,b] \to \mb{R}$ continue et $p,q \in \mb{R}_+$, montrer 
+qu'il existe un $c \in [a;b]$ tel que 
+
+\begin{equation*}
+    p f(a) + q f(b) = (p + q) f (c)
+\end{equation*}
+
+\exercice[Égalité de valeurs absolues ...]
+
+Soient $f : I \to \mb{R}$ et $g : I \to \mb{R}$ deux fonctions 
+continues qui vérifient~:
+
+\begin{equation*}
+    \forall x \in I, | f(x) | = |g(x)| \neq 0
+\end{equation*}
+
+Montrer que $f = g$ ou $f = -g$.
+
+\exercice[Équation fonctionnelle]
+
+Déterminer l'ensemble des fonctions $f : \mb{R} \to \mb{R}$ continues 
+qui vérifient~:
+\begin{equation*}
+    \forall x \in \mb{R}, f(x) = f (x^2)
+\end{equation*}
+
+
+\exercice[Sinus sinus ...]
+
+Soit $f : \mb{R} \to \mb{R}$ une fonction continue et prenant la valeur $0$
+et $1$. On suppose que~:
+
+\begin{equation*}
+    \forall x \in \mb{R}, f(2x) = f(x) \cos x
+\end{equation*}
+
+Déterminer $f$.
+
+\emph{Indication: appliquer en $x/2$... + récurrence}
+
+\exercice[Limite d'intégrale]
+
+Déterminer la limite quand $x \to 0^+$ de l'intégrale suivante
+
+\begin{equation*}
+    \int_{-x}^x \sin t^2 
+\end{equation*}
+
+\exercice[Exponentielle]
+
+On pose 
+\begin{equation*}
+    I_n = \int_0^1 \frac{(1 - x)^n}{n!} e^x dx
+\end{equation*}
+
+\begin{enumerate}[(a)]
+    \item Montrer que la suite $I_n$ tends vers zéro
+    \item Montrer que 
+        \begin{equation*}
+            I_n = \frac{1}{(n+1)!} + I_{n+1}
+        \end{equation*}
+    \item En déduire que 
+        \begin{equation*}
+            e = \sum_{k = 0}^\infty \frac{1}{k!}
+        \end{equation*}
+\end{enumerate}
 
 
 
