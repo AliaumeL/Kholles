@@ -1261,66 +1261,6 @@ On considère l'ensemble $\mb{Z}[\text{i}] := \{a + \text{i}b~|~a, b \in \mb{Z}\
 
 
 
-
-\subsection{Arithmétique}
-
-\exercice[Infinité de nombres premiers]
-
-Montrer qu'il existe une infinité de nombres premiers.
-
-\exercice[Des trous dans les nombres premiers]
-
-Justifier l'existence de $1 000$ nombres consécutifs 
-qui ne contiennent pas de nombres premiers.
-
-\emph{Indication: $x_k = (10001)! + k$}
-
-\exercice[Nombres de Mersenne]
-
-On suppose que $n$ est un entier plus grand que $2$, et que 
-$2^n - 1$ est premier. Montrer que $n$ est premier.
-
-\emph{Indication~: $2^{ab} - 1 = (2^a - 1)(1 + \dots + 2^{a(b-1)})$}
-
-\exercice[Répartition des nombres premiers]
-
-On note $v_p(n)$ l'exposant de $p$ dans la décomposition de $n$ 
-en facteurs premiers. On note $\pi(x)$ le nombre de nombres premiers 
-inférieurs à $x$.
-
-\begin{enumerate}[(a)]
-    \item Montrer l'égalité suivante
-        \begin{equation*}
-            v_p (n!) = \sum_{k = 1}^{+\infty} \left\lfloor \frac{n}{p^k} \right\rfloor
-        \end{equation*}
-
-    \item Montrer que $v_p (a b) = v_p (a) + v_p (b)$. En déduire que $v_p (a^2)
-        = 2 v_p (a)$. Montrer un résultat similaire pour la division.
-
-    \item Montrer que ${ 2n \choose n }$ divise le produit suivant~:
-
-            \begin{equation*}
-                \prod_{p \in \mb{P}, p \leq 2n} p^{ \lfloor \frac{\ln 2n}{\ln p}
-                \rfloor}
-            \end{equation*}
-
-            \emph{Indication: utiliser les questions précédentes sur le coefficient
-            binomial pour déterminer ses diviseurs premiers.}
-
-    \item Montrer que ${ 2n \choose n } \leq (2n)^{\pi (2n)}$
-
-
-    \item Montrer que quand $x \to +\infty$
-        \begin{equation*}
-            \frac{x}{\ln x} = O (\pi (x)) 
-        \end{equation*}
-\end{enumerate}
-
-
-
-
-
-
 \section{Fonctions réelles}
 
 \subsection{Etude de fonctions}
@@ -2640,9 +2580,9 @@ Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue et $f^n = f \circ \do
 
 \item Si $f$ admet un point fixe, est-ce le cas de $f^n$ ?
 
-\item On suppose que $f^n$ possède un unique point fixe. Montrer que $f$ possède un point fixe, et qu'il est unique. \emph{Indication : c'est $f(y)$ si $y$ est le point fixe de $f^n$}.
+\item On suppose que $f^n$ possède un unique point fixe. Montrer que $f$ possède un point fixe, et qu'il est unique. \emph{Indication : considérer $f(y)$ si $y$ est le point fixe de $f^n$}.
 
-\item On suppose dans la suite que $f^n$ possède un point fixe $y$, pas nécessairement unique. On va montrer que $f$ possède quand même un point fixe. Soit $\phi : x \mapsto f(x)$.
+\item On suppose dans la suite que $f^n$ possède un point fixe $y$, pas nécessairement unique. On va montrer que $f$ possède quand même un point fixe. Soit $\phi : x \mapsto f(x) -x$.
 
 \begin{enumerate}
 
@@ -2809,6 +2749,208 @@ Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0
 
 
 
+
+
+
+\section{Structures algébriques}
+
+\subsection{Arithmétique}
+\exercice[Des trous dans les nombres premiers]
+
+Justifier l'existence de $1 000$ nombres consécutifs 
+qui ne sont pas premiers.
+
+\emph{Indication: $x_k = (1001)! + k$}
+
+
+\exercice[Nombres de Mersenne]
+
+\begin{enumerate}
+
+\item 
+
+\begin{enumerate}
+
+\item Montrer que si $\alpha \ge 2$ entier et $m \in \mb{N}$, $\alpha-1 | \alpha^n -1 $.
+
+\item On suppose que $\alpha^m -1$ est premier.  Montrer que $\alpha = 2$. En déduire que $m$ est premier.
+
+\end{enumerate}
+
+\item On note pour $p$ premier $M_p = 2^p -1$ (appelé nombre de Mersenne). Calculer $2^{11} [23]$. En déduire que $M_{11}$ n'est pas premier.
+
+\end{enumerate}
+
+\exercice
+
+\begin{enumerate}
+
+\item Soit $n \in \mb{N}$. Montrer que les $ k n! +1$ pour $0 \le k \le n+1$ sont 2 à 2 premiers entre eux.
+
+\item En déduire qu'il existe une infinité de nombres premiers.
+
+\end{enumerate}
+
+
+\exercice[Un exemple de progression arithmétique]
+
+Montrons qu'il existe une infinité de nombres premiers congrus à $-1[6]$. On suppose par l'absurde qu'il en existe un plus grand $N$ et on pose $M = -1 + 6 N!$
+
+\begin{enumerate}
+
+\item Montrer que $2 \not | M$ et $3 \not | M$.
+
+\item Soit $p$ un facteur premier de $M$.
+
+\begin{enumerate}
+
+\item Montrer que $p \not \equiv -1[6]$. \emph{On raisonnera par l'absurde.}
+
+\item En déduire que $p \equiv 1[6]$.
+
+\end{enumerate}
+
+\item Conclure que $M \equiv 1 [6]$. En déduire une contradiction.
+
+\end{enumerate}
+
+
+
+\exercice[Un théorème de Liouville]
+
+Soit $p$ un entier, on veut résoudre en $m \in \mb{N}^*$ l'équation suivante : $(p-1)! +1 = p^m$.
+
+\begin{enumerate}
+
+\item Traiter les cas $p = 1,2,3,4,5$.
+
+\item Désormais $p > 5$ et on suppose qu'il existe $m$ tel que $(p-1)! +1 = p^m$.
+
+\begin{enumerate}
+
+\item Montrer que $(p-1)^2 | (p-1) !$.
+
+\emph{Indication : montrer d'abord que $p$ est impair, et donc que $\frac{p-1}{2}$ est entier.}
+
+\item En utilisant une identité bien choisie, montrer que $(p-1) | 1+ p + \dots + p^{m-1}$.
+
+\item En déduire que $(p-1) | m$, puis que $m \ge p-1$.
+
+\item Montrer qu'alors $p^m > (p-1)! +1$. Etait-ce possible ?
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\exercice[Nombres de Fermat]
+
+\begin{enumerate}
+
+\item \begin{enumerate}
+
+\item Montrer que si $\alpha \ge 2$ entier, et $m$ est impair alors $\alpha +1 | \alpha^m +1$
+
+\emph{Indication : remarquer que $\alpha^m +1 = \alpha^m - (-1)^m$.}
+
+\item Montrer que si $m$ a un facteur impair, alors $2^m+1$ n'est pas un nombre premier. Comment s'écrivent  les entiers $m$ sans facteurs impairs ?
+
+\end{enumerate}
+
+\item Pour $n \ge 0$, on appelle $n$-ième nombre de Fermat noté $F_n$ l'entier $2^{2^n}+1$.
+
+\begin{enumerate}
+
+\item Calculer $F_0$, $F_1$, $F_2$, $F_3$ et justifier qu'ils sont premiers.
+
+\emph{Remarque : $F_4$ aussi est premier, mais pas $F_5 = 641 \times 6700417$.}
+
+\item Montrer que pour $n < m$, $F_n$ et $F_m$ sont premiers entre eux.
+
+\emph{Indication : écrire $m = n+k$ puis faire apparaître $F_n$ dans $F_{n+k} = F_m$.}
+
+\item En déduire qu'il existe une infinité de nombres premiers.
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+\exercice[Théorème de Wilson sans expliciter $\mb{F}_p$]
+
+On souhaite montrer que $p \ge 2$ est premier si et seulement si $(p-1)! \equiv -1 [p]$ $(*)$.
+
+\begin{enumerate}
+
+\item On suppose que $p$ vérifie $(*)$. Considérons $0 < a <p$ tel que $a | p$. Montrer que $a =1$. 
+
+\emph{Indication : montrer que $a | 1$}. Conclure quant à une implication du théorème.
+
+\item Vérifier explicitement $(*)$ lorsque $p = 2,3,5$.
+
+\item On suppose dans la suite $p$ premier $> 3$ et on note $A = \{2 \dots p-2\}$.
+
+\begin{enumerate}
+
+\item Montrer que pour $i \in A$, il existe un unique entier $f(i) \in A$ tel que $if(i) \equiv 1 [p]$. \emph{Indication : remarquer que $i$ et $p$ sont premiers entre eux.}
+
+\item Montrer que $f(f(i)) =i$ et $f(i) \neq i$.
+
+En regroupant les termes 2 par 2, en déduire que $\prod_{i \in A} i \equiv 1 [p]$.
+
+\item Conclure.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+
+
+
+\exercice[Répartition des nombres premiers]
+
+On note $v_p(n)$ l'exposant de $p$ dans la décomposition de $n$ 
+en facteurs premiers. On note $\pi(x)$ le nombre de nombres premiers 
+inférieurs à $x$.
+
+\begin{enumerate}[(a)]
+    \item Montrer l'égalité suivante
+        \begin{equation*}
+            v_p (n!) = \sum_{k = 1}^{+\infty} \left\lfloor \frac{n}{p^k} \right\rfloor
+        \end{equation*}
+
+    \item Montrer que $v_p (a b) = v_p (a) + v_p (b)$. En déduire que $v_p (a^2)
+        = 2 v_p (a)$. Montrer un résultat similaire pour la division.
+
+    \item Montrer que ${ 2n \choose n }$ divise le produit suivant~:
+
+            \begin{equation*}
+                \prod_{p \in \mb{P}, p \leq 2n} p^{ \lfloor \frac{\ln 2n}{\ln p}
+                \rfloor}
+            \end{equation*}
+
+            \emph{Indication: utiliser les questions précédentes sur le coefficient
+            binomial pour déterminer ses diviseurs premiers.}
+
+    \item Montrer que ${ 2n \choose n } \leq (2n)^{\pi (2n)}$
+
+
+    \item Montrer que quand $x \to +\infty$
+        \begin{equation*}
+            \frac{x}{\ln x} = O (\pi (x)) 
+        \end{equation*}
+\end{enumerate}
 
 
 
