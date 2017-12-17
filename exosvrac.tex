@@ -2755,64 +2755,19 @@ Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0
 \section{Structures algébriques}
 
 \subsection{Arithmétique}
-\exercice[Des trous dans les nombres premiers]
 
-Justifier l'existence de $1 000$ nombres consécutifs 
-qui ne sont pas premiers.
-
-\emph{Indication: $x_k = (1001)! + k$}
+\subsubsection{Congruences et Bezout}
 
 
-\exercice[Nombres de Mersenne]
 
-\begin{enumerate}
+\exercice[Une unicité des coefficients de Bezout]
 
-\item 
+ Soient $a \ge 1$ et $ b \ge 2$ deux entiers premiers entre eux. Montrer qu'il existe un unique couple d'entiers $0 \le u_0 < b$ et $0 \le v_0 < a$ tel que $au_0 - b v_0 = 1$.
+ 
+\exercice[Carrés parfaits]
 
-\begin{enumerate}
+Soit $n \in \mb{N}$. Montrer que $\sqrt{n} \in \mb{Q} \iff \exists m \in \mb{N}, n = m^2$.
 
-\item Montrer que si $\alpha \ge 2$ entier et $m \in \mb{N}$, $\alpha-1 | \alpha^n -1 $.
-
-\item On suppose que $\alpha^m -1$ est premier.  Montrer que $\alpha = 2$. En déduire que $m$ est premier.
-
-\end{enumerate}
-
-\item On note pour $p$ premier $M_p = 2^p -1$ (appelé nombre de Mersenne). Calculer $2^{11} [23]$. En déduire que $M_{11}$ n'est pas premier.
-
-\end{enumerate}
-
-\exercice
-
-\begin{enumerate}
-
-\item Soit $n \in \mb{N}$. Montrer que les $ k n! +1$ pour $0 \le k \le n+1$ sont 2 à 2 premiers entre eux.
-
-\item En déduire qu'il existe une infinité de nombres premiers.
-
-\end{enumerate}
-
-
-\exercice[Un exemple de progression arithmétique]
-
-Montrons qu'il existe une infinité de nombres premiers congrus à $-1[6]$. On suppose par l'absurde qu'il en existe un plus grand $N$ et on pose $M = -1 + 6 N!$
-
-\begin{enumerate}
-
-\item Montrer que $2 \not | M$ et $3 \not | M$.
-
-\item Soit $p$ un facteur premier de $M$.
-
-\begin{enumerate}
-
-\item Montrer que $p \not \equiv -1[6]$. \emph{On raisonnera par l'absurde.}
-
-\item En déduire que $p \equiv 1[6]$.
-
-\end{enumerate}
-
-\item Conclure que $M \equiv 1 [6]$. En déduire une contradiction.
-
-\end{enumerate}
 
 
 
@@ -2841,6 +2796,63 @@ Soit $p$ un entier, on veut résoudre en $m \in \mb{N}^*$ l'équation suivante :
 \end{enumerate}
 
 \end{enumerate}
+
+\subsubsection{Des nombres célèbres}
+
+
+\exercice[Nombres de Mersenne]
+
+\begin{enumerate}
+
+\item 
+
+\begin{enumerate}
+
+\item Montrer que si $\alpha \ge 2$ entier et $m \in \mb{N}$, $\alpha-1 | \alpha^n -1 $.
+
+\item Si $\alpha^m -1$ est premier, montrer que $\alpha = 2$. En déduire qu'alors $m$ est premier.
+
+\end{enumerate}
+
+\item Calculer $2^{11} [23]$. La réciproque de la question précédente est-elle vraie ?
+
+\item On définit la suite $M_n := 2^n -1$ pour $n \ge 0$.
+
+\begin{enumerate}
+
+
+\item Montrer que $M_{m+n} = 2^n M_{m} + M_n$. En déduire que $M_{m+n} \wedge M_n = M_{m} \wedge M_n$, puis que $M_m \wedge M_n = M_n \wedge M_r $ où $r$ reste de la division euclidienne de $m$ par $n$.
+
+\item Conclure que $M_m \wedge M_n = M_{n \wedge m}$. \emph{On pensera à l'algorithme d'Euclide.}
+\end{enumerate}
+
+\end{enumerate}
+
+
+\exercice[Nombres de Fibonacci]
+
+On définit la suite $(F_n)_{n \ge 0}$ par $F_0 = 0 $, $F_1 =1$ et $F_{n+2} = F_{n+1} + F_n$.
+
+\begin{enumerate}
+
+\item \begin{enumerate}\item Montrer que $\forall n \ge 1$, $F_{n+1} F_{n-1} - (F_n)^2 = (-1)^n$.
+
+\item En déduire $F_n \wedge F_{n+1} = 1$.
+
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item Montrer que $\forall n \ge 0$, $\forall m \ge 1$, $F_{m+n} = F_m F_{n+1} + F_{m-1} F_n$.
+
+\item En déduire que $F_n \wedge F_{m+n} = F_n \wedge F_m$, puis $F_n \wedge F_{m} = F_n \wedge F_r$ où $r$ est le reste de la division euclidienne de $m$ par $n$.
+
+\item Conclure que $F_n \wedge F_{m} = F_{m \wedge n}$. \emph{On pensera à l'algorithme d'Euclide.}
+
+\end{enumerate}
+
+\end{enumerate}
+
 
 
 
@@ -2880,7 +2892,45 @@ Soit $p$ un entier, on veut résoudre en $m \in \mb{N}^*$ l'équation suivante :
 
 
 
+\subsubsection{Nombres premiers, caractérisations, répartition}
 
+
+\exercice[Une infinité de nombres premiers]
+
+\begin{enumerate}
+
+\item Soit $n \in \mb{N}$. Montrer que les $ k n! +1$ pour $0 \le k \le n+1$ sont 2 à 2 premiers entre eux.
+
+\item En déduire qu'il existe une infinité de nombres premiers.
+
+\end{enumerate}
+
+\exercice[Des trous dans les nombres premiers]
+
+Justifier l'existence de $1 000$ nombres consécutifs 
+qui ne sont pas premiers.
+
+\emph{Indication: $x_k = (1001)! + k$}
+
+
+
+
+\exercice[Un exemple de progression arithmétique]
+
+Montrons qu'il existe une infinité de nombres premiers congrus à $-1[6]$. On suppose par l'absurde qu'il en existe un plus grand $N$ et on pose $M = -1 + 6 N!$
+
+\begin{enumerate}
+
+\item Montrer que $2 \not | M$ et $3 \not | M$.
+
+\item Soit $p$ un facteur premier de $M$. Montrer que $p \equiv 1[6]$.
+
+ \emph{On raisonnera par disjonction de cas sur la valeur de la congruence.}
+
+
+\item En déduire une contradiction.
+
+\end{enumerate}
 
 
 
