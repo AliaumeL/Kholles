@@ -58,7 +58,7 @@
 
 
 
-\title{Exercices détaillés de MSPI}
+\title{Exercices détaillés de MPSI}
 
 \author{Aliaume Lopez \& Gaëtan Douéneau}
 
@@ -1261,66 +1261,6 @@ On considère l'ensemble $\mb{Z}[\text{i}] := \{a + \text{i}b~|~a, b \in \mb{Z}\
 
 
 
-
-\subsection{Arithmétique}
-
-\exercice[Infinité de nombres premiers]
-
-Montrer qu'il existe une infinité de nombres premiers.
-
-\exercice[Des trous dans les nombres premiers]
-
-Justifier l'existence de $1 000$ nombres consécutifs 
-qui ne contiennent pas de nombres premiers.
-
-\emph{Indication: $x_k = (10001)! + k$}
-
-\exercice[Nombres de Mersenne]
-
-On suppose que $n$ est un entier plus grand que $2$, et que 
-$2^n - 1$ est premier. Montrer que $n$ est premier.
-
-\emph{Indication~: $2^{ab} - 1 = (2^a - 1)(1 + \dots + 2^{a(b-1)})$}
-
-\exercice[Répartition des nombres premiers]
-
-On note $v_p(n)$ l'exposant de $p$ dans la décomposition de $n$ 
-en facteurs premiers. On note $\pi(x)$ le nombre de nombres premiers 
-inférieurs à $x$.
-
-\begin{enumerate}[(a)]
-    \item Montrer l'égalité suivante
-        \begin{equation*}
-            v_p (n!) = \sum_{k = 1}^{+\infty} \left\lfloor \frac{n}{p^k} \right\rfloor
-        \end{equation*}
-
-    \item Montrer que $v_p (a b) = v_p (a) + v_p (b)$. En déduire que $v_p (a^2)
-        = 2 v_p (a)$. Montrer un résultat similaire pour la division.
-
-    \item Montrer que ${ 2n \choose n }$ divise le produit suivant~:
-
-            \begin{equation*}
-                \prod_{p \in \mb{P}, p \leq 2n} p^{ \lfloor \frac{\ln 2n}{\ln p}
-                \rfloor}
-            \end{equation*}
-
-            \emph{Indication: utiliser les questions précédentes sur le coefficient
-            binomial pour déterminer ses diviseurs premiers.}
-
-    \item Montrer que ${ 2n \choose n } \leq (2n)^{\pi (2n)}$
-
-
-    \item Montrer que quand $x \to +\infty$
-        \begin{equation*}
-            \frac{x}{\ln x} = O (\pi (x)) 
-        \end{equation*}
-\end{enumerate}
-
-
-
-
-
-
 \section{Fonctions réelles}
 
 \subsection{Etude de fonctions}
@@ -1748,120 +1688,11 @@ $x \in [0,1]$ tel que $f(x) = x$.
         $f'(x) = -x f(x)$
 \end{enumerate}
 
-\section{Topologie, suites dans $\mb{R}$ et $\mb{C}$}
 
 
-\exercice[Théorème de Knaster-Tarski]
-
-Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f$ possède un \emph{point fixe}, c'est-à-dire qu'il existe $a \in [0,1]$ tel que $f(a) = a$. Soit $A = \{x \in [0,1]~|~f(x)\le x\}$.
-
-\begin{enumerate}
-
-\item Montrer que $A$ n'est pas vide.
-
-\item Montrer que si $x \in A$, alors $f(x) \in A$.
-
-\item Soit $a = \inf A$. Montrer que $\forall x \in A, f(a) \le x$. En déduire que $f(a)\le a$.
-
-\item Montrer que $a \le f(a)$ et conclure.
-
-\end{enumerate}
-
-\exercice
-
-Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
-
-\exercice
-
-Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue telle que si $ x \le y$ sont des rationnels alors $f(x) \le f(y)$. Montrer que $f$ est croissante sur $\mb{R}$.
-
-\exercice
-
-Soit $f : [0,1] \rightarrow \mb{R}$ continue et $\fonction{g}{[0,1]}{\mb{R}}{x}{\displaystyle \sup_{t \in [0,x]} f(t)}$.
-
-Montrer que $g$ est croissante et continue.
 
 
-\section{Continuité, TVI \& compagnie}
 
-\exercice[Théorème de point fixe]
-
-Soit $f : [0; + \infty] \to \mb{R}_+$ continue et qui vérifie
-
-\begin{equation*}
-    \frac{f(x)}{x} \underset{x \to +\infty}{\xrightarrow{\quad\quad\quad}} l < 1
-\end{equation*}
-
-Montrer que $f$ admet un point fixe.
-
-\exercice
-
-Soit $f : [a,b] \to \mb{R}$ continue et $p,q \in \mb{R}_+$, montrer 
-qu'il existe un $c \in [a;b]$ tel que 
-
-\begin{equation*}
-    p f(a) + q f(b) = (p + q) f (c)
-\end{equation*}
-
-\exercice[Égalité de valeurs absolues ...]
-
-Soient $f : I \to \mb{R}$ et $g : I \to \mb{R}$ deux fonctions 
-continues qui vérifient~:
-
-\begin{equation*}
-    \forall x \in I, | f(x) | = |g(x)| \neq 0
-\end{equation*}
-
-Montrer que $f = g$ ou $f = -g$.
-
-\exercice[Équation fonctionnelle]
-
-Déterminer l'ensemble des fonctions $f : \mb{R} \to \mb{R}$ continues 
-qui vérifient~:
-\begin{equation*}
-    \forall x \in \mb{R}, f(x) = f (x^2)
-\end{equation*}
-
-
-\exercice[Sinus sinus ...]
-
-Soit $f : \mb{R} \to \mb{R}$ une fonction continue et prenant la valeur $0$
-et $1$. On suppose que~:
-
-\begin{equation*}
-    \forall x \in \mb{R}, f(2x) = f(x) \cos x
-\end{equation*}
-
-Déterminer $f$.
-
-\emph{Indication: appliquer en $x/2$... + récurrence}
-
-\exercice[Limite d'intégrale]
-
-Déterminer la limite quand $x \to 0^+$ de l'intégrale suivante
-
-\begin{equation*}
-    \int_{-x}^x \sin t^2 
-\end{equation*}
-
-\exercice[Exponentielle]
-
-On pose 
-\begin{equation*}
-    I_n = \int_0^1 \frac{(1 - x)^n}{n!} e^x dx
-\end{equation*}
-
-\begin{enumerate}[(a)]
-    \item Montrer que la suite $I_n$ tends vers zéro
-    \item Montrer que 
-        \begin{equation*}
-            I_n = \frac{1}{(n+1)!} + I_{n+1}
-        \end{equation*}
-    \item En déduire que 
-        \begin{equation*}
-            e = \sum_{k = 0}^\infty \frac{1}{k!}
-        \end{equation*}
-\end{enumerate}
 
 
 
@@ -2290,10 +2121,11 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 
 \end{enumerate}
 
+\section{Propriétés topologiques dans $\mb{R}$ et $\mb{C}$}
 
-\section{Suites numériques}
+\subsection{Suites numériques}
 
-\subsection{Convergence}
+\subsubsection{Convergence}
 
 \exercice[Règle de Leibniz]
 
@@ -2375,7 +2207,21 @@ Soient $(a,b) \in \mb{R}^{2}$, $(u_{n})$ et $(v_{n})$ deux suites telles que
 Montrer que $u_{n} \to a$ et $v_{n} \to b$.
 
 
-\subsection{Suites récurrentes}
+\subsubsection{Suites récurrentes}
+
+\exercice
+
+Terme général de $(u_n)_{n \ge 0}$ définie par $u_0 = u_1 = 1$ et $u_{n+2} = 2 \cos(\theta) u_{n+1} - u_n$.
+
+\exercice
+
+Soit $(x_{n})$ et $(y_{n})$ deux suites réelles telles que
+\begin{equation*}
+    \forall n \in \mb{N}, x_{n + 1} = \frac{x_{n} - y_{n}}{2} \quad  y_{n + 1} = \frac{x_{n} + y_{n}}{2}
+\end{equation*}
+
+En introduisant la suite complexe de terme général $z_{n} = x_{n} + i y_{n}$, 
+montrer que les suites $(x_{n})$ et $(y_{n})$ convergent et déterminer leurs limites.
 
 \exercice
 
@@ -2393,21 +2239,6 @@ Déterminer les fonctions $f : \mb{R}_+^* \rightarrow \mb{R}_+^*$ vérifiant $f 
 
 \emph{Indication :  faire apparaître une suite récurrente.}
 
-\exercice
-
-Terme général de $(u_n)_{n \ge 0}$ définie par $u_0 = u_1 = 1$ et $u_{n+2} = 2 \cos(\theta) u_{n+1} - u_n$.
-
-
-
-\exercice
-
-Soit $(x_{n})$ et $(y_{n})$ deux suites réelles telles que
-\begin{equation*}
-    \forall n \in \mb{N}, x_{n + 1} = \frac{x_{n} - y_{n}}{2} \quad  y_{n + 1} = \frac{x_{n} + y_{n}}{2}
-\end{equation*}
-
-En introduisant la suite complexe de terme général $z_{n} = x_{n} + i y_{n}$, 
-montrer que les suites $(x_{n})$ et $(y_{n})$ convergent et déterminer leurs limites.
 
 \exercice[Inégalité de récurrence]
 
@@ -2504,7 +2335,7 @@ Soit $0 < v_0 < u_0$, on définit par récurrence pour $n > 0$, $u_{n+1} = \frac
 
 
 
-\subsection{Sous-suites, extractions, manipulations de $\varepsilon$}
+\subsubsection{Sous-suites, extractions, manipulations de $\varepsilon$}
 
 
 
@@ -2664,6 +2495,516 @@ On suppose que pour tout $k \ge 0$, $u^k := (u^k_n)_{n \ge 0}$ est une suite ré
 
 
 \end{enumerate}
+
+
+\subsection{Limites de fonctions, continuité}
+
+\subsubsection{Limites et continuité}
+
+\exercice
+
+\begin{enumerate}
+
+\item Trouver toutes les fonctions continues $\mb{R} \rightarrow \mb{Z}$.
+
+\item Soit $X\subseteq \mb{R}$ un ensemble fini. Trouver toutes les fonctions continues $\mb{R} \rightarrow X$.
+
+\end{enumerate}
+
+
+\exercice[Périodique n'a pas de limite]
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction périodique admettant une limite en $+ \infty$.
+
+Montrer que $f$ est constante.
+
+\exercice
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue telle que si $ x \le y$ sont des rationnels alors $f(x) \le f(y)$. Montrer que $f$ est croissante sur $\mb{R}$.
+
+
+\exercice
+
+Soit $f : [0,1] \rightarrow \mb{R}$ continue et $\fonction{g}{[0,1]}{\mb{R}}{x}{\displaystyle \sup_{t \in [0,x]} f(t)}$.
+
+Montrer que $g$ est croissante et continue.
+
+\exercice[Fonction nulle part continue]
+
+Trouver une fonction $\mb{R} \rightarrow \mb{R}$ qui n'est continue en aucun point.
+
+\emph{On pourra penser aux rationnels.}
+
+
+
+
+\subsubsection{Valeurs intermédiaires, points fixes}
+
+\exercice
+
+Soit $f : [a,b] \to \mb{R}$ continue et $p,q \in \mb{R}_+$, montrer 
+qu'il existe un $c \in [a;b]$ tel que 
+
+\begin{equation*}
+    p f(a) + q f(b) = (p + q) f (c)
+\end{equation*}
+
+
+\exercice[Isobarycentre des images]
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue et $x_1 \dots x_n$ des réels.
+
+Montrer qu'il existe $c \in \mb{R}$ tel que $\displaystyle f(c) = \frac{1}{n} \sum_{i=1}^n f(x_i)$.
+
+\emph{Indication : encadrer la valeur que l'on veut atteindre.}
+
+
+\exercice
+
+Soit $f : [0,1] \rightarrow \mb{R}$ continue telle que $f(0) = 0$ et $f(1) = 1$. Montrer que $f$ possède un point fixe.
+
+\exercice
+
+Soit $f : [0; + \infty] \to \mb{R}_+$ continue et qui vérifie
+
+\begin{equation*}
+    \frac{f(x)}{x} \underset{x \to +\infty}{\xrightarrow{\quad\quad\quad}} l < 1
+\end{equation*}
+
+Montrer que $f$ admet un point fixe.
+
+\exercice[Point fixe itéré]
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction continue et $f^n = f \circ \dots \circ f$ ($n$ fois).
+\begin{enumerate}
+
+\item Si $f$ admet un point fixe, est-ce le cas de $f^n$ ?
+
+\item On suppose que $f^n$ possède un unique point fixe. Montrer que $f$ possède un point fixe, et qu'il est unique. \emph{Indication : considérer $f(y)$ si $y$ est le point fixe de $f^n$}.
+
+\item On suppose dans la suite que $f^n$ possède un point fixe $y$, pas nécessairement unique. On va montrer que $f$ possède quand même un point fixe. Soit $\phi : x \mapsto f(x) -x$.
+
+\begin{enumerate}
+
+\item Montrer que $\displaystyle \sum_{k=0}^{n-1} \phi(f^k(y)) = 0$.
+
+\item En déduire que $\phi$ change de signe (au sens large) et conclure.
+
+\end{enumerate}
+
+\item Trouver une fonction $f : \mb{R} \rightarrow \mb{R}$ admettant un unique point fixe, telle que $f^2$ ait strictement plus d'un point fixe.
+
+
+\end{enumerate}
+
+
+\exercice[Théorème de Knaster-Tarski]
+
+Soit $f : [0,1] \rightarrow [0,1]$ une fonction croissante. On va montrer que $f$ possède un \emph{point fixe}, c'est-à-dire qu'il existe $a \in [0,1]$ tel que $f(a) = a$. Soit $A = \{x \in [0,1]~|~f(x)\le x\}$.
+
+\begin{enumerate}
+
+\item Montrer que $A$ n'est pas vide.
+
+\item Montrer que si $x \in A$, alors $f(x) \in A$.
+
+\item Soit $a = \inf A$. Montrer que $\forall x \in A, f(a) \le x$. En déduire que $f(a)\le a$.
+
+\item Montrer que $a \le f(a)$ et conclure.
+
+\end{enumerate}
+
+\subsubsection{Equations fonctionnelles}
+
+\exercice[Équation fonctionnelle]
+
+Déterminer l'ensemble des fonctions $f : \mb{R} \to \mb{R}$ continues 
+qui vérifient~:
+\begin{equation*}
+    \forall x \in \mb{R}, f(x) = f (x^2)
+\end{equation*}
+
+
+
+\exercice[Égalité de valeurs absolues ...]
+
+Soient $f : I \to \mb{R}$ et $g : I \to \mb{R}$ deux fonctions 
+continues qui vérifient~:
+
+\begin{equation*}
+    \forall x \in I, | f(x) | = |g(x)| \neq 0
+\end{equation*}
+
+Montrer que $f = g$ ou $f = -g$.
+
+
+
+\exercice[Sinus sinus ...]
+
+Soit $f : \mb{R} \to \mb{R}$ une fonction continue et prenant la valeur $0$
+et $1$. On suppose que~:
+
+\begin{equation*}
+    \forall x \in \mb{R}, f(2x) = f(x) \cos x
+\end{equation*}
+
+Déterminer $f$.
+
+\emph{Indication: appliquer en $x/2$... + récurrence}
+
+\exercice
+
+Soit $f : \mb{R}_{+} \rightarrow \mb{R}_{+}$ une fonction continue telle que $f \circ f = \text{id}$.
+
+\begin{enumerate}
+
+\item Montrer que $f$ est strictement croissante.
+
+\item En déduire que $f = \text{id}$ \emph{Indication : montrer que $f(x) > x$ ou $f(x) < x$ est impossible.}
+
+\end{enumerate}
+
+\exercice[Equation fonctionnelle de la moyenne]
+
+On cherche les fonctions continues $f : \mb{R} \rightarrow \mb{R}$ telles que $\forall x,y \in \mb{R}$, $f(\frac{x+y}{2}) = \frac{f(x) +f(y)}{2}$.
+
+\begin{enumerate}
+
+\item Soit $f$ une fonction de la forme précédente. On suppose de plus $f(0) = f(1) = 0$.
+
+\begin{enumerate}
+
+\item Montrer que $f(2x) = 2 f(x)$.
+
+\item Montrer que $f$ est $2$-périodique. \emph{On pensera à utiliser les symétries autour de $0$ et $1$.}
+
+\item En remarquant que $f$ doit être bornée, conclure que $f$ est nulle.
+
+\end{enumerate}
+
+\item Que dire dans le cas général ? \emph{Indication : comment se ramener au cas précédent ?}
+
+\end{enumerate}
+
+
+\exercice[Automorphismes du corps réel]
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ telle que $\forall x,y \in \mb{R}$, $f(x+y) = f(x) + f(y)$ et $f(xy) = f(x) f(y)$.
+
+\emph{Attention on ne suppose pas $f$ continue.} 
+
+\begin{enumerate}
+
+\item Montrer que $f(0) = 0$ et $f(1) = \pm 1$. Dans la suite on supposera $f(1) = 1$.
+
+\item Montrer que $f$ est l'identité sur $\mb{N}$, puis sur $\mb{Z}$, et enfin sur $\mb{Q}$.
+
+\item Montrer que $f$ est croissante. \emph{Indication : $f(x^2) = f(x)^2$.}
+
+\item En déduire que $f$ est l'identité. \emph{On pensera aux limites monotones.}
+
+\item Que se passait-il si $f(1) = -1$ ?
+
+\end{enumerate}
+
+
+
+\subsubsection{Limites d'intégrales}
+
+\exercice[Limite d'intégrale]
+
+Déterminer la limite quand $x \to 0^+$ de l'intégrale suivante
+
+\begin{equation*}
+    \int_{-x}^x \sin t^2 \di t
+\end{equation*}
+
+\exercice[Exponentielle]
+
+On pose 
+\begin{equation*}
+    I_n = \int_0^1 \frac{(1 - x)^n}{n!} e^x \di x
+\end{equation*}
+
+\begin{enumerate}[(a)]
+    \item Montrer que la suite $I_n$ tend vers zéro
+    \item Montrer que 
+        \begin{equation*}
+            I_n = \frac{1}{(n+1)!} + I_{n+1}
+        \end{equation*}
+    \item En déduire que 
+        \begin{equation*}
+            e = \sum_{k = 0}^\infty \frac{1}{k!}
+        \end{equation*}
+\end{enumerate}
+
+
+
+\subsection{Partie entière}
+
+
+\exercice
+
+Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0}^{n-1} E\left(x + \frac{k}{n}\right) = E(nx)$ où  $E$ est la partie entière. \emph{Indication : faire un dessin de la droite réelle.}
+
+
+
+
+
+
+\section{Structures algébriques}
+
+\subsection{Arithmétique}
+
+\subsubsection{Congruences et Bezout}
+
+
+
+\exercice[Une unicité des coefficients de Bezout]
+
+ Soient $a \ge 1$ et $ b \ge 2$ deux entiers premiers entre eux. Montrer qu'il existe un unique couple d'entiers $0 \le u_0 < b$ et $0 \le v_0 < a$ tel que $au_0 - b v_0 = 1$.
+ 
+\exercice[Carrés parfaits]
+
+Soit $n \in \mb{N}$. Montrer que $\sqrt{n} \in \mb{Q} \iff \exists m \in \mb{N}, n = m^2$.
+
+
+
+
+\exercice[Un théorème de Liouville]
+
+Soit $p$ un entier, on veut résoudre en $m \in \mb{N}^*$ l'équation suivante : $(p-1)! +1 = p^m$.
+
+\begin{enumerate}
+
+\item Traiter les cas $p = 1,2,3,4,5$.
+
+\item Désormais $p > 5$ et on suppose qu'il existe $m$ tel que $(p-1)! +1 = p^m$.
+
+\begin{enumerate}
+
+\item Montrer que $(p-1)^2 | (p-1) !$.
+
+\emph{Indication : montrer d'abord que $p$ est impair, et donc que $\frac{p-1}{2}$ est entier.}
+
+\item En utilisant une identité bien choisie, montrer que $(p-1) | 1+ p + \dots + p^{m-1}$.
+
+\item En déduire que $(p-1) | m$, puis que $m \ge p-1$.
+
+\item Montrer qu'alors $p^m > (p-1)! +1$. Etait-ce possible ?
+
+\end{enumerate}
+
+\end{enumerate}
+
+\subsubsection{Des nombres célèbres}
+
+
+\exercice[Nombres de Mersenne]
+
+\begin{enumerate}
+
+\item 
+
+\begin{enumerate}
+
+\item Montrer que si $\alpha \ge 2$ entier et $m \in \mb{N}$, $\alpha-1 | \alpha^n -1 $.
+
+\item Si $\alpha^m -1$ est premier, montrer que $\alpha = 2$. En déduire qu'alors $m$ est premier.
+
+\end{enumerate}
+
+\item Calculer $2^{11} [23]$. La réciproque de la question précédente est-elle vraie ?
+
+\item On définit la suite $M_n := 2^n -1$ pour $n \ge 0$.
+
+\begin{enumerate}
+
+
+\item Montrer que $M_{m+n} = 2^n M_{m} + M_n$. En déduire que $M_{m+n} \wedge M_n = M_{m} \wedge M_n$, puis que $M_m \wedge M_n = M_n \wedge M_r $ où $r$ reste de la division euclidienne de $m$ par $n$.
+
+\item Conclure que $M_m \wedge M_n = M_{n \wedge m}$. \emph{On pensera à l'algorithme d'Euclide.}
+\end{enumerate}
+
+\end{enumerate}
+
+
+\exercice[Nombres de Fibonacci]
+
+On définit la suite $(F_n)_{n \ge 0}$ par $F_0 = 0 $, $F_1 =1$ et $F_{n+2} = F_{n+1} + F_n$.
+
+\begin{enumerate}
+
+\item \begin{enumerate}\item Montrer que $\forall n \ge 1$, $F_{n+1} F_{n-1} - (F_n)^2 = (-1)^n$.
+
+\item En déduire $F_n \wedge F_{n+1} = 1$.
+
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item Montrer que $\forall n \ge 0$, $\forall m \ge 1$, $F_{m+n} = F_m F_{n+1} + F_{m-1} F_n$.
+
+\item En déduire que $F_n \wedge F_{m+n} = F_n \wedge F_m$, puis $F_n \wedge F_{m} = F_n \wedge F_r$ où $r$ est le reste de la division euclidienne de $m$ par $n$.
+
+\item Conclure que $F_n \wedge F_{m} = F_{m \wedge n}$. \emph{On pensera à l'algorithme d'Euclide.}
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+\exercice[Nombres de Fermat]
+
+\begin{enumerate}
+
+\item \begin{enumerate}
+
+\item Montrer que si $\alpha \ge 2$ entier, et $m$ est impair alors $\alpha +1 | \alpha^m +1$
+
+\emph{Indication : remarquer que $\alpha^m +1 = \alpha^m - (-1)^m$.}
+
+\item Montrer que si $m$ a un facteur impair, alors $2^m+1$ n'est pas un nombre premier. Comment s'écrivent  les entiers $m$ sans facteurs impairs ?
+
+\end{enumerate}
+
+\item Pour $n \ge 0$, on appelle $n$-ième nombre de Fermat noté $F_n$ l'entier $2^{2^n}+1$.
+
+\begin{enumerate}
+
+\item Calculer $F_0$, $F_1$, $F_2$, $F_3$ et justifier qu'ils sont premiers.
+
+\emph{Remarque : $F_4$ aussi est premier, mais pas $F_5 = 641 \times 6700417$.}
+
+\item Montrer que pour $n < m$, $F_n$ et $F_m$ sont premiers entre eux.
+
+\emph{Indication : écrire $m = n+k$ puis faire apparaître $F_n$ dans $F_{n+k} = F_m$.}
+
+\item En déduire qu'il existe une infinité de nombres premiers.
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+
+\subsubsection{Nombres premiers, caractérisations, répartition}
+
+
+\exercice[Une infinité de nombres premiers]
+
+\begin{enumerate}
+
+\item Soit $n \in \mb{N}$. Montrer que les $ k n! +1$ pour $0 \le k \le n+1$ sont 2 à 2 premiers entre eux.
+
+\item En déduire qu'il existe une infinité de nombres premiers.
+
+\end{enumerate}
+
+\exercice[Des trous dans les nombres premiers]
+
+Justifier l'existence de $1 000$ nombres consécutifs 
+qui ne sont pas premiers.
+
+\emph{Indication: $x_k = (1001)! + k$}
+
+
+
+
+\exercice[Un exemple de progression arithmétique]
+
+Montrons qu'il existe une infinité de nombres premiers congrus à $-1[6]$. On suppose par l'absurde qu'il en existe un plus grand $N$ et on pose $M = -1 + 6 N!$
+
+\begin{enumerate}
+
+\item Montrer que $2 \not | M$ et $3 \not | M$.
+
+\item Soit $p$ un facteur premier de $M$. Montrer que $p \equiv 1[6]$.
+
+ \emph{On raisonnera par disjonction de cas sur la valeur de la congruence.}
+
+
+\item En déduire une contradiction.
+
+\end{enumerate}
+
+
+
+\exercice[Théorème de Wilson sans expliciter $\mb{F}_p$]
+
+On souhaite montrer que $p \ge 2$ est premier si et seulement si $(p-1)! \equiv -1 [p]$ $(*)$.
+
+\begin{enumerate}
+
+\item On suppose que $p$ vérifie $(*)$. Considérons $0 < a <p$ tel que $a | p$. Montrer que $a =1$. 
+
+\emph{Indication : montrer que $a | 1$}. Conclure quant à une implication du théorème.
+
+\item Vérifier explicitement $(*)$ lorsque $p = 2,3,5$.
+
+\item On suppose dans la suite $p$ premier $> 3$ et on note $A = \{2 \dots p-2\}$.
+
+\begin{enumerate}
+
+\item Montrer que pour $i \in A$, il existe un unique entier $f(i) \in A$ tel que $if(i) \equiv 1 [p]$. \emph{Indication : remarquer que $i$ et $p$ sont premiers entre eux.}
+
+\item Montrer que $f(f(i)) =i$ et $f(i) \neq i$.
+
+En regroupant les termes 2 par 2, en déduire que $\prod_{i \in A} i \equiv 1 [p]$.
+
+\item Conclure.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+
+
+
+\exercice[Répartition des nombres premiers]
+
+On note $v_p(n)$ l'exposant de $p$ dans la décomposition de $n$ 
+en facteurs premiers. On note $\pi(x)$ le nombre de nombres premiers 
+inférieurs à $x$.
+
+\begin{enumerate}[(a)]
+    \item Montrer l'égalité suivante
+        \begin{equation*}
+            v_p (n!) = \sum_{k = 1}^{+\infty} \left\lfloor \frac{n}{p^k} \right\rfloor
+        \end{equation*}
+
+    \item Montrer que $v_p (a b) = v_p (a) + v_p (b)$. En déduire que $v_p (a^2)
+        = 2 v_p (a)$. Montrer un résultat similaire pour la division.
+
+    \item Montrer que ${ 2n \choose n }$ divise le produit suivant~:
+
+            \begin{equation*}
+                \prod_{p \in \mb{P}, p \leq 2n} p^{ \lfloor \frac{\ln 2n}{\ln p}
+                \rfloor}
+            \end{equation*}
+
+            \emph{Indication: utiliser les questions précédentes sur le coefficient
+            binomial pour déterminer ses diviseurs premiers.}
+
+    \item Montrer que ${ 2n \choose n } \leq (2n)^{\pi (2n)}$
+
+
+    \item Montrer que quand $x \to +\infty$
+        \begin{equation*}
+            \frac{x}{\ln x} = O (\pi (x)) 
+        \end{equation*}
+\end{enumerate}
+
+
+
+
 
 
 
