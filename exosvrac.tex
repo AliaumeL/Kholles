@@ -2921,6 +2921,10 @@ On définit la suite $(F_n)_{n \ge 0}$ par $F_0 = 0 $, $F_1 =1$ et $F_{n+2} = F_
 
 \end{enumerate}
 
+\exercice
+
+Montrer qu'il existe une infinité de nombres premiers si et seulement s'il existe une infinité de nombres premiers entre eux.
+
 \exercice[Des trous dans les nombres premiers]
 
 Justifier l'existence de $1 000$ nombres consécutifs 
@@ -2990,7 +2994,7 @@ On note $v_p(n)$ l'exposant de $p$ dans la décomposition de $n$
 en facteurs premiers. On note $\pi(x)$ le nombre de nombres premiers 
 inférieurs à $x$.
 
-\begin{enumerate}[(a)]
+\begin{enumerate}
     \item Montrer l'égalité suivante
         \begin{equation*}
             v_p (n!) = \sum_{k = 1}^{+\infty} \left\lfloor \frac{n}{p^k} \right\rfloor
@@ -3019,27 +3023,140 @@ inférieurs à $x$.
 \end{enumerate}
 
 
+\subsection{Loi de composition interne}
 
+\exercice[Existence d'un idempotent]
 
+Soit $(E, \times)$ un magma associatif fini et $a \in E$.
+
+\begin{enumerate}
+
+\item Pourquoi l'expression $a^k := a \times a \times \cdots \times a$ a-t-elle un sens ?
+
+\item \begin{enumerate} \item Montrer qu'il existe $n \ge 0 $ et $m > 0$ tel que $a^{2^n} = a^{2^{n+m}}$.
+
+\item Soit $b := a^{2^{n}}$. Montrer que $b^{2^{m}} = b$. 
+
+\item En déduire que $s := b^{2^{m}-1}$ vérifie $s^2 = s$. On dit alors que $s$ est idempotent.
+
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item Ce résultat reste-t-il vrai si on retire l'hypothèse de finitude ?
+
+\item Dans un groupe, a-t-on toujours un idempotent distinct du neutre ?
+
+\end{enumerate}
+
+\end{enumerate}
 
 \subsection{Groupes}
 
-\subsubsection{Manipulation de la structure}
+\subsubsection{Exemples alimentaires}
 
 \exercice[Groupe opposé]
 
-Soit $ G := (X, \times, 1)$ un groupe d'ensemble sous-jacent $X$. On définit $G^{\text{op}} := (X, *, 1)$ où $*$ est une loi sur $X$ définie par $x*y = y \times x$.
+Soit $(G, \times, 1)$ un groupe d'ensemble sous-jacent $X$. On définit son groupe opposé $(G, *, 1)$ où $*$ est définie par $x*y = y \times x$.
 
 
 \begin{enumerate}
 
-\item  Montrer que $G^{\text{op}}$ est un groupe.
+\item  Montrer que l'opposé est un groupe.
 
-\item Soit $\fonction{\phi}{G}{G^{\text{op}}}{x}{x}$. Est-ce en général un morphisme de groupes ?
+\item Soit $\fonction{\phi}{(G, \times, 1)}{(G, *, 1)}{x}{x}$. Est-ce un morphisme de groupes ?
 
-\item Dans le cas où $G$ est abélien, montrer que $G \simeq G^{\text{op}}$.
+\item Dans le cas où $G$ est abélien, montrer que $G$ et son opposé sont isomorphes.
 \end{enumerate}
 
+\exercice[Groupe des automorphismes]
+
+
+Soit $G$ un groupe. Montrer que l'ensemble de ses automorphismes (les morphismes bijectifs de $G$ dans $G$) muni de la composition forme lui-même un groupe.
+
+
+\exercice[Groupes dont l'ensemble des sous-groupes est fini]
+
+\begin{enumerate}
+
+\item Soit $G$ un groupe fini. Montrer qu'il ne possède qu'un nombre fini de sous-groupes.
+
+\item Soit $G$ un groupe n'ayant qu'un nombre fini de sous-groupes.
+
+\begin{enumerate}
+
+\item Soit $x \in G$. Montrer que $\langle x \rangle$ est un sous-groupe fini.
+
+\item On suppose que $x$ est infini. TODO CONTINUE
+
+\end{enumerate}
+
+\item En déduire que $G$ est fini.
+
+\end{enumerate}
+
+
+\exercice[Une loi analytique]
+
+Soit $G = (]-1,1[, *, 0)$ où $x*y = \frac{x+y}{1+xy}$. Montrer que $G$ est un groupe. Est-il commutatif ?
+
+\exercice[Sous-groupes de $\mb{R}$]
+
+\begin{enumerate}
+
+\item Donner un exemple de sous-groupe de $(\mb{R}, +, 0)$ dense dans $\mb{R}$ et distinct de $\mb{Q}$.
+
+\item Soit $G$ un sous-groupe non trivial de $(\mb{R}, +, 0)$ qui n'est pas dense dans $\mb{R}$.
+
+\begin{enumerate}
+
+\item Montrer que $ \forall x \in \mb{R}$, $\inf G \cap ] x, + \infty[ >x$.
+
+\emph{Indication : sait que c'est vrai pour un $x$ car le sous-groupe n'est pas dense.}
+
+\item Soit $a = \inf G \cap \mb{R}^*_+$. Déduire de ce qui précède que $a > 0$ et qu'il est atteint.
+
+\item Conclure que $G = a \mb{Z}$.
+
+\end{enumerate}
+
+\item Montrer que $ \exp : (\mb{R}, +, 0) \rightarrow (]0, + \infty[, \times, 1)$ est un isomorphisme de groupes.
+
+Quelle est l'image de $a \mb{Z}$ ?
+
+\end{enumerate}
+
+\subsubsection{Morphismes}
+
+\exercice[Morphismes de $\mb{Q}$ dans $\mb{Z}$]
+
+Trouver tous les morphismes de groupes de $(\mb{Q}, +, 0)$ dans $(\mb{Z}, +, 0)$.
+
+\emph{Indication : commencer par regarder l'image.}
+
+\exercice[Propriété universelle du produit de groupes]
+
+\begin{enumerate}
+
+\item Soient $(G_1, \top, e_2)$ et $(G_2, \bot, e_2)$ deux groupes. On définit leur produit $(G_1 \times G_2, *, (e_1,e_2))$ où $(x_1,x_2)*(y_1,y_2) = (x_1 \top y_1, x_2 \bot y_2)$. Montrer que $G_1 \times G_2$ est un groupe.
+
+\item On pose $\fonction{\pi_1}{G_1\times G_2}{G_1}{(x_1,x_2)}{x_1}$ et $\fonction{\pi_{2}}{G_1\times G_2}{G_2}{(x_1,x_2)}{x_2}$.
+
+Montrer que $\pi_1$ et $\pi_2$ sont un morphismes de groupes surjectif.
+
+\item Soit $(H, \bullet, 1)$ un groupe et $f_1 : H \rightarrow G$ et $f_2 : H \rightarrow G$ deux morphismes de groupes. Montrer qu'il existe un unique morphisme de groupes $h : X \rightarrow G_1\times G_2$ telle que $\pi_1 \circ h = f_1$ et $\pi_2 \circ h = f_2$.  \emph{On pourra raisonner par analyse-synthèse.}
+
+\item Faire un dessin de la construction. On représentera les morphismes $\pi_1, \pi_1, f_1, f_2$ et $h$ par des flèches entre les groupes $G_1, G_2, G_1 \times G_2$ et $H$.
+
+\end{enumerate}
+
+
+
+\subsection{Corps}
+
+\exercice[Sous-corps premier]
+
+Quel est le plus petit sous-corps (pour l'inclusion) de $\mb{R}$ ? de $\mb{Q}$ ?
 
 
 
