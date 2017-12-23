@@ -2905,10 +2905,12 @@ On définit la suite $(F_n)_{n \ge 0}$ par $F_0 = 0 $, $F_1 =1$ et $F_{n+2} = F_
 
 \begin{enumerate}
 
-\item \begin{enumerate}\item Montrer que $\forall n \ge 1$, $F_{n+1} F_{n-1} - (F_n)^2 = (-1)^n$.
+    \item \emph{(Optionnel)} \begin{enumerate}\item Montrer que $\forall n \ge 1$, $F_{n+1} F_{n-1} - (F_n)^2 = (-1)^n$.
 
-\item En déduire $F_n \wedge F_{n+1} = 1$.
-
+        \item En déduire $F_n \wedge F_{n+1} = 1$. \emph{(Soit en utilisant la
+                question précédente, soit en procédant directement 
+                par récurrence car $F_{n+1} = F_n + F_{n-1}$ ... division
+                euclidienne...)}
 \end{enumerate}
 
 \item \begin{enumerate}
@@ -3037,8 +3039,31 @@ En regroupant les termes 2 par 2, en déduire que $\prod_{i \in A} i \equiv 1 [p
 \end{enumerate}
 
 
+\exercice[Définition de $\phi(n)$]
 
+Soit $n \in \mb{N}^*$. On note $\phi(n)$ le nombre 
+d'éléments inversibles dans $Z/nZ$.
 
+\begin{enumerate}
+    \item Calculer $\phi(p)$ quand $p$ est premier 
+    \item Calculer $\phi(p^\alpha)$ 
+    \item Montrer que $\phi(mn) = \phi (m) \phi (n)$ quand 
+        $m \wedge n = 1$
+        en utilisant l'isomorphisme du théorème chinois 
+    \item En déduire une expression de $\phi(n)$ à partir de la 
+        décomposition de $n$ en facteurs premiers
+\end{enumerate}
+
+\exercice[Estimation de $\phi(n)$]
+
+On pose $\phi(n) = n \times (1 - 1/p_1) \dots (1 - 1 / p_r)$
+où $p_1, \dots, p_r$ sont les facteurs premiers de $n$.
+
+\begin{enumerate}
+    \item Montrer que $2 \phi(n) \geq n$
+    \item Montrer que $n \geq r \ln 2$
+    \item En déduire une minoration de $\phi(n)$
+\end{enumerate}
 
 
 
