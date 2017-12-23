@@ -1880,6 +1880,60 @@ Soit $g : \mb{R} \rightarrow \mb{R}$ une fonction continue. On pose $f(x) = \dis
 \item En déduire $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{k}$. Comparer avec $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{2^k}$.
 \end{enumerate}
 
+\exercice[Théorème de Lindemann]
+
+On va montrer dans cet exercice que $\pi$ est irrationnel.
+
+\begin{enumerate}
+
+\item Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction polynomiale.
+
+\begin{enumerate}
+
+\item Montrer que $\displaystyle \int_{0}^{\pi} f(t) \sin(t) \di t = f(\pi) + f(0) - \int_0^\pi f''(t) \sin(t) \di t$.
+
+\item En déduire que $\displaystyle \int_{0}^{\pi} f(t) \sin(t) \di t = F(\pi) + F(0)$ où $\displaystyle F := \sum_{k=0}^{\lfloor \deg(f)/2 \rfloor} (-1)^k f^{(2k)}$.
+
+\end{enumerate}
+
+
+\item Soient $a,b \in \mb{N}^*$, on pose $f_n = \frac{x^n(a-bx)^n}{n!}$.
+
+\begin{enumerate}
+
+\item Exprimer les dérivées successives de $f$ en fonction de celles de $g_1 : x \mapsto x^n$ et $g_2 : x \mapsto (a-bx)^n$. \emph{Indication : il y a une formule pour faire cela.}
+
+\item En déduire que pour $p <n$, $f_n^{(p)}(0) = 0$ et que pour $p \ge n$, $f_n^{(p)} (\frac{a}{b}) = \binom{n}{k} g_1^{(p-n)}(0)$.
+
+Conclure que $\forall p \ge 0$, $f_n^{(p)}(0) \in \mb{Z}$.
+
+\item Montrer de même que $\forall p \ge 0$, $f_n^{(p)}(\frac{a}{b}) \in \mb{Z}$.
+
+\end{enumerate}
+
+\item Utiliser les questions précédentes pour obtenir $\displaystyle I_n := \int_{0}^{\pi} f_n(t) \sin(t) \di t \in \mb{Z}$.
+
+\item On suppose maintenant par l'absurde $\pi = a/b$ avec $a,b \in \mb{N}^*$.
+
+$f_n$ et $I_n$ sont définies en utilisant ces valeurs de $a$ et $b$.
+
+
+\begin{enumerate}
+
+\item Montrer que $I_n > 0$. En déduire que $I_n \ge 1$.
+
+\item Montrer que $x(a-bx) \le \frac{a^2}{4b}$ pour $x \in [0, \pi]$. En déduire que $I_n \le \pi (\frac{a^2}{4b})^n \frac{1}{n!}$.
+
+\item Conclure à une contradiction. \emph{Indication : regarder la limite.}
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+
 
 \subsection{Equations différentielles}
 
