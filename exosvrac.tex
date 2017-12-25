@@ -3132,6 +3132,24 @@ Soit $(E, \times)$ un magma associatif fini et $a \in E$.
 
 \subsection{Groupes}
 
+\subsubsection{Propriétés algébriques}
+
+\exercice[Cyclicité et produit]
+
+Soient $H$ et $K$ deux groupes.
+
+\begin{enumerate}
+    \item Si $h$ est un élément d'ordre $p$ dans $H$
+        et $k$ est un élément d'ordre $q$ dans $K$, montrer 
+        que $(h,k)$ est un élément d'ordre $\operatorname{ppcm} (p,q)$
+        dans $H \times K$
+
+    \item On suppose $H$ et $K$ cycliques, montrer que 
+        $H \times K$ est cyclique si et seulement si les cardinaux 
+        de $H$ et $K$ sont premiers entre eux.
+\end{enumerate}
+
+
 \subsubsection{Exemples alimentaires}
 
 \exercice[Groupe opposé]
@@ -3212,7 +3230,50 @@ Quelle est l'image de $a \mb{Z}$ ?
 
 \end{enumerate}
 
+\exercice[Groupe quasi-cyclique]
+
+Soit $p$ un nombre premier, on note 
+
+\begin{equation*}
+    G_p = \left\{ z \in \mb{C} ~|~ \exists k \in \mb{N}, z^{p^k} = 1 \right\}
+\end{equation*}
+
+\begin{enumerate}
+    \item Montrer que $G_p$ est un sous groupe de $(\mb{U}, \times)$
+    \item Soit $H \subsetneq G_p$ un sous groupe strict
+        \begin{enumerate}
+            \item Montrer l'égalité suivante
+                \begin{equation*}
+                    G_p = \bigcup_{k \in \mb{N}} \mb{U}_{p^k} 
+                \end{equation*}
+            \item Montrer qu'il existe un $k \in \mb{N}$ tel 
+                que $\mb{U}_{p^k} \subseteq H$ et $\mb{U}_{p^{k+1}} \not
+                \subseteq H$.
+            \item Montrer que $H = \mb{U}_{p^k}$
+        \end{enumerate}
+    \item Déduire de la question précédente que tout sous groupe propre 
+        de $G_p$ est cyclique, et qu'aucun n'est maximal pour l'inclusion.
+
+    \item Montrer que $G_p$ n'est pas engendré par un nombre fini d'éléments
+    \item Est-ce que $G_p$ est dense dans $\mb{U}$ ?
+\end{enumerate}
+
 \subsubsection{Morphismes}
+
+\exercice[Introduction au produit interne]
+
+Soit $G$ un groupe fini, $H,K$ deux sous groupes de $G$. 
+On note $HK = \{ h k ~|~ h \in H, k \in K \}$.
+
+\begin{enumerate}
+    \item Montrer l'égalité suivante 
+\begin{equation*}
+    \card HK \times \card H \cap K = \card H \times \card K
+\end{equation*}
+    \item En déduire une condition nécessaire pour 
+        que $G \simeq H \times K$
+    \item Cette condition est-elle suffisante ?
+\end{enumerate}
 
 \exercice[Morphismes de $\mb{Q}$ dans $\mb{Z}$]
 
