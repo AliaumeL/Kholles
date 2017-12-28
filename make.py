@@ -7,8 +7,6 @@ import sys
 import os
 
 
-
-
 class Interactive:
     def __init__ (self):
         self.tabs   = 0
@@ -39,6 +37,7 @@ class Interactive:
         return open (f,m)
     
     def openExo (self, name):
+        self.log ("OPENEXO", "accède à l'exercice {}".format (name))
         return self.open ("Exos/{}.tex".format (name), "r")
 
     def openCatalogue (self, name):
@@ -52,6 +51,35 @@ class Interactive:
 
     def openCatalogueTemplate (self):
         return self.open ("Catalogue/template.tex","r")
+
+    def openFicheTemplate (self,name="template"):
+        return self.open ("Fiches/{}.tex".format (name),"r")
+
+    def openFiche (self, name):
+        return yaml.load (self.open ("Fiches/{}.yaml".format (name), "r"))
+
+    def openFicheTex (self, name):
+        return self.open ("Fiches/{}.tex".format (name), "w")
+
+
+class LaTeX:
+    def __init__ (self, filehandler):
+        self.output = filehandler
+
+    def cmd (self, name):
+        self.output.write ("\\" + name + "\n")
+
+    def cmdA (self, name, *args):
+        self.output.write ("\\" + name + "{" + "}{".join (args) + "}" + "\n")
+
+    def begin (self, name):
+        self.output.write("\\begin{" + name + "}\n")
+    
+    def end  (self, name):
+        self.output.write("\\end{" + name + "}\n")
+
+    def space (self):
+        self.output.write ("\n\n")
 
 
 class Database:
@@ -70,8 +98,6 @@ I.parseArgs ()
 
 D = Database ()
 D.exercices = I.openExercices ()
-
-
 
 def catalogueBuilder (name):
     """ Construit un catalogue des 
@@ -105,6 +131,7 @@ def catalogueBuilder (name):
 
     # ÉCRITURE DANS LE FICHIER
     output = I.openCatalogueTex (name)
+    L      = LaTeX (output)
 
     template  = I.openCatalogueTemplate ()
     for l in template.readlines ():
@@ -113,15 +140,19 @@ def catalogueBuilder (name):
     
 
     # TODO: trier par catégorie de tags ... !?!
+    def sortKey (x):
+        ID,exo = x 
+        return (exo.values ())
+
+    # catalist.sort (key = sortKey) 
     for (ID,exo) in catalist:
         exoctn = I.openExo (ID)
-        output.write ("\\exoID{" + ID + "}\n")
+        L.cmdA ("exoID", ID)
         for l in exoctn.readlines ():
             output.write (l)
         exoctn.close ()
 
-
-    output.write ("\n\\end{document}")
+    L.end ("document")
     output.close ()
 
     # Compile une ou deux fois pour être sûr 
@@ -134,10 +165,112 @@ def catalogueBuilder (name):
     os.system ("cd Catalogue && rm *.toc")
     os.system ("cd Catalogue && rm *.aux")
 
-        
+       
+def ficheBuilder (name):
+    """ Construire une fiche d'exercices
+        à partir d'un fichier qui liste 
+        les exercices 
+    """
+
+    fichedesc = I.openFiche (name)
+
+    eleves  = [ nom for trinome in fichedesc["trinômes"]
+                    for nom in trinome ] 
+    semaine = str(fichedesc["semaine"])
+    date    = fichedesc["date"]
+    titre   = fichedesc["titre"]
+    cours   = fichedesc["cours"]
+
+    random.shuffle (cours)
+
+    # ÉCRITURE DANS LE FICHIER
+    output = I.openFicheTex (name)
+    L      = LaTeX (output)
+
+    # Le « bruit » 
+    template  = I.openFicheTemplate ("headers")
+    for l in template.readlines ():
+        output.write (l) 
+    template.close ()
+
+    # Définition des en-têtes 
+    L.cmdA ("lhead", "MPSI -- Semaine " + semaine) 
+    L.cmdA ("rhead", date) 
+
+    L.space ()
+
+    L.begin ("document")
+
+    L.space ()
+
+    L.begin ("center")
+    L.cmdA ("rule", "15em", "2pt")
+    L.space ()
+    L.cmdA ("vspace", "1em")
+    L.cmdA ("textbf", "\\huge{" + titre + "}")
+    L.cmdA ("vspace", "0.5em")
+    L.space ()
+    L.cmdA ("rule", "15em", "2pt")
+    L.end   ("center")
+    
+    L.space ()
+
+
+    output.write ("""
+    \\begin{center}
+        \\rule[0.23em]{1.5em}{1pt} 
+        \\textbf{Question de cours}
+        \\rule[0.23em]{24em}{1pt}
+    \\end{center}
+    """)
+
+    L.space ()
+
+    L.begin ("center")
+    output.write ("""\\begin{minipage}{0.8\\linewidth}
+    \\begin{tabular}{rl}
+    """)
+    
+    # INSÉRER ICI LES QUESTIONS DE COURS 
+
+    for (eleve,question) in zip (eleves, cours):
+        output.write ("\\textbf{" + eleve + "} & " + question + " \\\\ \n")
+
+
+    output.write ("\\end{tabular}\n\\end{minipage}\n")
+    L.end   ("center")
+
+    output.write ("""
+    \\begin{center}
+        \\rule{35em}{1pt}
+    \\end{center}
+    """)
+
+    for trinome in fichedesc["trinômes"]:
+        for eleve in trinome:
+            L.space ()
+            L.cmdA ("textbf", eleve)
+            L.cmd ("resetexo")
+            L.space ()
+            for exo in fichedesc[eleve]:
+                L.begin ("exo")
+                
+                exoctn = I.openExo (exo)
+                for ligne in exoctn.readlines ():
+                    output.write (ligne)
+                exoctn.close ()
+
+                L.end ("exo")
+                L.space ()
+        L.cmd("newpage")
+
+    L.end("document")
+    output.close ()
 
 
 
-catalogueBuilder ("algebre")
+
+# catalogueBuilder ("algebre")
+ficheBuilder ("S-13")
 
 

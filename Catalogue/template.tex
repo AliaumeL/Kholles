@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts, amsmath, amssymb,dsfont, mathrsfs}
+\usepackage [a4paper]{geometry}
+\geometry{left=3.5cm, right=3.5cm,top=3.5cm ,bottom=4cm}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{complexity}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+\usepackage{paralist}
+\usepackage{epigraph}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning,automata,shadows}
+\usepackage{palatino}
+\usepackage{pdfpages}
+\usepackage{epigraph}
+\usepackage{multicol}
+
+%%%% Format
+
+\setlength{\headheight}{35pt}
+\lhead{Colles\\MPSI}
+\rhead{}
+\chead{}
+\rfoot{}
+\pagestyle{fancy}
+
+\newcommand{\fonction}[5]{\raisebox{-0.5\baselineskip}{$\begin{array}{lccc}
+    #1: & #2 & \longrightarrow & #3 \\
+        & #4 & \longmapsto & #5 \end{array}$}}
+        
+\newcommand{\es}{\vspace{1\baselineskip}}
+\newcommand{\ds}{\vspace{0.4\baselineskip}}
+\newcommand{\di}{\mathrm{d}}
+\newcommand{\ex}{{\operatorname{e}}}
+\newcommand{\im}{\text{i}}
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\card}{\operatorname{Card}}
+
+% Exercices
+
+\newcounter{exo}
+\setcounter{exo}{1}
+
+\newcommand{\exercice}[1][\null]{\textbf{Exercice \thesection.\theexo. #1} \addtocounter{exo}{1}}
+\newcommand{\cours}{\textbf{\ds \\ \large Questions de cours}}
+
+\newcommand{\exoID}[1]{\textbf{[ID: #1]}}
+
+%%%% Corps du fichier
+
+
+\begin{document}
+
+
+\title{Exercices détaillés de MPSI}
+
+\author{Aliaume Lopez \& Gaëtan Douéneau}
+
+\maketitle
+
+\tableofcontents
+
+\pagebreak
+

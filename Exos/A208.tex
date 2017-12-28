@@ -1,0 +1,37 @@
+\exercice[Répartition des nombres premiers]
+
+On note $v_p(n)$ l'exposant de $p$ dans la décomposition de $n$ 
+en facteurs premiers. On note $\pi(x)$ le nombre de nombres premiers 
+inférieurs à $x$.
+
+\begin{enumerate}
+    \item Montrer l'égalité suivante
+        \begin{equation*}
+            v_p (n!) = \sum_{k = 1}^{+\infty} \left\lfloor \frac{n}{p^k} \right\rfloor
+        \end{equation*}
+
+    \item Montrer que $v_p (a b) = v_p (a) + v_p (b)$. En déduire que $v_p (a^2)
+        = 2 v_p (a)$. Montrer un résultat similaire pour la division.
+
+    \item Montrer que ${ 2n \choose n }$ divise le produit suivant~:
+
+            \begin{equation*}
+                \prod_{p \in \mb{P}, p \leq 2n} p^{ \lfloor \frac{\ln 2n}{\ln p}
+                \rfloor}
+            \end{equation*}
+
+            \emph{Indication: utiliser les questions précédentes sur le coefficient
+            binomial pour déterminer ses diviseurs premiers.}
+
+    \item Montrer que ${ 2n \choose n } \leq (2n)^{\pi (2n)}$
+
+
+    \item Montrer que quand $x \to +\infty$
+        \begin{equation*}
+            \frac{x}{\ln x} = O (\pi (x)) 
+        \end{equation*}
+\end{enumerate}
+
+
+
+

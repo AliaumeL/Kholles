@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts, amsmath, amssymb,dsfont, mathrsfs}
+\usepackage[a4paper,twoside]{geometry}
+\geometry{left=2.5cm, right=2.5cm,top=1.5cm ,bottom=4cm}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{complexity}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+\usepackage{paralist}
+\usepackage{epigraph}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning,automata,shadows}
+\usepackage{tikz-cd}
+\usepackage{palatino}
+\usepackage{pdfpages}
+\usepackage{epigraph}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+
+\newcommand{\es}{\vspace{1\baselineskip}}
+\newcommand{\ds}{\vspace{0.4\baselineskip}}
+\newcommand{\di}{\mathrm{d}}
+\newcommand{\ex}{{\operatorname{e}}}
+\newcommand{\im}{\text{i}}
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\card}{\operatorname{Card}}
+
+\newcounter{exo}
+\setcounter{exo}{1}
+\newcommand{\exercice}[1][\null]{\textbf{\\ Exercice \theexo} \emph{(#1)}. \addtocounter{exo}{1}}
+\newcommand{\resetexo}{\setcounter{exo}{1}}
+
+\newcommand{\indication}[1]{\begin{flushright}\textit{Indication: #1}\end{flushright}}
+
+
+\newenvironment{exo}{
+\begin{center}
+\begin{minipage}{0.8\linewidth}
+}{
+\end{minipage}
+\end{center}
+}
+
+
+\setlength{\headheight}{35pt}
+\chead{}
+\rfoot{}
+\pagestyle{fancy}

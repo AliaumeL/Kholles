@@ -1,0 +1,57 @@
+\exercice[Convexité]
+
+On dit que $f : I \to \mb{R}$ est convexe quand elle vérifie 
+la propriété suivante
+
+\begin{equation*}
+    \forall (x,y) \in I^2, \forall \lambda \in [0,1], 
+    f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda) f(y)
+\end{equation*}
+
+Soit $a \in I$, on note $\Delta_a$ la fonction définie comme suit
+
+\begin{equation*}
+    \Delta_a (x) = \frac{f(x) - f(a)}{x - a}
+\end{equation*}
+
+\begin{enumerate}
+    \item Quel est l'ensemble de définitiion de $\Delta_a$ ?
+    \item Si $(x,y) \in I^2$ et $\lambda \in [0,1]$ 
+        montrer que $\lambda x + (1 - \lambda y) \in I$
+    \item Montrer que si pour tout $a \in I$ $\Delta_a$ 
+        est une fonction croissante alors $f$ est convexe.
+        \emph{(Indication: supposer $x < y$, $\lambda \in ]0,1[$ 
+            et remarquer 
+            $\lambda x + (1 - \lambda y) < y$
+            puis utiliser la croissance de $\Delta_x$)}
+    
+    \item On suppose maintenant $f$ convexe, et $a \in I$.
+        \begin{enumerate}
+            \item Si $(x,y) \in I^2$ et $x < y < a$, en considérant 
+                $\lambda = (x - a) / (y-a)$ montrer que 
+                $\Delta_a (x) \leq \Delta_a (y)$
+
+            \item Si $(x,y) \in I^2$ et $a < x < y$, montrer que 
+                $\Delta_a(x) \leq \Delta_a (y)$
+
+            \item Si $(x,y) \in I^2$ et $x < a < y$, montrer 
+                que $\Delta_a (x) \leq \Delta_a (y)$. 
+                \emph{(Indication: considérer $\lambda = (a - y)/(x-y)$)}
+        \end{enumerate}
+        En déduire que $\Delta_a$ est croissante.
+    \item Conclure que $f$ est convexe si et seulement si $\Delta_a$ est 
+        croissante pour tout $a \in I$.
+   
+    \item En déduire que si $f$ est convexe et dérivable sur $I$, alors $f'$ 
+        est croissante sur $I$ \emph{(Indication: utiliser la croissance de $\Delta_x$ 
+        pour $x$ entre $a$ et $b$)}.
+
+    \item Que dire de la réciproque ? \emph{(Indication: utiliser 
+            $g(\lambda) = \lambda f(x) + (1 - \lambda)f(y) - f (\lambda x +
+            (1-\lambda) f (y))$)}
+
+    \item Montrer que si $f$ est deux fois dérivable, $f$ est convexe 
+        si et seulement si $f''$ est positive.
+\end{enumerate}
+
+
