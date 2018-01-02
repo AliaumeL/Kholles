@@ -1,0 +1,49 @@
+\exercice[Irrationalité de $e$]
+
+On définit la suite $u_n$~:
+\begin{equation*}
+    u_n = \sum_{i = 0}^n \frac{1}{i !} 
+\end{equation*}
+
+
+Et $v_n = u_n + \frac{1}{n \cdot n!}$.
+
+\begin{enumerate}
+    \item Montrer que les suites $(u_n)$ et $(v_n)$ convergent 
+    \item On admet l'inégalité de Taylor-Lagrange pour une 
+        fonction $C^\infty$ sur un segment $[a,b]$~:
+
+        \begin{equation*}
+            \left|
+            f(x) - \sum_{i = 0}^{n} \frac{f^{(i)} (x_0)}{i!} (x - x_0)^i 
+            \right|
+            \leq 
+            \frac{M_{n+1} |x - x_0|^{n+1}}{(n+1)!}
+        \end{equation*}
+        Avec $M_{n+1} = \sup_{x \in [a,b] } |f^{(n+1)} (x)|$.
+
+        En appliquant cette inégalité à $f = \exp$, $[a,b] = [0,1]$,
+        $x_0 = 0$ et $x = 1$ 
+        en déduire $u_n \to e$
+
+    \item Supposons $e = p/q$ avec $p,q \in \mathbb{N} \times \mathbb{N}^*$.
+        En multipliant les suites $u_n$ et $v_n$ par $q \cdot q!$ en déduire 
+        une absurdité. \emph{Indication: pour à partir du $q$-ème terme il se
+        passe quelque chose}.
+\end{enumerate}
+
+TODO: ne pas utiliser l'inégalité de T.L. mais plutôt 
+un développement en série entière plus facile à justifier par récurrence. 
+Dans le sytle, montrer par récurrence que~:
+
+\begin{equation*}
+    e^x = \sum_{k = 0}^n \frac{x^k}{k!} + \int_0^x \frac{x^n}{n!} e^x dx
+\end{equation*}
+
+
+
+
+
+
+
+

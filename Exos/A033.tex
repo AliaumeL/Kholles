@@ -1,0 +1,32 @@
+\exercice[Clôtures d'une relation]
+ 
+ Soit $E$ un ensemble et $R \subseteq E^2$ une relation binaire. On note $\mc{R}(R)$ la plus petite relation réflexive qui contient $R$, appelée clôture réflexive de $R$. De même on note $\mc{S}(R)$ la clôture symétrique de $R$, et $\mc{T}(R)$ sa clôture transitive.\footnote{Indication générale : pour montrer que $X$ est le plus petit \emph{truc} vérifiant $P$, on procède en 2 étapes. Montrer que $X$ est un \emph{truc} vérifiant $P$. Puis montrer que tout \emph{truc} vérifiant $P$ contient $X$.}
+
+
+
+\begin{enumerate}
+
+\item Montrer que $\mc{R}(R)  = R \cup \{ (x,x) ~|~x\in E\}$.
+
+\item Montrer que $\mc{S}(R)  = R \cup \{ (y,x) ~|~(x,y)\in R\}$. A-t-on $ \mc{R}(\mc{S}(R)) = \mc{S}(\mc{R}(R))$ ?
+
+\item Soit $\fonction{f}{\mc{P}(E^2)}{\mc{P}(E^2)}{S}{S \cup \{(x,z)~|~\exists y, (x,y)\in S \text{ et }(y,z) \in S\}}$
+
+Montrer que $\mc{T}(R) = \cup_{n \ge 0} f^n(R)$ où $f^n = f \circ f \circ \cdots \circ f$ ($n$ fois) et $f^0 = \text{id}$.
+
+\emph{On prouvera par récurrence sur $n$ que $f^n(S) \subseteq R'$ pour toute $R'$ transitive contenant $R$.}
+
+\item Dans cette question on suppose $R$ symétrique et réflexive. Soit $\mc{E}(R)$ la plus petite relation d'équivalence contenant $R$. Montrer $\mc{T}(R) = \mc{E}(R)$.
+
+\emph{On utilisera la question précédente pour montrer que $\mc{T}(R)$ est une relation d'équivalence.}
+
+\item On ne fait plus d'hypothèses sur $R$. Montrer que $\mc{E}(R) = \mc{T} (\mc{S}(\mc{R}(R)))$.
+
+\item Application. Soit $E = \{1 \dots 6\}$ et $R = \{(1,2),(2,3),(5,6)\}$. Expliciter $\mc{E}(R)$ puis ses classes d'équivalence.
+
+
+\end{enumerate}
+
+
+
+
