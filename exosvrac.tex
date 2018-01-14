@@ -3367,6 +3367,183 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 \end{enumerate}
 
 
+\section{Semaine 14}
+
+\cours
+
+\begin{enumerate}
+
+\item Enoncer et démontrer la condition nécessaire d'extremum local (sur un ouvert).
+
+\item Enoncer et démontrer le théorème de Rolle. On admettra la condition nécessaire d'extremum local qui sera démontrée par le numéro 1.
+
+\item Soit $f$ une fonction croissante sur $\mb{R}$, et $(u_n)_{n \ge 0}$ vérifiant $u_{n+1} = f(u_n)$. Que dire quant aux variations de $(u_n)_{n \ge 0}$ ? Et si $f$ est strictement croissante ?
+
+Si $f$ est continue et $(u_n)_{n \ge 0}$ converge, montrer que la limite est un point fixe de $f$.
+\end{enumerate}
+
+
+
+\exercice[Rolle généralisé]
+
+\begin{enumerate}
+
+\item Soit $f : [a,b] \rightarrow \mb{R}$ une fonction continue et $n$ fois dérivable sur $]a,b[$s'annulant en $n+1$ points distincts. Montrer que $f^{(n)}$ s'annule au moins une fois sur $]a,b[$.
+
+\item Application. Si $f : [a,b] \rightarrow \mb{R}$ est fonction continue et $2$ fois dérivable telle que $f'' > 0$, alors $f$ possède au plus deux point fixe.
+
+
+\end{enumerate}
+
+
+
+\exercice[Ecrasement en l'origine]
+
+Pour $\alpha \in \mb{R}$ soit $\fonction{f_{\alpha}}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $|x|^\alpha$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$.
+
+\begin{enumerate}
+
+\item  Discuter la continuité et la dérivabilité de  $f_{\alpha}$ en fonction de $\alpha$.
+
+\emph{On complètera d'obscurs calculs par quelques dessins convaincants.}
+
+\item Pour $\alpha > 1$, étudier la régularité aux ordres supérieurs ($\mc{D}^k$, $\mc{C}^k$, $\mc{C}^{\infty}$ ?).
+
+\end{enumerate}
+
+\exercice[Qui n'est pas sa série de Taylor]
+
+Soit $\fonction{f}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $\exp(-1/x^2)$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$.
+
+Montrer que $f$ est de classe $\mc{C}^\infty$ sur $\mb{R}$ et que pour tout $n \ge 0$, $f^{(n)}(0) = 0$.
+
+
+
+
+
+
+\exercice
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction dérivable telle que $f(0) = f'(0) = 0$.
+
+\begin{enumerate}
+
+\item \begin{enumerate}\item Montrer que $g$ est dérivable sur $\mb{R}^*$ et continue sur $\mb{R}$ où 
+$$\fonction{g}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $\frac{f(x)}{x}$ si $x \neq 0$ \\ $0$ sinon.\end{tabular}}$$
+
+\item Donner un exemple de fonction $f$ vérifiant les hypothèses telle que $g$ ne soit pas dérivable en $0$. \emph{Indication : on pourra commencer par chercher $g$ non dérivable en $0$.}
+
+\end{enumerate}
+
+\item Rappeler l'équation de la tangente à la courbe de $f$ un point $x \in \mb{R}$. Que doit vérifier un point dont où la tangente passe par l'origine ?
+
+\item On suppose qu'il existe $a>0$ telle que $f(a) = 0$. Montrer qu'il existe $0 < b < a$ tel que la tangente à $f$ en $b$ passe par l'origine. \emph{Indication : utiliser la question 1.a.}
+
+Ensuite, faire un petit dessin.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+\exercice
+
+Etudier la suite définie par $u_0 \in \mb{R}$ et $u_{n+1}=u_n^2 +1$.
+
+\emph{Bonne définition, variations, limites\dots}
+
+
+
+
+
+
+\exercice
+
+Etudier la suite définie par $u_0 = 1$ et $u_{n+1}=\sqrt{1+u_n}$.
+
+\emph{Bonne définition, variations, limites\dots}
+
+
+
+
+
+
+\exercice
+
+Etudier les variations de la suite $(u_n)_{n \ge 0}$ définie par $u_0 \in \mb{R}$ et $\ex^{u_{n}} -1$.
+
+En déduire sa limite en fonction de la valeur de $u_0$.
+
+
+
+\exercice[Extraction de racine]
+
+Soit la suite $(u_n)_{n \ge 0}$ définie par $u_0 > 0$ et $u_{n+1} = \frac{1}{2}\left(u_n + \frac{a}{u_n}\right)$. Montrer qu'elle converge vers une limite $l$ que l'on précisera.
+
+
+\emph{Indication : on pourra d'abord intuiter la valeur de $l$, puis regarder $|u_n - l|$.}
+
+\exercice[Lorsque $f$ n'a pas de point fixe]
+
+Soit $\fonction{f}{\mb{R}}{\mb{R}}{x}{\frac{x + \lfloor x \rfloor +1}{2}}$ et $k \in \mb{Z}$.
+
+On définit la suite $(u_n)_{n \ge 0}$ par $u_0 \in [k, k+1[$ et $\forall n \ge 0$, $u_{n+1}=f(u_n)$.
+
+\begin{enumerate}
+
+\item Montrer que $\forall x$, $f(x) > x$. En déduire que $f$ n'a aucun point fixe.
+
+\item Montrer que $[k,k+1[$ est stable par $f$.
+
+\item Déduire de ce qui précède que $(u_n)_{n \ge 0}$ est convergente. Est-ce une contradiction avec la question 1 ? Pourquoi ?
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+\exercice[Point fixe dans un segment (compact)]
+
+Soit $I$ un segment de $\mb{R}$ et $f : I \rightarrow I$ une fonction continue.
+
+\begin{enumerate}
+
+\item Montrer que si $f$ possède un point fixe.
+
+\item On suppose dans la suite que $\forall x \neq y \in I$ on a $|f(x) - f(y)| < |x-y|$. Montrer que le point fixe est unique.
+
+\item Soit $u_0 \in I$ quelconque, on considère $(u_n)_{n \ge 0}$ définie par $u_{n+1} = f(u_n)$.
+
+\begin{enumerate}
+
+\item Montrer que $(|\alpha - u_n|)_{n \ge 0}$ admet une limite notée $l$.
+
+\item Pourquoi peut-on extraire une sous-suite convergente $(u_{\varphi(n)})_{n \ge 0}$ de $(u_n)_{n \ge 0}$ ? On note $x$ sa limite.
+
+\item Montrer que  $|\alpha - f(u_{\varphi(n)})|  \rightarrow l$ et $|\alpha - f(u_{\varphi(n)+1})|  \rightarrow l$.
+
+En déduire que $| \alpha - x| = |\alpha - f(x)| = l$.
+
+\item Conclure que $x = \alpha$. Que dire sur la convergence de $(u_n)_{n \ge 0}$ ?
+
+\end{enumerate}
+
+
+\item Comment pourrait-on faire si l'on voulait approcher ce point fixe avec un algorithme ?
+\end{enumerate}
+
 
 
 \end{document}
+
+
