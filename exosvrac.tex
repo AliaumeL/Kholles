@@ -51,6 +51,8 @@
 
 \newcommand{\exercice}[1][\null]{\textbf{\\ Exercice \thesection.\theexo. #1} \addtocounter{exo}{1}}
 \newcommand{\cours}{\textbf{\ds \\ \large Questions de cours}}
+\newcommand{\indication}[1]{\begin{flushright}\textit{Indication: #1}\end{flushright}}
+
 
 %%%% Corps du fichier
 
@@ -2768,6 +2770,8 @@ On pose
 
 
 
+
+
 \subsection{Partie entière}
 
 
@@ -2777,6 +2781,145 @@ Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0
 
 
 
+\subsection{Développements asymptotiques}
+
+\exercice[Une petite intégrale]
+Trouver un équivalent quand $n \to +\infty$
+de l'intégrale suivante
+
+\begin{equation*}
+    I_n = \int_{n^2}^{n^3} \frac{dt}{1 + t^2} 
+\end{equation*}
+
+\exercice[Développement limité d'une somme]
+On définit la suite $(u_n)$ comme suit~:
+\begin{equation*}
+    u_n = \sum_{k = 1}^n \sin \frac{k}{n^2}
+\end{equation*}
+
+\begin{compactenum}[(i)]
+\item Montrer qu'il existe un $C > 0$ tel que 
+    \begin{equation*}
+        \sup_{x \in [0,1]} \left| 
+            \sin x - x + \frac{x^3}{6} 
+        \right| \leq C
+    \end{equation*}
+
+\item En déduire un développement limité de $u_n$
+    jusqu'au terme $1/n^2$
+\end{compactenum}
+
+\exercice[Développement limité d'une somme]
+On définit la suite $(u_n)$ comme suit~:
+\begin{equation*}
+    u_n = \sum_{k = 1}^n \sin \frac{k}{n^2}
+\end{equation*}
+
+\begin{compactenum}[(i)]
+\item Montrer qu'il existe un $C > 0$ tel que 
+    \begin{equation*}
+        \sup_{x \in [0,1]} \left| 
+            \sin x - x + \frac{x^3}{6} 
+        \right| \leq C
+    \end{equation*}
+
+\item En déduire un développement limité de $u_n$
+    jusqu'au terme $1/n^2$
+\end{compactenum}
+
+\exercice[Suite des racines d'une famille de polynômes] 
+
+Soit $(u_n)$ une suite de réels qui vérifie
+$u_n^5 + n u_n - 1 = 0$.
+
+\begin{compactenum}[(i)]
+\item Montrer que $u_n$ est uniquement déterminé
+    par l'équation qu'il vérifie
+\item Montrer que $u_n$ converge vers une limite finie
+\item En déduire un équivalent de $u_n$
+    \indication{Quelle est la limite de $u_n^5$ ? }
+\item Trouver un développement asymptotique 
+    de $n u_n$ en $1/n^5$
+\item En déduire un développement de $u_n$ contenant 
+    deux termes
+\end{compactenum}
+
+\exercice[Racines itérées]
+
+Soit $(u_n)$ la suite définie par $u_1 = 1$
+et $u_{n+1} = \sqrt{ (n+1) + u_n }$.
+
+\begin{compactenum}[(i)]
+\item Montrer que $u_n \sim \sqrt{n}$
+\item Calculer le terme suivant du développement 
+    asymptotique de $u_n$
+    \indication{Ré-injecter l'équivalent dans 
+    la définition par récurrence}
+\item Peut-on calculer le troisème terme de la même 
+    manière ?
+\end{compactenum}
+
+
+\exercice[Développement limité d'une suite récurrente]
+\begin{center}
+    \fbox{\begin{minipage}{0.9\linewidth}
+            \textbf{Prérequis} \emph{Théorème de Césaro}
+            Soit $u_n$ une suite qui converge 
+            vers une limite $l$. Alors la $M_n$
+            définie ci-après converge aussi vers $l$
+
+            \begin{equation*}
+                M_n = \frac{1}{n} \sum_{k=1}^n u_k
+            \end{equation*}
+    \end{minipage}}
+\end{center}
+
+Soit $c > 0$ et $f : [0,c] \to [0,c]$ une fonction 
+dont le développement limité en zéro est 
+
+\begin{equation*}
+    f(x) = x - a x^\alpha + o (x^\alpha)
+\end{equation*}
+
+Où $\alpha > 1$ et $a > 0$.
+\begin{compactenum}[(i)]
+\item Montrer que pour $u_0$ suffisament proche de zéro,
+    la suite définie par $u_{n+1} = f(u_n)$ converge 
+    vers zéro
+
+\item Déterminer alors un équivalent de $u_n$
+\item Trouver un $\beta$ réel tel que 
+    $u_{n+1}^\beta - u_n^\beta$ possède une 
+    limite finie non nulle
+
+\item Utiliser le théorème de Césaro pour trouver 
+    un équivalent de $u_n$ en $+\infty$
+
+\item Traiter l'exemple de $u_{n+1} = \sin u_n$
+\item \emph{(Bonus)} Comment trouver le terme suivant 
+    du développement de $u_n$ ?
+\end{compactenum}
+
+\exercice[Puissances entières]
+
+Soit $f : \mb{R}_+^* \to \mb{R}$ une fonction 
+$\mathcal{C}^\infty$. On note $\Delta f (x) = f(x+1) - f(x)$.
+
+\begin{compactenum}[(i)]
+\item Montrer que pour tout $x > 0$ et pour tout $n \in \mb{N}^*$
+    il existe un $\theta \in ]0,1[$ tel que $\Delta^n f(x) = f^{(n)} (x +
+    n\theta)$.
+
+    \indication{Poser $g = \Delta^n f$ et utiliser le TAF}
+
+\item En utilisant ce résultat, montrer que si la suite définie par $u_n = n^c$
+    est entière pour tout $n$ alors $c \in \mb{N}$.
+
+    \indication{Quelle est l'expression de la dérivée $n$-ème de $f : x \mapsto
+    x^c$ ? En déduire que $\Delta^n f(k)$ est entier et tends vers zéro...}
+
+\item Quid de la réciproque ?
+\end{compactenum}
 
 
 

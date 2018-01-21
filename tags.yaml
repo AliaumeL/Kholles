@@ -1,30 +1,43 @@
 
 A000:
     année: SUP
-    difficultée: "***"
+    difficultée: "*"
     tags: 
         - Mathématiques
+        - Logique
+        - Élémentaire
+        - Quantificateurs 
 
     
 A001:
     année: SUP
-    difficultée: "***"
+    difficultée: "**"
     tags: 
         - Mathématiques
+        - Logique
+        - Élémentaire
+        - Quantificateurs 
 
     
 A002:
     année: SUP
-    difficultée: "***"
+    difficultée: "*"
     tags: 
         - Mathématiques
+        - Logique
+        - Élémentaire
+        - Quantificateurs 
 
     
 A003:
     année: SUP
-    difficultée: "***"
+    difficultée: "**"
     tags: 
         - Mathématiques
+        - Logique 
+        - Élémentaire
+        - Quantificateurs 
+        - Distributivité
 
     
 A004:
@@ -32,6 +45,10 @@ A004:
     difficultée: "***"
     tags: 
         - Mathématiques
+        - Analyse
+        - Logique
+        - Élémentaire 
+        - Epsilon
 
     
 A005:
@@ -39,6 +56,9 @@ A005:
     difficultée: "***"
     tags: 
         - Mathématiques
+        - Croissance
+        - Fonctions 
+        - Analyse
 
     
 A006:
@@ -46,27 +66,38 @@ A006:
     difficultée: "***"
     tags: 
         - Mathématiques
-
+        - Équation Fonctionnelle
+        - Fonctions 
+        - Entiers 
     
 A007:
     année: SUP
     difficultée: "***"
     tags: 
         - Mathématiques
+        - Fonctions 
+        - Analyse 
+        - Logique 
 
     
 A008:
     année: SUP
-    difficultée: "***"
+    difficultée: "**"
     tags: 
         - Mathématiques
+        - Logique
+        - Ensembles 
+        - Élémentaire
 
     
 A009:
     année: SUP
-    difficultée: "***"
+    difficultée: "*"
     tags: 
         - Mathématiques
+        - Équation Fonctionnelle
+        - Fonctions 
+        - Rationnels
 
     
 A010:
@@ -74,6 +105,9 @@ A010:
     difficultée: "***"
     tags: 
         - Mathématiques
+        - Fonctions 
+        - Périodicité
+        - Analyse 
 
     
 A011:
@@ -81,6 +115,9 @@ A011:
     difficultée: "***"
     tags: 
         - Mathématiques
+        - Rationnels
+        - Logique 
+        - Élémentaire
 
     
 A012:
@@ -88,6 +125,10 @@ A012:
     difficultée: "***"
     tags: 
         - Mathématiques
+        - Logique
+        - Ensembles
+        - Entiers 
+        - Élémentaire
 
     
 A013:
@@ -95,6 +136,9 @@ A013:
     difficultée: "***"
     tags: 
         - Mathématiques
+        - Fonctions 
+        - Ensembles
+        - Analyse
 
     
 A014:
@@ -102,6 +146,9 @@ A014:
     difficultée: "***"
     tags: 
         - Mathématiques
+        - Ensembles 
+        - Fonctions 
+        - Logique 
 
     
 A015:
@@ -109,6 +156,10 @@ A015:
     difficultée: "***"
     tags: 
         - Mathématiques
+        - Analyse 
+        - Ensembles 
+        - Élémentaire
+        - Logique
 
     
 A016:
