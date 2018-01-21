@@ -16,6 +16,10 @@ class Interactive:
     def parseArgs (self):
         pass 
 
+    def launchExtEditor (self, name):
+        self.log ("FILEEDIT", "ouvre le fichier {}".format (name))
+        os.system ("open {}".format (name))
+
     def log (self, name, desc):
         if self.debug == 3:
             if self.logger == None:
@@ -271,6 +275,9 @@ def ficheBuilder (name):
 
 
 # catalogueBuilder ("algebre")
-ficheBuilder ("S-13")
+# ficheBuilder ("S-13")
+
+
+
 
 
