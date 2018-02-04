@@ -47,7 +47,7 @@ print ("Variance: {} (Ali) | {} (Gat) | {} (Total)".format (descAli.variance,
 
 plt.hist([notesAli, notesGat], bins = range(0,20), color = ['yellow', 'green'],
             edgecolor = 'black', hatch = '/', label = ['Ali', 'Gat'],
-            histtype = 'bar')
+            histtype = 'bar', normed = True)
 plt.ylabel('Nb eleves')
 plt.xlabel('Note')
 plt.title('Ste Marie')
