@@ -2836,6 +2836,7 @@ et $u_{n+1} = \sqrt{ (n+1) + u_n }$.
 
 \begin{compactenum}[(i)]
 \item Montrer que $u_n \sim \sqrt{n}$
+    \indication{$\sqrt{n} \leq u_n \leq 2 \sqrt{n}$}
 \item Calculer le terme suivant du développement 
     asymptotique de $u_n$
     \indication{Ré-injecter l'équivalent dans 
@@ -2897,13 +2898,12 @@ $\mathcal{C}^\infty$. On note $\Delta f (x) = f(x+1) - f(x)$.
 
     \indication{Poser $g = \Delta^n f$ et utiliser le TAF}
 
-\item En utilisant ce résultat, montrer que si la suite définie par $u_n = n^c$
-    est entière pour tout $n$ alors $c \in \mb{N}$.
-
-    \indication{Quelle est l'expression de la dérivée $n$-ème de $f : x \mapsto
-    x^c$ ? En déduire que $\Delta^n f(k)$ est entier et tends vers zéro...}
-
+\item Calculer la dérivée $n$-ème de $f : x \mapsto x^c$
+\item Montrer que si $c$ n'est pas entier et $n \geq c$, alors $\Delta^n f(k) \to 0$
+    quand $k \to +\infty$.
+\item Conclure 
 \item Quid de la réciproque ?
+
 \end{compactenum}
 
 
