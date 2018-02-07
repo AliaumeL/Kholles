@@ -15,6 +15,7 @@
 \usepackage{paralist}
 \usepackage{epigraph}
 \usepackage{tikz}
+\usepackage{multicol}
 \usetikzlibrary{arrows,positioning,automata,shadows}
 \usepackage{palatino}
 \usepackage{pdfpages}
@@ -43,6 +44,8 @@
 \newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\mf}[1]{\mathfrak{#1}}
 \newcommand{\card}{\operatorname{Card}}
+\newcommand{\GL}{\operatorname{GL}}
+\renewcommand{\M}{\operatorname{M}}
 
 % Exercices
 
@@ -3494,20 +3497,6 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 
 \section{Semaine 14}
 
-\cours
-
-\begin{enumerate}
-
-\item Enoncer et démontrer la condition nécessaire d'extremum local (sur un ouvert).
-
-\item Enoncer et démontrer le théorème de Rolle. On admettra la condition nécessaire d'extremum local qui sera démontrée par le numéro 1.
-
-\item Soit $f$ une fonction croissante sur $\mb{R}$, et $(u_n)_{n \ge 0}$ vérifiant $u_{n+1} = f(u_n)$. Que dire quant aux variations de $(u_n)_{n \ge 0}$ ? Et si $f$ est strictement croissante ?
-
-Si $f$ est continue et $(u_n)_{n \ge 0}$ converge, montrer que la limite est un point fixe de $f$.
-\end{enumerate}
-
-
 
 \exercice[Rolle généralisé]
 
@@ -3521,20 +3510,6 @@ Si $f$ est continue et $(u_n)_{n \ge 0}$ converge, montrer que la limite est un 
 \end{enumerate}
 
 
-
-\exercice[Ecrasement en l'origine]
-
-Pour $\alpha \in \mb{R}$ soit $\fonction{f_{\alpha}}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $|x|^\alpha$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$.
-
-\begin{enumerate}
-
-\item  Discuter la continuité et la dérivabilité de  $f_{\alpha}$ en fonction de $\alpha$.
-
-\emph{On complètera d'obscurs calculs par quelques dessins convaincants.}
-
-\item Pour $\alpha > 1$, étudier la régularité aux ordres supérieurs ($\mc{D}^k$, $\mc{C}^k$, $\mc{C}^{\infty}$ ?).
-
-\end{enumerate}
 
 \exercice[Qui n'est pas sa série de Taylor]
 
@@ -3669,6 +3644,348 @@ En déduire que $| \alpha - x| = |\alpha - f(x)| = l$.
 
 
 
-\end{document}
+\section{Semaine 15}
 
+\exercice
+
+Donner le développement limité en $0$ de $\arcsin(x)$ (à tout ordre).
+
+En déduire la valeur de $\displaystyle \lim_{x \rightarrow 0} \frac{x - \arcsin(x)}{x^3}$.
+
+\exercice
+
+Donner un développement limité en $0$ de $\ln(\frac{1+x}{1-x})$ (à tout ordre).
+
+
+\exercice[Ecrasement en l'origine]
+
+Pour $\alpha \in \mb{R}$ soit $\fonction{f_{\alpha}}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $|x|^\alpha$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$.
+
+\begin{enumerate}
+
+\item Tracer le graphe de $f_{\alpha}$ pour $\alpha = -1$ ; $0$ ; $0.5$ ; $1$ ; $1.5$ ; $2$ et $1000$.
+
+\emph{On ne dessinera pas trop grand, de sorte à pouvoir conserver le dessin au tableau sans effacer.}
+
+\item Etudier la continuité de $f_{\alpha}$ en fonction de $\alpha$.
+
+\item Montrer que  $f_{\alpha}$ est dérivable sur $\mb{R}^*$ et calculer sa dérivée. Quand est-elle dérivable en $0$ ? Est-elle alors de classe $\mc{C}^1$ sur $\mb{R}$?
+
+\item 
+
+\begin{enumerate}
+
+\item Calculer la dérivée $n$-ième de $f_{\alpha}$ sur $\mb{R}^*$.
+
+
+\item Montrer que pour $\alpha \in \mb{N}^*$ pair, $f_\alpha$ est de classe $\mc{C}^{\infty}$ sur $\mb{R}$. Et si $\alpha$ est impair ?
+
+\item Si $\alpha \in ]k,k+1[$ avec $k \in \mb{N}$, montrer que $f_{\alpha}$ est de classe $\mc{C}^k$ sur $\mb{R}$, mais pas de classe $\mc{C}^{k+1}$ sur $\mb{R}$. \emph{Indication : la dérivée $k+1$-ième  peut-elle être continue en $0$ ?}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\exercice[Continu, dérivable ou $\mc{C}^1$ ?]
+
+\begin{enumerate}
+
+\item Toute fonction dérivable sur $\mb{R}$ est-elle continue ? Et réciproquement ? Contre(s)-exemple(s) ?
+
+\item Montrer que la fonction $\fonction{f}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $x^2 \sin(1/x)$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$ est continue $\mb{R}$, puis dérivable sur $\mb{R}$. Sa dérivée est-elle continue en $0$ ?
+\end{enumerate}
+
+
+\exercice[Itération du sinus]
+
+Soit $u_0 \in [0, \frac{\pi}{2}]$, on pose pour $n \ge 0$, $u_{n+1} = \sin(u_n)$.
+
+\begin{enumerate}
+
+\item Montrer que $(u_n)_{n \ge 0}$ est décroissante et converge vers une limite que l'on précisera.
+
+\item Montrer que $u_{n+1} - u_n \sim - \frac{(u_n)^3}{6}$.
+\end{enumerate}
+
+
+\exercice[$\zeta(2)$, vitesse de convergence.]
+
+Pour $n \ge 1$ soit $u_n = \sum_{k=1}^n \frac{1}{k^2}$.
+
+\begin{enumerate}
+
+\item \begin{enumerate}
+
+\item Justifier que $\displaystyle \int_{k}^{k+1} \frac{1}{t^2} \di t \le \frac{1}{k^2} \le \displaystyle \int_{k-1}^{k}  \frac{1}{t^2} \di t$ pour $k \ge 2$.
+
+\item En déduire que $(u_n)_{n \ge 1}$ est convergente vers une limite $\ell$.
+\end{enumerate}
+
+\item Montrer que $\displaystyle \ell - u_n = \lim_{N \rightarrow + \infty} \sum_{k=n+1}^N \frac{1}{k^2}$.
+
+\item Utiliser 1.a. pour montrer que $\ell - u_n\sim \frac{1}{n}$. Conclure que $u_n = \ell + \frac{1}{n} + \mathsf{o}\left(\frac{1}{n} \right)$.
+
+\end{enumerate}
+
+\exercice[Suite implicite $x_n = c / \tan(x_n)$]
+
+Soit $f(x) = x \sin(x) - c \cos(x)$, on s'intéresse aux zéros de $f$.
+
+\begin{enumerate}
+
+\item \begin{enumerate}
+
+\item Montrer que l'équation $f(x) = 0$ admet une unique solution $x_n$ sur $]n \pi, n \pi + \frac{\pi}{2}[$.
+
+\emph{On ne cherchera pas à la calculer ! Tout l'intérêt est là !}
+
+\item Peut-il y avoir des solutions dans les intervalles $[n \pi + \frac{\pi}{2}, n \pi]$ ?
+
+\emph{On regardera le signe de $\sin$ et $\cos$ pour se convaincre que non.}
+
+\end{enumerate}
+
+\item Donner un équivalent de $x_n$.
+
+\item On note $u_n = x_n - n \pi$.
+
+\begin{enumerate}
+
+\item Exprimer $f(x_n)$ en fonction de $u_n$ et simplifier l'expression.
+
+\item En déduire que $\displaystyle u_n = \arctan\left(\frac{c}{n\pi + u_n}\right)$.
+
+\item Donner un équivalent de $u_n$ et conclure que $\displaystyle x_n = n \pi + \frac{c}{n \pi} + \mathsf{o}(\frac{c}{n \pi})$.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\exercice[Nombre de diviseurs d'un entier]
+
+{\setlength{\parindent}{0cm}
+\textbf{Partie 1 : Série harmonique}}
+
+\begin{enumerate}
+
+\item Justifier que $\displaystyle \int_{k}^{k+1} \frac{1}{t} \di t \le \frac{1}{k} \le \displaystyle \int_{k-1}^{k}  \frac{1}{t} \di t$ pour $k \ge 0$.
+
+\item En déduire que $\displaystyle \sum_{k=1}^n \frac{1}{k} \sim \ln(n)$.
+
+\end{enumerate}
+
+{\setlength{\parindent}{0cm}
+\textbf{Partie 2 : Nombre de diviseurs}}
+
+Soit $\di(k)$ le nombre de diviseurs positifs de l'entier $k \ge 1$. On s'intéresse à $\alpha_n$ le nombre moyen de diviseurs des entiers compris entre $1$ et $n$, soit $ \alpha_n  = \frac{1}{n} \sum_{k=1}^n \di(k) $.
+
+\begin{enumerate}
+
+\item \begin{enumerate} \item Justifier que $n \alpha_n = |A_n|$ où $A_n := \{(d,k)~|~d \text{ divisant } k \text{ et } k \le n \text{ et } d \le n\}$.
+
+\item Montrer que $\displaystyle A_n = \biguplus_{d=1}^n B_d^n$ où $B_d^n = \{k \text{ tel que } k \le n \text{ et } d | k\}$.
+
+\item Montrer que $B_d^n = \left\{d, 2d, \dots, \lfloor \frac{n}{d} \rfloor d \right\}$. Conclure que $n \alpha_n = \sum_{d =1}^n \lfloor \frac{n}{d}\rfloor$.
+
+\end{enumerate}
+
+\item Utiliser 1.c. pour déduire que $\alpha_n \sim \ln(n)$.
+
+\emph{On encadrera la partie entière et on utilisera le résultat de la première partie}
+
+\end{enumerate}
+
+
+
+
+
+
+\section{Semaine 16}
+
+
+
+
+\exercice
+
+Soit $A = \begin{pmatrix} 1 & 1 & 0 \\ 0& 1& 1 \\ 0 &  0& 1 \end{pmatrix}$. Calculer $A^n$ pour $n \ge 0$.
+
+
+\exercice
+
+Soient $A, B, C \in \M_n(\mb{K})$ non nulles et telles que $ABC = 0_n$.
+
+Montrer qu'au moins deux matrices parmi $A$, $B$ et $C$ ne sont pas inversibles.
+
+
+
+\exercice[Calculs de limites]
+
+\begin{enumerate}
+
+\item Déterminer $\displaystyle \lim_{n \rightarrow + \infty} (3 \sqrt[n]{2} - 2 \sqrt[n]{3})^n$.
+
+\item Déterminer $\displaystyle \lim_{n \rightarrow + \infty} \left(n \sin\frac{1}{n}\right)^{n^2}$.
+
+\item Déterminer $\displaystyle \lim_{n \rightarrow + \infty} n^2\left(\sqrt[n]{n+1} - \sqrt[n]{n}\right)$.
+
+\end{enumerate}
+
+
+\exercice
+
+Déterminer $\displaystyle \lim_{x \rightarrow 0} \left( \frac{a^x + b^x}{2}\right)^{1/x}$.
+
+
+\section{Semaine 17}
+
+
+
+
+\exercice
+
+Existe-t-il deux matrices $A,B$ de taille $n \ge 1$, telles que $AB - BA = I_n$ ?
+
+\exercice
+
+Déterminer une condition nécessaire et suffisante pour que le produit de 2 matrices symétriques soit encore symétrique.
+
+\exercice
+
+\begin{enumerate}
+
+\item Soit $A = (a_{i,j})_{1 \le i,j \le n} \in \M_n(\mb{R})$ telle que $a_{i,j} = 0$ pour $i \ge j$.
+
+Démontrer que $A$ est nilpotente. \emph{On montrera que les $0$ ``remontent''.}
+
+\item Soit $A \in \M_3(\mb{R})$. En raisonnant par analyse-synthèse, montrer que $A$ peut s'écrire comme somme d'une matrice nilpotente et d'une matrice symétrique.
+
+\item Généraliser ce résultat à $\M_n(\mb{R})$ pour $n \ge 1$ quelconque.
+
+\item Cette décomposition est-elle unique ?
+
+\end{enumerate}
+
+\exercice
+
+Inverser les matrices suivantes (quand elles le sont).
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\item $ \begin{pmatrix} 1 & 0 & -1 \\ 2 & 1 & -3 \\ -1 & 0 & 2 \end{pmatrix}$
+
+\item $ \begin{pmatrix}  1 & 0 & 1 \\ 2 & -1 & 1 \\ -1 & 1 & -1 \end{pmatrix}$
+
+\item $ \begin{pmatrix}  1 & 1 & -1 \\ 2 & 0 & 1 \\ 2 & 1 & -1 \end{pmatrix}$
+
+\end{enumerate}
+
+\end{multicols}
+
+
+\exercice
+
+Soit $A = \begin{pmatrix} 2 & -1 & 2 \\ 5& -3& 3 \\ -1 & 0 & -2 \end{pmatrix}$. Calculer $(A+I_n)^3$.
+
+En déduire que $A$ est inversible et une expression de son inverse (sans Gauss).
+
+
+
+
+
+\exercice[Puissances alternées]
+
+Soit $A \in \GL_n(\mb{K})$ vérifiant $A + A^{-1} = I_n$. On pose $B_k = A^k + A^{-k} $.
+
+\begin{enumerate}
+
+\item Démontrer que $B_k = B_{k+1} +B_{k-1}$. \emph{Indication: que vaut $B_k B_1$ ?}
+
+\item En déduire que $B_k = \lambda_k I_n$ où $(\lambda_k)_{k \ge 0} \in \mb{K}^{\mb{N}}$ est une suite à expliciter.
+
+\end{enumerate}
+
+
+
+\exercice[Autour de $J$]
+
+\begin{enumerate}
+
+\item Soit $J = (1)_{1 \le i,j \le n}$. $J$ est-elle inversible ? Calculer $J^2$.
+
+\item Soit $A \in \M_n(\mb{K})$. Que vaut $JAJ$ en fonction de la somme des termes de $A$ ?
+
+\item Soit $\delta_{i,j} := 1$ si $i = j$, $0$ sinon. Soit $A = (1 - \delta_{i,j})_{1 \le i,j \le n}$.
+
+\begin{enumerate}
+ \item Justifier que $A= J - I_n$.
+ 
+ \item Exprimer $A^2$ en fonction de $A$ et $I_n$.
+ 
+ \item En déduire que $A$ est inversible et donner son inverse.
+ 
+ \end{enumerate}
+
+\end{enumerate}
+
+\exercice[Transformée de Fourier discrète]
+
+Soit $n \ge 2$ et $\omega = \exp(\frac{2\im \pi}{n})$. On pose $A = (\omega^{(i-1)(j-1)})_{1 \le i,j \le n}$.
+
+\begin{enumerate}
+
+\item \begin{enumerate}
+
+\item Calculer $A \overline{A}$ avec $\overline{A} = (\overline{a_{i,j}})_{1 \le i,j \le n}$.
+
+\item En déduire l'inverse de $A$.
+
+\end{enumerate}
+
+\item Soit $ P(x) =  \sum_{k=0}^{n-1} a_k x^k$ un polynôme de coefficients \emph{inconnus} $(a_0, \dots, a_{n-1})$.
+
+On suppose que l'on connaît l'évaluation de $P$ en $\omega^0 \dots \omega^{n-1}$, soit $(P(\omega^0), \dots, P(\omega^{n-1}))$.
+
+Comment trouver les coefficients $(a_0, \dots, a_{n-1})$?
+
+\end{enumerate}
+
+
+\exercice[Polynôme annulateur et calcul de puissances]
+
+Soit $A = \begin{pmatrix} 2 & -2 & 1 \\ 2& -3& 2 \\ -1 & 2 & 0 \end{pmatrix}$.
+
+\begin{enumerate}
+
+\item Montrer qu'il existe un polynôme $P(X) = a X^2 + b X + c \in \mb{R}_2[X]$ tel que $P(A) = 0$.
+
+\item Calculer la division euclidienne de $X^n$ par $P$.
+
+\item En déduire une expression de $A^n$.
+
+\end{enumerate}
+
+
+\exercice
+
+Résoudre l'équation $P \circ P = P$ d'inconnue $P \in \mb{R}[X]$.
+
+\exercice
+
+Soit $r$ le reste de la division euclidienne de $n$ par $k$. Monter que le reste de la division euclidienne de $X^n$ par $X^k - 1$ est $X^r$.
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
 
