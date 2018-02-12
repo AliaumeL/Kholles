@@ -1269,6 +1269,29 @@ On considère l'ensemble $\mb{Z}[\text{i}] := \{a + \text{i}b~|~a, b \in \mb{Z}\
 \section{Fonctions réelles}
 
 \subsection{Etude de fonctions}
+
+
+\exercice 
+
+\begin{enumerate}
+
+\item Donner un exemple \emph{simple} de fonction $f:[0,1] \rightarrow [0,1]$ vérifiant $\forall x, f(x^2) = f(x)$.
+\item Soit $\displaystyle A = \left\{\text{e}^{-2^n\ln(2)}~\Big|~n \in \mb{Z}\right\}$.
+
+\begin{enumerate}
+
+\item Justifier que $A \subseteq[0,1]$.
+
+\item Montrer que si $x \in A$, alors $x^2 \in A$.
+
+\item Montrer que si $x \in [0,1]\smallsetminus A$, alors $x^2 \in [0,1]\smallsetminus A$.
+
+\end{enumerate}
+
+\item En déduire une fonction \emph{non constante} $f:[0,1] \rightarrow [0,1]$ vérifiant $\forall x, f(x^2) = f(x)$.
+\end{enumerate}
+
+
         
 \subsection{Fonctions circulaires réciproques}
 
@@ -1345,144 +1368,6 @@ Soit $f : I \to J$ avec $I$ et $J$ des intervalles de $\mb{R}$.
     \item Est-ce que $f$ est majorée sur $I$ ?
 \end{enumerate}
 
-\exercice[Calcul de dérivée]
-
-On pose $f(x) = \frac{1}{1-x}$.
-
-\begin{enumerate}
-    \item Donner de domaine de définition de $f$
-    \item Tracer la courbe de $f$
-    \item Calculer la dérivée de $f$ en un point
-    \item On note $f'$ la fonction dérivée de $f$,
-        calculer la dérivée de $f'$
-    \item En déduire une expression générale 
-        de la dérivée $n$-ème de $f$
-\end{enumerate}
-
-
-\exercice[Dérivée et minimum local]
-
-Soit $f$ une fonction dérivable sur un intervalle $]a,b[$ de $\mb{R}$,
-et continue sur $[a,b]$.
-
-\begin{enumerate}
-    \item Si $f$ est croissante, que dire d'un éventuel minimum de $f$ ? 
-        D'un maximum de $f$ ?
-    \item Si $f$ admet un minimum en un point $x \in ]a,b[$, 
-        que dire de $f'(x)$ ?
-    \item Si $f$ admet un maximum en un point $x \in ]a,b[$,
-        que dire de $f'(x)$ ?
-    \item Si $f$ admet un extremum local en un point $x \in ]a,b[$
-        que dire de $f'(x)$ ?
-    \item Si $x \in ]a,b[$ et que $f'(x) = 0$, est-ce que $x$
-        est un extremum ? Un extremum local ?
-    \item Trouver un point réalisant un
-        minimum pour la fonction $x \mapsto \sqrt{x}$ pour $x \geq 0$.
-\end{enumerate}
-
-\exercice[Convexité]
-
-On dit que $f : I \to \mb{R}$ est convexe quand elle vérifie 
-la propriété suivante
-
-\begin{equation*}
-    \forall (x,y) \in I^2, \forall \lambda \in [0,1], 
-    f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda) f(y)
-\end{equation*}
-
-Soit $a \in I$, on note $\Delta_a$ la fonction définie comme suit
-
-\begin{equation*}
-    \Delta_a (x) = \frac{f(x) - f(a)}{x - a}
-\end{equation*}
-
-\begin{enumerate}
-    \item Quel est l'ensemble de définitiion de $\Delta_a$ ?
-    \item Si $(x,y) \in I^2$ et $\lambda \in [0,1]$ 
-        montrer que $\lambda x + (1 - \lambda y) \in I$
-    \item Montrer que si pour tout $a \in I$ $\Delta_a$ 
-        est une fonction croissante alors $f$ est convexe.
-        \emph{(Indication: supposer $x < y$, $\lambda \in ]0,1[$ 
-            et remarquer 
-            $\lambda x + (1 - \lambda y) < y$
-            puis utiliser la croissance de $\Delta_x$)}
-    
-    \item On suppose maintenant $f$ convexe, et $a \in I$.
-        \begin{enumerate}
-            \item Si $(x,y) \in I^2$ et $x < y < a$, en considérant 
-                $\lambda = (x - a) / (y-a)$ montrer que 
-                $\Delta_a (x) \leq \Delta_a (y)$
-
-            \item Si $(x,y) \in I^2$ et $a < x < y$, montrer que 
-                $\Delta_a(x) \leq \Delta_a (y)$
-
-            \item Si $(x,y) \in I^2$ et $x < a < y$, montrer 
-                que $\Delta_a (x) \leq \Delta_a (y)$. 
-                \emph{(Indication: considérer $\lambda = (a - y)/(x-y)$)}
-        \end{enumerate}
-        En déduire que $\Delta_a$ est croissante.
-    \item Conclure que $f$ est convexe si et seulement si $\Delta_a$ est 
-        croissante pour tout $a \in I$.
-   
-    \item En déduire que si $f$ est convexe et dérivable sur $I$, alors $f'$ 
-        est croissante sur $I$ \emph{(Indication: utiliser la croissance de $\Delta_x$ 
-        pour $x$ entre $a$ et $b$)}.
-
-    \item Que dire de la réciproque ? \emph{(Indication: utiliser 
-            $g(\lambda) = \lambda f(x) + (1 - \lambda)f(y) - f (\lambda x +
-            (1-\lambda) f (y))$)}
-
-    \item Montrer que si $f$ est deux fois dérivable, $f$ est convexe 
-        si et seulement si $f''$ est positive.
-\end{enumerate}
-
-
-\exercice[Inégalité de Huygens]
-
-\begin{enumerate}
-
-\item Montrer que pour $x \in [0, \frac{\pi}{2}[$ on a $x \le \frac{2}{3} \sin(x) + \frac{1}{3} \tan(x) $.
-
-\item Interpréter cette inégalité géométriquement.
-
-\end{enumerate}
-
-
-\exercice 
-
-Soit $f : \mb{R} \rightarrow \mb{R}, x \mapsto \frac{2x}{1+x^2}$.
-\begin{enumerate}
-\item Etudier les variations de $f$. Tracer son graphe.
-
-\item $f$ est-elle bijective ? (Surjective ? Injective ?)
-
-\item Montrer que $g : [0,1] \rightarrow [0,1], x \mapsto f(x)$ est bijective.
-\end{enumerate}
-
-
-
-
-\exercice
-
-On considère la fonction $f : \mb{R} \rightarrow \mb{R}, x \mapsto x^2 \sin(\frac{1}{x})$
-
-\begin{enumerate}
-
-\item Etudier le domaine de définition de $f$, sa parité, ses points d'annulation.
-
-\item Montrer que $\forall x \neq 0$, $-x^2 \le f(x) \le x^2$. En déduire $\displaystyle \lim_{\substack{x \rightarrow 0\\x \neq 0}} f(x)$.
-
-\item \begin{enumerate}
-
-\item Montrer que pour tout $t\in [0,\frac{\pi}{2}]$, $\frac{2}{\pi}t \le \sin(t) \le t$.
-
-\item En déduire un encadrement de $f(x)$ pour $x \ge a$ (on précisera la valeur de $a$).
-
-\end{enumerate}
-
-\item Tracer le graphe de $f$. On pourra admettre que $y =x$ est une asymptote de $f$ en $+ \infty$.
-\end{enumerate}
-
 
 \exercice[Argument sinus hyperbolique]
 
@@ -1539,169 +1424,10 @@ Soit $(x,y) \in \mb{R}^2$, montrer l'équivalence suivante
 
 \end{enumerate}
 
-\subsubsection{Dérivabilité}
 
 
-\exercice[Formule de Leibniz et application]
 
-\begin{enumerate}
-
-\item Soient $f$ et $g$ deux fonctions réelles $n$ fois dérivables. Montrer par récurrence que $\displaystyle (fg)^{(n)} (x)= \sum_{k=0}^n {n \choose k} f^{(k)}(x) g^{(n-k)}(x)$.
-
-\item \begin{enumerate}
-
-\item Calculer la dérivée $n$-ème de $f:x \mapsto x^{2n}$.
-
-\item En écrivant $x^{2n} = x^n\times x^n$, exprimer la dérivée $n$-ème de $f$ sous une autre forme.
-
-\item En déduire que $\displaystyle \sum_{k=0}^n {n \choose k}^2 = {2n \choose n}$.
-
-\end{enumerate}
-
-\end{enumerate}
-
-\exercice 
-
-\begin{enumerate}
-
-\item Donner un exemple \emph{simple} de fonction $f:[0,1] \rightarrow [0,1]$ vérifiant $\forall x, f(x^2) = f(x)$.
-\item Soit $\displaystyle A = \left\{\text{e}^{-2^n\ln(2)}~\Big|~n \in \mb{Z}\right\}$.
-
-\begin{enumerate}
-
-\item Justifier que $A \subseteq[0,1]$.
-
-\item Montrer que si $x \in A$, alors $x^2 \in A$.
-
-\item Montrer que si $x \in [0,1]\smallsetminus A$, alors $x^2 \in [0,1]\smallsetminus A$.
-
-\end{enumerate}
-
-\item En déduire une fonction \emph{non constante} $f:[0,1] \rightarrow [0,1]$ vérifiant $\forall x, f(x^2) = f(x)$.
-\end{enumerate}
-
-
-\exercice
-
-\begin{enumerate}
-
-\item Trouver toutes les fonctions dérivables $f :\mb{R} \rightarrow \mb{R}$ vérifiant $\forall xy, f(x+y) = f(x)+ f(y)$.
-
-\item Trouver toutes les fonctions dérivables $f :\mb{R} \rightarrow \mb{R}^*_+$ vérifiant $\forall xy, f(xy) = f(x)f(y)$.
-\end{enumerate}
-
-
-
-\exercice[Divergence de la série harmonique]
-
-\begin{enumerate}
-
-\item Calculer $\displaystyle \sum_{k=1}^n  \text{ln}(1+ \frac{1}{k})$.
-
-\item Que peut-on en déduire quant à $\displaystyle \lim_{n \to + \infty} \sum_{k=1}^n \frac{1}{k}$ ? On utilisera une inégalité avec $\text{ln}$.
-\end{enumerate}
-
-\exercice
-
-Résoudre le système $xy = 1$, ${\ex}^x {\ex}^y =a$ d'inconnues $x,y$, en fonction du paramètre $a \in \mb{R}$.
-
-
-\exercice 
-
-\begin{enumerate}
-    \item Établir que pour $x \in ]0, +\infty[$ l'inégalité suivante
-        est vérifiée
-        \begin{equation*}
-            \frac{1}{1+x} < \ln (1 + x) - \ln x < \frac{1}{x}
-        \end{equation*}
-
-    \item En déduire que pour $x \in ]0,+\infty[$ on a
-        \begin{equation*}
-            \left(1 + \frac{1}{x}\right)^x < e < \left(1 + \frac{1}{x}\right)^{1 + x}
-        \end{equation*}
-\end{enumerate}
-
-\exercice 
-
-\begin{enumerate}
-    \item Établir que pour tout $x \geq 0$ et pour $p \in ]0,1[$ on a 
-        l'inégalité suivante~:
-        \begin{equation*}
-            (1 + x)^p \leq 1 + x^p
-        \end{equation*}
-
-    \item En déduire que pour $x$ et $y$ réels, $p \in ]0,1[$
-        l'inégalité suivante est vérifiée:
-        \begin{equation*}
-            (x + y)^p \leq x^p + y^p
-        \end{equation*}
-\end{enumerate}
-
-\exercice
-
-Étudier la fonction suivante et tracer sa courbe 
-
-\begin{equation*}
-    f : x \mapsto \left(1 + \frac{1}{x}\right)^x
-\end{equation*}
-
-\exercice
-
-On pose $g(x) = e^{-1/x^2}$.
-
-\begin{enumerate}
-    \item Étudier le domaine de définition de $g$
-    \item Montrer que l'on peut prolonger $g$ en $0$
-    \item Montrer par récurrence sur $n$ l'équation suivante 
-        (où $P_n$ est un polynôme dont on explicitera 
-        le degré)
-
-        \begin{equation*}
-            g^{(n)} (x) = x^{-3n} P_n (x) f(x) 
-        \end{equation*}
-
-    \item Montrer que $f$ est $\mathcal{C}^\infty$, 
-        et que toutes ses dérivées sont nulles en zéro
-
-    \item Montrer que toutes les racines de $P_n$ sont 
-        réelles \emph{(Indication: Roll'N'Roll)}
-\end{enumerate}
-
-
-\exercice 
-
-Étudier la fonction $f : x \mapsto x \sqrt{1 - x^2}$
-afin de tracer son graphe.
-
-\exercice[Un petit théorème de point fixe]
-
-Soit $f$ continue de $ [0,1] $ dans $[0,1]$, montrer qu'il existe 
-$x \in [0,1]$ tel que $f(x) = x$.
-
-\exercice
-
-Étudier la fonction $f : x \mapsto \frac{\ln x }{x}$.
-
-
-\exercice["Equations différentielles"]
-
-\begin{enumerate}
-    \item Trouver une fonction dérivable $f$ telle que $f'(x) = f(x)$
-    \item Trouver une fonction dérivable $f$ telle que 
-        $f'(x) = - f (x)$
-    \item Trouver une fonction dérivable $f$ telle que 
-        $f'(x) = -x f(x)$
-\end{enumerate}
-
-
-
-
-
-
-
-
-
-\section{Intégration}
+\section{Intégration et équations différentielles}
 
 \subsection{Primitives, intégrales}
 
@@ -2154,7 +1880,7 @@ On cherche les solutions à valeurs complexes de $y' + y + y^2 + 1 = 0$ $(R)$. O
 
 
 
-\section{Propriétés topologiques dans $\mb{R}$ et $\mb{C}$}
+\section{Limites et continuité dans $\mb{R}$ et $\mb{C}$}
 
 \subsection{Suites numériques}
 
@@ -2784,7 +2510,657 @@ Soit $n \in \mb{N^*}$ et $x \in \mb{R}$. Démontrer que $\displaystyle \sum_{k=0
 
 
 
-\subsection{Développements asymptotiques}
+
+
+
+
+
+
+\section{Dérivation des fonctions réelles}
+
+\subsection{Notion de dérivée}
+
+\subsubsection{Etude de fonctions}
+
+\exercice 
+
+Étudier la fonction $f : x \mapsto x \sqrt{1 - x^2}$
+afin de tracer son graphe.
+
+\exercice
+
+Étudier la fonction $f : x \mapsto \frac{\ln x }{x}$.
+
+\exercice 
+
+Soit $f : \mb{R} \rightarrow \mb{R}, x \mapsto \frac{2x}{1+x^2}$.
+\begin{enumerate}
+\item Etudier les variations de $f$. Tracer son graphe.
+
+\item $f$ est-elle bijective ? (Surjective ? Injective ?)
+
+\item Montrer que $g : [0,1] \rightarrow [0,1], x \mapsto f(x)$ est bijective.
+\end{enumerate}
+
+
+\subsubsection{Calculs de dérivées}
+
+
+\exercice[Calcul de dérivée]
+
+On pose $f(x) = \frac{1}{1-x}$.
+
+\begin{enumerate}
+    \item Donner de domaine de définition de $f$
+    \item Tracer la courbe de $f$
+    \item Calculer la dérivée de $f$ en un point
+    \item On note $f'$ la fonction dérivée de $f$,
+        calculer la dérivée de $f'$
+    \item En déduire une expression générale 
+        de la dérivée $n$-ème de $f$
+\end{enumerate}
+
+
+\exercice[Formule de Leibniz et application]
+
+\begin{enumerate}
+
+\item Soient $f$ et $g$ deux fonctions réelles $n$ fois dérivables. Montrer par récurrence que $\displaystyle (fg)^{(n)} (x)= \sum_{k=0}^n {n \choose k} f^{(k)}(x) g^{(n-k)}(x)$.
+
+\item \begin{enumerate}
+
+\item Calculer la dérivée $n$-ème de $f:x \mapsto x^{2n}$.
+
+\item En écrivant $x^{2n} = x^n\times x^n$, exprimer la dérivée $n$-ème de $f$ sous une autre forme.
+
+\item En déduire que $\displaystyle \sum_{k=0}^n {n \choose k}^2 = {2n \choose n}$.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+\exercice
+
+\begin{enumerate}
+
+\item Trouver toutes les fonctions dérivables $f :\mb{R} \rightarrow \mb{R}$ vérifiant $\forall xy, f(x+y) = f(x)+ f(y)$.
+
+\item Trouver toutes les fonctions dérivables $f :\mb{R} \rightarrow \mb{R}^*_+$ vérifiant $\forall xy, f(xy) = f(x)f(y)$.
+\end{enumerate}
+
+
+\exercice
+
+Étudier la fonction suivante et tracer sa courbe 
+
+\begin{equation*}
+    f : x \mapsto \left(1 + \frac{1}{x}\right)^x
+\end{equation*}
+
+\exercice
+
+On pose $g(x) = e^{-1/x^2}$.
+
+\begin{enumerate}
+    \item Étudier le domaine de définition de $g$
+    \item Montrer que l'on peut prolonger $g$ en $0$
+    \item Montrer par récurrence sur $n$ l'équation suivante 
+        (où $P_n$ est un polynôme dont on explicitera 
+        le degré)
+
+        \begin{equation*}
+            g^{(n)} (x) = x^{-3n} P_n (x) f(x) 
+        \end{equation*}
+
+    \item Montrer que $f$ est $\mathcal{C}^\infty$, 
+        et que toutes ses dérivées sont nulles en zéro
+
+    \item Montrer que toutes les racines de $P_n$ sont 
+        réelles \emph{(Indication: Roll'N'Roll)}
+\end{enumerate}
+
+
+
+\exercice["Equations différentielles"]
+
+\begin{enumerate}
+    \item Trouver une fonction dérivable $f$ telle que $f'(x) = f(x)$
+    \item Trouver une fonction dérivable $f$ telle que 
+        $f'(x) = - f (x)$
+    \item Trouver une fonction dérivable $f$ telle que 
+        $f'(x) = -x f(x)$
+\end{enumerate}
+
+
+
+
+\subsection{Applications}
+
+
+\subsubsection{Obtention d'inégalités}
+
+
+
+\exercice[Inégalité de Huygens]
+
+\begin{enumerate}
+
+\item Montrer que pour $x \in [0, \frac{\pi}{2}[$ on a $x \le \frac{2}{3} \sin(x) + \frac{1}{3} \tan(x) $.
+
+\item Interpréter cette inégalité géométriquement.
+
+\end{enumerate}
+
+
+\exercice
+
+On considère la fonction $f : \mb{R} \rightarrow \mb{R}, x \mapsto x^2 \sin(\frac{1}{x})$
+
+\begin{enumerate}
+
+\item Etudier le domaine de définition de $f$, sa parité, ses points d'annulation.
+
+\item Montrer que $\forall x \neq 0$, $-x^2 \le f(x) \le x^2$. En déduire $\displaystyle \lim_{\substack{x \rightarrow 0\\x \neq 0}} f(x)$.
+
+\item \begin{enumerate}
+
+\item Montrer que pour tout $t\in [0,\frac{\pi}{2}]$, $\frac{2}{\pi}t \le \sin(t) \le t$.
+
+\item En déduire un encadrement de $f(x)$ pour $x \ge a$ (on précisera la valeur de $a$).
+
+\end{enumerate}
+
+\item Tracer le graphe de $f$. On pourra admettre que $y =x$ est une asymptote de $f$ en $+ \infty$.
+\end{enumerate}
+
+
+
+
+
+\exercice[Divergence de la série harmonique]
+
+\begin{enumerate}
+
+\item Calculer $\displaystyle \sum_{k=1}^n  \text{ln}(1+ \frac{1}{k})$.
+
+\item Que peut-on en déduire quant à $\displaystyle \lim_{n \to + \infty} \sum_{k=1}^n \frac{1}{k}$ ? On utilisera une inégalité avec $\text{ln}$.
+\end{enumerate}
+
+\exercice
+
+Résoudre le système $xy = 1$, ${\ex}^x {\ex}^y =a$ d'inconnues $x,y$, en fonction du paramètre $a \in \mb{R}$.
+
+
+\exercice 
+
+\begin{enumerate}
+    \item Établir que pour $x \in ]0, +\infty[$ l'inégalité suivante
+        est vérifiée
+        \begin{equation*}
+            \frac{1}{1+x} < \ln (1 + x) - \ln x < \frac{1}{x}
+        \end{equation*}
+
+    \item En déduire que pour $x \in ]0,+\infty[$ on a
+        \begin{equation*}
+            \left(1 + \frac{1}{x}\right)^x < e < \left(1 + \frac{1}{x}\right)^{1 + x}
+        \end{equation*}
+\end{enumerate}
+
+\exercice[Inégalité de Minkowski]
+
+\begin{enumerate}
+    \item Établir que pour tout $x \geq 0$ et pour $p \in ]0,1[$ on a 
+        l'inégalité suivante~:
+        \begin{equation*}
+            (1 + x)^p \leq 1 + x^p
+        \end{equation*}
+
+    \item En déduire que pour $x$ et $y$ réels, $p \in ]0,1[$
+        l'inégalité suivante est vérifiée:
+        \begin{equation*}
+            (x + y)^p \leq x^p + y^p
+        \end{equation*}
+\end{enumerate}
+
+
+
+\exercice[Convexité]
+
+On dit que $f : I \to \mb{R}$ est convexe quand elle vérifie 
+la propriété suivante
+
+\begin{equation*}
+    \forall (x,y) \in I^2, \forall \lambda \in [0,1], 
+    f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda) f(y)
+\end{equation*}
+
+Soit $a \in I$, on note $\Delta_a$ la fonction définie comme suit
+
+\begin{equation*}
+    \Delta_a (x) = \frac{f(x) - f(a)}{x - a}
+\end{equation*}
+
+\begin{enumerate}
+    \item Quel est l'ensemble de définitiion de $\Delta_a$ ?
+    \item Si $(x,y) \in I^2$ et $\lambda \in [0,1]$ 
+        montrer que $\lambda x + (1 - \lambda y) \in I$
+    \item Montrer que si pour tout $a \in I$ $\Delta_a$ 
+        est une fonction croissante alors $f$ est convexe.
+        \emph{(Indication: supposer $x < y$, $\lambda \in ]0,1[$ 
+            et remarquer 
+            $\lambda x + (1 - \lambda y) < y$
+            puis utiliser la croissance de $\Delta_x$)}
+    
+    \item On suppose maintenant $f$ convexe, et $a \in I$.
+        \begin{enumerate}
+            \item Si $(x,y) \in I^2$ et $x < y < a$, en considérant 
+                $\lambda = (x - a) / (y-a)$ montrer que 
+                $\Delta_a (x) \leq \Delta_a (y)$
+
+            \item Si $(x,y) \in I^2$ et $a < x < y$, montrer que 
+                $\Delta_a(x) \leq \Delta_a (y)$
+
+            \item Si $(x,y) \in I^2$ et $x < a < y$, montrer 
+                que $\Delta_a (x) \leq \Delta_a (y)$. 
+                \emph{(Indication: considérer $\lambda = (a - y)/(x-y)$)}
+        \end{enumerate}
+        En déduire que $\Delta_a$ est croissante.
+    \item Conclure que $f$ est convexe si et seulement si $\Delta_a$ est 
+        croissante pour tout $a \in I$.
+   
+    \item En déduire que si $f$ est convexe et dérivable sur $I$, alors $f'$ 
+        est croissante sur $I$ \emph{(Indication: utiliser la croissance de $\Delta_x$ 
+        pour $x$ entre $a$ et $b$)}.
+
+    \item Que dire de la réciproque ? \emph{(Indication: utiliser 
+            $g(\lambda) = \lambda f(x) + (1 - \lambda)f(y) - f (\lambda x +
+            (1-\lambda) f (y))$)}
+
+    \item Montrer que si $f$ est deux fois dérivable, $f$ est convexe 
+        si et seulement si $f''$ est positive.
+\end{enumerate}
+
+
+
+
+
+
+
+\subsubsection{Extrema}
+
+
+
+
+\exercice[Dérivée et minimum local]
+
+Soit $f$ une fonction dérivable sur un intervalle $]a,b[$ de $\mb{R}$,
+et continue sur $[a,b]$.
+
+\begin{enumerate}
+    \item Si $f$ est croissante, que dire d'un éventuel minimum de $f$ ? 
+        D'un maximum de $f$ ?
+    \item Si $f$ admet un minimum en un point $x \in ]a,b[$, 
+        que dire de $f'(x)$ ?
+    \item Si $f$ admet un maximum en un point $x \in ]a,b[$,
+        que dire de $f'(x)$ ?
+    \item Si $f$ admet un extremum local en un point $x \in ]a,b[$
+        que dire de $f'(x)$ ?
+    \item Si $x \in ]a,b[$ et que $f'(x) = 0$, est-ce que $x$
+        est un extremum ? Un extremum local ?
+    \item Trouver un point réalisant un
+        minimum pour la fonction $x \mapsto \sqrt{x}$ pour $x \geq 0$.
+\end{enumerate}
+
+
+
+
+
+\subsubsection{Rolle et accroissements finis}
+
+\exercice[Rolle généralisé]
+
+\begin{enumerate}
+
+\item Soit $f : [a,b] \rightarrow \mb{R}$ une fonction continue et $n$ fois dérivable sur $]a,b[$s'annulant en $n+1$ points distincts. Montrer que $f^{(n)}$ s'annule au moins une fois sur $]a,b[$.
+
+\item Application. Si $f : [a,b] \rightarrow \mb{R}$ est fonction continue et $2$ fois dérivable telle que $f'' > 0$, alors $f$ possède au plus deux point fixe.
+
+
+\end{enumerate}
+
+
+
+\exercice
+
+Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction dérivable telle que $f(0) = f'(0) = 0$.
+
+\begin{enumerate}
+
+\item \begin{enumerate}\item Montrer que $g$ est dérivable sur $\mb{R}^*$ et continue sur $\mb{R}$ où 
+$$\fonction{g}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $\frac{f(x)}{x}$ si $x \neq 0$ \\ $0$ sinon.\end{tabular}}$$
+
+\item Donner un exemple de fonction $f$ vérifiant les hypothèses telle que $g$ ne soit pas dérivable en $0$. \emph{Indication : on pourra commencer par chercher $g$ non dérivable en $0$.}
+
+\end{enumerate}
+
+\item Rappeler l'équation de la tangente à la courbe de $f$ un point $x \in \mb{R}$. Que doit vérifier un point dont où la tangente passe par l'origine ?
+
+\item On suppose qu'il existe $a>0$ telle que $f(a) = 0$. Montrer qu'il existe $0 < b < a$ tel que la tangente à $f$ en $b$ passe par l'origine. \emph{Indication : utiliser la question 1.a.}
+
+Ensuite, faire un petit dessin.
+
+\end{enumerate}
+
+
+
+\subsection{Contre-exemples}
+
+
+
+
+\exercice[Qui n'est pas sa série de Taylor]
+
+Soit $\fonction{f}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $\exp(-1/x^2)$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$.
+
+Montrer que $f$ est de classe $\mc{C}^\infty$ sur $\mb{R}$ et que pour tout $n \ge 0$, $f^{(n)}(0) = 0$.
+
+
+
+
+
+\exercice[Continu, dérivable ou $\mc{C}^1$ ?]
+
+\begin{enumerate}
+
+\item Toute fonction dérivable sur $\mb{R}$ est-elle continue ? Et réciproquement ? Contre(s)-exemple(s) ?
+
+\item Montrer que la fonction $\fonction{f}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $x^2 \sin(1/x)$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$ est continue $\mb{R}$, puis dérivable sur $\mb{R}$. Sa dérivée est-elle continue en $0$ ?
+\end{enumerate}
+
+
+
+
+\exercice[Ecrasement en l'origine]
+
+Pour $\alpha \in \mb{R}$ soit $\fonction{f_{\alpha}}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $|x|^\alpha$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$.
+
+\begin{enumerate}
+
+\item Tracer le graphe de $f_{\alpha}$ pour $\alpha = -1$ ; $0$ ; $0.5$ ; $1$ ; $1.5$ ; $2$ et $1000$.
+
+\emph{On ne dessinera pas trop grand, de sorte à pouvoir conserver le dessin au tableau sans effacer.}
+
+\item Etudier la continuité de $f_{\alpha}$ en fonction de $\alpha$.
+
+\item Montrer que  $f_{\alpha}$ est dérivable sur $\mb{R}^*$ et calculer sa dérivée. Quand est-elle dérivable en $0$ ? Est-elle alors de classe $\mc{C}^1$ sur $\mb{R}$?
+
+\item 
+
+\begin{enumerate}
+
+\item Calculer la dérivée $n$-ième de $f_{\alpha}$ sur $\mb{R}^*$.
+
+
+\item Montrer que pour $\alpha \in \mb{N}^*$ pair, $f_\alpha$ est de classe $\mc{C}^{\infty}$ sur $\mb{R}$. Et si $\alpha$ est impair ?
+
+\item Si $\alpha \in ]k,k+1[$ avec $k \in \mb{N}$, montrer que $f_{\alpha}$ est de classe $\mc{C}^k$ sur $\mb{R}$, mais pas de classe $\mc{C}^{k+1}$ sur $\mb{R}$. \emph{Indication : la dérivée $k+1$-ième  peut-elle être continue en $0$ ?}
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+\section{Suites récurrentes $u_{n+1} = f(u_n)$}
+
+
+\subsection{Exemples de suites}
+
+
+\exercice
+
+Etudier la suite définie par $u_0 \in \mb{R}$ et $u_{n+1}=u_n^2 +1$.
+
+\emph{Bonne définition, variations, limites\dots}
+
+
+
+\exercice
+
+Etudier la suite définie par $u_0 = 1$ et $u_{n+1}=\sqrt{1+u_n}$.
+
+\emph{Bonne définition, variations, limites\dots}
+
+
+
+
+\exercice
+
+Etudier les variations de la suite $(u_n)_{n \ge 0}$ définie par $u_0 \in \mb{R}$ et $\ex^{u_{n}} -1$.
+
+En déduire sa limite en fonction de la valeur de $u_0$.
+
+
+\exercice[Extraction de racine]
+
+Soit la suite $(u_n)_{n \ge 0}$ définie par $u_0 > 0$ et $u_{n+1} = \frac{1}{2}\left(u_n + \frac{a}{u_n}\right)$. Montrer qu'elle converge vers une limite $l$ que l'on précisera.
+
+
+\emph{Indication : on pourra d'abord intuiter la valeur de $l$, puis regarder $|u_n - l|$.}
+
+
+\exercice[Lorsque $f$ n'a pas de point fixe]
+
+Soit $\fonction{f}{\mb{R}}{\mb{R}}{x}{\frac{x + \lfloor x \rfloor +1}{2}}$ et $k \in \mb{Z}$.
+
+On définit la suite $(u_n)_{n \ge 0}$ par $u_0 \in [k, k+1[$ et $\forall n \ge 0$, $u_{n+1}=f(u_n)$.
+
+\begin{enumerate}
+
+\item Montrer que $\forall x$, $f(x) > x$. En déduire que $f$ n'a aucun point fixe.
+
+\item Montrer que $[k,k+1[$ est stable par $f$.
+
+\item Déduire de ce qui précède que $(u_n)_{n \ge 0}$ est convergente. Est-ce une contradiction avec la question 1 ? Pourquoi ?
+
+\end{enumerate}
+
+
+
+
+
+\subsection{Théorèmes généraux}
+
+\exercice[Fonctions contractantes et cie]
+
+
+
+\exercice[Point fixe dans un segment (compact)]
+
+Soit $I$ un segment de $\mb{R}$ et $f : I \rightarrow I$ une fonction continue.
+
+\begin{enumerate}
+
+\item Montrer que si $f$ possède un point fixe.
+
+\item On suppose dans la suite que $\forall x \neq y \in I$ on a $|f(x) - f(y)| < |x-y|$. Montrer que le point fixe est unique.
+
+\item Soit $u_0 \in I$ quelconque, on considère $(u_n)_{n \ge 0}$ définie par $u_{n+1} = f(u_n)$.
+
+\begin{enumerate}
+
+\item Montrer que $(|\alpha - u_n|)_{n \ge 0}$ admet une limite notée $l$.
+
+\item Pourquoi peut-on extraire une sous-suite convergente $(u_{\varphi(n)})_{n \ge 0}$ de $(u_n)_{n \ge 0}$ ? On note $x$ sa limite.
+
+\item Montrer que  $|\alpha - f(u_{\varphi(n)})|  \rightarrow l$ et $|\alpha - f(u_{\varphi(n)+1})|  \rightarrow l$.
+
+En déduire que $| \alpha - x| = |\alpha - f(x)| = l$.
+
+\item Conclure que $x = \alpha$. Que dire sur la convergence de $(u_n)_{n \ge 0}$ ?
+
+\end{enumerate}
+
+
+\item Comment pourrait-on faire si l'on voulait approcher ce point fixe avec un algorithme ?
+\end{enumerate}
+
+
+
+\section{Analyse asymptotique}
+
+
+
+\subsection{Calcul de limites}
+
+\exercice[Calculs de limites]
+
+\begin{enumerate}
+
+\item Déterminer $\displaystyle \lim_{n \rightarrow + \infty} (3 \sqrt[n]{2} - 2 \sqrt[n]{3})^n$.
+
+\item Déterminer $\displaystyle \lim_{n \rightarrow + \infty} \left(n \sin\frac{1}{n}\right)^{n^2}$.
+
+\item Déterminer $\displaystyle \lim_{n \rightarrow + \infty} n^2\left(\sqrt[n]{n+1} - \sqrt[n]{n}\right)$.
+
+\end{enumerate}
+
+
+\exercice
+
+Déterminer $\displaystyle \lim_{x \rightarrow 0} \left( \frac{a^x + b^x}{2}\right)^{1/x}$.
+
+\exercice
+
+Donner le développement limité en $0$ de $\arcsin(x)$ (à tout ordre).
+
+En déduire la valeur de $\displaystyle \lim_{x \rightarrow 0} \frac{x - \arcsin(x)}{x^3}$.
+
+
+\subsection{Equivalents et développements asymptotiques}
+
+
+
+\exercice
+
+Donner un développement limité en $0$ de $\ln(\frac{1+x}{1-x})$ (à tout ordre).
+
+
+\exercice[Itération du sinus]
+
+Soit $u_0 \in [0, \frac{\pi}{2}]$, on pose pour $n \ge 0$, $u_{n+1} = \sin(u_n)$.
+
+\begin{enumerate}
+
+\item Montrer que $(u_n)_{n \ge 0}$ est décroissante et converge vers une limite que l'on précisera.
+
+\item Montrer que $u_{n+1} - u_n \sim - \frac{(u_n)^3}{6}$.
+\end{enumerate}
+
+
+\exercice[$\zeta(2)$, vitesse de convergence.]
+
+Pour $n \ge 1$ soit $u_n = \sum_{k=1}^n \frac{1}{k^2}$.
+
+\begin{enumerate}
+
+\item \begin{enumerate}
+
+\item Justifier que $\displaystyle \int_{k}^{k+1} \frac{1}{t^2} \di t \le \frac{1}{k^2} \le \displaystyle \int_{k-1}^{k}  \frac{1}{t^2} \di t$ pour $k \ge 2$.
+
+\item En déduire que $(u_n)_{n \ge 1}$ est convergente vers une limite $\ell$.
+\end{enumerate}
+
+\item Montrer que $\displaystyle \ell - u_n = \lim_{N \rightarrow + \infty} \sum_{k=n+1}^N \frac{1}{k^2}$.
+
+\item Utiliser 1.a. pour montrer que $\ell - u_n\sim \frac{1}{n}$. Conclure que $u_n = \ell + \frac{1}{n} + \mathsf{o}\left(\frac{1}{n} \right)$.
+
+\end{enumerate}
+
+\exercice[Suite implicite $x_n = c / \tan(x_n)$]
+
+Soit $f(x) = x \sin(x) - c \cos(x)$, on s'intéresse aux zéros de $f$.
+
+\begin{enumerate}
+
+\item \begin{enumerate}
+
+\item Montrer que l'équation $f(x) = 0$ admet une unique solution $x_n$ sur $]n \pi, n \pi + \frac{\pi}{2}[$.
+
+\emph{On ne cherchera pas à la calculer ! Tout l'intérêt est là !}
+
+\item Peut-il y avoir des solutions dans les intervalles $[n \pi + \frac{\pi}{2}, n \pi]$ ?
+
+\emph{On regardera le signe de $\sin$ et $\cos$ pour se convaincre que non.}
+
+\end{enumerate}
+
+\item Donner un équivalent de $x_n$.
+
+\item On note $u_n = x_n - n \pi$.
+
+\begin{enumerate}
+
+\item Exprimer $f(x_n)$ en fonction de $u_n$ et simplifier l'expression.
+
+\item En déduire que $\displaystyle u_n = \arctan\left(\frac{c}{n\pi + u_n}\right)$.
+
+\item Donner un équivalent de $u_n$ et conclure que $\displaystyle x_n = n \pi + \frac{c}{n \pi} + \mathsf{o}(\frac{c}{n \pi})$.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\exercice[Nombre de diviseurs d'un entier]
+
+{\setlength{\parindent}{0cm}
+\textbf{Partie 1 : Série harmonique}}
+
+\begin{enumerate}
+
+\item Justifier que $\displaystyle \int_{k}^{k+1} \frac{1}{t} \di t \le \frac{1}{k} \le \displaystyle \int_{k-1}^{k}  \frac{1}{t} \di t$ pour $k \ge 0$.
+
+\item En déduire que $\displaystyle \sum_{k=1}^n \frac{1}{k} \sim \ln(n)$.
+
+\end{enumerate}
+
+{\setlength{\parindent}{0cm}
+\textbf{Partie 2 : Nombre de diviseurs}}
+
+Soit $\di(k)$ le nombre de diviseurs positifs de l'entier $k \ge 1$. On s'intéresse à $\alpha_n$ le nombre moyen de diviseurs des entiers compris entre $1$ et $n$, soit $ \alpha_n  = \frac{1}{n} \sum_{k=1}^n \di(k) $.
+
+\begin{enumerate}
+
+\item \begin{enumerate} \item Justifier que $n \alpha_n = |A_n|$ où $A_n := \{(d,k)~|~d \text{ divisant } k \text{ et } k \le n \text{ et } d \le n\}$.
+
+\item Montrer que $\displaystyle A_n = \biguplus_{d=1}^n B_d^n$ où $B_d^n = \{k \text{ tel que } k \le n \text{ et } d | k\}$.
+
+\item Montrer que $B_d^n = \left\{d, 2d, \dots, \lfloor \frac{n}{d} \rfloor d \right\}$. Conclure que $n \alpha_n = \sum_{d =1}^n \lfloor \frac{n}{d}\rfloor$.
+
+\end{enumerate}
+
+\item Utiliser 1.c. pour déduire que $\alpha_n \sim \ln(n)$.
+
+\emph{On encadrera la partie entière et on utilisera le résultat de la première partie}
+
+\end{enumerate}
+
+
+
+
+
+\subsection{Analyse asymptotique}
 
 \exercice[Une petite intégrale]
 Trouver un équivalent quand $n \to +\infty$
@@ -2846,7 +3222,7 @@ et $u_{n+1} = \sqrt{ (n+1) + u_n }$.
 \end{compactenum}
 
 
-\exercice[Développement limité d'une suite récurrente]
+\exercice[Développement asymptotique d'une suite récurrente]
 \begin{center}
     \fbox{\begin{minipage}{0.9\linewidth}
             \textbf{Prérequis} \emph{Théorème de Césaro}
@@ -2905,6 +3281,27 @@ $\mathcal{C}^\infty$. On note $\Delta f (x) = f(x+1) - f(x)$.
 \item Quid de la réciproque ?
 
 \end{compactenum}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3495,320 +3892,27 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 \end{enumerate}
 
 
-\section{Semaine 14}
 
 
-\exercice[Rolle généralisé]
 
-\begin{enumerate}
 
-\item Soit $f : [a,b] \rightarrow \mb{R}$ une fonction continue et $n$ fois dérivable sur $]a,b[$s'annulant en $n+1$ points distincts. Montrer que $f^{(n)}$ s'annule au moins une fois sur $]a,b[$.
 
-\item Application. Si $f : [a,b] \rightarrow \mb{R}$ est fonction continue et $2$ fois dérivable telle que $f'' > 0$, alors $f$ possède au plus deux point fixe.
 
 
-\end{enumerate}
 
 
 
-\exercice[Qui n'est pas sa série de Taylor]
 
-Soit $\fonction{f}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $\exp(-1/x^2)$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$.
 
-Montrer que $f$ est de classe $\mc{C}^\infty$ sur $\mb{R}$ et que pour tout $n \ge 0$, $f^{(n)}(0) = 0$.
 
 
 
 
+\section{Matrices et applications linéaires}
 
+\subsection{Calcul matriciel abstrait}
 
-\exercice
-
-Soit $f : \mb{R} \rightarrow \mb{R}$ une fonction dérivable telle que $f(0) = f'(0) = 0$.
-
-\begin{enumerate}
-
-\item \begin{enumerate}\item Montrer que $g$ est dérivable sur $\mb{R}^*$ et continue sur $\mb{R}$ où 
-$$\fonction{g}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $\frac{f(x)}{x}$ si $x \neq 0$ \\ $0$ sinon.\end{tabular}}$$
-
-\item Donner un exemple de fonction $f$ vérifiant les hypothèses telle que $g$ ne soit pas dérivable en $0$. \emph{Indication : on pourra commencer par chercher $g$ non dérivable en $0$.}
-
-\end{enumerate}
-
-\item Rappeler l'équation de la tangente à la courbe de $f$ un point $x \in \mb{R}$. Que doit vérifier un point dont où la tangente passe par l'origine ?
-
-\item On suppose qu'il existe $a>0$ telle que $f(a) = 0$. Montrer qu'il existe $0 < b < a$ tel que la tangente à $f$ en $b$ passe par l'origine. \emph{Indication : utiliser la question 1.a.}
-
-Ensuite, faire un petit dessin.
-
-\end{enumerate}
-
-
-
-
-
-
-
-
-
-\exercice
-
-Etudier la suite définie par $u_0 \in \mb{R}$ et $u_{n+1}=u_n^2 +1$.
-
-\emph{Bonne définition, variations, limites\dots}
-
-
-
-
-
-
-\exercice
-
-Etudier la suite définie par $u_0 = 1$ et $u_{n+1}=\sqrt{1+u_n}$.
-
-\emph{Bonne définition, variations, limites\dots}
-
-
-
-
-
-
-\exercice
-
-Etudier les variations de la suite $(u_n)_{n \ge 0}$ définie par $u_0 \in \mb{R}$ et $\ex^{u_{n}} -1$.
-
-En déduire sa limite en fonction de la valeur de $u_0$.
-
-
-
-\exercice[Extraction de racine]
-
-Soit la suite $(u_n)_{n \ge 0}$ définie par $u_0 > 0$ et $u_{n+1} = \frac{1}{2}\left(u_n + \frac{a}{u_n}\right)$. Montrer qu'elle converge vers une limite $l$ que l'on précisera.
-
-
-\emph{Indication : on pourra d'abord intuiter la valeur de $l$, puis regarder $|u_n - l|$.}
-
-\exercice[Lorsque $f$ n'a pas de point fixe]
-
-Soit $\fonction{f}{\mb{R}}{\mb{R}}{x}{\frac{x + \lfloor x \rfloor +1}{2}}$ et $k \in \mb{Z}$.
-
-On définit la suite $(u_n)_{n \ge 0}$ par $u_0 \in [k, k+1[$ et $\forall n \ge 0$, $u_{n+1}=f(u_n)$.
-
-\begin{enumerate}
-
-\item Montrer que $\forall x$, $f(x) > x$. En déduire que $f$ n'a aucun point fixe.
-
-\item Montrer que $[k,k+1[$ est stable par $f$.
-
-\item Déduire de ce qui précède que $(u_n)_{n \ge 0}$ est convergente. Est-ce une contradiction avec la question 1 ? Pourquoi ?
-
-\end{enumerate}
-
-
-
-
-
-
-
-
-
-\exercice[Point fixe dans un segment (compact)]
-
-Soit $I$ un segment de $\mb{R}$ et $f : I \rightarrow I$ une fonction continue.
-
-\begin{enumerate}
-
-\item Montrer que si $f$ possède un point fixe.
-
-\item On suppose dans la suite que $\forall x \neq y \in I$ on a $|f(x) - f(y)| < |x-y|$. Montrer que le point fixe est unique.
-
-\item Soit $u_0 \in I$ quelconque, on considère $(u_n)_{n \ge 0}$ définie par $u_{n+1} = f(u_n)$.
-
-\begin{enumerate}
-
-\item Montrer que $(|\alpha - u_n|)_{n \ge 0}$ admet une limite notée $l$.
-
-\item Pourquoi peut-on extraire une sous-suite convergente $(u_{\varphi(n)})_{n \ge 0}$ de $(u_n)_{n \ge 0}$ ? On note $x$ sa limite.
-
-\item Montrer que  $|\alpha - f(u_{\varphi(n)})|  \rightarrow l$ et $|\alpha - f(u_{\varphi(n)+1})|  \rightarrow l$.
-
-En déduire que $| \alpha - x| = |\alpha - f(x)| = l$.
-
-\item Conclure que $x = \alpha$. Que dire sur la convergence de $(u_n)_{n \ge 0}$ ?
-
-\end{enumerate}
-
-
-\item Comment pourrait-on faire si l'on voulait approcher ce point fixe avec un algorithme ?
-\end{enumerate}
-
-
-
-\section{Semaine 15}
-
-\exercice
-
-Donner le développement limité en $0$ de $\arcsin(x)$ (à tout ordre).
-
-En déduire la valeur de $\displaystyle \lim_{x \rightarrow 0} \frac{x - \arcsin(x)}{x^3}$.
-
-\exercice
-
-Donner un développement limité en $0$ de $\ln(\frac{1+x}{1-x})$ (à tout ordre).
-
-
-\exercice[Ecrasement en l'origine]
-
-Pour $\alpha \in \mb{R}$ soit $\fonction{f_{\alpha}}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $|x|^\alpha$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$.
-
-\begin{enumerate}
-
-\item Tracer le graphe de $f_{\alpha}$ pour $\alpha = -1$ ; $0$ ; $0.5$ ; $1$ ; $1.5$ ; $2$ et $1000$.
-
-\emph{On ne dessinera pas trop grand, de sorte à pouvoir conserver le dessin au tableau sans effacer.}
-
-\item Etudier la continuité de $f_{\alpha}$ en fonction de $\alpha$.
-
-\item Montrer que  $f_{\alpha}$ est dérivable sur $\mb{R}^*$ et calculer sa dérivée. Quand est-elle dérivable en $0$ ? Est-elle alors de classe $\mc{C}^1$ sur $\mb{R}$?
-
-\item 
-
-\begin{enumerate}
-
-\item Calculer la dérivée $n$-ième de $f_{\alpha}$ sur $\mb{R}^*$.
-
-
-\item Montrer que pour $\alpha \in \mb{N}^*$ pair, $f_\alpha$ est de classe $\mc{C}^{\infty}$ sur $\mb{R}$. Et si $\alpha$ est impair ?
-
-\item Si $\alpha \in ]k,k+1[$ avec $k \in \mb{N}$, montrer que $f_{\alpha}$ est de classe $\mc{C}^k$ sur $\mb{R}$, mais pas de classe $\mc{C}^{k+1}$ sur $\mb{R}$. \emph{Indication : la dérivée $k+1$-ième  peut-elle être continue en $0$ ?}
-
-\end{enumerate}
-
-\end{enumerate}
-
-\exercice[Continu, dérivable ou $\mc{C}^1$ ?]
-
-\begin{enumerate}
-
-\item Toute fonction dérivable sur $\mb{R}$ est-elle continue ? Et réciproquement ? Contre(s)-exemple(s) ?
-
-\item Montrer que la fonction $\fonction{f}{\mb{R}}{\mb{R}}{x}{\begin{tabular}{ll} $x^2 \sin(1/x)$ si $x \neq 0$ \\ $0$ sinon\end{tabular}}$ est continue $\mb{R}$, puis dérivable sur $\mb{R}$. Sa dérivée est-elle continue en $0$ ?
-\end{enumerate}
-
-
-\exercice[Itération du sinus]
-
-Soit $u_0 \in [0, \frac{\pi}{2}]$, on pose pour $n \ge 0$, $u_{n+1} = \sin(u_n)$.
-
-\begin{enumerate}
-
-\item Montrer que $(u_n)_{n \ge 0}$ est décroissante et converge vers une limite que l'on précisera.
-
-\item Montrer que $u_{n+1} - u_n \sim - \frac{(u_n)^3}{6}$.
-\end{enumerate}
-
-
-\exercice[$\zeta(2)$, vitesse de convergence.]
-
-Pour $n \ge 1$ soit $u_n = \sum_{k=1}^n \frac{1}{k^2}$.
-
-\begin{enumerate}
-
-\item \begin{enumerate}
-
-\item Justifier que $\displaystyle \int_{k}^{k+1} \frac{1}{t^2} \di t \le \frac{1}{k^2} \le \displaystyle \int_{k-1}^{k}  \frac{1}{t^2} \di t$ pour $k \ge 2$.
-
-\item En déduire que $(u_n)_{n \ge 1}$ est convergente vers une limite $\ell$.
-\end{enumerate}
-
-\item Montrer que $\displaystyle \ell - u_n = \lim_{N \rightarrow + \infty} \sum_{k=n+1}^N \frac{1}{k^2}$.
-
-\item Utiliser 1.a. pour montrer que $\ell - u_n\sim \frac{1}{n}$. Conclure que $u_n = \ell + \frac{1}{n} + \mathsf{o}\left(\frac{1}{n} \right)$.
-
-\end{enumerate}
-
-\exercice[Suite implicite $x_n = c / \tan(x_n)$]
-
-Soit $f(x) = x \sin(x) - c \cos(x)$, on s'intéresse aux zéros de $f$.
-
-\begin{enumerate}
-
-\item \begin{enumerate}
-
-\item Montrer que l'équation $f(x) = 0$ admet une unique solution $x_n$ sur $]n \pi, n \pi + \frac{\pi}{2}[$.
-
-\emph{On ne cherchera pas à la calculer ! Tout l'intérêt est là !}
-
-\item Peut-il y avoir des solutions dans les intervalles $[n \pi + \frac{\pi}{2}, n \pi]$ ?
-
-\emph{On regardera le signe de $\sin$ et $\cos$ pour se convaincre que non.}
-
-\end{enumerate}
-
-\item Donner un équivalent de $x_n$.
-
-\item On note $u_n = x_n - n \pi$.
-
-\begin{enumerate}
-
-\item Exprimer $f(x_n)$ en fonction de $u_n$ et simplifier l'expression.
-
-\item En déduire que $\displaystyle u_n = \arctan\left(\frac{c}{n\pi + u_n}\right)$.
-
-\item Donner un équivalent de $u_n$ et conclure que $\displaystyle x_n = n \pi + \frac{c}{n \pi} + \mathsf{o}(\frac{c}{n \pi})$.
-
-\end{enumerate}
-
-\end{enumerate}
-
-
-\exercice[Nombre de diviseurs d'un entier]
-
-{\setlength{\parindent}{0cm}
-\textbf{Partie 1 : Série harmonique}}
-
-\begin{enumerate}
-
-\item Justifier que $\displaystyle \int_{k}^{k+1} \frac{1}{t} \di t \le \frac{1}{k} \le \displaystyle \int_{k-1}^{k}  \frac{1}{t} \di t$ pour $k \ge 0$.
-
-\item En déduire que $\displaystyle \sum_{k=1}^n \frac{1}{k} \sim \ln(n)$.
-
-\end{enumerate}
-
-{\setlength{\parindent}{0cm}
-\textbf{Partie 2 : Nombre de diviseurs}}
-
-Soit $\di(k)$ le nombre de diviseurs positifs de l'entier $k \ge 1$. On s'intéresse à $\alpha_n$ le nombre moyen de diviseurs des entiers compris entre $1$ et $n$, soit $ \alpha_n  = \frac{1}{n} \sum_{k=1}^n \di(k) $.
-
-\begin{enumerate}
-
-\item \begin{enumerate} \item Justifier que $n \alpha_n = |A_n|$ où $A_n := \{(d,k)~|~d \text{ divisant } k \text{ et } k \le n \text{ et } d \le n\}$.
-
-\item Montrer que $\displaystyle A_n = \biguplus_{d=1}^n B_d^n$ où $B_d^n = \{k \text{ tel que } k \le n \text{ et } d | k\}$.
-
-\item Montrer que $B_d^n = \left\{d, 2d, \dots, \lfloor \frac{n}{d} \rfloor d \right\}$. Conclure que $n \alpha_n = \sum_{d =1}^n \lfloor \frac{n}{d}\rfloor$.
-
-\end{enumerate}
-
-\item Utiliser 1.c. pour déduire que $\alpha_n \sim \ln(n)$.
-
-\emph{On encadrera la partie entière et on utilisera le résultat de la première partie}
-
-\end{enumerate}
-
-
-
-
-
-
-\section{Semaine 16}
-
-
-
-
-\exercice
-
-Soit $A = \begin{pmatrix} 1 & 1 & 0 \\ 0& 1& 1 \\ 0 &  0& 1 \end{pmatrix}$. Calculer $A^n$ pour $n \ge 0$.
+\subsubsection{Notions de base}
 
 
 \exercice
@@ -3817,32 +3921,7 @@ Soient $A, B, C \in \M_n(\mb{K})$ non nulles et telles que $ABC = 0_n$.
 
 Montrer qu'au moins deux matrices parmi $A$, $B$ et $C$ ne sont pas inversibles.
 
-
-
-\exercice[Calculs de limites]
-
-\begin{enumerate}
-
-\item Déterminer $\displaystyle \lim_{n \rightarrow + \infty} (3 \sqrt[n]{2} - 2 \sqrt[n]{3})^n$.
-
-\item Déterminer $\displaystyle \lim_{n \rightarrow + \infty} \left(n \sin\frac{1}{n}\right)^{n^2}$.
-
-\item Déterminer $\displaystyle \lim_{n \rightarrow + \infty} n^2\left(\sqrt[n]{n+1} - \sqrt[n]{n}\right)$.
-
-\end{enumerate}
-
-
-\exercice
-
-Déterminer $\displaystyle \lim_{x \rightarrow 0} \left( \frac{a^x + b^x}{2}\right)^{1/x}$.
-
-
-\section{Semaine 17}
-
-
-
-
-\exercice
+\exercice[De la trace]
 
 Existe-t-il deux matrices $A,B$ de taille $n \ge 1$, telles que $AB - BA = I_n$ ?
 
@@ -3866,46 +3945,6 @@ Démontrer que $A$ est nilpotente. \emph{On montrera que les $0$ ``remontent''.}
 
 \end{enumerate}
 
-\exercice
-
-Inverser les matrices suivantes (quand elles le sont).
-
-\begin{multicols}{3}
-
-\begin{enumerate}
-
-\item $ \begin{pmatrix} 1 & 0 & -1 \\ 2 & 1 & -3 \\ -1 & 0 & 2 \end{pmatrix}$
-
-\item $ \begin{pmatrix}  1 & 0 & 1 \\ 2 & -1 & 1 \\ -1 & 1 & -1 \end{pmatrix}$
-
-\item $ \begin{pmatrix}  1 & 1 & -1 \\ 2 & 0 & 1 \\ 2 & 1 & -1 \end{pmatrix}$
-
-\end{enumerate}
-
-\end{multicols}
-
-
-\exercice
-
-Soit $A = \begin{pmatrix} 2 & -1 & 2 \\ 5& -3& 3 \\ -1 & 0 & -2 \end{pmatrix}$. Calculer $(A+I_n)^3$.
-
-En déduire que $A$ est inversible et une expression de son inverse (sans Gauss).
-
-
-
-
-
-\exercice[Puissances alternées]
-
-Soit $A \in \GL_n(\mb{K})$ vérifiant $A + A^{-1} = I_n$. On pose $B_k = A^k + A^{-k} $.
-
-\begin{enumerate}
-
-\item Démontrer que $B_k = B_{k+1} +B_{k-1}$. \emph{Indication: que vaut $B_k B_1$ ?}
-
-\item En déduire que $B_k = \lambda_k I_n$ où $(\lambda_k)_{k \ge 0} \in \mb{K}^{\mb{N}}$ est une suite à expliciter.
-
-\end{enumerate}
 
 
 
@@ -3930,6 +3969,65 @@ Soit $A \in \GL_n(\mb{K})$ vérifiant $A + A^{-1} = I_n$. On pose $B_k = A^k + A
 
 \end{enumerate}
 
+
+
+\subsubsection{Calculs de puissances}
+
+
+\exercice
+
+Soit $A = \begin{pmatrix} 1 & 1 & 0 \\ 0& 1& 1 \\ 0 &  0& 1 \end{pmatrix}$. Calculer $A^n$ pour $n \ge 0$.
+
+\exercice[Puissances alternées]
+
+Soit $A \in \GL_n(\mb{K})$ vérifiant $A + A^{-1} = I_n$. On pose $B_k = A^k + A^{-k} $.
+
+\begin{enumerate}
+
+\item Démontrer que $B_k = B_{k+1} +B_{k-1}$. \emph{Indication: que vaut $B_k B_1$ ?}
+
+\item En déduire que $B_k = \lambda_k I_n$ où $(\lambda_k)_{k \ge 0} \in \mb{K}^{\mb{N}}$ est une suite à expliciter.
+
+\end{enumerate}
+
+
+
+\subsubsection{Calculs d'inverses}
+
+
+
+
+\exercice
+
+Soit $A = \begin{pmatrix} 2 & -1 & 2 \\ 5& -3& 3 \\ -1 & 0 & -2 \end{pmatrix}$. Calculer $(A+I_n)^3$.
+
+En déduire que $A$ est inversible et une expression de son inverse (sans Gauss).
+
+
+
+
+\exercice
+
+Inverser les matrices suivantes (quand elles le sont).
+
+\begin{multicols}{3}
+
+\begin{enumerate}
+
+\item $ \begin{pmatrix} 1 & 0 & -1 \\ 2 & 1 & -3 \\ -1 & 0 & 2 \end{pmatrix}$
+
+\item $ \begin{pmatrix}  1 & 0 & 1 \\ 2 & -1 & 1 \\ -1 & 1 & -1 \end{pmatrix}$
+
+\item $ \begin{pmatrix}  1 & 1 & -1 \\ 2 & 0 & 1 \\ 2 & 1 & -1 \end{pmatrix}$
+
+\end{enumerate}
+
+\end{multicols}
+
+
+
+
+
 \exercice[Transformée de Fourier discrète]
 
 Soit $n \ge 2$ et $\omega = \exp(\frac{2\im \pi}{n})$. On pose $A = (\omega^{(i-1)(j-1)})_{1 \le i,j \le n}$.
@@ -3951,6 +4049,9 @@ On suppose que l'on connaît l'évaluation de $P$ en $\omega^0 \dots \omega^{n-1
 Comment trouver les coefficients $(a_0, \dots, a_{n-1})$?
 
 \end{enumerate}
+
+
+\section{Polynômes}
 
 
 \exercice[Polynôme annulateur et calcul de puissances]
