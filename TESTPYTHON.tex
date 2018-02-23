@@ -74,7 +74,7 @@
 
     \begin{pycode}
 pytex.add_dependencies ("query.py")
-from query import writeExercice
+from query import writeExercice,DATABASE
     \end{pycode}
 
 
@@ -108,7 +108,13 @@ from query import writeExercice
     \begin{center}
         \rule{35em}{1pt}
     \end{center}
-
-    \writeExo{A023} 
+    
+    \begin{pycode}
+import random
+exercices = [ random.choice(list(DATABASE.keys())) for i in range (10) ] 
+for exoID in exercices:
+    print ("\\textbf{" + exoID + "}")
+    print ("\\writeExo{" + exoID + "}")
+    \end{pycode}
 
 \end{document}
