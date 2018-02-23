@@ -3980,12 +3980,215 @@ Soit $r$ le reste de la division euclidienne de $n$ par $k$. Monter que le reste
 
 
 
+\section{Semaines 15 -- 17 Aliaume}
+
+\exercice[Warmup sur les polynômes]
+Montrer que $P$ est à racine simples
+dans $\mb{C}[X]$ si et seulement si 
+$\operatorname{pgcd} (P,P') = 1$
 
 
+\exercice[Division euclidienne]
+Soient $t \in \mb{R}$ et $n \in \mb{N}$.
+Déterminer le reste de la division 
+dans $\mb{R}[X]$ de $(X \cos t + \sin t)^n$
+par $X^2 + 1$.
+
+\indication{Évaluer en $i$ ...}
 
 
+\exercice[Rolle]
+Soit $P$ un polynôme réel de degré $n+1$
+scindé à racines simples. 
+
+\begin{compactenum}[(i)]
+\item Montrer que $P'$ est scindé à racines simples.
+\item En déduire que $P^2 + 1$
+    n'a pas de racine multiple 
+    dans $\mb{C}$ 
+    \indication{Les racines de $P$
+    et $P'$ sont réelles ...}
+\end{compactenum}
 
 
+\exercice[Utilisation des racines]
+On cherche les polynômes $P \in \mb{C}[X]$ 
+qui vérifient $P(X^2) = P(X)P(X+1)$
+\begin{compactenum}[(i)]
+\item \emph{(indépendante)} Quel 
+    est le nombre maximal de racines 
+    pour un polynôme de degré $n$ ?
+\item Si $a$ est une racine de $P$,
+    en déduire que $a$ est soit nul, 
+    soit une racine de l'unité
+\item Montrer qu'en réalité $a \in \{ 0, 1, -j, -j^2\}$
+\item En déduire la forme des solutions de l'équation 
+    \indication{On admettra que tout 
+        polynôme est scindé sur $\mb{C}$}
+\end{compactenum}
+
+
+\exercice[Équations dans l'anneau des polynômes]
+Résoudre les équations suivantes
+\begin{compactenum}[(i)]
+\item $P^2 = X Q^2$ avec $P,Q$ dans $k[X]$
+\item $P \circ P = P$ avec $P$ dans $k[X]$
+\end{compactenum}
+
+
+\exercice[Décomposition en base 2]
+On pose 
+\begin{equation*}
+    P_n(X) = (1+X)(1+X^2) \dots (1 + X^{2^n})
+\end{equation*}
+
+\begin{compactenum}[(i)]
+\item Simplifier l'expression $(1 - X) P_n (X)$
+\item En déduire une expression simple de $P_n(X)$
+\item À quoi correspond le coefficient devant le terme $X^k$
+    dans $P_n(X)$ ?
+\item En déduire l'existence et l'unicité de la décomposition 
+    en base $2$
+\end{compactenum}
+
+\exercice[Racines de l'unité]
+Soit $P = a_0 + a_1 X + \dots + a_n X^n$ dans $\mb{C}[X]$.
+On pose $M = \sup_{|z| = 1} |P(z)|$ .
+\begin{compactenum}[(i)]
+\item Montrer que $M$ est fini 
+\item On pose $\omega$ une racine primitive $n+1$-ème de l'unité.
+    Calculer pour tout $l \in \mathbb{N}$
+    \begin{equation*}
+        \sum_{k = 0}^n \omega^{kl} 
+    \end{equation*}
+\item En déduire l'expression de 
+    \begin{equation*}
+        P(1) + P(\omega) + \dots + P(\omega^n)
+    \end{equation*}
+\item Conclure que $(n+1) |a_0| \leq M$
+\item Est-il possible de montrer que $(n+1) |a_k| \leq M$ ?
+    \indication{$\sum \omega^{-kl} P(\omega^l) = \dots$}
+\end{compactenum}
+
+\exercice[Commutant d'une matrice diagonale]
+Soient $\lambda_1, \dots, \lambda_n$ distincts, 
+et $D = \textrm{diag}(\lambda_1, \dots, \lambda_n)$. Déterminer 
+les matrices $M$ qui vérifient $DM = MD$.
+\exercice[Centre(s)]
+
+\begin{compactenum}[(i)]
+\item Quelles sont les matrices de $M_n(k)$ qui commutent 
+avec toutes les autres matrices ?
+\indication{$E_{i,j}$ ... }
+
+\item Que devient ce résultat pour $GL_n(k)$ ?
+\indication{Comment rendre $E_{i,j}$ inversible ?}
+\item Adapter ce résultat aux matrices symétriques 
+\item Adapter ce résultat aux matrices antisymétriques
+\end{compactenum}
+
+\exercice[Bébé sous groupe de $GL_n(\mathbb{R})$]
+Soit $H$ une partie non vide et finie de $GL_n(\mb{R})$
+qui est stable par multiplication.
+
+\begin{compactenum}[(i)]
+\item Soit $M \in H$, en considérant $k \mapsto M^k$ 
+    montrer que l'inverse de $M$ est dans $H$
+\item Conclure que $H$ est un sous-groupe multiplicatif de $GL_n(\mb{R})$
+\item \emph{(BONUS)} Si on suppose le sous-groupe \emph{compact} et non pas 
+    fini, peut-on adapter la preuve ?
+\end{compactenum}
+
+\exercice[Représentation complexe]
+
+On note $SO_2(\mb{R})$ l'ensemble des matrices dans $M_2(\mb{R})$
+qui vérifient ${}^t M M = I_2$ et qui vérifient $ad - bc = 1$.
+
+\begin{compactenum}[(i)]
+\item Montrer que $SO_2(\mb{R})$ est un sous groupe de $GL_2(\mb{R})$
+\item Calculer le produit suivant 
+    \begin{equation*}
+        \begin{pmatrix}
+            a & b \\
+            c & d 
+        \end{pmatrix}
+        \begin{pmatrix}
+            d  & -b \\
+            -c & a 
+        \end{pmatrix}
+    \end{equation*}
+\item En déduire que tout élément de $SO_2(\mb{R})$ est inversible 
+    et expliciter son inverse 
+\item Montrer que les éléments de $SO_2(\mb{R})$ sont de la forme 
+    \begin{equation*}
+        \begin{pmatrix}
+            a & -b \\
+            b & a \\
+        \end{pmatrix}
+    \end{equation*}
+\item Montrer qu'à une matrice dans $SO_2(\mb{R})$ on peut 
+associer un nombre complexe $z \in \mb{U}$. 
+\item Montrer que cette représentation respecte sommes 
+    et produits
+\end{compactenum}
+
+\exercice[Somme des termes d'une matrice]
+Pour une matrice $A$ on note $\sigma(A)$ la somme 
+des termes de $A$. 
+
+On pose \begin{equation*} J = \begin{pmatrix} 1 & \cdots & 1 \\ \vdots & (1) &
+\vdots \\ 1 & \cdots & 1 \end{pmatrix} \end{equation*}
+
+Vérifier que $JAJ = \sigma (A) J$
+
+\exercice[Équation matricielle]
+
+Résoudre l'équation $X^2 = A$ où 
+
+\begin{equation*}
+    A = \begin{pmatrix}
+            1 & 0 & 1 \\
+            0 & 4 & 2 \\
+            0 & 0 & 16 
+        \end{pmatrix}
+\end{equation*}
+\indication{Une solution doit commuter avec $A$ ...}
+
+\exercice[Matrices de permutation]
+
+\begin{center}
+    \fbox{
+    \begin{minipage}{0.9\linewidth}
+        \textbf{Prérequis}
+        \begin{compactenum}
+        \item $\mathfrak{S}_n$ est l'ensemble des bijections 
+            de $\{1 \dots n\}$ dans lui-même. C'est un groupe 
+            pour la composition, son neutre est la fonction identité.
+        \item Le symbole de Kronecker $\delta_a^b$ vaut $1$ 
+            si $a=b$ et $0$ sinon
+        \end{compactenum}
+    \end{minipage}}
+\end{center}
+
+On fixe $n \geq 2$. Si $\sigma \in \mathfrak{S}_n$ on 
+définit la matrice $P(\sigma)$ comme suit~:
+
+\begin{equation*}
+    P(\sigma)_{i,j} = \delta_i^{\sigma(j)}
+\end{equation*}
+
+\begin{compactenum}[(i)]
+\item Écrire $P(id)$ pour $n = 3$ puis pour un $n$ quelconque 
+\item On note $e_i$ le vecteur qui est nul partout sauf en 
+    la $i$-ème composante où il vaut $1$. Calculer 
+
+    \begin{equation*}
+        P(\sigma) e_i 
+    \end{equation*}
+\item Montrer que $P( \sigma \circ \tau) = P(\sigma) \times P(\tau)$
+\item Vérifier que ${}^t \left( P(\sigma) \right) = P\left(\sigma^{-1}\right)$
+\item Montrer que $P(\sigma^{-1}) = P(\sigma)^{-1}$
+\end{compactenum}
 
 \end{document}
 
