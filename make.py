@@ -40,7 +40,7 @@ class Interactive:
         self.log ("FILEOPEN", "ouvre le fichier {} en mode {}".format (f,m))
         return open (f,m)
     
-    def openExo (self, name):
+    def openExo (self, name)::
         self.log ("OPENEXO", "accède à l'exercice {}".format (name))
         return self.open ("Exos/{}.tex".format (name), "r")
 

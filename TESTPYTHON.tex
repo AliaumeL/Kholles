@@ -1,0 +1,114 @@
+\documentclass[11pt]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts, amsmath, amssymb,dsfont, mathrsfs}
+\usepackage[a4paper,twoside]{geometry}
+\geometry{left=2.5cm, right=2.5cm,top=1.5cm ,bottom=4cm}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{complexity}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+\usepackage{paralist}
+\usepackage{epigraph}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning,automata,shadows}
+\usepackage{tikz-cd}
+\usepackage{palatino}
+\usepackage{pdfpages}
+\usepackage{epigraph}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{pythontex}
+
+
+\newcommand{\es}{\vspace{1\baselineskip}}
+\newcommand{\ds}{\vspace{0.4\baselineskip}}
+\newcommand{\di}{\mathrm{d}}
+\newcommand{\ex}{{\operatorname{e}}}
+\newcommand{\im}{\text{i}}
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\card}{\operatorname{Card}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcounter{exo}
+\setcounter{exo}{1}
+\newcommand{\exercice}[1][\null]{\textbf{\\ Exercice \theexo} \emph{(#1)}. \addtocounter{exo}{1}}
+\newcommand{\resetexo}{\setcounter{exo}{1}}
+
+\newcommand{\indication}[1]{\begin{flushright}\textit{Indication: #1}\end{flushright}}
+
+
+
+\newenvironment{exo}{
+\begin{center}
+\begin{minipage}{0.8\linewidth}
+}{
+\end{minipage}
+\end{center}
+}
+
+\newcommand{\writeExo}[1]{
+    \begin{exo} 
+        \py{writeExercice ("#1")}
+    \end{exo} 
+}
+
+
+\newcommand{\qcours}[2]{\textbf{#1} & #2 \\}
+
+\setlength{\headheight}{35pt}
+\chead{}
+\rfoot{Lopez Aliaume}
+\pagestyle{fancy}
+\lhead{MPSI -- Semaine 16}
+\rhead{29 Janvier -- 2 Février 2018}
+
+
+\begin{document}
+
+    \begin{pycode}
+pytex.add_dependencies ("query.py")
+from query import writeExercice
+    \end{pycode}
+
+
+\begin{center}
+\rule{15em}{2pt}
+
+
+\vspace{1em}
+\textbf{\huge{Analyse Asymptotique \\ Matrices}}
+\vspace{0.5em}
+
+
+\rule{15em}{2pt}
+\end{center}
+
+
+
+    \begin{center}
+        \rule[0.23em]{1.5em}{1pt} 
+        \textbf{Question de cours}
+        \rule[0.23em]{24em}{1pt}
+    \end{center}
+    
+
+\begin{center}
+\begin{minipage}{0.8\linewidth}
+    coucou
+\end{minipage}
+\end{center}
+
+    \begin{center}
+        \rule{35em}{1pt}
+    \end{center}
+
+    \writeExo{A052} 
+
+\end{document}
