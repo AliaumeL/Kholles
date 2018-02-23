@@ -13,6 +13,7 @@ CONFIG = {
     "tagfile" : "tags.yaml",
     "exoDIR"  : "Exos",
     "catDIR"  : "Catalogue",
+    "semDIR"  : "Semaines",
     "fihDIR"  : "Fiches",
     "debug"   : False,
     "log"     : []
@@ -76,4 +77,11 @@ def writeExercice (exoID):
     """
     return "".join(openFile ("{}/{}.tex".format (CONFIG["exoDIR"],
         exoID)).readlines ())
+
+def questionCours (semaine):
+    """
+        Récupère les questions 
+        de cours pour une semaine 
+    """
+    return yaml.load (open ("{}/{}.yaml".format (CONFIG["semDIR"], semaine),"r"))
 

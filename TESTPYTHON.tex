@@ -59,7 +59,6 @@
     \end{exo} 
 }
 
-
 \newcommand{\qcours}[2]{\textbf{#1} & #2 \\}
 
 \setlength{\headheight}{35pt}
@@ -74,7 +73,8 @@
 
     \begin{pycode}
 pytex.add_dependencies ("query.py")
-from query import writeExercice,DATABASE
+from query import writeExercice,DATABASE,questionCours
+import random
     \end{pycode}
 
 
@@ -101,7 +101,15 @@ from query import writeExercice,DATABASE
 
 \begin{center}
 \begin{minipage}{0.8\linewidth}
-    coucou
+    \begin{pycode}
+print ("\\begin{tabular}{rl}")
+eleves = ["Clement", "Le Harivel", "Mansouri" ] 
+cours  = questionCours ("semaine17")
+quest  = [ random.choice (cours) for e in eleves ] 
+for e,c in zip (eleves,quest):
+    print ("\\qcours{" + e + "}{" + c +  "}")
+print ("\\end{tabular}")
+    \end{pycode}
 \end{minipage}
 \end{center}
 
@@ -109,12 +117,11 @@ from query import writeExercice,DATABASE
         \rule{35em}{1pt}
     \end{center}
     
-    \begin{pycode}
-import random
-exercices = [ random.choice(list(DATABASE.keys())) for i in range (10) ] 
-for exoID in exercices:
-    print ("\\textbf{" + exoID + "}")
-    writeExo (exoID)
-    \end{pycode}
+    %\begin{pycode}
+%exercices = [ random.choice(list(DATABASE.keys())) for i in range (10) ] 
+%for exoID in exercices:
+    %print ("\\textbf{" + exoID + "}")
+    %print (writeExercice (exoID))
+    %\end{pycode}
 
 \end{document}
