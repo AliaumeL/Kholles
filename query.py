@@ -74,6 +74,6 @@ def writeExercice (exoID):
 
         @return : unit
     """
-    print ("".join(openFile ("{}/{}.tex".format (CONFIG["exoDIR"],
-        exoID)).readlines ()))
+    return "".join(openFile ("{}/{}.tex".format (CONFIG["exoDIR"],
+        exoID)).readlines ())
 
