@@ -60,7 +60,7 @@ def openFile (filename):
 
         @return : string
     """
-    debugInfo ("OPENFILE", filename))
+    debugInfo ("OPENFILE", filename)
 
     return open (filename, "r")
         
@@ -88,7 +88,7 @@ def fetchCours (semaine):
         cours pour une semaine donnée 
     """
     debugInfo ("COURS", " questions de cours de « {} »".format (semaine))
-    with open ("{}/{}.yaml".format (CONFIG["semDIR"], semaine),"r") as f
+    with open ("{}/{}.yaml".format (CONFIG["semDIR"], semaine),"r") as f:
         return yaml.load (f)
 
 
@@ -103,7 +103,7 @@ def fetchRequest (reqname):
         fichier 
     """
     debugInfo ("LOADREQ", " requête {}".format (reqname))
-    with open ("{}/{}.yaml".format (CONFIG["reqDIR"], reqname),"r") as f
+    with open ("{}/{}.yaml".format (CONFIG["reqDIR"], reqname),"r") as f:
         return yaml.load (f)
 
 def saveRequest (reqname, request):
@@ -116,22 +116,28 @@ def saveRequest (reqname, request):
         yaml.dump (request, f, default_flow_style=False)
 
 
-def requestValidate (request, exoID):
+def requestValidate (request, exo):
     """ 
         Vérifie si la requête valide 
         l'exercice donné en argument
     """
 
-    def satisfies (string, valkey, valprop):
+    def satisfiesSTR (string, valkey, valprop):
         if valkey == "EXACT":
             return string == valprop
         elif valkey == "REGEX":
             return bool (re.match (valprop, string))
         else:
             return False # FIXME 
+
+    def satisfies (exoprop, valkey, valprop):
+        if isinstance (exoprop, list):
+            return any (satisfiesSTR (s, valkey, valprop) for s in exoprop)
+        else:
+            return satisfiesSTR (exoprop, valkey, valprop)
     
     for spec in request.keys ():
-        exo   = DATABASE[exoID]
+        print ("checking prop {}".format (spec))
         props = (satisfies(exo[spec],key,prop) for key,prop in request[spec].items () )
         if not any (props):
             return False
@@ -152,8 +158,8 @@ def fetchExercices (request):
     """
     debugInfo ("DBREQ", "request : {}".format (request))
 
-    for exoID in DATABASE.keys ():
-        if requestValidate (request, exoID):
+    for exoID,exo in DATABASE.items ():
+        if requestValidate (request, exo):
             yield exoID
     
 if __name__ == "__main__":
