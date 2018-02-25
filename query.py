@@ -137,7 +137,6 @@ def requestValidate (request, exo):
             return satisfiesSTR (exoprop, valkey, valprop)
     
     for spec in request.keys ():
-        print ("checking prop {}".format (spec))
         props = (satisfies(exo[spec],key,prop) for key,prop in request[spec].items () )
         if not any (props):
             return False

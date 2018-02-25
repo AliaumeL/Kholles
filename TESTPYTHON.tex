@@ -73,7 +73,7 @@
 
     \begin{pycode}
 pytex.add_dependencies ("query.py")
-from query import writeExercice,DATABASE,questionCours
+from query import *
 import random
     \end{pycode}
 
@@ -100,30 +100,37 @@ import random
     
 
 \begin{center}
-    coucou
-%\begin{minipage}{0.8\linewidth}
-    %\begin{pycode}
-%print ("\\begin{tabular}{rl}")
-%cours  = questionCours ("semaine17")
-%eleves = cours["MARDI"]
-%quest  = [ random.choice (cours["QUESTIONS"]) for e in eleves ] 
-%for e,c in zip (eleves,quest):
-    %print ("\\qcours{" + e + "}{" + c +  "}")
-%print ("\\end{tabular}")
-    %\end{pycode}
-%\end{minipage}
+\begin{minipage}{0.8\linewidth}
+    \begin{pycode}
+print ("\\begin{tabular}{rl}")
+cours  = fetchCours ("semaine17")
+eleves = cours["MARDI"]
+quest  = [ random.choice (cours["QUESTIONS"]) for e in eleves ] 
+for e,c in zip (eleves,quest):
+    print ("\\qcours{" + e + "}{" + c +  "}")
+print ("\\end{tabular}")
+    \end{pycode}
+\end{minipage}
 \end{center}
 
     \begin{center}
         \rule{35em}{1pt}
     \end{center}
 
-    \href{run:./Exos/A000.tex}{Coucou}
-    %\begin{pycode}
-%exercices = [ random.choice(list(DATABASE.keys())) for i in range (10) ] 
-%for exoID in exercices:
-    %print ("\\textbf{" + exoID + "}")
-    %print (writeExercice (exoID))
-    %\end{pycode}
+    \begin{pycode}
+request   = {
+    "tags" : { 
+        "EXACT" : "Quantificateurs"
+    },
+    "difficultée" : {
+        "EXACT" : "*",
+        "EXACT" : "**"
+    }
+}
+reqrun    = fetchExercices (request)
+for exoID in reqrun:
+    print ("\\textbf{" + exoID + "}")
+    print (fetchExercice (exoID))
+    \end{pycode}
 
 \end{document}
