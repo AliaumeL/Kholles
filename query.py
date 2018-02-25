@@ -5,6 +5,7 @@ import random
 import yaml
 import sys
 import os
+import re
 
 
 # TODO: charger la configuration depuis 
@@ -22,8 +23,8 @@ CONFIG = {
 
 def debugInfo (action, description):
     """
-        Ajoute l'information au log
-        de debug
+        Ajoute l'information 
+        au log de debug
 
         action      : string
             nom de l'action entreprise
@@ -69,8 +70,8 @@ DATABASE = yaml.load (open (CONFIG["tagfile"], "r"))
 
 def fetchExercice (exoID):
     """
-        Écrit textuellement 
-        le contenu de l'exercice exoID
+        Écrit textuellement le 
+        contenu de l'exercice exoID
 
         exoID : int 
             le numéro de l'exercice
@@ -83,9 +84,8 @@ def fetchExercice (exoID):
 
 def fetchCours (semaine):
     """
-        Récupère les questions 
-        de cours pour une semaine 
-        donnée 
+        Récupère les questions de 
+        cours pour une semaine donnée 
     """
     debugInfo ("COURS", " questions de cours de « {} »".format (semaine))
     with open ("{}/{}.yaml".format (CONFIG["semDIR"], semaine),"r") as f
@@ -114,6 +114,30 @@ def saveRequest (reqname, request):
     debugInfo ("SAVEREQ", " requête {}".format (reqname))
     with open ("{}/{}".format (CONFIG["reqDIR"], reqname), "w") as f:
         yaml.dump (request, f, default_flow_style=False)
+
+
+def requestValidate (request, exoID):
+    """ 
+        Vérifie si la requête valide 
+        l'exercice donné en argument
+    """
+
+    def satisfies (string, valkey, valprop):
+        if valkey == "EXACT":
+            return string == valprop
+        elif valkey == "REGEX":
+            return bool (re.match (valprop, string))
+        else:
+            return False # FIXME 
+    
+    for spec in request.keys ():
+        exo   = DATABASE[exoID]
+        props = (satisfies(exo[spec],key,prop) for key,prop in request[spec].items () )
+        if not any (props):
+            return False
+    
+    return True
+
 
 def fetchExercices (request):
     """
