@@ -113,6 +113,19 @@ print ("\\end{tabular}")
 \end{minipage}
 \end{center}
 
+\begin{center}
+\begin{minipage}{0.7\linewidth}
+        \begin{pycode}
+print ("\\begin{itemize}")
+for e in eleves:
+    print ("\\item ")
+    for notes in fetchNotes (removeSpaces (e)):
+        print (notes)
+print ("\\end{itemize}")
+        \end{pycode}
+\end{minipage}
+\end{center}
+
     \begin{center}
         \rule{35em}{1pt}
     \end{center}

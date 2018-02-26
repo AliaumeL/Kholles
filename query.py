@@ -92,6 +92,17 @@ def fetchCours (semaine):
         return yaml.load (f)
 
 
+def fetchNotes (nom):
+    """
+        Récupère les notes données 
+        à un élève
+    """
+    debugInfo ("NOTES", " notes de {}".format (nom))
+    with open ("notes.txt", "r") as f:
+        for line in f.readlines ():
+            if re.search (nom, line, re.IGNORECASE):
+                yield line
+
 
 ## TYPE REQUEST : STRING DICT
 # où les clefs sont exactement les clefs 
