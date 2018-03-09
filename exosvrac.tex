@@ -4071,16 +4071,157 @@ Soit $A = \begin{pmatrix} 2 & -2 & 1 \\ 2& -3& 2 \\ -1 & 2 & 0 \end{pmatrix}$.
 \end{enumerate}
 
 
-\exercice
+\exercice[Des équations polynomiales en des polynômes]
 
-Résoudre l'équation $P \circ P = P$ d'inconnue $P \in \mb{R}[X]$.
+\begin{enumerate}
 
-\exercice
+\item Trouver tous les polynômes $P \in \mb{R}[X]$ tels que $P \circ P = P$.
 
-Soit $r$ le reste de la division euclidienne de $n$ par $k$. Monter que le reste de la division euclidienne de $X^n$ par $X^k - 1$ est $X^r$.
+\item Trouver tous les polynômes $P \in \mb{C}[X]$ tels que $(P')^2 = 4P$.
+
+\item Trouver les polynômes $P \in \mb{C}[X]$ tels que $(X^2+1)P'' - 6P =0$.
+
+\item Trouver les polynômes $P \in \mb{C}[X]$ tels que $P - P' = X^n$.
+
+\end{enumerate}
 
 
-\exercice[Polynômes d'Hermite]
+\exercice[Presque Lagrange]
+
+Soient $a_1, \dots, a_n \in \mb{C}$ deux-à-deux distincts.
+
+\begin{enumerate}
+
+\item Montrer que $\displaystyle \sum_{i=1}^n \prod_{j \neq i} \frac{X - a_j}{a_i - a_j} = 1$.
+
+\item Soit $P = \prod_{j=1}^n (X-a_j)$. Utiliser ce qui précède pour calculer $\sum_{i=1}^n \frac{1}{P'(a_i)}$.
+
+\emph{On justifiera d'abord que ce nombre est bien défini.}
+
+\end{enumerate}
+
+
+
+\exercice[Un tiers de tour]
+
+Soit $P := 1 + X + X^2 \in \mb{C}[X]$.
+
+\begin{enumerate}
+
+\item Quelles sont les racines de $P$ ?
+
+\item Soient $n,p,q \ge 0$, montrer que $P$ divise $X^{3n} + X^{3p+1} + X^{3q+2}$.
+
+\item Montrer que $P$ divise $1 + X^{n} + X^{2n}$ si et seulement si $n \not \equiv 0 [3]$.
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Où il est déterminé quand sa dérivée le divise]
+
+
+\begin{enumerate}
+
+\item Soit $P \in \mb{C}[X]$ tel que $P' | P$. On suppose que $P$ a au moins deux racines distinctes.
+
+\begin{enumerate}
+
+\item Montrer qu'il existe $\alpha$ racine de multiplicité $m>0$ dans $P$  qui est aussi une racine de multiplicité $m$ dans $P'$. \emph{Indication: on pensera à compter les racines.}
+
+\item En écrivant $P = (X - \alpha)^m Q$, exhiber une absurdité. \emph{Indication: $\alpha$ racine de $Q$ ?}
+
+\end{enumerate}
+
+\item Conclure: quels sont les $P \in \mb{C}[X]$ tels que $P' | P$ ?
+
+
+\end{enumerate}
+
+
+\exercice[Petits restes]
+
+\begin{enumerate}
+
+\item Soit $P \in \mb{C}[X]$.
+
+\begin{enumerate}
+
+\item Exprimer le reste de la division euclidienne de $P$ par $(X-a)(X-b)$ en fonction de $P(a)$ et $P(b)$, où $a \neq b \in \mb{C}$. 
+
+\item Exprimer le reste de la division euclidienne de $P$ par $(X-a)^2$ en fonction de $P(a)$ et $P'(a)$. 
+
+\end{enumerate}
+
+\item Quel le reste de la division de $(X \cos(t) + \sin(t))^n$ par $X^2+1$ ($n \ge 0$ et $t \in \mb{R}$) ?
+
+\item Quel est le reste de la division de $X^p + X^q + 1$ par $X^2 + X + 1$ ($p,q \ge 0$)?
+
+\item Que dire de la question 1 si on divise par un polynôme $(X-a)(X-b)(X-c)$ ?
+
+\end{enumerate}
+
+
+
+
+
+
+\exercice[Divisions euclidiennes dans tous les anneaux]
+
+\begin{enumerate}
+
+\item Soit $r \ge 0$ le reste de la division euclidienne de $m\ge 0$ par $n \ge 0$. Montrer que $X^r-1$ est le reste de la division euclidienne de $X^m -1$ par $X^n -1$.
+
+\emph{Indication: faire apparaître $X^r-1$ dans $X^{bq+r}-1$.}
+
+\item En déduire que $(X^m -1) \wedge (X^n -1) = X^{m \wedge n}-1$.
+
+\emph{Indication: penser à l'algorithme d'Euclide.}
+
+\end{enumerate}
+
+\exercice[Calcul de $\zeta(2)$]
+
+\begin{enumerate}
+
+\item Pour $m > 0$, on pose $f_m: ]- \pi, \pi [ \smallsetminus \{0\} \rightarrow \mb{R}, \theta \mapsto \frac{\sin((2m+1)\theta)}{\sin^{2m+1}(\theta)}$.
+
+\begin{enumerate}
+
+\item Pour $\theta \in \mb{R}$, exprimer $\sin((2m+1)\theta)$ en fonction de $\sin(\theta)$ et $\cos(\theta)$.
+
+\item En déduire que $f_m(\theta) = P_m(\frac{1}{\tan^2(\theta)})$ où $P_m$ polynôme à expliciter (de degré $m$).
+
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item Montrer que si $1 \le k \le m$, $f_m(\frac{k \pi}{2m+1}) = 0$. Quelles sont les racines de $P_m$ ?
+
+\item En déduire que $\displaystyle \sum_{k=1}^m \frac{1}{\tan^2(\frac{k\pi}{2m+1})} = \frac{2m(2m-1)}{6}$.
+
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item Montrer que $\frac{1}{\tan^2(x)} \le \frac{1}{x^2}$ pour $x \in ]0, \frac{\pi}{2}[$.
+
+\item Montrer $\sin(x) \le x$ pour $x \in ]0, \frac{\pi}{2}[$. En déduire que $\frac{1}{x^2} \le 1 + \frac{1}{\tan^2(x)}$.
+
+\end{enumerate}
+
+\item En utilisant 2.b, 3.a et 3.b, montrer que:
+
+$$\frac{2m(2m-1)}{6} \le \sum_{k=1}^m \frac{(2m+1)^2}{k^2 \pi^2} \le \frac{2m(2m-1)}{6} + m.$$
+
+En faisant tendre $m$ vers l'infini, en déduire la valeur de $\displaystyle \sum_{k=1}^{+ \infty} \frac{1}{k^2}$. 
+
+\end{enumerate}
+
+
+
 
 
 \section{Semaines 15 -- 17 Aliaume}
