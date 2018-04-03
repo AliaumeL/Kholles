@@ -3856,6 +3856,307 @@ est un corps.
 
 \section{Espaces vectoriels}
 
+\subsection{Espaces vectoriels}
+
+\subsubsection{Exemples}
+
+
+\exercice[Suites (ultimement) périodiques]
+
+On considère $\mb{R}^{\mb{N}}$ l'espace vectoriel des suites réelles. 
+\begin{enumerate}
+
+\item Une suite $(u_n)_{n \ge 0}$ est dite \emph{périodique} s'il existe $T \in \mb{N}^*$ tel que $\forall n \in \mb{N}$, $u_{n} = u_{n+T}$. Montrer que l'ensemble des suites périodiques est un sous-espace vectoriel de $\mb{R}^{\mb{N}}$.
+
+\item Une suite $(u_n)_{n \ge 0}$ est dite \emph{ultimement périodique} s'il existe $k \ge 0$ tel que la suite $(u_n)_{n \ge k}$ soit périodique. Montrer que l'ensemble des suites ultimement périodiques est un sous-espace vectoriel de $\mb{R}^{\mb{N}}$.
+
+\end{enumerate}
+
+\exercice[$\mb{Q}$-espace vectoriel]
+
+Montrer que $E = \{a + b \sqrt{2}\}$ est un $\mb{Q}$-espace vectoriel. En donner une base.
+
+\exercice[Espaces vectoriels sur les corps finis]
+
+\begin{enumerate}
+
+\item \begin{enumerate} \item Montrer qu'il existe un corps, noté $\mb{F}_2$, de cardinal $2$. \emph{Indication : on pourra noter ses éléments $0$ et $1$, puis expliciter les tables d'addition et de produit dans $\mb{F}_2$.}
+
+\item On se place sur l'espace vectoriel $F := (\mb{F}_2)^2$. Combien a-t-il d'éléments ? Expliciter ses sous-espaces vectoriels stricts et montrer que leur union est $F$ tout entier. \emph{Indication : on pourra dessiner un carré pour mieux réfléchir.}
+
+\end{enumerate}
+
+
+\item Soit $\mb{K}$ un corps (de cardinal) fini et $E$ un $\mb{K}$-espace vectoriel de dimension finie $n \ge 1$. Montrer que $E$ est fini et exprimer $|E|$ en fonction de $|\mb{K}|$ et $n$.
+
+
+\end{enumerate}
+
+
+
+\subsubsection{Engendrement, liberté, bases}
+
+\exercice[Espaces engendrés]
+
+Soit $E$ un espace vectoriel et $A,B \subseteq E$. Montrer que $\text{Vect}(A \cap B) \subseteq \text{Vect}(A) \cap \text{Vect}(B)$. A-t-on la réciproque ?
+
+
+\exercice[Base de polynômes]
+
+Soit $(P_i)_{1 \le i \le n}$ une famille de polynômes de $\mb{R}_n[X]$ telle que pour tout $1 \le i \le n$, $0$ est racine d'ordre exactement $i$ dans $P_i$. Montrer que $(P_i)_{1 \le i \le n}$ est une base de $\mb{R}_n[X]$.
+
+
+\subsubsection{Supplémentaires}
+
+
+\exercice
+
+Soit $E$ un $\mb{K}$-espace vectoriel et $A,B$ et $C$ des sous-espaces. On suppose que $A$ et $B$ sont supplémentaires dans $E$ et que $A \subseteq C$. Montrer que $C = A \oplus (B \cap C)$.
+
+
+
+
+
+\exercice[Supplémentaires dans les fonctions continues]
+
+\begin{enumerate}
+
+\item Montrer que l'ensemble $F := \mc{C}([-1,1], \mb{R})$ est un $\mb{R}$-espace vectoriel.
+
+\item Dans chacun des cas suivants, montrer que $H$ est un sous-espace vectoriel de $F$ et en donner un supplémentaire.
+
+\begin{enumerate}
+
+\item $H = \{f \in F~|~f(-1) = f(1)\}$.
+
+\item $H = \{ f \in F~|~\int_{-1}^1 f(t) \di t = 0\}$.
+
+\item $H = \{ f \in F~|~\forall x \in [-1,1], f(x) = f(-x)\}$.
+
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+
+
+\subsubsection{Propriétés universelles}
+
+\exercice[Propriété universelle du quotient]
+
+Soit $E = F \oplus G$ un espace vectoriel et $p$ la projection sur $G$ parallèlement à $F$. Soit $E'$ un autre espace et $f : E \rightarrow E'$ tel que $F \subseteq \text{Ker}(f)$.
+
+\begin{enumerate}
+
+\item Montrer qu'il existe une unique application linéaire $\widetilde{f} : G \rightarrow E'$ telle que $\widetilde{f} \circ p = f$.
+
+\item Montrer que $\widetilde{f}$ est injective si et seulement si $\text{Ker}(f) = F$.
+
+\item Quand est-elle surjective ? 
+
+\end{enumerate}
+
+
+
+
+\exercice[Propriété universelle du produit]
+
+\begin{enumerate}
+
+\item Soient $E$ et $F$ deux $\mb{K}$-espaces vectoriels.
+
+On pose $\fonction{\pi_E}{E\times F}{E}{(a,b)}{a}$ et $\fonction{\pi_F}{E\times F}{F}{(a,b)}{b}$.
+
+Montrer que $\pi_E$ et $\pi_F$ sont linéaires et surjectives. Quand a-t-on injectivité de $\pi_E$ ?
+
+\item Soit $G$ un autre $\mb{K}$-espace vectoriel et deux applications linéaires $g_E : G \rightarrow E$ et $g_F : G \rightarrow F$. Montrer qu'il existe une unique application linéaire $h : G \rightarrow E \times F$ telle que $\pi_E \circ h = g_E$ et $\pi_F \circ h = g_F$.  \emph{On pourra raisonner par analyse-synthèse.}
+
+\item Faire un dessin de la construction. On représentera les fonctions $\pi_A, \pi_B, f_A, f_B$ et $h$ par des flèches entre les ensembles $A, B, A \times B$ et $C$.
+\end{enumerate}
+
+
+\exercice[Propriété universelle du coproduit]
+
+\begin{enumerate}
+
+\item Soient $E$ et $F$ deux $\mb{K}$-espaces vectoriels.
+
+On pose $\fonction{\iota_E}{E}{E\times F}{a}{(a, 0_F)}$ et $\fonction{\iota_F}{F}{E\times F}{b}{(0_E, b)}$.
+
+Montrer que $\iota_E$ et $\iota_F$ sont linéaires et injectives. Quand a-t-on surjectivité de $\iota_E$ ?
+
+\item Soit $G$ un autre $\mb{K}$-espace vectoriel et deux applications linéaires $g_E : E \rightarrow G$ et $g_F : F \rightarrow G$. Montrer qu'il existe une unique application linéaire $h : E \times F \rightarrow G$ telle que $h \circ \iota_E = g_E$ et $h \circ \iota_F= g_F$.  \emph{On pourra raisonner par analyse-synthèse.}
+
+\end{enumerate}
+
+
+
+\subsection{Applications linéaires}
+
+
+\exercice[Caractérisation des homothéties]
+
+Soit $u : E \rightarrow E$ une application linéaire telle que $\forall x \in E$, $\exists \lambda_x \in \mb{K}, u(x) = \lambda_x \cdot x$.
+
+Montrer que $\exists \lambda \in \mb{K}, \forall x \in E, u(x) = \lambda \cdot x$.
+
+
+
+
+\exercice[Deux formes linéaires]
+
+Soient $f,g$ deux formes linéaires non-nulles d'un espace vectoriel $E$. Montrer qu'il existe $x \in E$ tel que $f(x)g(x) \neq 0$.
+
+
+\subsubsection{Projecteurs, symétries}
+
+
+
+
+\exercice[Permuter les projections]
+
+Soit $E = F \oplus G$ un espace vectoriel et $p$ le projecteur sur $F$ parallèlement à $G$. Exprimer en fonction de $p$ le projecteur sur $G$ parallèlement à $F$.
+
+
+
+\exercice[Projecteurs de même noyau]
+
+Soit $E$ un espace vectoriel et $p,q$ deux endomorphismes.
+
+\begin{enumerate}
+
+\item On suppose que $p$ et $q$ sont deux projecteurs de même noyau. Montrer que $p \circ q = p$ et $q \circ p = q$. \emph{On décomposera habilement les éléments.}
+
+\item On suppose que $p \circ q = p$ et $q \circ p = q$.
+
+\begin{enumerate}
+
+\item Montrer que $p$ et $q$ sont des projecteurs.
+
+\item Montrer que $p$ et $q$ ont même noyau.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\exercice[Théorème de Maschke pour les symétries]
+
+Soit $E =  F \oplus G$ un espace vectoriel réel de dimension finie, $H$ un sous-espace vectoriel, et $s$ la symétrie par rapport à $F$ parallèlement à $G$.
+
+\begin{enumerate}
+
+\item On suppose $H \subseteq F$. Montrer que $H$ possède un supplémentaire stable par $s$.
+
+\item On suppose $H \subseteq G$. Même question.
+
+\item On suppose seulement que $H$ est stable par $s$. Montrer que que $H$ possède encore un supplémentaire stable par $s$.
+
+\end{enumerate}
+
+
+\exercice[Inverse d'un côté]
+
+Soit $E$ un espace vectoriel et $f,g$ deux endomorphismes tels que $f \circ g = \text{id}_{E}$.
+
+\begin{enumerate}
+
+\item On suppose la dimension de $E$ finie. Montrer que $f$ est un isomorphisme.
+
+\item On ne fait plus d'hypothèses sur la dimension de $E$.
+
+\begin{enumerate}
+
+\item Montrer que $\text{Ker}(g \circ f) = \text{Ker}(f)$, puis $\text{Im}(g \circ f) = \text{Im}(g)$.
+
+\emph{On notera à chaque fois qu'une inclusion est toujours vraie.}
+
+\item Montrer $E = \text{Ker}(f) \oplus \text{Im}(g)$. \emph{On pourra utiliser un projecteur bien choisi.}
+
+\item En considérant la dérivation dans $E = \mb{R}[X]$, donner un exemple où ni $f$ ni $g$ ne sont des applications bijectives.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+\subsection{Dimension, dimension finie}
+
+ \exercice[Une définition]
+
+Soit $E$ un $\mb{K}$-espace vectoriel et $e_1 \dots e_n$ une famille libre de $E$. Montrer que $\text{Vect}(e_1, \dots, e_n)$ et $\mb{K}^n$ sont des espaces vectoriels isomorphes. \emph{Donc exhiber une application linéaire bijective.}
+
+\exercice[Gros espaces]
+
+Soient $E$ et $F$ trois sous-espaces d'un espace vectoriel réel de dimension finie $n$.
+
+\begin{enumerate}
+
+\item On suppose que $\dim(E) + \dim(F) > n$. Que dire de $E \cap F$ ?
+
+\item Comment généraliser ce résultat à $k \ge 3$ sous-espaces ?
+
+
+\end{enumerate}
+
+
+\exercice[Dimension des fonctions affines par morceaux]
+
+\begin{enumerate}
+
+\item Montrer que les fonctions $f \in \mc{C}([-1,1], \mb{R})$ affines sur $[-1,0]$ et sur $[0,1]$ forment un $\mb{R}$-espace vectoriel de dimension finie dont on donnera une base.
+
+\emph{On pourra faire un dessin.}
+
+\item Soient $a_1 < \dots <a_n$ des réels. Montrer que les fonctions $f \in \mc{C}([a_1,a_n], \mb{R})$ affines sur chaque $[a_i, a_{i+1}]$ forment un $\mb{R}$-espace vectoriel de dimension finie à préciser.
+
+\end{enumerate}
+
+
+\exercice[Shift]
+
+Soient $E = F \oplus G$ un espace vectoriel et $f_1, \dots, e_n$ une base de $f$. On note pour $a \in G$ le sous-espace $F_a = \text{Vect}(e_1 +a, \dots, e_n + a)$.
+
+\begin{enumerate}
+
+\item Quelle est la dimension de $F_a$ ?
+
+\item Montrer que $F_a \oplus G = E$.
+
+\item Montrer que si $a \neq b \in G$, alors $F_a \neq F_b$.
+
+\end{enumerate}
+
+
+
+
+\exercice[Supplémentaire commun]
+
+Soient $E$ un espace de dimension finie $n$.
+
+\begin{enumerate}
+
+\item Soient $F,G$ deux hyperplans de $E$, montrer qu'ils ont un supplémentaire commun.
+
+\item Plus généralement si $\dim(F) = \dim(G)$, ont-ils un supplémentaire commun ?
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
 \subsection{Déterminants}
 
 \exercice[Déterminant de Vandermonde]
@@ -3908,9 +4209,6 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 
 
 
-
-
-\section{Matrices et applications linéaires}
 
 \subsection{Calcul matriciel abstrait}
 
