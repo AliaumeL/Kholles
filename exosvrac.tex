@@ -3874,7 +3874,7 @@ On considère $\mb{R}^{\mb{N}}$ l'espace vectoriel des suites réelles.
 
 \exercice[$\mb{Q}$-espace vectoriel]
 
-Montrer que $E = \{a + b \sqrt{2}\}$ est un $\mb{Q}$-espace vectoriel. En donner une base.
+Montrer que $\mb{Q}[\sqrt{2}] := \{ a + b\sqrt{2} ~|~ (a,b) \in \mb{Q} \}$ est un $\mb{Q}$-espace vectoriel. En donner une base. Quelle est sa dimension ? Est-ce un sous-corps de $\mb{C}$ ?
 
 \exercice[Espaces vectoriels sur les corps finis]
 
@@ -4157,49 +4157,6 @@ Soient $E$ un espace de dimension finie $n$.
 
 
 
-\subsection{Déterminants}
-
-\exercice[Déterminant de Vandermonde]
-
-\exercice[Déterminant de Cauchy]
-
-\exercice[Déterminant de Smith]
-
-\exercice[Déterminant circulant]
-
-\subsection{Espaces euclidiens}
-
-\exercice[Déterminant de Gram]
-
-\exercice[Quand la norme passe à l'intégrale]
-
-Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une application continue telle que $\displaystyle \left\lVert\int_a^b f(t) \di t \right\lVert = \int_a^b \lVert f(t)\lVert \di t$.
-
-\begin{enumerate}
-
-\item Que dire si $\left\lVert\int_a^b f(t) \di t \right\lVert = 0$ ?
-
-\item On suppose désormais $\neq 0$. Soit $e_1 = \int_a^b f(t) \di t \Big/  \left\lVert\int_a^b f(t) \di t \right\lVert $. On complète $e_1$ en une base orthonormée $e_1 \dots e_n$ de $E$, et on note $f = \sum_i f_i e_i$.
-\begin{enumerate}
-
-\item Montrer que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$ puis que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$.
-
-\item Utiliser ce résultat pour obtenir $f_i = 0$ pour $i \ge 2$.
-
-\item Conclure que $f = \lVert f \lVert e_1$.
-
-\end{enumerate}
-
-\item Ce résultat est-il toujours vrai avec une norme quelconque ?
-
-\end{enumerate}
-
-
-
-
-
-
-
 
 
 
@@ -4349,6 +4306,59 @@ On suppose que l'on connaît l'évaluation de $P$ en $\omega^0 \dots \omega^{n-1
 Comment trouver les coefficients $(a_0, \dots, a_{n-1})$?
 
 \end{enumerate}
+
+\subsection{Espaces euclidiens}
+
+\exercice[Déterminant de Gram]
+
+\exercice[Quand la norme passe à l'intégrale]
+
+Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une application continue telle que $\displaystyle \left\lVert\int_a^b f(t) \di t \right\lVert = \int_a^b \lVert f(t)\lVert \di t$.
+
+\begin{enumerate}
+
+\item Que dire si $\left\lVert\int_a^b f(t) \di t \right\lVert = 0$ ?
+
+\item On suppose désormais $\neq 0$. Soit $e_1 = \int_a^b f(t) \di t \Big/  \left\lVert\int_a^b f(t) \di t \right\lVert $. On complète $e_1$ en une base orthonormée $e_1 \dots e_n$ de $E$, et on note $f = \sum_i f_i e_i$.
+\begin{enumerate}
+
+\item Montrer que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$ puis que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$.
+
+\item Utiliser ce résultat pour obtenir $f_i = 0$ pour $i \ge 2$.
+
+\item Conclure que $f = \lVert f \lVert e_1$.
+
+\end{enumerate}
+
+\item Ce résultat est-il toujours vrai avec une norme quelconque ?
+
+\end{enumerate}
+
+
+
+
+
+
+\subsection{Déterminants}
+
+\exercice[Déterminant de Vandermonde]
+
+\exercice[Déterminant de Cauchy]
+
+\exercice[Déterminant de Smith]
+
+\exercice[Déterminant circulant]
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Polynômes}
