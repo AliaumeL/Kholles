@@ -4345,7 +4345,29 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 
 \exercice[Déterminant de Cauchy]
 
-\exercice[Déterminant de Smith]
+\exercice[Déterminants de Smith]
+
+\begin{enumerate}
+
+\item Soit $\psi : \mb{N}^* \rightarrow \mb{R}$ une fonction, on note $\displaystyle a_{i,j} := \sum_{k|i \text{ et } k |j} \psi(k)$ et $A$ la matrice $(a_{i,j})_{1 \le i, j \le n}$.
+
+Montrer que $ \det(A) = \prod_{k=1}^n \psi(k)$. \emph{Indication : écrire $A$ comme un produit de matrices.}
+
+\item Utiliser ce résultat pour en déduire $\det(A)$ dans les cas suivants:
+
+\begin{enumerate}
+
+\item $a_{i,j}$ est le nombre de diviseurs communs à $i$ et $j$;
+
+\item  $a_{i,j}$ est la somme des diviseurs communs à $i$ et $j$.
+
+\end{enumerate}
+
+\emph{On peut aller jusqu'à traiter le cas $a_{i,j} = i \wedge j$ si on connaît l'indicatrice d'Euler.}
+
+\end{enumerate}
+
+
 
 \exercice[Déterminant circulant]
 
