@@ -4020,7 +4020,7 @@ Soit $u : E \rightarrow E$ une application telle que $\forall x \in E$, $\exists
 
 \end{enumerate}
 
-
+\subsubsection{Formes linéaires}
 
 
 \exercice[Deux formes linéaires]
@@ -4166,6 +4166,66 @@ Soient $E$ un espace de dimension finie $n$.
 \item Plus généralement si $\dim(F) = \dim(G)$, ont-ils un supplémentaire commun ?
 
 \end{enumerate}
+
+
+
+
+\exercice[Base duale, base antéduale]
+
+Soit $E$ un espace vectoriel de dimension finie $n$, on note $E^*:= \mc{L}(E, \mb{R})$ son dual.
+
+\begin{enumerate}
+
+\item  Soit $e_1, \dots, e_n$ une base de $E$. Pour $1 \le i \le n$, soit $e_i^* : E \rightarrow \mb{R},\sum_{k=1}^n a_k e_k \mapsto a_i$.
+
+Montrer que $e_1^*, \dots, e_n^*$ est une base de $E^*$ (on l'appelle \emph{base duale} de $e_1, \dots, e_n$).
+
+\item Soit $ l_1, \dots, l_n$ une base (quelconque) de $E^*$.
+
+\begin{enumerate}
+
+\item Si $l_i = \sum_{j=1}^n {\alpha_{i,j}} e_j^*$, justifier que la matrice $P = (\alpha_{i,j})_{1 \le i,j \le n}$ est inversible.
+
+\item Notons $P^{-1} =: (\beta_{i,j})_{1 \le i,j \le n}$ et $f_j = \sum_{p=1}^n {\beta_{p,j}} e_p$ pour $1 \le i \le n$.
+
+Justifier que $f_1, \dots, f_n$ est une base de $E$, puis établir que $l_i(f_j) = \delta_{i,j}$.
+
+\item En déduire que $l_1, \dots, l_n$ est la base duale de $f_1, \dots, f_n$.
+
+\item Montrer que $f_1, \dots, f_n$ est la seule base de $E$ dont $l_1, \dots, l_n$ est duale.
+
+(on l'appelle \emph{base antéduale} de $l_1, \dots, l_n$.)
+
+\end{enumerate}
+
+\item Ici $E = \mb{K}_n[X]$. Quelle est la base antéduale de $l_1, \dots, l_{n+1}$ si $l_i : P \mapsto \frac{P^{(i-1)}(0)}{(i-1)!}$ ?
+
+\emph{On ne cherchera pas à montrer directement que $l_1, \dots, l_n$ est une base de $E^*$.}
+
+\end{enumerate}
+
+
+\exercice[Familles libres de fonctions continues \& dualité]
+
+On se place dans le $\mb{R}$-espace vectoriel $\mc{C}(\mb{R})$.
+
+\begin{enumerate}
+
+\item Soit $f_1,\dots, f_n \in \mc{C}(\mb{R}) $  telles qu'il existe $x_1, \dots, x_n \in \mb{R}$ de sorte que la matrice $(f_i(x_j))_{1 \le i,j \le n}$ est inversible. Montrer que $f_1,\dots, f_n$ est libre.
+
+\item On suppose maintenant que  $f_1,\dots, f_n$ est libre, soit $F = \text{Vect}(f_1, \dots, f_n)$. 
+
+\begin{enumerate}
+
+\item Quelle est la dimension de $F$ ? Du dual $F^* := \mc{L}(F, \mb{R})$ ? Montrer que pour tout $x \in \mb{R}$, l'application d'évaluation en $x$, $e_x : F \rightarrow \mb{R}, f \mapsto f(x) $ est dans $F^*$.
+
+\item \emph{On admet qu'il existe une base de $F^*$ de la forme $e_{x_1}, \dots, e_{x_n}$.} Montrer que la matrice $(f_i(x_j))_{1 \le i,j \le n}$ est inversible et conclure quant à la réciproque de $1$.
+
+\end{enumerate}
+
+
+\end{enumerate}
+
 
 
 
