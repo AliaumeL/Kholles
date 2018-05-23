@@ -1422,6 +1422,27 @@ Soit $(x,y) \in \mb{R}^2$, montrer l'équivalence suivante
 
 \subsection{Primitives, intégrales}
 
+
+\subsubsection{Continuité uniforme}
+
+
+
+\exercice[Limite et limite des multiples]
+
+Soit $f : \mb{R}^*_+ \rightarrow \mb{R}$, on appelle $(P)$ la propriété $\forall x >0, \lim_{n \rightarrow + \infty} f(nx) = 0$.
+
+\begin{enumerate}
+
+\item On suppose que $f$ vérifie $(P)$ et admet une limite en $+ \infty$. Que vaut-elle ?
+
+\item Soit $f$ uniformément continue et vérifiant $(P)$. Montrer que $\lim_{+ \infty} f = 0$.
+\end{enumerate}
+
+\emph{En fait $f$ continue suffit, mais il faut utiliser Baire dans $\mb{R}$.}
+
+
+
+
 \subsubsection{Calculs d'intégrales}
 
 \exercice
@@ -1588,8 +1609,73 @@ Soit $g : \mb{R} \rightarrow \mb{R}$ une fonction continue. On pose $f(x) = \dis
 
 \end{enumerate}
 
+\subsubsection{Inégalités en tous genres}
+
+\exercice[Majoration]
+
+Soit $f \in \mc{C}^1([a,b], \mb{R})$ telle que $f(a) = f(b) = 0$. Soit $M = \sup_{t \in [a,b]} f'(t)$.
+
+\begin{enumerate}
+
+\item Etablir $|\int_{a}^bf(t) \di t| \le M\frac{(b-a)^2}{2}$.
+
+\item Montrer qu'en fait $|\int_{a}^bf(t) \di t| \le M\frac{(b-a)^2}{4}$.
+
+\emph{On pourra découper l'intégrale.}
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Inégalité de Young (encore une)]
+
+Soit $f : \mb{R}_{+} \rightarrow \mb{R}_+$ une fonction de classe $\mc{C}^1$, tendant vers $+ \infty$ en $+\infty$, strictement croissante, et telle que $f(0) = 0$.
+
+\begin{enumerate}
+
+\item Justifier que $f^{-1} : \mb{R}_{+} \rightarrow \mb{R}_+$ est bien définie et de classe $\mc{C}^1$ sur $]0, +\infty[$.
+
+\item Montrer que $\displaystyle \forall x \ge 0, \int_{0}^x f(t) \di t + \int_{0}^{f(x)} f^{-1}(t) \di t = xf(x)$.
+
+\emph{On pourra introduire une quantité à dériver.}
+
+\item Soit $b \ge 0 $ et $\displaystyle \phi : x \mapsto \int_{0}^x f(t) \di t + \int_{0}^{b} f^{-1}(t) \di t - xb$.
+
+\begin{enumerate}
+
+\item Que vaut $\phi(f^{-1}(b))$ ?
+
+\item Justifier que $\phi$ est dérivable. Que vaut $\phi'(x)$ ? Etudier son signe.
+
+\item En déduire que $\forall x \neq f^{-1}(b)$, $\phi(x) > 0$.
+
+
+\item Conclure que $\forall a,b \ge 0$, $\displaystyle x \mapsto \int_{0}^a f(t) \di t + \int_{0}^{b} f^{-1}(t) \di t \ge ab$.
+
+Quand l'égalité se produit-elle ?
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+
+
 
 \subsubsection{Applications}
+
+\exercice[Formule de la moyenne]
+
+Soit $f : [a,b] \rightarrow \mb{R}$ une fonction continue et $g :[a,b] \rightarrow \mb{R}_+$ continue par morceaux et positive (pondération).
+
+Montrer qu'il existe $c \in [a,b]$ tel que $\displaystyle \int_{a}^b f(x)g(x) \di x = f(c) \int_{a}^b g(x) \di x$.
+
+\emph{On pourra commencer par encadrer l'intégrale de gauche, en faisant disparaître $f$.}
+
 
 \exercice[Comparaison série-intégrale]
 
@@ -1601,6 +1687,50 @@ Soit $g : \mb{R} \rightarrow \mb{R}$ une fonction continue. On pose $f(x) = \dis
 
 \item En déduire $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{k}$. Comparer avec $\displaystyle  \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{1}{2^k}$.
 \end{enumerate}
+
+
+\exercice
+
+Soit $ \fonction{f}{\mb{R^*_+}}{\mb{R}}{x}{\displaystyle \int_x^{2x} \frac{\ex^t}{t}}$.
+
+\begin{enumerate}
+
+\item Montrer que $f$ est dérivable et calculer sa dérivée.
+
+\item En remarquant que pour $x>0$, $\forall t \in [x,2x]$, $\displaystyle \frac{\ex^x}{t} \le \frac{\ex^t}{t} \le \frac{\ex^{2x}}{t} $, déterminer $\displaystyle \lim_{x \rightarrow 0^+} f(x)$.
+
+\end{enumerate}
+
+
+\exercice[Sommes de Riemann] Les deux questions sont indépendantes.
+
+\begin{enumerate}
+
+\item Montrer que la suite $u_n := \sum_{k=1}^n \frac{n}{n^2 + k^2}$ converge et calculer sa limite.
+
+\item Soit $\alpha \ge 1$, montrer que $\sum_{k=1}^n k^{\alpha-1} \sim \frac{n^{\alpha}}{\alpha}$.
+
+\end{enumerate}
+
+\exercice[Somme de Riemann d'une intégrale impropre]
+
+Soit $f : ]0,1] \rightarrow \mb{R}$ continue croissante telle que $\int_{0}^1 f(t) \di t :=\lim_{\varepsilon \rightarrow 0^{+}} \int_{\varepsilon}^{1} f(t) \di t$ existe (et est finie). \emph{Attention $f$ n'est pas définie en $0$.}
+
+\begin{enumerate}
+
+\item Justifier que pour tout $0<x < 1$, $\int_{0}^x f(t) \di t :=\lim_{\varepsilon \rightarrow 0^{+}} \int_{\varepsilon}^{x} f(t) \di t$ existe, et que  $\int_{0}^x f(t) \di t + \int_{x}^1 f(t) \di t = \int_{0}^1 f(t) \di t$. Que dire de $\lim_{x \rightarrow 0^+}\int_{0}^x f(t) \di t$ ?
+
+\item Montrer que $\forall 1 \le k \le n-1$, $\int_{\frac{k-1}{n}}^{\frac{k}{n}} f(t) \di t \le \frac{1}{n} f(\frac{k}{n}) \le \int_{\frac{k}{n}}^{\frac{k+1}{n}} f(t) \di t$.
+
+\emph{On justifiera soigneusement le cas $k=1$.}
+
+\item En déduire la limite de $\frac{1}{n}\sum_{k=1}^{n-1} f(\frac{k}{n})$.
+
+\end{enumerate}
+
+
+
+
 
 \exercice[Théorème de Lindemann]
 
@@ -2320,6 +2450,7 @@ Soit $a\le b \in \mb{R}$ et $f : [a,b] \rightarrow \mb{R}$ continue.
 \item On suppose que $f([a,b]) \supseteq [a,b]$. Montrer que $f$ a un point fixe.
 
 \end{enumerate}
+
 
 \exercice
 
@@ -3768,6 +3899,40 @@ Soit $p$ un nombre premier, on note
 \end{enumerate}
 
 
+\subsubsection{Groupe symétrique}
+
+
+
+\exercice[Centre de $\mathfrak{S}_n$]
+
+
+\begin{enumerate}
+
+\item Soit $n \ge 0$ et $1 \le i \neq j \le n$. Montrer que les permutations de $\mathfrak{S}_n$ qui commutent avec $( i~j)$ sont celles qui laissent stable $\{i,j\}$ (i.e. les $\sigma$ vérifiant $\{\sigma(i), \sigma(j)\} = \{i,j\}$).
+
+\item En déduire le centre de $\mathfrak{S}_n$ (permutations qui commutent avec toutes les autres).
+
+\end{enumerate}
+
+
+\exercice[Signature du double (loi complémentaire $\left(\frac{2}{p} \right) = (-1)^\frac{p^2-1}{8}$).]
+
+Soit $p \ge 3$ un nombre premier.
+
+\begin{enumerate}
+
+\item Justifier que $s : x \mapsto 2x \mod p$ est une permutation de $\{0, \dots, p-1\}$.
+
+\emph{On pourra d'abord donner un antécédent de $1$ par $s$ en utilisant des propriétés arithémtiques.}
+
+\item Montrer que $\varepsilon(s) = (-1)^{\frac{p^2-1}{8}}$.
+
+
+\end{enumerate}
+
+
+
+
 \subsubsection{Morphismes}
 
 \exercice[Introduction au produit interne]
@@ -3862,7 +4027,7 @@ est un corps.
 
 
 
-\section{Espaces vectoriels}
+\section{Algèbre linéaire}
 
 \subsection{Espaces vectoriels}
 
@@ -4428,9 +4593,16 @@ Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une
 
 \subsection{Déterminants}
 
-\exercice[Déterminant de Vandermonde]
 
-\exercice[Déterminant de Cauchy]
+
+\subsubsection{Déterminants classiques}
+
+\exercice[Déterminant de Hurwitz]
+
+Soient $a,\lambda_1, \dots, \lambda_n \in \mb{C}$ et $H \in \M_n(\mb{C})$ la matrice $\begin{pmatrix} a + \lambda_1 & a & \dots & a \\ a  & a + \lambda_2 & \ddots & \vdots \\ \vdots & \ddots & \ddots & a \\ a & \dots & a & a + \lambda_n  \end{pmatrix}$.
+
+Montrer que $\displaystyle \det(H) = \prod_{i=1}^n \lambda_i + a \sum_{i=1}^n \prod_{j \neq i} \lambda_i$. \emph{Indication : on pourra écrire chaque colonne de $H$ comme somme de deux vecteurs, puis utiliser la $n$-linéarité.}
+
 
 \exercice[Déterminants de Smith]
 
@@ -4450,13 +4622,101 @@ Montrer que $ \det(A) = \prod_{k=1}^n \psi(k)$. \emph{Indication : écrire $A$ c
 
 \end{enumerate}
 
-\emph{On peut aller jusqu'à traiter le cas $a_{i,j} = i \wedge j$ si on connaît l'indicatrice d'Euler.}
+\end{enumerate}
+
+
+
+\exercice[Déterminant circulant (par la FFT)]
+
+
+Soient $a_1, \dots, a_n \in \mb{C}$, on note $C \in \M_n(\mb{C})$ la matrice $\begin{pmatrix} a_1 & a_2 & \dots & a_n \\ a_n & a_1 & \ddots & \vdots \\ \vdots & \ddots & \ddots & a_{2} \\ a_2 & \dots & a_n & a_{1}  \end{pmatrix}$.
+
+\begin{enumerate}
+
+\item Soit $\omega := \ex^{\frac{2 \im \pi}{n}}$ et $\Omega := (\omega^{(i-1)(j-1)})_{1 \le i,j \le n}$. Que vaut $\det(\Omega)$ ?
+
+\item Soit $(a_{i,j})_{1 \le i,j \le n}:= C \Omega$, établir que $a_{i,j} = P(\omega^{j-1})\omega^{(i-1)(j-1)}$
+
+où $P$ est le polynôme $\sum_{k=1}^n a_k X^{k-1}$.
+
+\item En déduire la valeur de $\det(C)$.
+
+\vspace*{-0.7cm}
+
+\item Application. Déterminer, en fonction de $\alpha$ et de $n$, le rang de $\begin{pmatrix} 1 & \alpha & \dots & 0 \\ 0 & 1 & \ddots & \vdots \\ \vdots & \ddots & \ddots & \alpha \\ \alpha & \dots & 0 & 1 \end{pmatrix}$.
 
 \end{enumerate}
 
 
 
-\exercice[Déterminant circulant]
+
+
+
+
+\exercice[Déterminant de Cauchy (par des fractions rationnelles)]
+
+Soient $a_1, \dots, a_n, b_1; \dots, b_n \in \mb{C}$ tels que $\forall 1 \le i,j \le n$, $a_i + b_j \neq 0$.
+
+On note $C_n = \left(\frac{1}{a_i + b_j} \right)_{1 \le i,j \le n}$ et on cherche à calculer son déterminant.
+
+\begin{enumerate}
+
+\item On suppose qu'il existe $i \neq j$ tels que $a_i = a_j$. Que vaut $\det(C_n)$ ?
+
+\item Dans la suite on suppose les $a_i$ tous distincts.
+
+\begin{enumerate}
+
+\item Soit $R(X)$ la fraction rationnelle $\dfrac{\prod_{i=1}^{n-1} (b_i - X)}{\prod_{i=1}^{n} (a_i + X)}$.
+
+Expliciter les $\lambda_i \in \mb{C}$ de sa décomposition en éléments simples $R(X) = \sum_{i=1}^n \frac{\lambda_i}{a_i + X}$.
+
+\item Justifier que $\det(C_n) = \frac{1}{\lambda_n} \begin{vmatrix} \frac{1}{a_1 + b_1} &  \frac{1}{a_1 + b_2}  & \dots &  \frac{1}{a_1 + b_n} \\ \vdots &  &  & \vdots \\ \frac{1}{a_{n-1} +b_1} & \dots &  \frac{1}{a_{n-1} +b_{n-1}} &  \frac{1}{a_{n-1} +b_n} \\ R(b_1) & \dots & R(b_{n-1}) & R(b_n) \end{vmatrix}$.
+
+\emph{On pratiquera des opérations élémentaires sur la dernière ligne.}
+
+\item En déduire par récurrence que $\displaystyle \det(C_n ) = \frac{\prod_{1 \le i<j \le n} (a_i - a_j) (b_i - b_j))}{\prod_{1 \le i , j \le n} a_i + b_j}$.
+
+
+\end{enumerate}
+
+\end{enumerate}
+
+\subsubsection{Comatrice}
+
+
+\exercice[Comatrice, orthogonalité et rang]
+
+\begin{enumerate}
+
+\item Soit $A \in \M_n(\mb{R})$.
+
+\begin{enumerate}
+
+\item Si $\text{rg}(A) = n$, que vaut $\text{rg}(\text{com}(A))$ ? Et si $\text{rg}(A) \le n-2$ ?
+
+\item On suppose $\text{rg}(A) = n-1$. Justifier que $A \neq 0$, puis que $\text{dim}(\text{Ker} ({}^t \text{com}(A))) \ge n-1$. En déduire que $\text{rg}(\text{com}(A)) = 1$.
+\end{enumerate}
+
+\item Pour $n \ge 3$, résoudre dans $\M_n(\mb{R})$ l'équation $A = \text{com}(A)$.
+
+\emph{On prendra le déterminant dans le cas non-trivial, pour retrouver $\text{SO}_n(\mb{R})$.}
+\end{enumerate}
+
+\exercice[Matrices à coefficients entiers]
+
+\begin{enumerate}
+
+\item Soit $M \in \M_n(\mb{R})$ à coefficients entiers. \'Etablir une CNS pour que $M$  soit inversible et que $M^{-1}$ soit à coefficients entiers. \emph{On dit alors que $M \in \GL_n(\mb{Z})$.}
+
+\item Soit $M \in \GL_n(\mb{Z})$. On note $a_1, \dots, a_n$ sa première ligne. Montrer que $a_1, \dots, a_n$ sont premiers entre eux dans leur ensemble. \emph{On cherchera à développer le déterminant.}
+
+\end{enumerate}
+
+
+
+\end{document}
+
 
 
 
