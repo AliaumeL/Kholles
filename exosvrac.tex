@@ -4024,6 +4024,68 @@ est un corps.
 
 
 
+\section{Combinatoire et probabilités}
+
+\subsection{Dénombrement}
+
+
+
+\exercice[Dénombrements de cardinaux]
+
+Soit $E$ un ensemble de $n$ éléments.
+
+\begin{enumerate}
+
+\item Calculer $\displaystyle \sum_{X \subseteq E} \text{Card}(X)$.
+
+\item \begin{enumerate}
+
+\item Soit $Z$ une partie à $k$ éléments de $E$. Combien y a-t-il de couples $X,Y \subseteq E$ tels que $X \cap Y = Z$ ? \emph{Fixer d'abord un $X$ possible et déterminer quels $Y$ conviennent.}
+
+\item En déduire que $\displaystyle \sum_{X,Y \subseteq E} \text{Card}(X \cap Y) = \sum_{k=0}^n k \binom{n}{k} 3^{n-k}$.
+
+\item Simplifier cette expression en dérivant $(3+x)^n$.
+
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Formule du crible de Poincaré, Formule de Grassman]
+
+Soit $E$ un ensemble fini et $A,B \subseteq E$.
+
+\begin{enumerate}
+
+\item  Rappeler la formule reliant $\text{Card}(A \cup B)$ à $\text{Card}(A)$, $\text{Card}(B)$ et $\text{Card}(A \cap B)$.
+
+Rappeler d'autre part la formule de Grassman.
+
+\item Si $C\subseteq E$, établir une formule du même type que $1.$ pour $\text{Card}(A \cup B \cup C)$.
+
+ Montrer que ce résultat n'est plus vrai pour les dimensions d'espaces.
+
+\item Plus généralement, montrer que si $A_1, \dots, A_n \subseteq E$, montrer que
+
+$$\text{Card}\left(\bigcup_{1 \le i \le n} A_i \right)= \sum_{\substack{I \neq \varnothing\\ I \subseteq \{ 1, \dots, n \}}} (-1)^{\text{Card}(I)+1} \text{Card}\left(\bigcap_{i \in I} A_i\right).$$
+
+\item 
+
+\begin{enumerate}
+
+\item Soit $N,n \ge 0$, combien y a-t-il de multiples de $n$ compris entre $1$ et $N$ ?
+
+\item Application. Montrer qu'il y a $228$ entiers entre $1$ et $1000$ qui \emph{ne sont pas multiples} de $2,3,5$ ou $7$.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
 
 
 
