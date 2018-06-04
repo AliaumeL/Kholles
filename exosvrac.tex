@@ -21,6 +21,7 @@
 \usepackage{pdfpages}
 \usepackage{epigraph}
 \usepackage{multicol}
+\usepackage{bbm}
 
 %%%% Format
 
@@ -4621,36 +4622,6 @@ Comment trouver les coefficients $(a_0, \dots, a_{n-1})$?
 
 \end{enumerate}
 
-\subsection{Espaces euclidiens}
-
-\exercice[Déterminant de Gram]
-
-\exercice[Quand la norme passe à l'intégrale]
-
-Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une application continue telle que $\displaystyle \left\lVert\int_a^b f(t) \di t \right\lVert = \int_a^b \lVert f(t)\lVert \di t$.
-
-\begin{enumerate}
-
-\item Que dire si $\left\lVert\int_a^b f(t) \di t \right\lVert = 0$ ?
-
-\item On suppose désormais $\neq 0$. Soit $e_1 = \int_a^b f(t) \di t \Big/  \left\lVert\int_a^b f(t) \di t \right\lVert $. On complète $e_1$ en une base orthonormée $e_1 \dots e_n$ de $E$, et on note $f = \sum_i f_i e_i$.
-\begin{enumerate}
-
-\item Montrer que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$ puis que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$.
-
-\item Utiliser ce résultat pour obtenir $f_i = 0$ pour $i \ge 2$.
-
-\item Conclure que $f = \lVert f \lVert e_1$.
-
-\end{enumerate}
-
-\item Ce résultat est-il toujours vrai avec une norme quelconque ?
-
-\end{enumerate}
-
-
-
-
 
 
 \subsection{Déterminants}
@@ -4777,7 +4748,146 @@ Expliciter les $\lambda_i \in \mb{C}$ de sa décomposition en éléments simples
 
 
 
-\end{document}
+\subsection{Espaces euclidiens}
+
+\exercice[Déterminant de Gram]
+
+\exercice[Quand la norme passe à l'intégrale]
+
+Soit $E$ un espace euclidien de dimension finie et $f : [a,b] \rightarrow E$ une application continue telle que $\displaystyle \left\lVert\int_a^b f(t) \di t \right\lVert = \int_a^b \lVert f(t)\lVert \di t$.
+
+\begin{enumerate}
+
+\item Que dire si $\left\lVert\int_a^b f(t) \di t \right\lVert = 0$ ?
+
+\item On suppose désormais $\neq 0$. Soit $e_1 = \int_a^b f(t) \di t \Big/  \left\lVert\int_a^b f(t) \di t \right\lVert $. On complète $e_1$ en une base orthonormée $e_1 \dots e_n$ de $E$, et on note $f = \sum_i f_i e_i$.
+\begin{enumerate}
+
+\item Montrer que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$ puis que $\int_a^b f(t) \di t = (\int_a^b \lVert f(t) \rVert \di t) e_1$.
+
+\item Utiliser ce résultat pour obtenir $f_i = 0$ pour $i \ge 2$.
+
+\item Conclure que $f = \lVert f \lVert e_1$.
+
+\end{enumerate}
+
+\item Ce résultat est-il toujours vrai avec une norme quelconque ?
+
+\end{enumerate}
+
+
+
+
+\exercice[Caractérisation de l'orthogonalité]
+
+Soit $(E, <\cdot, \cdot>)$ un espace euclidien et $||\cdot||$ la norme induite par $<\cdot, \cdot>$.
+
+\begin{enumerate}
+
+\item Soient $x,y$ deux vecteurs orthogonaux, justifier que $\forall \lambda \in \mb{R}$ on a $||x+\lambda y|| \ge ||x||$.
+
+\item On suppose que $\forall \lambda \in \mb{R}$, $||x+\lambda y|| \ge ||x||$. Montrer que $x$ et $y$ sont orthogonaux.
+
+\emph{On fera apparaître $<x,y>$ et varier $\lambda$.}
+
+\end{enumerate}
+
+
+\exercice[Théorème de représentation de Riesz]
+
+
+\begin{enumerate}
+
+\item Soit $E$ un $\mb{R}$-espace vectoriel de dimension finie $n$.
+\begin{enumerate}
+
+\item Rappeler la dimension de l'espace $E^* := \mc{L}(E,\mb{R})$.
+
+\item On suppose maintenant que $<\cdot,\cdot>$ est un produit scalaire sur $E$. Démontrer que $\Phi : E \rightarrow E^*, x \mapsto (y \mapsto <x, y>)$ est un isomorphisme.
+
+\item En déduire que $\forall l \in E^*$, il existe un unique $x \in E$ tel que $l : y \mapsto <x,y>$.
+
+\end{enumerate}
+
+\item Application. Soit $n \ge 1$. Montrer que pour toute $l \in \M_n(\mb{R})^*$, il existe une unique $A \in \M_n(\mb{R})$ telle que $l : M \mapsto \text{tr}(AM)$.
+
+\end{enumerate}
+
+
+\exercice[]
+
+On se place sur $\M_n(\mb{R})$ muni du produit scalaire $<A,B> = \text{tr}({}^t A B)$ (à justifier).
+
+Les questions sont indépendantes.
+\begin{enumerate}
+
+\item Montrer que la base canonique $(E_{i,j})_{1 \le i,j \le n}$ de $\M_n(\mb{R})$ est orthonormée.
+
+\item Démontrer que les espaces $\mc{S}_n$ et $\mf{A}_n$ sont des supplémentaires orthogonaux. 
+
+\item Montrer que $\text{tr}(A) \le \sqrt{n} \sqrt{\text{tr}({}^t A A)}$. Quand a-t-on égalité ?
+\end{enumerate}
+
+
+
+
+
+\exercice[Identité du parallélogramme, théorème de Fréchet-Von Neumann-Jordan]
+
+Soit $(E, ||\cdot||)$ un $\mb{R}$-espace vectoriel normé. On suppose que la norme vérifie l'\emph{identité du parallélogramme}, i.e. $\forall x,y \in E$, $||x+y||^2 + ||x-y||^2 = 2(||x||^2 + ||y||^2)$.
+
+On cherche un produit scalaire $<\cdot, \cdot>$ sur $E$ tel que $\forall x, ||x||^2 = <x,x>$.
+
+
+\begin{enumerate}
+\item Montrer si $<\cdot, \cdot>$ existe, alors nécessairement $<x,y> = \frac{1}{4}\left(||x+y||^2 - ||x-y||^2\right)$.
+
+Dans la suite, on définit ainsi $<\cdot, \cdot>$, et on va vérifier que c'est un produit scalaire. 
+
+\item Justifier que $<\cdot, \cdot>$ est symétrique, défini et positif.
+\item \begin{enumerate}
+\item Montrer que $\forall x,y$, $2<x,y> = <x,2y>$.
+
+\item Montrer que $\forall x,y,z$, $2(<x,z> + <y,z>) = <x+y, 2z> $.
+
+\item Déduire de i. et ii. que $\forall x,y,z$, $<x,z> + <y,z> = <x+y, z>$.
+
+\end{enumerate}
+
+\item \begin{enumerate}
+\item Montrer que $\forall x,y, \forall n \in \mb{Z}$, $<nx,y> = n<x,y>$.
+
+\item En déduire que $\forall x,y, \forall n \in \mb{N}^*$, $<\frac{1}{n}x,y> = \frac{1}{n}<x,y>$.
+
+\item En déduire que $\forall x,y, \forall q \in \mb{Q}$, $<qx,y> = q<x,y>$.
+
+\end{enumerate}
+
+
+\item \begin{enumerate}
+
+\item Soient $x,y$ fixés, montrer que l'application $\mb{R} \rightarrow \mb{R}, \lambda \mapsto ||\lambda x + y||$ est continue.
+
+En déduire que $\mb{R} \rightarrow \mb{R}, \lambda \mapsto <\lambda x, y>$ est continue.
+
+
+\item Déduire de ceci et de 4.(c). que $\forall \lambda \in \mb{R}$, $<\lambda x,y> = \lambda<x,y>$.
+
+\end{enumerate}
+
+\item Conclure: quelles sont les normes vérifiant l'identité du parallélogramme ?
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4958,6 +5068,202 @@ $$\frac{2m(2m-1)}{6} \le \sum_{k=1}^m \frac{(2m+1)^2}{k^2 \pi^2} \le \frac{2m(2m
 En faisant tendre $m$ vers l'infini, en déduire la valeur de $\displaystyle \sum_{k=1}^{+ \infty} \frac{1}{k^2}$. 
 
 \end{enumerate}
+
+
+
+\section{Probabilités}
+
+\subsection{Evénements, comptage}
+
+
+\exercice[Formule du crible de Poincaré et application]
+
+
+
+\begin{enumerate}
+
+
+\item Soit $E$ un espace probabilisé et $(A_i)_{ 1 \le i \le n}$ des événements. \'Etablir que:
+
+$$\mb{P}\left(\bigcup_{1 \le i \le n} A_i \right)= \sum_{\substack{I \neq \varnothing\\ I \subseteq \{ 1, \dots, n \}}} (-1)^{|I|+1} \mb{P}\left(\bigcap_{i \in I} A_i\right).$$
+
+\item 
+
+\begin{enumerate}
+
+\item Soit $N,n \ge 0$, combien y a-t-il de multiples de $n$ compris entre $1$ et $N$ ?
+
+\item Application. On tire uniformément un entier au hasard entre $1$ et $1000$. Montrer qu'il a une probabilité de $0,228$ de \emph{ne pas être multiple} de $2,3,5$ ou $7$.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection{Inépendance}
+
+
+
+\exercice[Indépendance sur un système générateur]
+
+Soient $X,Y$ deux VA telles que $\forall x,y, \mb{P}(X=x)\mb{P}(Y=y) = \mb{P}(X=x, Y=y)$.
+
+Montrer que $X$ et $Y$ sont indépendantes.
+
+
+\exercice[Indépendance de $X$ et $f(X)$]
+
+Soit $X : \Omega \rightarrow A$ une VA et $f : A \rightarrow B$ une application.
+
+Montrer que $X$ et $f(X)$ sont indépendantes ssi $f$ est constante sur $\{x~|~\mb{P}(X=x) > 0\}$.
+
+\emph{On pourra considérer l'indépendance des événements $f(X)= f(x)$ et $X=x$.}
+
+
+\exercice[Somme aléatoire]
+
+ Soient $X_1, \dots, X_n$ des VA réelles de même loi, et $N$ une VA à valeurs dans $\{0, \dots, n\}$. On les suppose toutes indépendantes. On note $Y$ la VA réelle $\sum_{k=1}^N X_k$.
+
+Montrer que $\mb{E}[Y] = \mb{E}[X] \mb{E}[N]$.  \emph{On repartira de la définition de l'espérance.}
+
+
+
+
+
+\subsection{Inégalités}
+
+
+\exercice[Loi faible des grands nombres (précisée, et pour la binomiale)]
+
+Soit $X \sim \mc{B}(n,p)$. Démontrer que $\mb{P}\left(\left|\frac{X}{n}-p\right| \ge \epsilon\right) \le \frac{\sqrt{p(1-p)}}{\epsilon \sqrt{n}}$.
+
+\emph{On commencera par appliquer l'inégalité de Markov sans réfléchir.}
+
+
+
+
+\exercice[Variation]
+
+Soit $X$ est une variable aléatoire positive et $g : \mb{R}_+ \rightarrow \mb{R}_+$ une fonction strictement croissante. Soit $a > 0$. Montrer que $\mb{E}[X \ge a] \le \frac{\mb{E}[g(X)]}{g(a)}$.
+
+
+\exercice[Inégalité de Payley-Zygmund]
+
+Soit $X$ une variable aléatoire réelle positive telle que $\mb{E}[X^2]>0$ et soit $a \in ]0,1[$.
+
+\begin{enumerate}
+
+\item Justifier que $\mb{E}[X \mathbbm{1}_{X \ge a \mb{E}[X]}]^2 \le \mb{E}[X^2] \mb{P}(X \ge a \mb{E}(X)).$
+
+\item En déduire que $\mb{P}(X \ge a \mb{E}[X]) \ge (1- a)^2 \frac{\mb{E}[X]^2}{\mb{E}[X^2]}$.
+
+\end{enumerate}
+
+
+\subsection{Moments d'une variable aléatoire}
+
+
+
+\exercice
+
+Soit $X \sim \mc{B}(n,p)$. Calculer $\mb{E}\left[\frac{1}{1+X}\right]$.
+
+
+\exercice[Série génératrice, cas fini]
+
+Soit $\Omega, \mb{P}$ un espace probabilisé fini et $X : \Omega \rightarrow \{1, \dots, N\}$.
+
+
+\begin{enumerate}
+
+\item Pour $s \in \mb{R}$ soit $G_X(s):=\mb{E}[s^X]$. Justifier que $G_X(s) = \sum_{n = 0}^{N} \mb{P}(X=n) s^n$.
+
+\item \'Etablier que $G_X^{(n)}(0) = n! \mb{P}(X=n)$.
+
+\item Que vaut $G_X(1)$ ? Et $G'_X(1)$ ? Et $G''_X(1)$ ?
+
+\item Si $Y$ est une VA indépendante de $X$, démontrer que $G_{X+Y} = G_XG_Y$.
+
+\end{enumerate}
+
+
+\subsection{Problèmes concerts}
+
+
+
+\exercice
+
+\begin{enumerate}
+
+\item Soit $X$ une variable aléatoire suivant une loi $\mc{B}(n,p)$. Quelle est la loi de $n-X$ ?
+
+\item Soient $X$ et $Y$ deux variables aléatoires indépendantes suivant des lois de Bernoulli de paramètres $p$ et $q$. Quelle est la loi de $\max(X,Y)$.
+
+\item Deux élèves résolvent indépendamment un devoir de $n$ exercices. Le premier élève a une probabilité $p$ de réussir chaque exercice, et pour le second $q$.
+
+\begin{enumerate}
+
+\item Quelle est la loi suivie par le nombre d'exercices résolus par l'un des deux ?
+
+\item Quelle est la loi suivie par le nombre d'exercices non résolus ?
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+
+\exercice[Loi de succession de Laplace]
+
+On dispose de $N+1$ urnes, numérotées de $0$ à $N$. L'urne $k$ contient $k$ boules blanches et $N-k$ boules noires. On tire une urne au hasard, puis sans connaître son numéro on tire $n+1$ boules dans cette urne, avec remise après chaque tirage. On note :
+
+\begin{itemize}
+
+\item $U_i$ pour $0 \le i \le N$ l'événement ``le tirage est effectué dans l'urne $i$'';
+
+\item $A_k$ pour $0 \le k \le n+1$ l'événement ``les $k$ premières boules tirées sont blanches''.
+
+\end{itemize}
+
+\begin{enumerate}
+
+\item Que vaut $\mb{P}(A_k|U_i)$ ?
+
+\item En déduire que $\mb{P}(A_k) = \frac{1}{N+1} \sum_{i=0}^N (\frac{i}{N})^k$. Calculer la probabilité $p_N$ que la dernière boule soit blanche sachant que les $n$ premières l'étaient.
+
+\item Déterminer la limite de $p_N$ quand $N \rightarrow + \infty$ (les autres paramètres étant fixés).
+
+\emph{On reconnaîtra une type de somme bien connu.}
+
+\end{enumerate}
+
+
+\exercice[Marche aléatoire dans \{0, \dots, N\}]
+
+Soit $N>0$ et $p \in ]0,1[$.
+Une particule se déplace sur $\{0, \dots, N\}$ en faisant des sauts d'une unité à droite (avec proba $p$) ou à gauche (avec proba $q : =1-p$). Les déplacements sont indépendants. Initialement la particule est en $n \in \{0, \dots, N\}$, et elle s'arrête si elle atteint une extrémité de l'intervalle. On note $q_n$ la probabilité que la particule s'arrête en $0$.
+
+\begin{enumerate}
+
+\item Que valent $q_0$ et $q_N$ ? 
+
+\item Démontrer précisément que pour $1 \le n \le N-1$ on a $q_n = p q_{n+1} + qq_{n-1}$.
+
+\item En déduire un expression de $q_n$. \emph{On fera attention au cas $p = \frac{1}{2}$.}
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5172,6 +5478,15 @@ définit la matrice $P(\sigma)$ comme suit~:
 \item Vérifier que ${}^t \left( P(\sigma) \right) = P\left(\sigma^{-1}\right)$
 \item Montrer que $P(\sigma^{-1}) = P(\sigma)^{-1}$
 \end{compactenum}
+
+
+
+
+
+
+
+
+
 
 \end{document}
 
